@@ -1,9 +1,6 @@
 package clasesNecesarias;
 import java.sql.*;
 import com.microsoft.sqlserver.jdbc.*;
-
-import clasesProfesor.BD_Error;
-
 import java.util.*;
 
 public class BD 

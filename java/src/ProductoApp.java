@@ -10,15 +10,15 @@ import java.awt.event.ActionListener;
 import java.util.List;
 
 public class ProductoApp extends JFrame {
-    private BD database;
+	private String idCuenta;
     private DefaultListModel<Producto> modeloLista;
     private JList<Producto> listaProductos;
     private JTextField txtSKU, txtNombre, txtGTIN;
     private JLabel lblThumbnail;
     private ImageIcon imagenProducto;
 
-    public ProductoApp(BD db) {
-        this.database = db;
+    public ProductoApp(String idCuenta) {
+        this.idCuenta = idCuenta;
 
         setTitle("Gestión de Productos");
         setSize(600, 500);
@@ -74,10 +74,9 @@ public class ProductoApp extends JFrame {
 
         // Agregar lógica para obtener thumbnail
         // Suponiendo que se agrega una ruta de imagen por simplicidad
-        Producto producto = new Producto(sku, nombre, imagenProducto, gtin, null, null);
 
         try {
-            database.agregarProducto(producto);
+            Producto producto = new Producto(idCuenta,sku, nombre, imagenProducto, gtin, null, null);
             modeloLista.addElement(producto);
             limpiarCampos();
         } catch (BD_Error e) {
@@ -106,10 +105,12 @@ public class ProductoApp extends JFrame {
     }
 
     public static void main(String[] args) {
+    	
+    	/* Esto habrá que mejorarlo*/
+    	String idCuenta = "1";
         try {
-            Database db = new Database("jdbc:mysql://localhost:3306/tu_base_de_datos", "tu_usuario", "tu_contraseña");
             SwingUtilities.invokeLater(() -> {
-                ProductoApp app = new ProductoApp(db);
+                ProductoApp app = new ProductoApp( idCuenta );
                 app.setVisible(true);
             });
         } catch (BD_Error e) {
