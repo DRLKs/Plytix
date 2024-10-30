@@ -20,3 +20,9 @@ function cargarProductos() {
         })
         .catch(error => console.error('Error al cargar productos:', error));
 }
+
+window.onload = function() {
+    // Recupera los parámetros de la URL
+    const numCuenta = localStorage.getItem("numCuenta");
+    document.getElementById('tituloPagina').innerText = numCuenta === '1' ? "Productos-Cuenta 1" : "Productos-Cuenta 2";
+}

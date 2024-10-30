@@ -1,9 +1,11 @@
 // script.js
 
 function redirigirCuenta1() {
-    window.location.href = "cuenta.html?cuenta=1";
+    localStorage.setItem("cuenta", "1");
+    window.location.href = "cuenta.html";
 }
 
 function redirigirCuenta2() {
-    window.location.href = "cuenta.html?cuenta=2";
+    localStorage.setItem("cuenta", "2");
+    window.location.href = "cuenta.html";
 }
