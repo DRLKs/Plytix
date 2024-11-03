@@ -24,24 +24,25 @@ body {
     text-decoration: underline;
 }
 
-h1 {
-    color: #333;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
 }
 
-#listaProductos {
-    margin: 20px auto;
-    max-width: 600px;
-}
-
-.producto {
+th, td {
     padding: 10px;
-    margin: 10px 0;
-    background-color: #fff;
     border: 1px solid #ddd;
-    border-radius: 4px;
+    text-align: left;
 }
 
-.producto h2 {
-    font-size: 18px;
-    color: #555;
+th {
+    background-color: #f4f4f4;
 }
+
+form {
+    margin-top: 20px;
+    max-width: 400px;
+}
+
+
