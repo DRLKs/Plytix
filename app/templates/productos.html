@@ -9,7 +9,18 @@
 </head>
 <body>
 
-    <h1>Productos de {{ account[1] }}</h1>
+    <!-- Contenedor de la cabecera con botón y título -->
+    <div class="header">
+        <button onclick="window.location.href='{{ url_for('main.cuenta', account_id=account[0]) }}'">Volver a la cuenta</button>
+        <h1>Productos de {{ account[1] }}</h1>
+    </div>
+
+    <!-- Espacio para la imagen de 200x200px -->
+    <div class="image-container">
+        <img src="{{ url_for('static', filename='assets/images/shrekFeliz.jpg') }}" alt="Imagen del producto" width="200" height="200">
+    </div>
+
+    <!-- Lista de productos en la parte inferior -->
     <div class="product-list">
         {% if products %}
             <ul>
@@ -20,7 +31,6 @@
                         <strong>NOMBRE:</strong> {{ product[2] }} <br>
                         <strong>THUMBNAIL:</strong> {{ product[3] }} <br>
                         <strong>ACCIONES:</strong> {{ product[4] }} <br>
-
                     </li>
                 {% endfor %}
             </ul>
@@ -28,6 +38,6 @@
             <p>No hay productos disponibles para esta cuenta.</p>
         {% endif %}
     </div>
-    <button onclick="window.location.href='{{ url_for('main.cuenta', account_id=account[0]) }}'">Volver a la cuenta</button>
+
 </body>
 </html>
