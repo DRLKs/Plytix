@@ -15,7 +15,7 @@ class Producto(db.Model):
     GTIN = db.Column(db.String(10), unique=True, nullable=True)
     NOMBRE = db.Column(db.String(120), unique=True, nullable=False)
     THUMBANAIL = db.Column(db.String(200)) # Llevo la URL de la imagen
-    ID_CUENTA = db.Column(db.Integer, db.ForeignKey('Cuenta.id'), nullable=False)
+    IDCUENTA = db.Column(db.Integer, db.ForeignKey('Cuenta.id'), nullable=False)
 
     def __repr__(self):
         return f'<Producto {self.NOMBRE}>'

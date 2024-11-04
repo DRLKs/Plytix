@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="{{ url_for('static', filename='assets/images/PlytixLogo.webp') }}" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos de {{ account[1] }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='productos.css') }}">
+</head>
+<body>
+
+    <h1>Productos de {{ account[1] }}</h1>
+    <div class="product-list">
+        {% if products %}
+            <ul>
+                {% for product in products %}
+                    <li>
+                        <strong>SKU:</strong> {{ product[0] }} <br>
+                        <strong>GTU:</strong> {{ product[1] }} <br>
+                        <strong>NOMBRE:</strong> {{ product[2] }} <br>
+                        <strong>THUMBNAIL:</strong> {{ product[3] }} <br>
+                        <strong>ACCIONES:</strong> {{ product[4] }} <br>
+
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No hay productos disponibles para esta cuenta.</p>
+        {% endif %}
+    </div>
+    <button onclick="window.location.href='{{ url_for('main.cuenta', account_id=account[0]) }}'">Volver a la cuenta</button>
+</body>
+</html>

@@ -1,60 +1,63 @@
-import os
-from flask import render_template, request, redirect, url_for
+from flask import Blueprint, render_template
+import sqlite3
 
-from app.forms import ProductoForm
-from . import app, db
-from .models import Producto, Cuenta
+# Define el Blueprint para las rutas principales
+main = Blueprint('main', __name__)
 
-UPLOAD_FOLDER = 'assets/images'  # Carpeta donde se guardarán las imágenes
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+# Función para obtener todas las cuentas desde la base de datos
+def get_all_accounts():
+    connection = sqlite3.connect('IngenieriaRequisitos.db')
+    cursor = connection.cursor()
+    cursor.execute("SELECT * FROM Cuenta")  # Obtenemos los datos de las cuentas
+    accounts = cursor.fetchall()
+    connection.close()
+    return accounts
 
-@app.route('/add_producto<int:id_cuenta>', methods=['GET','POST'])
-def add_producto( id_cuenta ):
-    
-    form = ProductoForm()
+# Función para obtener detalles de una cuenta específica por ID
+def get_account_details(account_id):
+    connection = sqlite3.connect('IngenieriaRequisitos.db')
+    cursor = connection.cursor()
+    cursor.execute("SELECT * FROM Cuenta WHERE ID = ?", (account_id,))
+    account = cursor.fetchone()
+    connection.close()
+    return account
 
-    form.cuenta_id.choices = [(cuenta.id, cuenta.username) for cuenta in Cuenta.query.all()]
-
-    if form.validate_on_submit():
-        sku = form.sku.data
-        gtin = request.gtin.data
-        nombre = request.nombre.data
-        imagen_file = form.thumbnail.data
-        thumbnail_path = os.path.join(app.config['UPLOAD_FOLDER'], imagen_file.filename)
-          # Guardar la imagen
-        imagen_file.save( thumbnail_path )
-
-        # Crear un nuevo producto
-        nuevo_producto = Producto(SKU=sku, GTIN=gtin, NOMBRE=nombre, THUMBANIL=thumbnail_path, ID_CUENTA=id_cuenta )
-        db.session.add(nuevo_producto)
-        db.session.commit()
-        
-        return redirect(url_for('index'))  # Redirigir a la página principal después de agregar
-    
-    return render_template('add_product.html', form=form)
-
-
-@app.route('/')
+# Ruta principal donde se muestran los botones para cada cuenta
+@main.route('/')
 def index():
-    productos = Producto.query.all()  # Obtener todos los usuarios de la base de datos
-    return render_template('index.html', Productos=productos)  # Pasar la lista de usuarios a la plantilla
+    accounts = get_all_accounts()
+    return render_template('index.html', accounts=accounts)
 
-@app.route('/update_producto/<int:id_cuenta>,<String:sku>', methods=['POST'])
-def update_producto(id_cuenta, sku):
-    producto = Producto.query.get(sku, id_cuenta)
-    if producto:
-        producto.sku = request.form.get('SKU')
-        producto.gtin = request.form.get('GTIN')
-        producto.nombre = request.form.get('NOMBRE')
-        producto.thumbnail = request.form.get('THUMBNAIL')
-        db.session.commit()
-    return redirect(url_for('index'))
+# Ruta para mostrar detalles de una cuenta específica
+@main.route('/cuenta/<int:account_id>')
+def cuenta(account_id):
+    account = get_account_details(account_id)
+    if account is None:
+        # Si no se encuentra la cuenta, redirige o muestra un error adecuado
+        return "Cuenta no encontrada", 404
+    return render_template('cuenta.html', account=account)
+
+######### PRODUCTOS ###############
+
+def get_products_by_account(account_id):
+    connection = sqlite3.connect('IngenieriaRequisitos.db')
+    cursor = connection.cursor()
+    cursor.execute("SELECT * FROM Producto WHERE IDCuenta = ?", (account_id,))
+    products = cursor.fetchall()
+    connection.close()
+    return products
+
+@main.route('/productos/<int:account_id>')
+def productos(account_id):
+    # Obtener la información de la cuenta, si es necesario, para mostrarla en la página
+    account = get_account_details(account_id)
+    if account is None:
+        return "Cuenta no encontrada", 404
+    
+    # Obtener los productos asociados a la cuenta
+    products = get_products_by_account(account_id)
+    
+    # Renderizar la plantilla productos.html con los productos y la información de la cuenta
+    return render_template('productos.html', account=account, products=products)
 
 
-@app.route('/delete_producto/<int:id_cuenta>,<String:sku>')
-def delete_user(id_cuenta, sku):
-    producto = Producto.query.get(sku, id_cuenta)
-    if producto:
-        db.session.delete(sku, id_cuenta)
-        db.session.commit()
-    return redirect(url_for('index'))

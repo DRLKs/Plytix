@@ -31,7 +31,7 @@ window.onload = function() {
     // Recupera los parámetros de la URL
     const numCuenta = localStorage.getItem("numCuenta");
     document.getElementById('tituloPagina').innerText = numCuenta === '1' ? "Productos-Cuenta 1" : "Productos-Cuenta 2";
-
+    document.getElementById('numCuenta').innerText = numCuenta;
 }
 
 function confirmDeletion(event) {
@@ -40,3 +40,4 @@ function confirmDeletion(event) {
         event.preventDefault(); // Cancelar la acción de envío del formulario
     }
 }
+
