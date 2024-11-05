@@ -7,3 +7,4 @@ Aplicación web de Ingeniería de Requisitos
 - Estar en el directorio Plytix
 - Ejecutar en el cmd:  pip install -r requirements.txt
 - Luego ejecutar: python run.py
+- Por último conectarte a: http://localhost:5000/ 
