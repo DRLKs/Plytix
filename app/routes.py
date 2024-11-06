@@ -82,22 +82,29 @@ def add_product(account_id):
     gtin = request.form['gtin']
     nombre = request.form['nombre']
     
-    # Leer el archivo de imagen (si se proporciona) en formato bytes
-    thumbnail = request.files['thumbnail']
-    thumbnail_data = thumbnail.read() if thumbnail else None  # Leer como bytes o None si no hay imagen
+    #Comprobaciones imágenes
+    thumbnail = request.files.get('thumbnail')
+    thumbnail_data = None
+    if thumbnail and thumbnail.filename != '':  # Verificar si el archivo es válido
+        try:
+            thumbnail_data = thumbnail.read()  # Leer el archivo como bytes
+        except Exception as e:
+            flash(f"Error al leer la imagen: {str(e)}", "error")
+            return redirect(url_for('main.productos', account_id=account_id))
 
     connection = sqlite3.connect('IngenieriaRequisitos.db')
     cursor = connection.cursor()
-
+    
     # Comprobar si el SKU ya existe para evitar conflictos de unicidad
-    cursor.execute("SELECT GTIN FROM Producto WHERE GTIN = ?", (gtin,))
-    exists = cursor.fetchone()
-    if exists:
-        flash(f"Error: El producto: {nombre}, tiene un GTIN({gtin}), que está usando otro producto")
-        connection.close()
-        return redirect(url_for('main.productos', account_id=account_id))
-
-    # Si el SKU es único, procede a insertar el nuevo producto
+    if gtin != '':      # Si no da error, igual GTIN cuando 2 no tienen GTIN
+        cursor.execute("SELECT GTIN FROM Producto WHERE GTIN = ?", (gtin,))
+        exists = cursor.fetchone()
+        if exists:
+            flash(f"Error: El producto: {nombre}, tiene un GTIN({gtin}), que está usando otro producto")
+            connection.close()
+            return redirect(url_for('main.productos', account_id=account_id))
+    else :
+        gtin = None 
     cursor.execute(
         "INSERT INTO Producto (GTIN, NOMBRE, THUMBNAIL, IDCuenta) VALUES (?, ?, ?, ?)",
         (gtin, nombre, thumbnail_data, account_id)
@@ -108,9 +115,3 @@ def add_product(account_id):
     flash("Producto añadido exitosamente.")
     return redirect(url_for('main.productos', account_id=account_id))
 
-# Filtro personalizado para codificar en Base64, usado en el Formulario
-@main.app_template_filter('b64encode')
-def b64encode(data):
-    if data:
-        return base64.b64encode(data).decode('utf-8')
-    return ''
