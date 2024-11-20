@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="grupo11DBModel.Store" Provider="Devart.Data.MySql" ProviderManifestToken="MySQL, 8.0.39" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="PRODRELACIONADOS">
+    <Key>
+      <PropertyRef Name="SKU1" />
+      <PropertyRef Name="SKU2" />
+    </Key>
+    <Property Name="SKU1" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SKU2" Type="varchar" MaxLength="45" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PRODUCTO">
+    <Key>
+      <PropertyRef Name="SKU" />
+    </Key>
+    <Property Name="THUMBNAIL" Type="blob" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SKU" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="GTIN" Type="varchar" MaxLength="45" />
+    <Property Name="CATEGORIAID" Type="int" />
+  </EntityType>
+  <Association Name="PRODUCTOSRELACIONADOS1">
+    <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="1" />
+    <End Role="PRODRELACIONADOS" Type="Self.PRODRELACIONADOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTO">
+        <PropertyRef Name="SKU" />
+      </Principal>
+      <Dependent Role="PRODRELACIONADOS">
+        <PropertyRef Name="SKU1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PRODUCTOSRELACIONADOS2">
+    <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="1" />
+    <End Role="PRODRELACIONADOS" Type="Self.PRODRELACIONADOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTO">
+        <PropertyRef Name="SKU" />
+      </Principal>
+      <Dependent Role="PRODRELACIONADOS">
+        <PropertyRef Name="SKU2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="grupo11DBModelStoreContainer">
+    <EntitySet Name="PRODRELACIONADOS" EntityType="Self.PRODRELACIONADOS" Schema="grupo11DB" store:Type="Tables" />
+    <EntitySet Name="PRODUCTO" EntityType="Self.PRODUCTO" Schema="grupo11DB" store:Type="Tables" />
+    <AssociationSet Name="PRODUCTOSRELACIONADOS1" Association="Self.PRODUCTOSRELACIONADOS1">
+      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+      <End Role="PRODRELACIONADOS" EntitySet="PRODRELACIONADOS" />
+    </AssociationSet>
+    <AssociationSet Name="PRODUCTOSRELACIONADOS2" Association="Self.PRODUCTOSRELACIONADOS2">
+      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+      <End Role="PRODRELACIONADOS" EntitySet="PRODRELACIONADOS" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
