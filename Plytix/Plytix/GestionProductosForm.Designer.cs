@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionProductosForms));
             this.label1 = new System.Windows.Forms.Label();
             this.Volver = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.ProductosGridView = new System.Windows.Forms.DataGridView();
             this.Add = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.NoProductsLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ProductosGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,13 +78,14 @@
             this.ProductosGridView.Name = "ProductosGridView";
             this.ProductosGridView.RowHeadersWidth = 51;
             this.ProductosGridView.RowTemplate.Height = 24;
-            this.ProductosGridView.Size = new System.Drawing.Size(690, 228);
+            this.ProductosGridView.Size = new System.Drawing.Size(1009, 228);
             this.ProductosGridView.TabIndex = 3;
+            this.ProductosGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductosGridClickar);
             // 
             // Add
             // 
             this.Add.AutoSize = true;
-            this.Add.Location = new System.Drawing.Point(584, 133);
+            this.Add.Location = new System.Drawing.Point(735, 133);
             this.Add.Name = "Add";
             this.Add.Size = new System.Drawing.Size(81, 16);
             this.Add.TabIndex = 4;
@@ -90,7 +93,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(671, 127);
+            this.button1.Location = new System.Drawing.Point(835, 127);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(31, 29);
             this.button1.TabIndex = 5;
@@ -98,17 +101,30 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.AddProductButton);
             // 
+            // NoProductsLabel
+            // 
+            this.NoProductsLabel.AutoSize = true;
+            this.NoProductsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NoProductsLabel.ForeColor = System.Drawing.Color.Black;
+            this.NoProductsLabel.Location = new System.Drawing.Point(269, 266);
+            this.NoProductsLabel.Name = "NoProductsLabel";
+            this.NoProductsLabel.Size = new System.Drawing.Size(197, 29);
+            this.NoProductsLabel.TabIndex = 6;
+            this.NoProductsLabel.Text = "NO PRODUCTS";
+            // 
             // GestionProductosForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1065, 450);
+            this.Controls.Add(this.NoProductsLabel);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Add);
             this.Controls.Add(this.ProductosGridView);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Volver);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GestionProductosForms";
             this.Text = "GestionProductos";
             ((System.ComponentModel.ISupportInitialize)(this.ProductosGridView)).EndInit();
@@ -125,5 +141,6 @@
         private System.Windows.Forms.DataGridView ProductosGridView;
         private System.Windows.Forms.Label Add;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label NoProductsLabel;
     }
 }

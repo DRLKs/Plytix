@@ -120,7 +120,6 @@
     <Compile Include="GestionProductosForm.Designer.cs">
       <DependentUpon>GestionProductosForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GestionProductosForada.cs" />
     <Compile Include="MainForms.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +161,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resource2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource2.resx</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddProductForm.resx">
       <DependentUpon>AddProductForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -183,6 +187,10 @@
     <EmbeddedResource Include="Resource1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource2.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

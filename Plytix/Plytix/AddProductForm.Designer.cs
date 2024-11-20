@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddProductForm));
             this.label1 = new System.Windows.Forms.Label();
             this.buttonSave = new System.Windows.Forms.Button();
             this.textBoxSKU = new System.Windows.Forms.TextBox();
@@ -38,6 +39,9 @@
             this.textBoxNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnCerrar = new System.Windows.Forms.Button();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -50,7 +54,7 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(337, 382);
+            this.buttonSave.Location = new System.Drawing.Point(331, 306);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(118, 38);
             this.buttonSave.TabIndex = 17;
@@ -83,6 +87,7 @@
             this.button1.TabIndex = 14;
             this.button1.Text = "Subir";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.SubirImagenClick);
             // 
             // label3
             // 
@@ -128,11 +133,31 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "Add Product Name";
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Location = new System.Drawing.Point(181, 38);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(75, 23);
+            this.btnCerrar.TabIndex = 18;
+            this.btnCerrar.Text = "X";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.ExitButton);
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.Location = new System.Drawing.Point(536, 269);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(68, 25);
+            this.pictureBox.TabIndex = 19;
+            this.pictureBox.TabStop = false;
+            // 
             // AddProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox);
+            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.textBoxSKU);
             this.Controls.Add(this.label4);
@@ -143,8 +168,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddProductForm";
             this.Text = "AddProductForm";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,5 +189,7 @@
         private System.Windows.Forms.TextBox textBoxNombre;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.PictureBox pictureBox;
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,94 +19,71 @@ namespace Plytix
         {
             InitializeComponent();
             conexion = new grupo11DBEntities();
-            inicializarGridView();
-            cargarProductos();
+            CargarProductos();
         }
 
-        private void inicializarGridView()
+        private void CargarProductos()
         {
-            ProductosGridView = new DataGridView
-            {
-                Dock = DockStyle.Fill,
-                AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
-                AllowUserToAddRows = false, // Desactivar fila de "nueva entrada"
-                RowTemplate = { Height = 60 } // Altura de fila para miniaturas
-            };
+            NoProductsLabel.Hide();
+            ProductosGridView.Show();
 
-            var imageColumn = new DataGridViewImageColumn
-            {
-                Name = "Thumbnail",
-                HeaderText = "Thumbnail",
-                ImageLayout = DataGridViewImageCellLayout.Zoom // Ajustar imagen
-            };
-            ProductosGridView.Columns.Add(imageColumn);
-
-            ProductosGridView.Columns.Add("Name", "Name");
-            ProductosGridView.Columns.Add("SKU", "SKU");
-            ProductosGridView.Columns.Add("GTIN", "GTIN");
-            ProductosGridView.Columns.Add("RelatedProducts", "Related Products");
-            ProductosGridView.Columns.Add("Category", "Category");
-
-            var editButton = new DataGridViewButtonColumn
-            {
-                Name = "Edit",
-                HeaderText = "",
-                Text = "✏️", // Icono o texto para editar
-                UseColumnTextForButtonValue = true
-            };
-            ProductosGridView.Columns.Add(editButton);
-
-            var deleteButton = new DataGridViewButtonColumn
-            {
-                Name = "Delete",
-                HeaderText = "",
-                Text = "🗑️", // Icono o texto para eliminar
-                UseColumnTextForButtonValue = true
-            };
-            ProductosGridView.Columns.Add(deleteButton);
-        }
-
-        public void cargarProductos()
-        {
-            ProductosGridView.AutoGenerateColumns = false;
-
-            ProductosGridView.Columns.Add(new DataGridViewImageColumn
-            {
-                DataPropertyName = "ImagenUrl", // Solo si usas URL para imágenes
-                HeaderText = "Thumbnail"
-            });
-
-            ProductosGridView.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "Nombre",
-                HeaderText = "Nombre"
-            });
-
-            ProductosGridView.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "SKU",
-                HeaderText = "SKU"
-            });
-
-            ProductosGridView.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "GTIN",
-                HeaderText = "GTIN"
-            });
-
-            ProductosGridView.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "CATEGORIAID",
-                HeaderText = "CATEGORIA"
-            });
-
+            ProductosGridView.Columns.Clear(); // Asegúrate de que no haya columnas duplicadas
+            ProductosGridView.Rows.Clear();    // Limpia filas anteriores, si las hubiera
 
             List<PRODUCTO> listaProductos = (from producto in conexion.PRODUCTO select producto).ToList();
 
-            foreach (PRODUCTO p in listaProductos)
+            if (listaProductos.Count > 0)
             {
+                // Configura columnas
+                if (ProductosGridView.Columns.Count == 0)
+                {
+                    ProductosGridView.Columns.Add(new DataGridViewImageColumn
+                    {
+                        Name = "Thumbnail",
+                        HeaderText = "Thumbnail",
+                        ImageLayout = DataGridViewImageCellLayout.Zoom
+                    });
+
+                    ProductosGridView.Columns.Add("Nombre", "Nombre");
+                    ProductosGridView.Columns.Add("sku", "SKU");
+                    ProductosGridView.Columns.Add("gtin", "GTIN");
+                    ProductosGridView.Columns.Add("Categoria", "Categoria");
+
+                    ProductosGridView.Columns.Add(new DataGridViewButtonColumn
+                    {
+                        Name = "Edit",
+                        HeaderText = "",
+                        Text = "✏️",
+                        UseColumnTextForButtonValue = true
+                    });
+
+                    ProductosGridView.Columns.Add(new DataGridViewButtonColumn
+                    {
+                        Name = "Delete",
+                        HeaderText = "",
+                        Text = "🗑️",
+                        UseColumnTextForButtonValue = true
+                    });
+                }
+
+                // Agrega los datos al DataGridView
+                foreach (var p in listaProductos)
+                {
+                    var thumbnail = p.THUMBNAIL != null
+                        ? ConvertirBlobAImagen(p.THUMBNAIL)
+                        : Image.FromFile(@"C:\Users\David\Documents\GIT\Plytix\Plytix\Plytix\Resources\sinImagen.jpg");
+
+                    ProductosGridView.Rows.Add(thumbnail, p.NOMBRE, p.SKU, p.GTIN, p.CATEGORIAID);
+                }
+
+                ProductosGridView.Show();
             }
-            ProductosGridView.DataSource = listaProductos;
+            else
+            {
+                NoProductsLabel.Show();
+                ProductosGridView.Hide();
+            }
+
         }
 
         private void VolverClick(object sender, EventArgs e)
@@ -118,9 +96,78 @@ namespace Plytix
         private void AddProductButton(object sender, EventArgs e)
         {
             var addPForms = new AddProductForm();
-            addPForms.Width = 300;
-            addPForms.Height = 700;
             addPForms.Show();
+            
         }
+
+        public byte[] ConvertirImagenABlob(string rutaImagen)
+        {
+            byte[] imagenBytes;
+            using (MemoryStream ms = new MemoryStream())
+            {
+                // Cargar la imagen en un MemoryStream
+                Image imagen = Image.FromFile(rutaImagen);
+                imagen.Save(ms, imagen.RawFormat); // Guardar la imagen en el stream
+                imagenBytes = ms.ToArray(); // Obtener el arreglo de bytes
+            }
+            return imagenBytes;
+        }
+
+        public Image ConvertirBlobAImagen(byte[] blob)
+        {
+            using (MemoryStream ms = new MemoryStream(blob))
+            {
+                return Image.FromStream(ms);
+            }
+        }
+
+        private void ProductosGridClickar(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            // Identificar la columna donde ocurrió el clic
+            string columnName = ProductosGridView.Columns[e.ColumnIndex].Name;
+
+            if (columnName == "Edit") // Columna Editar
+            {
+                // Obtener datos del producto seleccionado
+                String  sku = ProductosGridView.Rows[e.RowIndex].Cells["SKU"].Value.ToString();
+                EditarProducto(sku);
+            }
+            else if (columnName == "Delete") // Columna Eliminar
+            {
+                // Confirmar antes de eliminar
+                DialogResult result = MessageBox.Show("¿Estás seguro de que deseas eliminar este producto?",
+                                                      "Confirmar eliminación", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    String sku = ProductosGridView.Rows[e.RowIndex].Cells["SKU"].Value.ToString();
+                    EliminarProducto(sku);
+                }
+            }
+        }
+        private void EliminarProducto(String sku)
+        {
+            PRODUCTO p = (from producto in conexion.PRODUCTO
+                          where producto.SKU == sku
+                          select producto).FirstOrDefault();
+
+            conexion.PRODUCTO.Remove(p);
+            conexion.SaveChanges();
+            CargarProductos();
+        }
+
+        private void EditarProducto(String sku)
+        {
+            PRODUCTO p = (from producto in conexion.PRODUCTO
+                          where producto.SKU == sku
+                          select producto).FirstOrDefault();
+            // Crear un forms y toda la paranoia
+            CargarProductos();
+        }
+
     }
+
+    
 }
