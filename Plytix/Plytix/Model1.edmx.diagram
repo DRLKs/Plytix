@@ -5,8 +5,12 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="328a5f5f862f44518ccde914929391bc" Name="Diagram1">
-        <EntityTypeShape EntityType="grupo11DBModel.PRODUCTO" Width="1.5" PointX="2.875" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="grupo11DBModel.PRODUCTO" Width="1.5" PointX="5.5" PointY="1.25" IsExpanded="true" />
         <AssociationConnector Association="grupo11DBModel.PRODRELACIONADOS" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="grupo11DBModel.ATRIBUTO" Width="1.5" PointX="2.375" PointY="5.25" />
+        <EntityTypeShape EntityType="grupo11DBModel.CATEGORIA" Width="1.5" PointX="1" PointY="1.125" />
+        <EntityTypeShape EntityType="grupo11DBModel.TIPO_ATRIBUTO" Width="1.5" PointX="4.625" PointY="5.375" />
+        <AssociationConnector Association="grupo11DBModel.TIPO" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

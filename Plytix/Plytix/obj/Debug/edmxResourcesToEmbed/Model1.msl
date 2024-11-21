@@ -20,5 +20,30 @@
         <ScalarProperty Name="SKU" ColumnName="SKU2" />
       </EndProperty>
     </AssociationSetMapping>
+    <EntitySetMapping Name="ATRIBUTO">
+      <EntityTypeMapping TypeName="grupo11DBModel.ATRIBUTO">
+        <MappingFragment StoreEntitySet="ATRIBUTO">
+          <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CATEGORIA">
+      <EntityTypeMapping TypeName="grupo11DBModel.CATEGORIA">
+        <MappingFragment StoreEntitySet="CATEGORIA">
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIPO_ATRIBUTO">
+      <EntityTypeMapping TypeName="grupo11DBModel.TIPO_ATRIBUTO">
+        <MappingFragment StoreEntitySet="TIPO_ATRIBUTO">
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

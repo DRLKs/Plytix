@@ -22,5 +22,48 @@
       <End Role="PRODUCTO" EntitySet="PRODUCTO" />
       <End Role="PRODUCTO1" EntitySet="PRODUCTO" />
     </AssociationSet>
+    <EntitySet Name="ATRIBUTO" EntityType="grupo11DBModel.ATRIBUTO" />
+    <EntitySet Name="CATEGORIA" EntityType="grupo11DBModel.CATEGORIA" />
+    <EntitySet Name="TIPO_ATRIBUTO" EntityType="grupo11DBModel.TIPO_ATRIBUTO" />
+    <AssociationSet Name="TIPO" Association="grupo11DBModel.TIPO">
+      <End Role="ATRIBUTO" EntitySet="ATRIBUTO" />
+      <End Role="TIPO_ATRIBUTO" EntitySet="TIPO_ATRIBUTO" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="ATRIBUTO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="TIPO" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="TIPO_ATRIBUTO" Relationship="grupo11DBModel.TIPO" FromRole="ATRIBUTO" ToRole="TIPO_ATRIBUTO" />
+  </EntityType>
+  <EntityType Name="CATEGORIA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TIPO_ATRIBUTO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ATRIBUTO" Relationship="grupo11DBModel.TIPO" FromRole="TIPO_ATRIBUTO" ToRole="ATRIBUTO" />
+  </EntityType>
+  <Association Name="TIPO">
+    <End Type="grupo11DBModel.ATRIBUTO" Role="ATRIBUTO" Multiplicity="1" />
+    <End Type="grupo11DBModel.TIPO_ATRIBUTO" Role="TIPO_ATRIBUTO" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ATRIBUTO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TIPO_ATRIBUTO">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>
