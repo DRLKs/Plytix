@@ -108,11 +108,11 @@
     <Compile Include="Conexion.cs" />
     <Compile Include="ConexionMySQL.cs" />
     <Compile Include="Consulta.cs" />
-    <Compile Include="AddProductForm.cs">
+    <Compile Include="ProductsForms.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddProductForm.Designer.cs">
-      <DependentUpon>AddProductForm.cs</DependentUpon>
+    <Compile Include="ProductsForms.Designer.cs">
+      <DependentUpon>ProductsForms.cs</DependentUpon>
     </Compile>
     <Compile Include="GestionProductosForm.cs">
       <SubType>Form</SubType>
@@ -166,8 +166,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource2.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddProductForm.resx">
-      <DependentUpon>AddProductForm.cs</DependentUpon>
+    <EmbeddedResource Include="ProductsForms.resx">
+      <DependentUpon>ProductsForms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionProductosForm.resx">
       <DependentUpon>GestionProductosForm.cs</DependentUpon>

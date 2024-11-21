@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -12,54 +13,79 @@ using System.Windows.Forms;
 
 namespace Plytix
 {
-    public partial class AddProductForm : Form
+    public partial class ProductsForms : Form
     {
+        private grupo11DBEntities conexion;
         private string imagePath;
-        public AddProductForm()
+        private GestionProductosForms formsQueLoLlama;
+        private readonly String sku = null;
+        public ProductsForms(String sku, GestionProductosForms formsQueLoLlama )
         {
             InitializeComponent();
             btnCerrar_Paint();
             this.FormBorderStyle = FormBorderStyle.None;  // Elimina los bordes
             this.MaximizeBox = false;  // Evita que el formulario pueda maximizarse
             this.MinimizeBox = false;  // Evita que el formulario pueda minimizarse
-
+            this.formsQueLoLlama = formsQueLoLlama;
+            conexion = new grupo11DBEntities();
+            if (sku != null)
+            {
+                this.sku = sku;
+                PrepararEditor();
+            }
+            
             imagePath = null;
         }
+        /*
+         *  Actualiza los textBoxes para que carguen los datos del elemento a editar
+         */
+        private void PrepararEditor()
+        {
+            PRODUCTO p = (from producto in conexion.PRODUCTO
+                          where producto.SKU == sku
+                          select producto).FirstOrDefault(); textBoxSKU.Text = sku.ToString();
 
-
+            textBoxGTIN.Text = p.GTIN.ToString();
+            textBoxNombre.Text = p.NOMBRE.ToString();
+            var thumbnail = p.THUMBNAIL != null
+                        ? ConvertirBlobAImagen(p.THUMBNAIL)
+                        : Image.FromFile(@"C:\Users\David\Documents\GIT\Plytix\Plytix\Plytix\Resources\sinImagen.jpg");
+            pictureBox.Image = thumbnail;
+        }
 
         private void SaveClick(object sender, EventArgs e)
-        {   
+        {
             if (textBoxSKU.Text.Length > 0 && textBoxNombre.Text.Length > 0)
             {
-                PRODUCTO p;
-                if (imagePath == null) 
+
+                PRODUCTO p = new PRODUCTO();
+                p.SKU = textBoxSKU.Text;
+                if (textBoxGTIN.Text.Length > 0) p.GTIN = textBoxGTIN.Text; 
+                else p.GTIN = null;
+
+                p.NOMBRE = textBoxNombre.Text;
+                if (imagePath == null) p.THUMBNAIL = null;
+                else p.THUMBNAIL = ConvertirImagenABlob(imagePath);
+
+                p.CATEGORIAID = null;
+
+                try
                 {
-                    p = new PRODUCTO
+                    conexion.PRODUCTO.AddOrUpdate(p);
+                    if( sku != null)   // Estamos ante un update
                     {
-                        SKU = textBoxSKU.Text,
-                        GTIN = textBoxNombre.Text,
-                        NOMBRE = textBoxNombre.Text,
-                        CATEGORIAID = null
-                    };
+                        if (textBoxGTIN.TextLength == 0) p.GTIN = null;
+                    }
+                    conexion.SaveChanges();
+                    this.Hide();
+                    formsQueLoLlama.CargarProductos();
                 }
-                else
+                catch (Exception ex)
                 {
-                    p = new PRODUCTO
-                    {
-                        SKU = textBoxSKU.Text,
-                        GTIN = textBoxNombre.Text,
-                        NOMBRE = textBoxNombre.Text,
-                        THUMBNAIL = ConvertirImagenABlob(imagePath),
-                        CATEGORIAID = null
-                    };
+                    MessageBox.Show(ex.Message);
                 }
 
                 
-                grupo11DBEntities conexion = new grupo11DBEntities();
-                conexion.PRODUCTO.Add(p);
-                conexion.SaveChanges();
-                this.Hide();
             }
             else
             {
@@ -110,6 +136,13 @@ namespace Plytix
 
                 // Mostrar la imagen en un PictureBox (si tienes uno en tu formulario)
                 pictureBox.Image = Image.FromFile(imagePath);
+            }
+        }
+        public Image ConvertirBlobAImagen(byte[] blob)
+        {
+            using (MemoryStream ms = new MemoryStream(blob))
+            {
+                return Image.FromStream(ms);
             }
         }
     }

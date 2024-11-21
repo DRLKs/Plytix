@@ -36,6 +36,7 @@
             this.Add = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.NoProductsLabel = new System.Windows.Forms.Label();
+            this.textFiltroProductos = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ProductosGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,17 +107,26 @@
             this.NoProductsLabel.AutoSize = true;
             this.NoProductsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NoProductsLabel.ForeColor = System.Drawing.Color.Black;
-            this.NoProductsLabel.Location = new System.Drawing.Point(269, 266);
+            this.NoProductsLabel.Location = new System.Drawing.Point(422, 263);
             this.NoProductsLabel.Name = "NoProductsLabel";
             this.NoProductsLabel.Size = new System.Drawing.Size(197, 29);
             this.NoProductsLabel.TabIndex = 6;
             this.NoProductsLabel.Text = "NO PRODUCTS";
+            // 
+            // textFiltroProductos
+            // 
+            this.textFiltroProductos.Location = new System.Drawing.Point(458, 49);
+            this.textFiltroProductos.Name = "textFiltroProductos";
+            this.textFiltroProductos.Size = new System.Drawing.Size(127, 22);
+            this.textFiltroProductos.TabIndex = 7;
+            this.textFiltroProductos.TextChanged += new System.EventHandler(this.NuevoFiltroProductos);
             // 
             // GestionProductosForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1065, 450);
+            this.Controls.Add(this.textFiltroProductos);
             this.Controls.Add(this.NoProductsLabel);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Add);
@@ -142,5 +152,6 @@
         private System.Windows.Forms.Label Add;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label NoProductsLabel;
+        private System.Windows.Forms.TextBox textFiltroProductos;
     }
 }

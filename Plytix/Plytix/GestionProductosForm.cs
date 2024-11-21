@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,15 +15,19 @@ namespace Plytix
     public partial class GestionProductosForms : Form
     {
         private grupo11DBEntities conexion;
+        private String filtro;
 
         public GestionProductosForms()
         {
             InitializeComponent();
             conexion = new grupo11DBEntities();
+            ProductosGridView.AllowUserToAddRows = false;
+            this.FormClosing += MainForm_FormClosing;   // Para cerrar el programa no solo el FORMS
+            filtro = "";
             CargarProductos();
         }
 
-        private void CargarProductos()
+        public void CargarProductos()
         {
             NoProductsLabel.Hide();
             ProductosGridView.Show();
@@ -30,7 +35,17 @@ namespace Plytix
             ProductosGridView.Columns.Clear(); // Asegúrate de que no haya columnas duplicadas
             ProductosGridView.Rows.Clear();    // Limpia filas anteriores, si las hubiera
 
-            List<PRODUCTO> listaProductos = (from producto in conexion.PRODUCTO select producto).ToList();
+            List<PRODUCTO> listaProductos;
+            if ( filtro == "")
+            {
+                listaProductos = (from producto in conexion.PRODUCTO select producto).ToList();
+            }
+            else
+            {
+                listaProductos = (from producto in conexion.PRODUCTO
+                                  where producto.NOMBRE.Contains(filtro)
+                                  select producto).ToList();
+            }
 
             if (listaProductos.Count > 0)
             {
@@ -52,7 +67,7 @@ namespace Plytix
                     ProductosGridView.Columns.Add(new DataGridViewButtonColumn
                     {
                         Name = "Edit",
-                        HeaderText = "",
+                        HeaderText = "Edit",
                         Text = "✏️",
                         UseColumnTextForButtonValue = true
                     });
@@ -60,7 +75,7 @@ namespace Plytix
                     ProductosGridView.Columns.Add(new DataGridViewButtonColumn
                     {
                         Name = "Delete",
-                        HeaderText = "",
+                        HeaderText = "Delete",
                         Text = "🗑️",
                         UseColumnTextForButtonValue = true
                     });
@@ -95,9 +110,8 @@ namespace Plytix
 
         private void AddProductButton(object sender, EventArgs e)
         {
-            var addPForms = new AddProductForm();
+            var addPForms = new ProductsForms(null, this);
             addPForms.Show();
-            
         }
 
         public byte[] ConvertirImagenABlob(string rutaImagen)
@@ -160,11 +174,20 @@ namespace Plytix
 
         private void EditarProducto(String sku)
         {
-            PRODUCTO p = (from producto in conexion.PRODUCTO
-                          where producto.SKU == sku
-                          select producto).FirstOrDefault();
-            // Crear un forms y toda la paranoia
+            var addPForms = new ProductsForms(sku, this);
+            addPForms.Show();
+        }
+
+        private void NuevoFiltroProductos(object sender, EventArgs e)
+        {
+            filtro = textFiltroProductos.Text;
             CargarProductos();
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Cierra toda la aplicación
+            Application.Exit();
         }
 
     }

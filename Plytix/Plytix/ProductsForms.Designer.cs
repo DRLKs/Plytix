@@ -1,6 +1,6 @@
 ﻿namespace Plytix
 {
-    partial class AddProductForm
+    partial class ProductsForms
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddProductForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductsForms));
             this.label1 = new System.Windows.Forms.Label();
             this.buttonSave = new System.Windows.Forms.Button();
             this.textBoxSKU = new System.Windows.Forms.TextBox();
@@ -151,7 +151,7 @@
             this.pictureBox.TabIndex = 19;
             this.pictureBox.TabStop = false;
             // 
-            // AddProductForm
+            // ProductsForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -169,8 +169,8 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "AddProductForm";
-            this.Text = "AddProductForm";
+            this.Name = "ProductsForms";
+            this.Text = "GestionProductos";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

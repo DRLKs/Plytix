@@ -11,8 +11,12 @@
       "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\gestionproductosform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|C:\\Users\\David\\Documents\\GIT\\Plytix\\Plytix\\plytix\\addproductform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\addproductform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|c:\\users\\david\\documents\\git\\plytix\\plytix\\plytix\\productsforms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\productsforms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|c:\\users\\david\\documents\\git\\plytix\\plytix\\plytix\\productsforms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\productsforms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,8 +26,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductsForms.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\Plytix\\Plytix\\ProductsForms.cs",
+              "RelativeDocumentMoniker": "Plytix\\ProductsForms.cs",
+              "ToolTip": "C:\\Users\\David\\Documents\\GIT\\Plytix\\Plytix\\Plytix\\ProductsForms.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Plytix\\ProductsForms.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T14:15:55.163Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -38,13 +54,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AddProductForm.cs",
-              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\Plytix\\Plytix\\AddProductForm.cs",
-              "RelativeDocumentMoniker": "Plytix\\AddProductForm.cs",
-              "ToolTip": "C:\\Users\\David\\Documents\\GIT\\Plytix\\Plytix\\Plytix\\AddProductForm.cs",
-              "RelativeToolTip": "Plytix\\AddProductForm.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAAwD0AAAAcAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "ProductsForms.cs",
+              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\Plytix\\Plytix\\ProductsForms.cs",
+              "RelativeDocumentMoniker": "Plytix\\ProductsForms.cs",
+              "ToolTip": "C:\\Users\\David\\Documents\\GIT\\Plytix\\Plytix\\Plytix\\ProductsForms.cs",
+              "RelativeToolTip": "Plytix\\ProductsForms.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAqwBsAAABTAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-20T17:46:06.962Z",
               "EditorCaption": ""
@@ -57,7 +73,7 @@
               "RelativeDocumentMoniker": "Plytix\\GestionProductosForm.cs",
               "ToolTip": "C:\\Users\\David\\Documents\\GIT\\Plytix\\Plytix\\Plytix\\GestionProductosForm.cs",
               "RelativeToolTip": "Plytix\\GestionProductosForm.cs",
-              "ViewState": "AgIAAJUAAAAAAAAAAAAwwKUAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAKoAAAAAAAAAAADwv7cAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-20T14:56:39.741Z",
               "EditorCaption": ""

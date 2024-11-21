@@ -89,7 +89,6 @@ C:\Users\David\Documents\GIT\Plytix\Plytix\Plytix\bin\Debug\System.Threading.Tas
 C:\Users\David\Documents\GIT\Plytix\Plytix\Plytix\obj\Debug\Plytix.csproj.AssemblyReference.cache
 C:\Users\David\Documents\GIT\Plytix\Plytix\Plytix\obj\Debug\Plytix.csproj.SuggestedBindingRedirects.cache
 C:\Users\David\Documents\GIT\Plytix\Plytix\Plytix\obj\Debug\Plytix.exe.config
-C:\Users\David\Documents\GIT\Plytix\Plytix\Plytix\obj\Debug\Plytix.AddProductForm.resources
 C:\Users\David\Documents\GIT\Plytix\Plytix\Plytix\obj\Debug\Plytix.GestionProductosForms.resources
 C:\Users\David\Documents\GIT\Plytix\Plytix\Plytix\obj\Debug\Plytix.MainForms.resources
 C:\Users\David\Documents\GIT\Plytix\Plytix\Plytix\obj\Debug\Plytix.Properties.Resource1.resources
@@ -101,3 +100,4 @@ C:\Users\David\Documents\GIT\Plytix\Plytix\Plytix\obj\Debug\Plytix.csproj.CoreCo
 C:\Users\David\Documents\GIT\Plytix\Plytix\Plytix\obj\Debug\Plytix.csproj.Up2Date
 C:\Users\David\Documents\GIT\Plytix\Plytix\Plytix\obj\Debug\Plytix.exe
 C:\Users\David\Documents\GIT\Plytix\Plytix\Plytix\obj\Debug\Plytix.pdb
+C:\Users\David\Documents\GIT\Plytix\Plytix\Plytix\obj\Debug\Plytix.ProductsForms.resources
