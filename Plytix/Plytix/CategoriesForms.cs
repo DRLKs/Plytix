@@ -13,22 +13,29 @@ namespace Plytix
 {
     public partial class CategoriesForms : Form
     {
-        public CategoriesForms( int id, GestionProductosForms forms)
+        private int id;
+        private GestionCategoriasForms forms;
+        public CategoriesForms( int id, GestionCategoriasForms forms)
         {
             InitializeComponent();
+            if( id >= 0 ) this.id = id;
+            else          this.id = -1;
+            this.forms = forms;
         }
 
         private void SaveClick(object sender, EventArgs e)
         {
-            if( textBoxId.Text != "" && textBoxNombre.Text != "")
+            if(textBoxId.Text != null && textBoxId.Text != "" && textBoxNombre.Text != "")
             {
                 grupo11DBEntities conexion = new grupo11DBEntities();
 
                 CATEGORIA c = new CATEGORIA();
                 c.ID =  Int32.Parse( textBoxId.Text );
                 c.NOMBRE = textBoxNombre.Text;
-                conexion.CATEGORIA.AddOrUpdate();
+                conexion.CATEGORIA.AddOrUpdate(c);
                 conexion.SaveChanges();
+                forms.CargarCategorias();
+                this.Hide();
             }
         }
     }

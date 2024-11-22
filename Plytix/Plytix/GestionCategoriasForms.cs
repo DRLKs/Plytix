@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.Remoting.Contexts;
 
 namespace Plytix
 {
@@ -18,10 +19,12 @@ namespace Plytix
         {
             InitializeComponent();
             conexion = new grupo11DBEntities();
+            this.FormClosing += MainForm_FormClosing;   // Para cerrar el programa no solo el FORMS
             filtro = "";
+            CargarCategorias();
         }
 
-        public void CargarProductos()
+        public void CargarCategorias()
         {
             NoProductsLabel.Hide();
             CategoriasGridView.Show();
@@ -91,6 +94,17 @@ namespace Plytix
             var mainForm = new MainForms();
             mainForm.Show();
             this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var AddCform = new CategoriesForms(-1,this);
+            AddCform.Show();
+        }
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Cierra toda la aplicación
+            Application.Exit();
         }
     }
 }
