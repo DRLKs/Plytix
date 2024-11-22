@@ -110,8 +110,8 @@ namespace Plytix
 
         private void AddProductButton(object sender, EventArgs e)
         {
-            var addPForms = new ProductsForms(null, this);
-            addPForms.Show();
+            var addCForms = new CategoriesForms(null, this);
+            addCForms.Show();
         }
 
         public byte[] ConvertirImagenABlob(string rutaImagen)

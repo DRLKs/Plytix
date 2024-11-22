@@ -57,7 +57,7 @@
             this.Volver.Name = "Volver";
             this.Volver.Size = new System.Drawing.Size(75, 23);
             this.Volver.TabIndex = 1;
-            this.Volver.Text = "Volver";
+            this.Volver.Text = "Return";
             this.Volver.UseVisualStyleBackColor = true;
             this.Volver.Click += new System.EventHandler(this.VolverClick);
             // 

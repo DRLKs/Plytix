@@ -114,6 +114,12 @@
     <Compile Include="Conexion.cs" />
     <Compile Include="ConexionMySQL.cs" />
     <Compile Include="Consulta.cs" />
+    <Compile Include="CategoriesForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CategoriesForms.Designer.cs">
+      <DependentUpon>CategoriesForms.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestionCategoriasForms.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     <Compile Include="TIPO_ATRIBUTO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CategoriesForms.resx">
+      <DependentUpon>CategoriesForms.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GestionCategoriasForms.resx">
       <DependentUpon>GestionCategoriasForms.cs</DependentUpon>
     </EmbeddedResource>
