@@ -101,3 +101,4 @@ C:\Users\David\Documents\GIT\Plytix\Plytix\Plytix\obj\Debug\Plytix.csproj.Up2Dat
 C:\Users\David\Documents\GIT\Plytix\Plytix\Plytix\obj\Debug\Plytix.exe
 C:\Users\David\Documents\GIT\Plytix\Plytix\Plytix\obj\Debug\Plytix.pdb
 C:\Users\David\Documents\GIT\Plytix\Plytix\Plytix\obj\Debug\Plytix.ProductsForms.resources
+C:\Users\David\Documents\GIT\Plytix\Plytix\Plytix\obj\Debug\Plytix.GestionCategoriasForms.resources

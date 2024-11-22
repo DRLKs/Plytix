@@ -41,6 +41,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +56,7 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(331, 306);
+            this.buttonSave.Location = new System.Drawing.Point(331, 369);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(118, 38);
             this.buttonSave.TabIndex = 17;
@@ -145,17 +147,39 @@
             // 
             // pictureBox
             // 
-            this.pictureBox.Location = new System.Drawing.Point(536, 269);
+            this.pictureBox.Location = new System.Drawing.Point(623, 209);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(68, 25);
+            this.pictureBox.Size = new System.Drawing.Size(121, 82);
             this.pictureBox.TabIndex = 19;
             this.pictureBox.TabStop = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(265, 278);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(167, 29);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Add Category";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(264, 317);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(259, 29);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Add Related Products";
             // 
             // ProductsForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.buttonSave);
@@ -191,5 +215,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }

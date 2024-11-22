@@ -40,6 +40,18 @@
     <Property Name="ID" Type="int" Nullable="false" />
     <Property Name="NOMBRE" Type="varchar" MaxLength="45" Nullable="false" />
   </EntityType>
+  <Association Name="Categoria1">
+    <End Role="CATEGORIA" Type="Self.CATEGORIA" Multiplicity="0..1" />
+    <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CATEGORIA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PRODUCTO">
+        <PropertyRef Name="CATEGORIAID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="PRODUCTOSRELACIONADOS1">
     <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="1" />
     <End Role="PRODRELACIONADOS" Type="Self.PRODRELACIONADOS" Multiplicity="*" />
@@ -65,14 +77,14 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="TIPO">
-    <End Role="ATRIBUTO" Type="Self.ATRIBUTO" Multiplicity="1" />
-    <End Role="TIPO_ATRIBUTO" Type="Self.TIPO_ATRIBUTO" Multiplicity="0..1" />
+    <End Role="TIPO_ATRIBUTO" Type="Self.TIPO_ATRIBUTO" Multiplicity="1" />
+    <End Role="ATRIBUTO" Type="Self.ATRIBUTO" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="ATRIBUTO">
+      <Principal Role="TIPO_ATRIBUTO">
         <PropertyRef Name="ID" />
       </Principal>
-      <Dependent Role="TIPO_ATRIBUTO">
-        <PropertyRef Name="ID" />
+      <Dependent Role="ATRIBUTO">
+        <PropertyRef Name="TIPO" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -82,6 +94,10 @@
     <EntitySet Name="PRODRELACIONADOS" EntityType="Self.PRODRELACIONADOS" Schema="grupo11DB" store:Type="Tables" />
     <EntitySet Name="PRODUCTO" EntityType="Self.PRODUCTO" Schema="grupo11DB" store:Type="Tables" />
     <EntitySet Name="TIPO_ATRIBUTO" EntityType="Self.TIPO_ATRIBUTO" Schema="grupo11DB" store:Type="Tables" />
+    <AssociationSet Name="Categoria1" Association="Self.Categoria1">
+      <End Role="CATEGORIA" EntitySet="CATEGORIA" />
+      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+    </AssociationSet>
     <AssociationSet Name="PRODUCTOSRELACIONADOS1" Association="Self.PRODUCTOSRELACIONADOS1">
       <End Role="PRODUCTO" EntitySet="PRODUCTO" />
       <End Role="PRODRELACIONADOS" EntitySet="PRODRELACIONADOS" />
@@ -91,8 +107,8 @@
       <End Role="PRODRELACIONADOS" EntitySet="PRODRELACIONADOS" />
     </AssociationSet>
     <AssociationSet Name="TIPO" Association="Self.TIPO">
-      <End Role="ATRIBUTO" EntitySet="ATRIBUTO" />
       <End Role="TIPO_ATRIBUTO" EntitySet="TIPO_ATRIBUTO" />
+      <End Role="ATRIBUTO" EntitySet="ATRIBUTO" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

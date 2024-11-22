@@ -14,7 +14,14 @@ namespace Plytix
     
     public partial class CATEGORIA
     {
+        public CATEGORIA()
+        {
+            this.PRODUCTO = new HashSet<PRODUCTO>();
+        }
+    
         public int ID { get; set; }
         public string NOMBRE { get; set; }
+    
+        public virtual ICollection<PRODUCTO> PRODUCTO { get; set; }
     }
 }

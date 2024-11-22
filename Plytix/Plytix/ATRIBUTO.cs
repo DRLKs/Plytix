@@ -19,5 +19,6 @@ namespace Plytix
         public int TIPO { get; set; }
     
         public virtual TIPO_ATRIBUTO TIPO_ATRIBUTO { get; set; }
+        public virtual TIPO_ATRIBUTO TIPO_ATRIBUTO1 { get; set; }
     }
 }

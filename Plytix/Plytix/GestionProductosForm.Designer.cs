@@ -66,7 +66,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(39, 107);
+            this.label2.Location = new System.Drawing.Point(39, 120);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(230, 29);
             this.label2.TabIndex = 2;
@@ -79,14 +79,14 @@
             this.ProductosGridView.Name = "ProductosGridView";
             this.ProductosGridView.RowHeadersWidth = 51;
             this.ProductosGridView.RowTemplate.Height = 24;
-            this.ProductosGridView.Size = new System.Drawing.Size(1009, 228);
+            this.ProductosGridView.Size = new System.Drawing.Size(1149, 258);
             this.ProductosGridView.TabIndex = 3;
             this.ProductosGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductosGridClickar);
             // 
             // Add
             // 
             this.Add.AutoSize = true;
-            this.Add.Location = new System.Drawing.Point(735, 133);
+            this.Add.Location = new System.Drawing.Point(1030, 133);
             this.Add.Name = "Add";
             this.Add.Size = new System.Drawing.Size(81, 16);
             this.Add.TabIndex = 4;
@@ -94,7 +94,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(835, 127);
+            this.button1.Location = new System.Drawing.Point(1140, 127);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(31, 29);
             this.button1.TabIndex = 5;
@@ -107,7 +107,7 @@
             this.NoProductsLabel.AutoSize = true;
             this.NoProductsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NoProductsLabel.ForeColor = System.Drawing.Color.Black;
-            this.NoProductsLabel.Location = new System.Drawing.Point(422, 263);
+            this.NoProductsLabel.Location = new System.Drawing.Point(486, 274);
             this.NoProductsLabel.Name = "NoProductsLabel";
             this.NoProductsLabel.Size = new System.Drawing.Size(197, 29);
             this.NoProductsLabel.TabIndex = 6;
@@ -115,7 +115,7 @@
             // 
             // textFiltroProductos
             // 
-            this.textFiltroProductos.Location = new System.Drawing.Point(458, 49);
+            this.textFiltroProductos.Location = new System.Drawing.Point(503, 49);
             this.textFiltroProductos.Name = "textFiltroProductos";
             this.textFiltroProductos.Size = new System.Drawing.Size(127, 22);
             this.textFiltroProductos.TabIndex = 7;
@@ -125,7 +125,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1065, 450);
+            this.ClientSize = new System.Drawing.Size(1305, 628);
             this.Controls.Add(this.textFiltroProductos);
             this.Controls.Add(this.NoProductsLabel);
             this.Controls.Add(this.button1);

@@ -44,9 +44,11 @@ namespace Plytix
             PRODUCTO p = (from producto in conexion.PRODUCTO
                           where producto.SKU == sku
                           select producto).FirstOrDefault(); textBoxSKU.Text = sku.ToString();
-
-            textBoxGTIN.Text = p.GTIN.ToString();
+            
+            if(p.GTIN != null) textBoxGTIN.Text = p.GTIN.ToString();
             textBoxNombre.Text = p.NOMBRE.ToString();
+            textBoxSKU.Text = p.SKU.ToString();
+            
             var thumbnail = p.THUMBNAIL != null
                         ? ConvertirBlobAImagen(p.THUMBNAIL)
                         : Image.FromFile(@"C:\Users\David\Documents\GIT\Plytix\Plytix\Plytix\Resources\sinImagen.jpg");

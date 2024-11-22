@@ -28,5 +28,6 @@ namespace Plytix
     
         public virtual ICollection<PRODUCTO> PRODUCTO1 { get; set; }
         public virtual ICollection<PRODUCTO> PRODUCTO2 { get; set; }
+        public virtual CATEGORIA CATEGORIA { get; set; }
     }
 }
