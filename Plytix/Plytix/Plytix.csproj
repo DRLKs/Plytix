@@ -36,6 +36,8 @@
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
       <HintPath>..\packages\BouncyCastle.Cryptography.2.3.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
     </Reference>
+    <Reference Include="Devart.Data, Version=6.0.10.0, Culture=neutral, PublicKeyToken=09af7300eec23701" />
+    <Reference Include="Devart.Data.MySql, Version=9.3.10.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -108,6 +110,12 @@
     <Compile Include="ATRIBUTO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="AtributteAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AtributteAddForm.Designer.cs">
+      <DependentUpon>AtributteAddForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CATEGORIA.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -119,6 +127,17 @@
     </Compile>
     <Compile Include="CategoriesForms.Designer.cs">
       <DependentUpon>CategoriesForms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionAtributosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionAtributosForm.Designer.cs">
+      <DependentUpon>GestionAtributosForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="grupo11DBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>grupo11DBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="ProductosFormsCategorias.cs">
       <SubType>Form</SubType>
@@ -193,8 +212,14 @@
     <Compile Include="TIPO_ATRIBUTO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AtributteAddForm.resx">
+      <DependentUpon>AtributteAddForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CategoriesForms.resx">
       <DependentUpon>CategoriesForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionAtributosForm.resx">
+      <DependentUpon>GestionAtributosForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionCategoriasForms.resx">
       <DependentUpon>GestionCategoriasForms.cs</DependentUpon>
@@ -232,6 +257,17 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="grupo11DBDataSet.xsc">
+      <DependentUpon>grupo11DBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="grupo11DBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>grupo11DBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="grupo11DBDataSet.xss">
+      <DependentUpon>grupo11DBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>

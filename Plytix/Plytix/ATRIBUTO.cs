@@ -14,10 +14,17 @@ namespace Plytix
     
     public partial class ATRIBUTO
     {
+        public ATRIBUTO()
+        {
+            this.ATRIBUTO1 = new HashSet<ATRIBUTO>();
+            this.ATRIBUTO2 = new HashSet<ATRIBUTO>();
+        }
         public int ID { get; set; }
         public string DESCRIPCION { get; set; }
         public int TIPO { get; set; }
-    
+
+        public virtual ICollection<ATRIBUTO> ATRIBUTO1 { get; set; }
+        public virtual ICollection<ATRIBUTO> ATRIBUTO2 { get; set; }
         public virtual TIPO_ATRIBUTO TIPO_ATRIBUTO { get; set; }
         public virtual TIPO_ATRIBUTO TIPO_ATRIBUTO1 { get; set; }
     }

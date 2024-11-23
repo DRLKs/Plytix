@@ -68,7 +68,9 @@ namespace Plytix
 
         private void AtributosClick(object sender, EventArgs e)
         {
-
+            var atributtesForm = new GestionAtributosForm();
+            atributtesForm.Show();
+            this.Hide();
         }
 
         protected override void OnPaintBackground(PaintEventArgs e)
