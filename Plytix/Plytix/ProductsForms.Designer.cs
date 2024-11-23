@@ -43,6 +43,8 @@
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.CategoriasComboBox = new System.Windows.Forms.ComboBox();
+            this.ProductosRelacionadoscheckedListBox = new System.Windows.Forms.CheckedListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -173,11 +175,29 @@
             this.label7.TabIndex = 21;
             this.label7.Text = "Add Related Products";
             // 
+            // CategoriasComboBox
+            // 
+            this.CategoriasComboBox.FormattingEnabled = true;
+            this.CategoriasComboBox.Location = new System.Drawing.Point(460, 282);
+            this.CategoriasComboBox.Name = "CategoriasComboBox";
+            this.CategoriasComboBox.Size = new System.Drawing.Size(121, 24);
+            this.CategoriasComboBox.TabIndex = 22;
+            // 
+            // ProductosRelacionadoscheckedListBox
+            // 
+            this.ProductosRelacionadoscheckedListBox.FormattingEnabled = true;
+            this.ProductosRelacionadoscheckedListBox.Location = new System.Drawing.Point(529, 318);
+            this.ProductosRelacionadoscheckedListBox.Name = "ProductosRelacionadoscheckedListBox";
+            this.ProductosRelacionadoscheckedListBox.Size = new System.Drawing.Size(144, 89);
+            this.ProductosRelacionadoscheckedListBox.TabIndex = 23;
+            // 
             // ProductsForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ProductosRelacionadoscheckedListBox);
+            this.Controls.Add(this.CategoriasComboBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox);
@@ -217,5 +237,7 @@
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox CategoriasComboBox;
+        private System.Windows.Forms.CheckedListBox ProductosRelacionadoscheckedListBox;
     }
 }

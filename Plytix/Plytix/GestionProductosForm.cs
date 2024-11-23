@@ -49,6 +49,7 @@ namespace Plytix
 
             if (listaProductos.Count > 0)
             {
+                ProductosGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 // Configura columnas
                 if (ProductosGridView.Columns.Count == 0)
                 {

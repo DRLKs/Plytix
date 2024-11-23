@@ -33,7 +33,8 @@ namespace Plytix
                 this.sku = sku;
                 PrepararEditor();
             }
-            
+            CategoriasBoxCargar();  // Cargamos el ComboBox que contiene las categorias
+            CargarProductosRelacionados();  // Cargamos los Nombres de los productos relacionados
             imagePath = null;
         }
         /*
@@ -69,8 +70,27 @@ namespace Plytix
                 if (imagePath == null) p.THUMBNAIL = null;
                 else p.THUMBNAIL = ConvertirImagenABlob(imagePath);
 
-                p.CATEGORIAID = null;
+                string categoriaNombre = CategoriasComboBox.SelectedItem.ToString();
+                if ( categoriaNombre != null && categoriaNombre != "")
+                {
+                    p.CATEGORIAID = (from categoria in conexion.CATEGORIA where categoria.NOMBRE == categoriaNombre select categoria.ID).FirstOrDefault();
+                }
+                else
+                {
+                    p.CATEGORIAID = null;
+                }
 
+                /* Productos Relacionados */
+                var seleccionadas = new List<string>();
+                PRODUCTO pAux;
+                foreach (var item in ProductosRelacionadoscheckedListBox.CheckedItems)
+                {
+                    seleccionadas.Add(item.ToString());
+                    pAux = (from producto in conexion.PRODUCTO where producto.NOMBRE == item.ToString() select producto).FirstOrDefault();
+                    p.PRODUCTO1 = p.SKU;
+                    p.PRODUCTO2 = pAux;
+                }
+                /* Fin de Productos Relacionados */
                 try
                 {
                     conexion.PRODUCTO.AddOrUpdate(p);
@@ -140,11 +160,38 @@ namespace Plytix
                 pictureBox.Image = Image.FromFile(imagePath);
             }
         }
-        public Image ConvertirBlobAImagen(byte[] blob)
+        private Image ConvertirBlobAImagen(byte[] blob)
         {
             using (MemoryStream ms = new MemoryStream(blob))
             {
                 return Image.FromStream(ms);
+            }
+        }
+
+        private void CategoriasBoxCargar()
+        {
+            CategoriasComboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend; // Sugerir opciones mientras se escribe
+            CategoriasComboBox.AutoCompleteSource = AutoCompleteSource.ListItems; // Usar la lista de ítems como fuente de autocompletado
+            
+            List<CATEGORIA> categorias = (from categoria in conexion.CATEGORIA select categoria ).ToList();
+            // Llenar el ComboBox con una lista de ejemplo
+            foreach ( CATEGORIA c in categorias )
+            {
+                CategoriasComboBox.Items.Add( c.NOMBRE );
+            }
+        }
+
+        private void CargarProductosRelacionados()
+        {
+            ProductosRelacionadoscheckedListBox.Items.Clear();
+            ProductosRelacionadoscheckedListBox.Dock = DockStyle.Top;
+            ProductosRelacionadoscheckedListBox.CheckOnClick = true; // Esto hace que al hacer clic en un elemento se marque o desmarque
+
+            List<String> nombresProductos = (from producto in conexion.PRODUCTO select producto.NOMBRE).ToList();
+
+            foreach ( String nombre in nombresProductos )
+            {
+                ProductosRelacionadoscheckedListBox.Items.Add(nombre);
             }
         }
     }
