@@ -31,15 +31,15 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxId = new System.Windows.Forms.TextBox();
             this.textBoxNombre = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(347, 279);
+            this.button1.Location = new System.Drawing.Point(32, 225);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(129, 56);
             this.button1.TabIndex = 0;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
@@ -47,48 +47,50 @@
             // 
             // textBoxId
             // 
-            this.textBoxId.Location = new System.Drawing.Point(347, 138);
+            this.textBoxId.Location = new System.Drawing.Point(49, 111);
             this.textBoxId.Name = "textBoxId";
-            this.textBoxId.Size = new System.Drawing.Size(100, 22);
+            this.textBoxId.Size = new System.Drawing.Size(86, 22);
             this.textBoxId.TabIndex = 1;
             // 
             // textBoxNombre
             // 
-            this.textBoxNombre.Location = new System.Drawing.Point(350, 214);
+            this.textBoxNombre.Location = new System.Drawing.Point(12, 168);
             this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Size = new System.Drawing.Size(100, 22);
+            this.textBoxNombre.Size = new System.Drawing.Size(178, 22);
             this.textBoxNombre.TabIndex = 2;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(73, 68);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(37, 29);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "ID";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(377, 84);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(54, 136);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(20, 16);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "ID";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(390, 195);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 16);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "NOMBRE";
+            this.label1.Size = new System.Drawing.Size(81, 29);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Name";
             // 
             // CategoriesForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.textBoxNombre);
             this.Controls.Add(this.textBoxId);
             this.Controls.Add(this.button1);
             this.Name = "CategoriesForms";
-            this.Text = "Categories";
+            this.Text = "Modify Categories";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,7 +101,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBoxId;
         private System.Windows.Forms.TextBox textBoxNombre;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
     }
 }

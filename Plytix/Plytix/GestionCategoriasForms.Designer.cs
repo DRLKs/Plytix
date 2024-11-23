@@ -63,12 +63,13 @@
             // CategoriasGridView
             // 
             this.CategoriasGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CategoriasGridView.Location = new System.Drawing.Point(27, 176);
+            this.CategoriasGridView.Location = new System.Drawing.Point(81, 183);
             this.CategoriasGridView.Name = "CategoriasGridView";
             this.CategoriasGridView.RowHeadersWidth = 51;
             this.CategoriasGridView.RowTemplate.Height = 24;
-            this.CategoriasGridView.Size = new System.Drawing.Size(1061, 252);
+            this.CategoriasGridView.Size = new System.Drawing.Size(1001, 264);
             this.CategoriasGridView.TabIndex = 4;
+            this.CategoriasGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CategoriasGridClickar);
             // 
             // NoProductsLabel
             // 
@@ -83,25 +84,25 @@
             // 
             // textFiltroProductos
             // 
-            this.textFiltroProductos.Location = new System.Drawing.Point(494, 33);
+            this.textFiltroProductos.Location = new System.Drawing.Point(503, 33);
             this.textFiltroProductos.Name = "textFiltroProductos";
             this.textFiltroProductos.Size = new System.Drawing.Size(127, 22);
             this.textFiltroProductos.TabIndex = 8;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1027, 141);
+            this.button1.Location = new System.Drawing.Point(895, 141);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(31, 29);
             this.button1.TabIndex = 9;
             this.button1.Text = "+";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.AddCategoryClick);
             // 
             // Add
             // 
             this.Add.AutoSize = true;
-            this.Add.Location = new System.Drawing.Point(931, 154);
+            this.Add.Location = new System.Drawing.Point(786, 147);
             this.Add.Name = "Add";
             this.Add.Size = new System.Drawing.Size(90, 16);
             this.Add.TabIndex = 10;

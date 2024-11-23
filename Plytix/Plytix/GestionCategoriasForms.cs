@@ -31,6 +31,7 @@ namespace Plytix
 
             CategoriasGridView.Columns.Clear(); // Asegúrate de que no haya columnas duplicadas
             CategoriasGridView.Rows.Clear();    // Limpia filas anteriores, si las hubiera
+            CategoriasGridView.AllowUserToAddRows = false;  // Limpia la última fila que no tiene nada
 
             List<CATEGORIA> listaCategorias;
             if (filtro == "")
@@ -49,7 +50,7 @@ namespace Plytix
                 // Configura columnas
                 if (CategoriasGridView.Columns.Count == 0)
                 {
-
+                    CategoriasGridView.Columns.Add("ID", "ID");
                     CategoriasGridView.Columns.Add("Category Name", "Nombre");
                     CategoriasGridView.Columns.Add("Assets", "Assets");
                     CategoriasGridView.Columns.Add("Number of Products", "Products");
@@ -76,10 +77,11 @@ namespace Plytix
                     numProd = (from p in conexion.PRODUCTO
                                where p.CATEGORIAID == c.ID
                                select p).Count();
-                    CategoriasGridView.Rows.Add(c.NOMBRE, "0", numProd);
+                    CategoriasGridView.Rows.Add(c.ID,c.NOMBRE, "0", numProd);
                 }
 
                 CategoriasGridView.Show();
+                CategoriasGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
             else
             {
@@ -96,7 +98,7 @@ namespace Plytix
             this.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void AddCategoryClick(object sender, EventArgs e)
         {
             var AddCform = new CategoriesForms(-1,this);
             AddCform.Show();
@@ -105,6 +107,52 @@ namespace Plytix
         {
             // Cierra toda la aplicación
             Application.Exit();
+        }
+
+        /*
+         * Función que llama el DataGrid cuando selecciona la columna EDIT, DELETE 
+         */
+        private void CategoriasGridClickar(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            // Identificar la columna donde ocurrió el clic
+            string columnName = CategoriasGridView.Columns[e.ColumnIndex].Name;
+
+            if (columnName == "Edit") // Columna Editar
+            {
+                // Obtener datos del producto seleccionado
+                int id = (int) CategoriasGridView.Rows[e.RowIndex].Cells["ID"].Value;
+                EditarCategoria(id);
+            }
+            else if (columnName == "Delete") // Columna Eliminar
+            {
+                // Confirmar antes de eliminar
+                DialogResult result = MessageBox.Show("¿Estás seguro de que deseas eliminar este producto?",
+                                                      "Confirmar eliminación", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    int id = (int) CategoriasGridView.Rows[e.RowIndex].Cells["ID"].Value;
+                    EliminarCategoria(id);
+                }
+            }
+        }
+
+        private void EditarCategoria( int id )
+        {
+            var AddCform = new CategoriesForms(id, this);
+            AddCform.Show();
+        }
+
+        private void EliminarCategoria( int id)
+        {
+            CATEGORIA c = (from categoria in conexion.CATEGORIA
+                           where categoria.ID == id
+                           select categoria).FirstOrDefault();
+            conexion.CATEGORIA.Remove(c);
+            conexion.SaveChanges();
+            CargarCategorias();
         }
     }
 }
