@@ -10,9 +10,7 @@ Esta aplicación simula una aplicación que gestionaría el inventario de un hos
 2. [Requisitos Previos](#requisitos-previos)  
 3. [Instalación](#instalación)  
 4. [Cómo Clonar el Proyecto](#cómo-clonar-el-proyecto)  
-5. [Uso](#uso)  
-6. [Contribución](#contribución)  
-7. [Licencia](#licencia)  
+5. [Contribución](#como-contribuir)  
 
 ---
 
@@ -55,7 +53,7 @@ Antes de comenzar, asegúrate de tener instalados los siguientes programas o her
 
 ---
 
-## Como contribucir:
+## Como contribuir:
 
 1. Haz un fork del repositorio:
 2. Crea una rama con tu nueva funcionalidad:
