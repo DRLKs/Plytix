@@ -41,3 +41,32 @@ Antes de comenzar, asegúrate de tener instalados los siguientes programas o her
 1. Instala las dependencias necesarias usando el siguiente comando:  
    ```bash
    npm install
+
+---
+
+## Como clonar el proyecto
+
+1. Clona el proyecto usando el siguiente comando remplazando la ruta de su repositorio y su usuario:
+   ```bash
+   git clone https://github.com/tu-usuario/tu-repositorio.git
+2. Ingresa al directorio del proyecto clonado:
+   ```bash
+   cd tu-repositorio
+
+---
+
+## Como contribucir:
+
+1. Haz un fork del repositorio:
+2. Crea una rama con tu nueva funcionalidad:
+   ```bash
+   git checkout -b nombre-de-la-rama
+4. Realiza tus cambios y haz un commit:
+   ```bash
+   git commit -m "Descripción de los cambios"
+5. Sube tus cambios
+   ```bash
+   git push origin nombre-de-la-rama
+6. Abre un Pull Request en GitHub.
+
+
