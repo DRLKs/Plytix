@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Plytix.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -52,7 +53,7 @@ namespace Plytix
             
             var thumbnail = p.THUMBNAIL != null
                         ? ConvertirBlobAImagen(p.THUMBNAIL)
-                        : Image.FromFile(@"C:\Users\David\Documents\GIT\Plytix\Plytix\Plytix\Resources\sinImagen.jpg");
+                        : Image.FromFile(@"..\..\Resources\sinImagen.jpg");
             pictureBox.Image = thumbnail;
         }
 
@@ -87,8 +88,7 @@ namespace Plytix
                 {
                     seleccionadas.Add(item.ToString());
                     pAux = (from producto in conexion.PRODUCTO where producto.NOMBRE == item.ToString() select producto).FirstOrDefault();
-                    p.PRODUCTO1 = p.SKU;
-                    p.PRODUCTO2 = pAux;
+                    
                 }
                 /* Fin de Productos Relacionados */
                 try

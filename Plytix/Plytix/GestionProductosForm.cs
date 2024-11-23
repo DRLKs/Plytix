@@ -87,7 +87,7 @@ namespace Plytix
                 {
                     var thumbnail = p.THUMBNAIL != null
                         ? ConvertirBlobAImagen(p.THUMBNAIL)
-                        : Image.FromFile(@"C:\Users\David\Documents\GIT\Plytix\Plytix\Plytix\Resources\sinImagen.jpg");
+                        : Image.FromFile(@"..\..\Resources\sinImagen.jpg");
 
                     ProductosGridView.Rows.Add(thumbnail, p.NOMBRE, p.SKU, p.GTIN, p.CATEGORIAID);
                 }
