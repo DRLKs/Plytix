@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Org.BouncyCastle.Crypto.Utilities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,14 +14,15 @@ namespace Plytix
     {
         private grupo11DBEntities conexion;
         List<ATRIBUTO> listaAtributos;
-        public GestionAtributosForm()
+        private string sku;
+        public GestionAtributosForm( string sku )
         {
             InitializeComponent();
             conexion = new grupo11DBEntities();
             GridViewAtributos.AllowUserToAddRows = false;
             listaAtributos = (from atributo in conexion.ATRIBUTO
                               select atributo).ToList();
-
+            this.sku = sku;
             CargarAtributos();
         }
         public void CargarAtributos()
@@ -31,6 +33,7 @@ namespace Plytix
 
              (from atributo in conexion.ATRIBUTO select atributo).ToList();
             int numeroAtributos = listaAtributos.Count;
+            RemainingAtributesLabel.Text = "Remaining available attributes: " + (5 - numeroAtributos);
             if (numeroAtributos > 0 && numeroAtributos <= 5)
             {
                 // Configura columnas
@@ -81,7 +84,7 @@ namespace Plytix
         {
             int numAtributos = listaAtributos.Count;
             if (numAtributos < 5) {
-                var addAtributeForm = new AtributteAddForm();
+                var addAtributeForm = new AtributteAddForm(sku,-1);
                 addAtributeForm.Show();
             }
             

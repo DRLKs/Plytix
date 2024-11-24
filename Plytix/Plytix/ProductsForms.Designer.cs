@@ -45,6 +45,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.CategoriasComboBox = new System.Windows.Forms.ComboBox();
             this.ProductosRelacionadoscheckedListBox = new System.Windows.Forms.CheckedListBox();
+            this.AttributesName = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -139,12 +140,16 @@
             // 
             // btnCerrar
             // 
+            this.btnCerrar.BackColor = System.Drawing.Color.DarkRed;
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnCerrar.ForeColor = System.Drawing.SystemColors.MenuText;
             this.btnCerrar.Location = new System.Drawing.Point(181, 38);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
             this.btnCerrar.TabIndex = 18;
             this.btnCerrar.Text = "X";
-            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.ExitButton);
             // 
             // pictureBox
@@ -191,11 +196,23 @@
             this.ProductosRelacionadoscheckedListBox.Size = new System.Drawing.Size(292, 72);
             this.ProductosRelacionadoscheckedListBox.TabIndex = 23;
             // 
+            // AttributesName
+            // 
+            this.AttributesName.Location = new System.Drawing.Point(709, 122);
+            this.AttributesName.Name = "AttributesName";
+            this.AttributesName.Size = new System.Drawing.Size(75, 23);
+            this.AttributesName.TabIndex = 24;
+            this.AttributesName.Text = "Attributes";
+            this.AttributesName.UseVisualStyleBackColor = true;
+            this.AttributesName.Click += new System.EventHandler(this.Attributes_Click);
+            // 
             // ProductsForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.ClientSize = new System.Drawing.Size(1132, 528);
+            this.Controls.Add(this.AttributesName);
             this.Controls.Add(this.CategoriasComboBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -239,5 +256,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox CategoriasComboBox;
         private System.Windows.Forms.CheckedListBox ProductosRelacionadoscheckedListBox;
+        private System.Windows.Forms.Button AttributesName;
     }
 }

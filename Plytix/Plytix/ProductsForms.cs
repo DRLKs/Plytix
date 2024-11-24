@@ -23,7 +23,6 @@ namespace Plytix
         public ProductsForms(String sku, GestionProductosForms formsQueLoLlama )
         {
             InitializeComponent();
-            btnCerrar_Paint();
             this.MaximizeBox = false;  // Evita que el formulario pueda maximizarse
             this.MinimizeBox = false;  // Evita que el formulario pueda minimizarse
             this.formsQueLoLlama = formsQueLoLlama;
@@ -62,9 +61,14 @@ namespace Plytix
 
             if (p.PRODUCTO2.Count() > 0)
             {
-                foreach( PRODUCTO pRel in ProductosRelacionadoscheckedListBox.)
+                int idx = 0;
+                foreach( PRODUCTO pC in p.PRODUCTO2 )
                 {
-                    ProductosRelacionadoscheckedListBox. = pRel.NOMBRE;
+                    if( p.PRODUCTO2.Contains( pC ))
+                    {
+                        ProductosRelacionadoscheckedListBox.SetItemChecked(idx,true);
+                        ++idx;
+                    }
                 }
             }
         }
@@ -75,7 +79,7 @@ namespace Plytix
             {
 
                 PRODUCTO p;
-                if (this.sku == null)
+                if (this.sku == null)   // Estamos añadiendo un producto
                 {
                     p = new PRODUCTO
                     {
@@ -83,10 +87,10 @@ namespace Plytix
                     };
 
                 }
-                else
+                else                    // Estamos editando un producto
                 {
                     p = (from producto in conexion.PRODUCTO where producto.SKU == this.sku select producto).FirstOrDefault();
-                    if (textBoxSKU.Text != sku)
+                    if (textBoxSKU.Text != sku)     // Si modificamos el SKU necesitamos borrarlo y crear uno nuevo
                     {
                         conexion.PRODUCTO.Remove(p);
                         p.SKU = textBoxSKU.Text;
@@ -125,23 +129,23 @@ namespace Plytix
                     }
                 }
                 /* Fin de Productos Relacionados */
+                
+                /* Añadimos o editamos el producto */
                 try
                 {
                     conexion.PRODUCTO.AddOrUpdate(p);
-                    if( sku != null)   // Estamos ante un update
+                    if( sku != null)   /* Estamos ante un update */
                     {
                         if (textBoxGTIN.TextLength == 0) p.GTIN = null;
                     }
                     conexion.SaveChanges();
                     formsQueLoLlama.CargarProductos();
-                    this.Hide();
+                    this.Close();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
-
-                
             }
             else
             {
@@ -164,17 +168,7 @@ namespace Plytix
 
         private void ExitButton(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void btnCerrar_Paint()
-        {
-            btnCerrar.Width = 50;
-            btnCerrar.Height = 50;
-            btnCerrar.Region = new Region(new Rectangle(0, 0, btnCerrar.Width, btnCerrar.Height));
-            btnCerrar.FlatStyle = FlatStyle.Flat;  // Elimina el borde
-            btnCerrar.FlatAppearance.BorderSize = 0;  // Elimina el borde
-            btnCerrar.BackColor = Color.Red;  // Puedes cambiar el color de fondo
+            Close();    /* Cerramos la ventana */
         }
 
         private void SubirImagenClick(object sender, EventArgs e)
@@ -227,6 +221,22 @@ namespace Plytix
             {
                 ProductosRelacionadoscheckedListBox.Items.Add(nombre);
             }
+        }
+
+        private void Attributes_Click(object sender, EventArgs e)
+        {
+            if( sku != null)
+            {
+                this.Hide();
+                
+                var form = new GestionAtributosForm( sku );
+                form.Show();
+            }
+            else
+            {
+                MessageBox.Show("Create the product first");
+            }
+            
         }
     }
 }

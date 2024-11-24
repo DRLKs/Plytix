@@ -21,6 +21,10 @@
       <End Role="PRODUCTO" EntitySet="PRODUCTO" />
       <End Role="PRODUCTO1" EntitySet="PRODUCTO" />
     </AssociationSet>
+    <AssociationSet Name="Atributo1" Association="grupo11DBModel.Atributo1">
+      <End Role="ATRIBUTO" EntitySet="ATRIBUTO" />
+      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="ATRIBUTO">
     <Key>
@@ -31,6 +35,7 @@
     <Property Name="TIPO" Type="Int32" Nullable="false" />
     <NavigationProperty Name="TIPO_ATRIBUTO" Relationship="grupo11DBModel.TIPO" FromRole="ATRIBUTO" ToRole="TIPO_ATRIBUTO" />
     <NavigationProperty Name="TIPO_ATRIBUTO1" Relationship="grupo11DBModel.TIPO1" FromRole="ATRIBUTO" ToRole="TIPO_ATRIBUTO" />
+    <NavigationProperty Name="PRODUCTO" Relationship="grupo11DBModel.Atributo1" FromRole="ATRIBUTO" ToRole="PRODUCTO" />
   </EntityType>
   <EntityType Name="TIPO_ATRIBUTO">
     <Key>
@@ -73,6 +78,8 @@
     <NavigationProperty Name="CATEGORIA" Relationship="grupo11DBModel.Categoria1" FromRole="PRODUCTO" ToRole="CATEGORIA" />
     <NavigationProperty Name="PRODUCTO1" Relationship="grupo11DBModel.PRODRELACIONADOS" FromRole="PRODUCTO" ToRole="PRODUCTO1" />
     <NavigationProperty Name="PRODUCTO2" Relationship="grupo11DBModel.PRODRELACIONADOS" FromRole="PRODUCTO1" ToRole="PRODUCTO" />
+    <Property Name="ATRIBUTOID" Type="Int32" />
+    <NavigationProperty Name="ATRIBUTO" Relationship="grupo11DBModel.Atributo1" FromRole="PRODUCTO" ToRole="ATRIBUTO" />
   </EntityType>
   <Association Name="TIPO1">
     <End Type="grupo11DBModel.TIPO_ATRIBUTO" Role="TIPO_ATRIBUTO" Multiplicity="1" />
@@ -101,5 +108,17 @@
   <Association Name="PRODRELACIONADOS">
     <End Type="grupo11DBModel.PRODUCTO" Role="PRODUCTO" Multiplicity="*" />
     <End Type="grupo11DBModel.PRODUCTO" Role="PRODUCTO1" Multiplicity="*" />
+  </Association>
+  <Association Name="Atributo1">
+    <End Type="grupo11DBModel.ATRIBUTO" Role="ATRIBUTO" Multiplicity="0..1" />
+    <End Type="grupo11DBModel.PRODUCTO" Role="PRODUCTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ATRIBUTO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PRODUCTO">
+        <PropertyRef Name="ATRIBUTOID" />
+      </Dependent>
+    </ReferentialConstraint>
   </Association>
 </Schema>

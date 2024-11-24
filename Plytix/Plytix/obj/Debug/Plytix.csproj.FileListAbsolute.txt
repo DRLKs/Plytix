@@ -103,7 +103,6 @@ C:\Users\David\Documents\GIT\Plytix\Plytix\Plytix\obj\Debug\Plytix.pdb
 C:\Users\David\Documents\GIT\Plytix\Plytix\Plytix\obj\Debug\Plytix.ProductsForms.resources
 C:\Users\David\Documents\GIT\Plytix\Plytix\Plytix\obj\Debug\Plytix.GestionCategoriasForms.resources
 C:\Users\David\Documents\GIT\Plytix\Plytix\Plytix\obj\Debug\Plytix.CategoriesForms.resources
-C:\Users\David\Documents\GIT\Plytix\Plytix\Plytix\obj\Debug\Plytix.ProductosFormsCategorias.resources
 C:\Users\Alejandro\OneDrive - Universidad de Málaga\Escritorio\UNIVERSIDAD\Plytix\Plytix\Plytix\Plytix\obj\Debug\Plytix.csproj.AssemblyReference.cache
 C:\Users\Alejandro\OneDrive - Universidad de Málaga\Escritorio\UNIVERSIDAD\Plytix\Plytix\Plytix\Plytix\obj\Debug\Plytix.csproj.SuggestedBindingRedirects.cache
 C:\Users\Alejandro\OneDrive - Universidad de Málaga\Escritorio\UNIVERSIDAD\Plytix\Plytix\Plytix\Plytix\obj\Debug\Plytix.exe.config

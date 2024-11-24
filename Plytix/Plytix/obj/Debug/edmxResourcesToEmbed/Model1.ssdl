@@ -32,6 +32,7 @@
     <Property Name="SKU" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="GTIN" Type="varchar" MaxLength="45" />
     <Property Name="CATEGORIAID" Type="int" />
+    <Property Name="ATRIBUTOID" Type="int" />
   </EntityType>
   <EntityType Name="TIPO_ATRIBUTO">
     <Key>
@@ -40,6 +41,18 @@
     <Property Name="ID" Type="int" Nullable="false" />
     <Property Name="NOMBRE" Type="varchar" MaxLength="45" Nullable="false" />
   </EntityType>
+  <Association Name="Atributo1">
+    <End Role="ATRIBUTO" Type="Self.ATRIBUTO" Multiplicity="0..1" />
+    <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ATRIBUTO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PRODUCTO">
+        <PropertyRef Name="ATRIBUTOID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="Categoria1">
     <End Role="CATEGORIA" Type="Self.CATEGORIA" Multiplicity="0..1" />
     <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="*" />
@@ -94,6 +107,10 @@
     <EntitySet Name="PRODRELACIONADOS" EntityType="Self.PRODRELACIONADOS" Schema="grupo11DB" store:Type="Tables" />
     <EntitySet Name="PRODUCTO" EntityType="Self.PRODUCTO" Schema="grupo11DB" store:Type="Tables" />
     <EntitySet Name="TIPO_ATRIBUTO" EntityType="Self.TIPO_ATRIBUTO" Schema="grupo11DB" store:Type="Tables" />
+    <AssociationSet Name="Atributo1" Association="Self.Atributo1">
+      <End Role="ATRIBUTO" EntitySet="ATRIBUTO" />
+      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+    </AssociationSet>
     <AssociationSet Name="Categoria1" Association="Self.Categoria1">
       <End Role="CATEGORIA" EntitySet="CATEGORIA" />
       <End Role="PRODUCTO" EntitySet="PRODUCTO" />

@@ -36,6 +36,7 @@
             this.grupo11DBDataSet = new Plytix.grupo11DBDataSet();
             this.AddAtributoBotton = new System.Windows.Forms.Button();
             this.textBuscarAtributo = new System.Windows.Forms.TextBox();
+            this.RemainingAtributesLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewAtributos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grupo11DBDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grupo11DBDataSet)).BeginInit();
@@ -102,9 +103,19 @@
             this.textBuscarAtributo.Size = new System.Drawing.Size(212, 22);
             this.textBuscarAtributo.TabIndex = 4;
             // 
+            // RemainingAtributesLabel
+            // 
+            this.RemainingAtributesLabel.AutoSize = true;
+            this.RemainingAtributesLabel.Location = new System.Drawing.Point(869, 134);
+            this.RemainingAtributesLabel.Name = "RemainingAtributesLabel";
+            this.RemainingAtributesLabel.Size = new System.Drawing.Size(90, 16);
+            this.RemainingAtributesLabel.TabIndex = 5;
+            this.RemainingAtributesLabel.Text = "Add Atributtes";
+            // 
             // GestionAtributosForm
             // 
             this.ClientSize = new System.Drawing.Size(1070, 653);
+            this.Controls.Add(this.RemainingAtributesLabel);
             this.Controls.Add(this.textBuscarAtributo);
             this.Controls.Add(this.AddAtributoBotton);
             this.Controls.Add(this.GridViewAtributos);
@@ -128,5 +139,6 @@
         private grupo11DBDataSet grupo11DBDataSet;
         private System.Windows.Forms.Button AddAtributoBotton;
         private System.Windows.Forms.TextBox textBuscarAtributo;
+        private System.Windows.Forms.Label RemainingAtributesLabel;
     }
 }

@@ -82,7 +82,7 @@ namespace Plytix
                     }
                     conexion.SaveChanges();
                     formularioPadre.CargarCategorias();
-                    this.Hide();
+                    this.Close();
                 }
                 catch (FormatException)
                 {

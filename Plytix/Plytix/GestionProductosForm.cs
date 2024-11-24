@@ -199,8 +199,5 @@ namespace Plytix
             // Cierra toda la aplicación
             Application.Exit();
         }
-
     }
-
-    
 }
