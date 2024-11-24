@@ -39,10 +39,10 @@
     </EntitySetMapping>
     <AssociationSetMapping Name="PRODRELACIONADOS" TypeName="grupo11DBModel.PRODRELACIONADOS" StoreEntitySet="PRODRELACIONADOS">
       <EndProperty Name="PRODUCTO1">
-        <ScalarProperty Name="SKU" ColumnName="SKU2" />
+        <ScalarProperty Name="SKU" ColumnName="PROD2" />
       </EndProperty>
       <EndProperty Name="PRODUCTO">
-        <ScalarProperty Name="SKU" ColumnName="SKU1" />
+        <ScalarProperty Name="SKU" ColumnName="PROD1" />
       </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>

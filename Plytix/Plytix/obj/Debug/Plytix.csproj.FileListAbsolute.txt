@@ -163,3 +163,7 @@ C:\Users\Alejandro\OneDrive - Universidad de Málaga\Escritorio\UNIVERSIDAD\Plyt
 C:\Users\Alejandro\OneDrive - Universidad de Málaga\Escritorio\UNIVERSIDAD\Plytix\Plytix\Plytix\Plytix\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Alejandro\OneDrive - Universidad de Málaga\Escritorio\UNIVERSIDAD\Plytix\Plytix\Plytix\Plytix\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Alejandro\OneDrive - Universidad de Málaga\Escritorio\UNIVERSIDAD\Plytix\Plytix\Plytix\Plytix\obj\Debug\Plytix.csproj.Up2Date
+C:\Users\David\Documents\GIT\Plytix\Plytix\Plytix\bin\Debug\Devart.Data.dll
+C:\Users\David\Documents\GIT\Plytix\Plytix\Plytix\bin\Debug\Devart.Data.MySql.dll
+C:\Users\David\Documents\GIT\Plytix\Plytix\Plytix\obj\Debug\Plytix.AtributteAddForm.resources
+C:\Users\David\Documents\GIT\Plytix\Plytix\Plytix\obj\Debug\Plytix.GestionAtributosForm.resources

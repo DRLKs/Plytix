@@ -13,13 +13,13 @@
       <End Role="TIPO_ATRIBUTO" EntitySet="TIPO_ATRIBUTO" />
       <End Role="ATRIBUTO" EntitySet="ATRIBUTO" />
     </AssociationSet>
-    <AssociationSet Name="PRODRELACIONADOS" Association="grupo11DBModel.PRODRELACIONADOS">
-      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
-      <End Role="PRODUCTO1" EntitySet="PRODUCTO" />
-    </AssociationSet>
     <AssociationSet Name="Categoria1" Association="grupo11DBModel.Categoria1">
       <End Role="CATEGORIA" EntitySet="CATEGORIA" />
       <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+    </AssociationSet>
+    <AssociationSet Name="PRODRELACIONADOS" Association="grupo11DBModel.PRODRELACIONADOS">
+      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+      <End Role="PRODUCTO1" EntitySet="PRODUCTO" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="ATRIBUTO">
@@ -70,9 +70,9 @@
     <Property Name="SKU" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="GTIN" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
     <Property Name="CATEGORIAID" Type="Int32" />
+    <NavigationProperty Name="CATEGORIA" Relationship="grupo11DBModel.Categoria1" FromRole="PRODUCTO" ToRole="CATEGORIA" />
     <NavigationProperty Name="PRODUCTO1" Relationship="grupo11DBModel.PRODRELACIONADOS" FromRole="PRODUCTO" ToRole="PRODUCTO1" />
     <NavigationProperty Name="PRODUCTO2" Relationship="grupo11DBModel.PRODRELACIONADOS" FromRole="PRODUCTO1" ToRole="PRODUCTO" />
-    <NavigationProperty Name="CATEGORIA" Relationship="grupo11DBModel.Categoria1" FromRole="PRODUCTO" ToRole="CATEGORIA" />
   </EntityType>
   <Association Name="TIPO1">
     <End Type="grupo11DBModel.TIPO_ATRIBUTO" Role="TIPO_ATRIBUTO" Multiplicity="1" />
@@ -86,10 +86,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="PRODRELACIONADOS">
-    <End Type="grupo11DBModel.PRODUCTO" Role="PRODUCTO" Multiplicity="*" />
-    <End Type="grupo11DBModel.PRODUCTO" Role="PRODUCTO1" Multiplicity="*" />
-  </Association>
   <Association Name="Categoria1">
     <End Type="grupo11DBModel.CATEGORIA" Role="CATEGORIA" Multiplicity="0..1" />
     <End Type="grupo11DBModel.PRODUCTO" Role="PRODUCTO" Multiplicity="*" />
@@ -101,5 +97,9 @@
         <PropertyRef Name="CATEGORIAID" />
       </Dependent>
     </ReferentialConstraint>
+  </Association>
+  <Association Name="PRODRELACIONADOS">
+    <End Type="grupo11DBModel.PRODUCTO" Role="PRODUCTO" Multiplicity="*" />
+    <End Type="grupo11DBModel.PRODUCTO" Role="PRODUCTO1" Multiplicity="*" />
   </Association>
 </Schema>

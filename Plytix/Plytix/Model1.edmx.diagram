@@ -11,8 +11,13 @@
         <EntityTypeShape EntityType="grupo11DBModel.CATEGORIA" Width="1.5" PointX="2.75" PointY="0.75" />
         <EntityTypeShape EntityType="grupo11DBModel.PRODUCTO" Width="1.5" PointX="0.75" PointY="0.75" />
         <AssociationConnector Association="grupo11DBModel.TIPO1" />
-        <AssociationConnector Association="grupo11DBModel.PRODRELACIONADOS" />
         <AssociationConnector Association="grupo11DBModel.Categoria1" />
+        <AssociationConnector Association="grupo11DBModel.PRODRELACIONADOS" ManuallyRouted="true" >
+          <ConnectorPoint PointX="1.2819230769230767" PointY="3.3071907552083331" />
+          <ConnectorPoint PointX="1.2819230769230767" PointY="3.9363572362934551" />
+          <ConnectorPoint PointX="1.7284615384615383" PointY="3.9363572362934551" />
+          <ConnectorPoint PointX="1.7284615384615383" PointY="3.3071907552083331" />
+        </AssociationConnector>
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

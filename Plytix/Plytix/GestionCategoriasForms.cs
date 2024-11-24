@@ -98,11 +98,6 @@ namespace Plytix
             this.Hide();
         }
 
-        private void AddCategoryClick(object sender, EventArgs e)
-        {
-            var AddCform = new CategoriesForms(-1,this);
-            AddCform.Show();
-        }
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             // Cierra toda la aplicación
@@ -139,6 +134,12 @@ namespace Plytix
             }
         }
 
+        private void AddCategoryClick(object sender, EventArgs e)
+        {
+            var AddCform = new CategoriesForms(-1, this);
+            AddCform.Show();
+        }
+
         private void EditarCategoria( int id )
         {
             var AddCform = new CategoriesForms(id, this);
@@ -152,6 +153,12 @@ namespace Plytix
                            select categoria).FirstOrDefault();
             conexion.CATEGORIA.Remove(c);
             conexion.SaveChanges();
+            CargarCategorias();
+        }
+
+        private void TextFiltro_TextChanged(object sender, EventArgs e)
+        {
+            filtro = textFiltroCategorias.Text;
             CargarCategorias();
         }
     }

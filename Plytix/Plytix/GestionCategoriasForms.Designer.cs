@@ -33,7 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.CategoriasGridView = new System.Windows.Forms.DataGridView();
             this.NoProductsLabel = new System.Windows.Forms.Label();
-            this.textFiltroProductos = new System.Windows.Forms.TextBox();
+            this.textFiltroCategorias = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.Add = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.CategoriasGridView)).BeginInit();
@@ -82,12 +82,13 @@
             this.NoProductsLabel.TabIndex = 7;
             this.NoProductsLabel.Text = "NO CATEGORIES";
             // 
-            // textFiltroProductos
+            // textFiltroCategorias
             // 
-            this.textFiltroProductos.Location = new System.Drawing.Point(503, 33);
-            this.textFiltroProductos.Name = "textFiltroProductos";
-            this.textFiltroProductos.Size = new System.Drawing.Size(127, 22);
-            this.textFiltroProductos.TabIndex = 8;
+            this.textFiltroCategorias.Location = new System.Drawing.Point(503, 33);
+            this.textFiltroCategorias.Name = "textFiltroCategorias";
+            this.textFiltroCategorias.Size = new System.Drawing.Size(127, 22);
+            this.textFiltroCategorias.TabIndex = 8;
+            this.textFiltroCategorias.TextChanged += new System.EventHandler(this.TextFiltro_TextChanged);
             // 
             // button1
             // 
@@ -115,7 +116,7 @@
             this.ClientSize = new System.Drawing.Size(1107, 450);
             this.Controls.Add(this.Add);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textFiltroProductos);
+            this.Controls.Add(this.textFiltroCategorias);
             this.Controls.Add(this.NoProductsLabel);
             this.Controls.Add(this.CategoriasGridView);
             this.Controls.Add(this.label1);
@@ -135,7 +136,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView CategoriasGridView;
         private System.Windows.Forms.Label NoProductsLabel;
-        private System.Windows.Forms.TextBox textFiltroProductos;
+        private System.Windows.Forms.TextBox textFiltroCategorias;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label Add;
     }

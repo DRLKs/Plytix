@@ -58,7 +58,7 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(331, 369);
+            this.buttonSave.Location = new System.Drawing.Point(337, 478);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(118, 38);
             this.buttonSave.TabIndex = 17;
@@ -149,9 +149,9 @@
             // 
             // pictureBox
             // 
-            this.pictureBox.Location = new System.Drawing.Point(623, 209);
+            this.pictureBox.Location = new System.Drawing.Point(650, 187);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(121, 82);
+            this.pictureBox.Size = new System.Drawing.Size(177, 163);
             this.pictureBox.TabIndex = 19;
             this.pictureBox.TabStop = false;
             // 
@@ -159,7 +159,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(265, 278);
+            this.label6.Location = new System.Drawing.Point(320, 318);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(167, 29);
             this.label6.TabIndex = 20;
@@ -169,7 +169,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(264, 317);
+            this.label7.Location = new System.Drawing.Point(274, 378);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(259, 29);
             this.label7.TabIndex = 21;
@@ -178,7 +178,7 @@
             // CategoriasComboBox
             // 
             this.CategoriasComboBox.FormattingEnabled = true;
-            this.CategoriasComboBox.Location = new System.Drawing.Point(460, 282);
+            this.CategoriasComboBox.Location = new System.Drawing.Point(150, 326);
             this.CategoriasComboBox.Name = "CategoriasComboBox";
             this.CategoriasComboBox.Size = new System.Drawing.Size(121, 24);
             this.CategoriasComboBox.TabIndex = 22;
@@ -186,7 +186,7 @@
             // ProductosRelacionadoscheckedListBox
             // 
             this.ProductosRelacionadoscheckedListBox.FormattingEnabled = true;
-            this.ProductosRelacionadoscheckedListBox.Location = new System.Drawing.Point(529, 318);
+            this.ProductosRelacionadoscheckedListBox.Location = new System.Drawing.Point(583, 364);
             this.ProductosRelacionadoscheckedListBox.Name = "ProductosRelacionadoscheckedListBox";
             this.ProductosRelacionadoscheckedListBox.Size = new System.Drawing.Size(144, 89);
             this.ProductosRelacionadoscheckedListBox.TabIndex = 23;
@@ -195,7 +195,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1132, 528);
             this.Controls.Add(this.ProductosRelacionadoscheckedListBox);
             this.Controls.Add(this.CategoriasComboBox);
             this.Controls.Add(this.label7);

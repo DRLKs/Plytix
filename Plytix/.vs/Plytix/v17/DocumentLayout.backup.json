@@ -1,38 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Alejandro\\OneDrive - Universidad de M\u00E1laga\\Escritorio\\UNIVERSIDAD\\Plytix\\Plytix\\Plytix\\",
+  "WorkspaceRootPath": "C:\\Users\\David\\Documents\\GIT\\Plytix\\Plytix\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|c:\\users\\alejandro\\onedrive - universidad de m\u00E1laga\\escritorio\\universidad\\plytix\\plytix\\plytix\\plytix\\mainforms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\mainforms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|c:\\users\\david\\documents\\git\\plytix\\plytix\\plytix\\productsforms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\productsforms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|c:\\users\\alejandro\\onedrive - universidad de m\u00E1laga\\escritorio\\universidad\\plytix\\plytix\\plytix\\plytix\\gestionatributosform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\gestionatributosform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|c:\\users\\david\\documents\\git\\plytix\\plytix\\plytix\\gestionproductosform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\gestionproductosform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|c:\\users\\alejandro\\onedrive - universidad de m\u00E1laga\\escritorio\\universidad\\plytix\\plytix\\plytix\\plytix\\gestioncategoriasforms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\gestioncategoriasforms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|c:\\users\\david\\documents\\git\\plytix\\plytix\\plytix\\productsforms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\productsforms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|c:\\users\\alejandro\\onedrive - universidad de m\u00E1laga\\escritorio\\universidad\\plytix\\plytix\\plytix\\plytix\\atributteaddform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\atributteaddform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|c:\\users\\alejandro\\onedrive - universidad de m\u00E1laga\\escritorio\\universidad\\plytix\\plytix\\plytix\\plytix\\mainforms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\mainforms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|c:\\users\\alejandro\\onedrive - universidad de m\u00E1laga\\escritorio\\universidad\\plytix\\plytix\\plytix\\plytix\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|c:\\users\\david\\documents\\git\\plytix\\plytix\\plytix\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
       "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|C:\\Users\\Alejandro\\OneDrive - Universidad de M\u00E1laga\\Escritorio\\UNIVERSIDAD\\Plytix\\Plytix\\Plytix\\plytix\\categoriesforms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\categoriesforms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|c:\\users\\alejandro\\onedrive - universidad de m\u00E1laga\\escritorio\\universidad\\plytix\\plytix\\plytix\\plytix\\atributteaddform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\atributteaddform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|c:\\users\\david\\documents\\git\\plytix\\plytix\\plytix\\gestionproductosform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\gestionproductosform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,137 +30,69 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MainForms.cs",
-              "DocumentMoniker": "C:\\Users\\Alejandro\\OneDrive - Universidad de M\u00E1laga\\Escritorio\\UNIVERSIDAD\\Plytix\\Plytix\\Plytix\\Plytix\\MainForms.cs",
-              "RelativeDocumentMoniker": "Plytix\\MainForms.cs",
-              "ToolTip": "C:\\Users\\Alejandro\\OneDrive - Universidad de M\u00E1laga\\Escritorio\\UNIVERSIDAD\\Plytix\\Plytix\\Plytix\\Plytix\\MainForms.cs",
-              "RelativeToolTip": "Plytix\\MainForms.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAhwEgAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T19:50:35.93Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainForms.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Alejandro\\OneDrive - Universidad de M\u00E1laga\\Escritorio\\UNIVERSIDAD\\Plytix\\Plytix\\Plytix\\Plytix\\MainForms.cs",
-              "RelativeDocumentMoniker": "Plytix\\MainForms.cs",
-              "ToolTip": "C:\\Users\\Alejandro\\OneDrive - Universidad de M\u00E1laga\\Escritorio\\UNIVERSIDAD\\Plytix\\Plytix\\Plytix\\Plytix\\MainForms.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Plytix\\MainForms.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T19:50:32.986Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "AtributteAddForm.cs",
-              "DocumentMoniker": "C:\\Users\\Alejandro\\OneDrive - Universidad de M\u00E1laga\\Escritorio\\UNIVERSIDAD\\Plytix\\Plytix\\Plytix\\Plytix\\AtributteAddForm.cs",
-              "RelativeDocumentMoniker": "Plytix\\AtributteAddForm.cs",
-              "ToolTip": "C:\\Users\\Alejandro\\OneDrive - Universidad de M\u00E1laga\\Escritorio\\UNIVERSIDAD\\Plytix\\Plytix\\Plytix\\Plytix\\AtributteAddForm.cs",
-              "RelativeToolTip": "Plytix\\AtributteAddForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T19:39:32.162Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GestionAtributosForm.cs",
-              "DocumentMoniker": "C:\\Users\\Alejandro\\OneDrive - Universidad de M\u00E1laga\\Escritorio\\UNIVERSIDAD\\Plytix\\Plytix\\Plytix\\Plytix\\GestionAtributosForm.cs",
-              "RelativeDocumentMoniker": "Plytix\\GestionAtributosForm.cs",
-              "ToolTip": "C:\\Users\\Alejandro\\OneDrive - Universidad de M\u00E1laga\\Escritorio\\UNIVERSIDAD\\Plytix\\Plytix\\Plytix\\Plytix\\GestionAtributosForm.cs",
-              "RelativeToolTip": "Plytix\\GestionAtributosForm.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAkwB0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T18:28:02.619Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "Model1.edmx [Diagram1]",
-              "DocumentMoniker": "C:\\Users\\Alejandro\\OneDrive - Universidad de M\u00E1laga\\Escritorio\\UNIVERSIDAD\\Plytix\\Plytix\\Plytix\\Plytix\\Model1.edmx",
+              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\Plytix\\Plytix\\Model1.edmx",
               "RelativeDocumentMoniker": "Plytix\\Model1.edmx",
-              "ToolTip": "C:\\Users\\Alejandro\\OneDrive - Universidad de M\u00E1laga\\Escritorio\\UNIVERSIDAD\\Plytix\\Plytix\\Plytix\\Plytix\\Model1.edmx [Diagram1]",
+              "ToolTip": "C:\\Users\\David\\Documents\\GIT\\Plytix\\Plytix\\Plytix\\Model1.edmx [Diagram1]",
               "RelativeToolTip": "Plytix\\Model1.edmx [Diagram1]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
-              "WhenOpened": "2024-11-23T19:17:11.593Z",
+              "WhenOpened": "2024-11-24T09:12:49.203Z",
               "EditorCaption": " [Diagram1]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CategoriesForms.cs",
-              "DocumentMoniker": "C:\\Users\\Alejandro\\OneDrive - Universidad de M\u00E1laga\\Escritorio\\UNIVERSIDAD\\Plytix\\Plytix\\Plytix\\Plytix\\CategoriesForms.cs",
-              "RelativeDocumentMoniker": "Plytix\\CategoriesForms.cs",
-              "ToolTip": "C:\\Users\\Alejandro\\OneDrive - Universidad de M\u00E1laga\\Escritorio\\UNIVERSIDAD\\Plytix\\Plytix\\Plytix\\Plytix\\CategoriesForms.cs",
-              "RelativeToolTip": "Plytix\\CategoriesForms.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAQwG8AAAANAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "ProductsForms.cs",
+              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\Plytix\\Plytix\\ProductsForms.cs",
+              "RelativeDocumentMoniker": "Plytix\\ProductsForms.cs",
+              "ToolTip": "C:\\Users\\David\\Documents\\GIT\\Plytix\\Plytix\\Plytix\\ProductsForms.cs",
+              "RelativeToolTip": "Plytix\\ProductsForms.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAArwFoAAABpAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T09:40:56.914Z",
+              "WhenOpened": "2024-11-24T09:08:18.987Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AtributteAddForm.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Alejandro\\OneDrive - Universidad de M\u00E1laga\\Escritorio\\UNIVERSIDAD\\Plytix\\Plytix\\Plytix\\Plytix\\AtributteAddForm.cs",
-              "RelativeDocumentMoniker": "Plytix\\AtributteAddForm.cs",
-              "ToolTip": "C:\\Users\\Alejandro\\OneDrive - Universidad de M\u00E1laga\\Escritorio\\UNIVERSIDAD\\Plytix\\Plytix\\Plytix\\Plytix\\AtributteAddForm.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Plytix\\AtributteAddForm.cs [Dise\u00F1o]",
+              "DocumentIndex": 2,
+              "Title": "ProductsForms.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\Plytix\\Plytix\\ProductsForms.cs",
+              "RelativeDocumentMoniker": "Plytix\\ProductsForms.cs",
+              "ToolTip": "C:\\Users\\David\\Documents\\GIT\\Plytix\\Plytix\\Plytix\\ProductsForms.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Plytix\\ProductsForms.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T19:39:30.472Z",
+              "WhenOpened": "2024-11-24T09:07:08.018Z",
               "EditorCaption": " [Dise\u00F1o]"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "fbd0d8d5-1261-437a-b732-d42bdf01e513",
-        "Display": 0,
-        "X": 212,
-        "Y": 104,
-        "Width": 1329,
-        "Height": 719,
-        "WindowState": 0
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
+            },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GestionCategoriasForms.cs",
-              "DocumentMoniker": "C:\\Users\\Alejandro\\OneDrive - Universidad de M\u00E1laga\\Escritorio\\UNIVERSIDAD\\Plytix\\Plytix\\Plytix\\Plytix\\GestionCategoriasForms.cs",
-              "RelativeDocumentMoniker": "Plytix\\GestionCategoriasForms.cs",
-              "ToolTip": "C:\\Users\\Alejandro\\OneDrive - Universidad de M\u00E1laga\\Escritorio\\UNIVERSIDAD\\Plytix\\Plytix\\Plytix\\Plytix\\GestionCategoriasForms.cs",
-              "RelativeToolTip": "Plytix\\GestionCategoriasForms.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAEIAAAAoAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "GestionProductosForm.cs",
+              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\Plytix\\Plytix\\GestionProductosForm.cs",
+              "RelativeDocumentMoniker": "Plytix\\GestionProductosForm.cs",
+              "ToolTip": "C:\\Users\\David\\Documents\\GIT\\Plytix\\Plytix\\Plytix\\GestionProductosForm.cs",
+              "RelativeToolTip": "Plytix\\GestionProductosForm.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAkwGIAAABfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T19:11:01.999Z",
+              "WhenOpened": "2024-11-24T09:03:39.111Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GestionProductosForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\Plytix\\Plytix\\GestionProductosForm.cs",
+              "RelativeDocumentMoniker": "Plytix\\GestionProductosForm.cs",
+              "ToolTip": "C:\\Users\\David\\Documents\\GIT\\Plytix\\Plytix\\Plytix\\GestionProductosForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Plytix\\GestionProductosForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-24T09:03:28.073Z",
+              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }

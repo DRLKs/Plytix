@@ -38,6 +38,7 @@ namespace Plytix
 
             if (id >= 0)
             {
+                textBoxId.ReadOnly = true;
                 this.id = id;
                 RellenarTextBoxes();
             }
@@ -57,41 +58,25 @@ namespace Plytix
 
                 try
                 {
-                    int idText = Int32.Parse(textBoxId.Text);
                     CATEGORIA c;
-                    if (this.id >= 0 && this.id == idText )
+                    if (this.id >= 0 )
                     {
                         c = (from categoria in conexion.CATEGORIA
                              where categoria.ID == this.id
                              select categoria).FirstOrDefault();
-                    }
-                    else if(this.id >= 0 && this.id != idText) 
-                    {
-                        c = (from categoria in conexion.CATEGORIA
-                             where categoria.ID == this.id
-                             select categoria).FirstOrDefault();
-                        conexion.CATEGORIA.Remove(c);
 
-                        c = new CATEGORIA   // Inicializamos la Categoría con el nuevo ID
-                        {
-                            ID = idText
-                        };
+                        if ( c.NOMBRE != textBoxNombre.Text ) c.NOMBRE = textBoxNombre.Text;
                     }
                     else
                     {
                         c = new CATEGORIA   // Inicializamos la Categoría con el nuevo ID
                         {
-                            ID = idText
+                            ID = Int32.Parse(textBoxId.Text),
+                            NOMBRE = textBoxNombre.Text
                         };
                     }
 
-                    c.NOMBRE = textBoxNombre.Text;
-
-                    if (this.id >= 0)
-                    {
-                        conexion.CATEGORIA.AddOrUpdate(c);
-                    }
-                    else
+                    if (this.id < 0)    // Estamos añadiendo una categoría
                     {
                         conexion.CATEGORIA.Add(c);
                     }

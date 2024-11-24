@@ -79,7 +79,7 @@
             this.ProductosGridView.Name = "ProductosGridView";
             this.ProductosGridView.RowHeadersWidth = 51;
             this.ProductosGridView.RowTemplate.Height = 24;
-            this.ProductosGridView.Size = new System.Drawing.Size(1149, 258);
+            this.ProductosGridView.Size = new System.Drawing.Size(1301, 327);
             this.ProductosGridView.TabIndex = 3;
             this.ProductosGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductosGridClickar);
             // 
@@ -107,7 +107,7 @@
             this.NoProductsLabel.AutoSize = true;
             this.NoProductsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NoProductsLabel.ForeColor = System.Drawing.Color.Black;
-            this.NoProductsLabel.Location = new System.Drawing.Point(486, 274);
+            this.NoProductsLabel.Location = new System.Drawing.Point(528, 297);
             this.NoProductsLabel.Name = "NoProductsLabel";
             this.NoProductsLabel.Size = new System.Drawing.Size(197, 29);
             this.NoProductsLabel.TabIndex = 6;
@@ -115,7 +115,7 @@
             // 
             // textFiltroProductos
             // 
-            this.textFiltroProductos.Location = new System.Drawing.Point(503, 49);
+            this.textFiltroProductos.Location = new System.Drawing.Point(558, 66);
             this.textFiltroProductos.Name = "textFiltroProductos";
             this.textFiltroProductos.Size = new System.Drawing.Size(127, 22);
             this.textFiltroProductos.TabIndex = 7;

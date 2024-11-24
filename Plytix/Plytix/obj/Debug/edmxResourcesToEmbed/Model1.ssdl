@@ -17,11 +17,11 @@
   </EntityType>
   <EntityType Name="PRODRELACIONADOS">
     <Key>
-      <PropertyRef Name="SKU1" />
-      <PropertyRef Name="SKU2" />
+      <PropertyRef Name="PROD1" />
+      <PropertyRef Name="PROD2" />
     </Key>
-    <Property Name="SKU1" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="SKU2" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="PROD1" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PROD2" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="PRODUCTO">
     <Key>
@@ -52,7 +52,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="PRODUCTOSRELACIONADOS1">
+  <Association Name="RELP1">
     <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="1" />
     <End Role="PRODRELACIONADOS" Type="Self.PRODRELACIONADOS" Multiplicity="*" />
     <ReferentialConstraint>
@@ -60,11 +60,11 @@
         <PropertyRef Name="SKU" />
       </Principal>
       <Dependent Role="PRODRELACIONADOS">
-        <PropertyRef Name="SKU1" />
+        <PropertyRef Name="PROD1" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="PRODUCTOSRELACIONADOS2">
+  <Association Name="RELP2">
     <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="1" />
     <End Role="PRODRELACIONADOS" Type="Self.PRODRELACIONADOS" Multiplicity="*" />
     <ReferentialConstraint>
@@ -72,7 +72,7 @@
         <PropertyRef Name="SKU" />
       </Principal>
       <Dependent Role="PRODRELACIONADOS">
-        <PropertyRef Name="SKU2" />
+        <PropertyRef Name="PROD2" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -98,11 +98,11 @@
       <End Role="CATEGORIA" EntitySet="CATEGORIA" />
       <End Role="PRODUCTO" EntitySet="PRODUCTO" />
     </AssociationSet>
-    <AssociationSet Name="PRODUCTOSRELACIONADOS1" Association="Self.PRODUCTOSRELACIONADOS1">
+    <AssociationSet Name="RELP1" Association="Self.RELP1">
       <End Role="PRODUCTO" EntitySet="PRODUCTO" />
       <End Role="PRODRELACIONADOS" EntitySet="PRODRELACIONADOS" />
     </AssociationSet>
-    <AssociationSet Name="PRODUCTOSRELACIONADOS2" Association="Self.PRODUCTOSRELACIONADOS2">
+    <AssociationSet Name="RELP2" Association="Self.RELP2">
       <End Role="PRODUCTO" EntitySet="PRODUCTO" />
       <End Role="PRODRELACIONADOS" EntitySet="PRODRELACIONADOS" />
     </AssociationSet>

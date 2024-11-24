@@ -55,6 +55,16 @@ namespace Plytix
                         ? ConvertirBlobAImagen(p.THUMBNAIL)
                         : Image.FromFile(@"..\..\Resources\sinImagen.jpg");
             pictureBox.Image = thumbnail;
+
+            if (p.CATEGORIAID != null)
+            {
+                CategoriasComboBox.SelectedItem = ( from categoria in conexion.CATEGORIA where categoria.ID == p.CATEGORIAID select categoria.NOMBRE ).FirstOrDefault();
+            }
+
+            if (p.PRODUCTO2.Count() > 0)
+            {
+                
+            }
         }
 
         private void SaveClick(object sender, EventArgs e)
@@ -62,8 +72,25 @@ namespace Plytix
             if (textBoxSKU.Text.Length > 0 && textBoxNombre.Text.Length > 0)
             {
 
-                PRODUCTO p = new PRODUCTO();
-                p.SKU = textBoxSKU.Text;
+                PRODUCTO p;
+                if (this.sku == null)
+                {
+                    p = new PRODUCTO
+                    {
+                        SKU = textBoxSKU.Text
+                    };
+
+                }
+                else
+                {
+                    p = (from producto in conexion.PRODUCTO where producto.SKU == this.sku select producto).FirstOrDefault();
+                    if (textBoxSKU.Text != sku)
+                    {
+                        conexion.PRODUCTO.Remove(p);
+                        p.SKU = textBoxSKU.Text;
+                    }
+                }
+
                 if (textBoxGTIN.Text.Length > 0) p.GTIN = textBoxGTIN.Text; 
                 else p.GTIN = null;
 
@@ -71,9 +98,9 @@ namespace Plytix
                 if (imagePath == null) p.THUMBNAIL = null;
                 else p.THUMBNAIL = ConvertirImagenABlob(imagePath);
 
-                string categoriaNombre = CategoriasComboBox.SelectedItem.ToString();
-                if ( categoriaNombre != null && categoriaNombre != "")
+                if (CategoriasComboBox.SelectedItem != null && CategoriasComboBox.SelectedItem.ToString() != "")
                 {
+                    string categoriaNombre = CategoriasComboBox.SelectedItem.ToString();
                     p.CATEGORIAID = (from categoria in conexion.CATEGORIA where categoria.NOMBRE == categoriaNombre select categoria.ID).FirstOrDefault();
                 }
                 else
@@ -84,11 +111,12 @@ namespace Plytix
                 /* Productos Relacionados */
                 var seleccionadas = new List<string>();
                 PRODUCTO pAux;
-                foreach (var item in ProductosRelacionadoscheckedListBox.CheckedItems)
+                p.PRODUCTO1.Add(p);
+                foreach (String item in ProductosRelacionadoscheckedListBox.CheckedItems)
                 {
                     seleccionadas.Add(item.ToString());
-                    pAux = (from producto in conexion.PRODUCTO where producto.NOMBRE == item.ToString() select producto).FirstOrDefault();
-                    
+                    pAux = (from producto in conexion.PRODUCTO where producto.NOMBRE == item select producto).FirstOrDefault();
+                    p.PRODUCTO2.Add(pAux);
                 }
                 /* Fin de Productos Relacionados */
                 try
