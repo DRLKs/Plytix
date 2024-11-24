@@ -64,7 +64,7 @@ namespace Plytix
                     ProductosGridView.Columns.Add("SKU", "SKU");
                     ProductosGridView.Columns.Add("GTIN", "GTIN");
                     ProductosGridView.Columns.Add("Related products", "Related products");
-                    ProductosGridView.Columns.Add("Category", "Categoria");
+                    ProductosGridView.Columns.Add("Categoria", "Category");
 
                     ProductosGridView.Columns.Add(new DataGridViewButtonColumn
                     {
@@ -89,14 +89,16 @@ namespace Plytix
                     var thumbnail = p.THUMBNAIL != null
                         ? ConvertirBlobAImagen(p.THUMBNAIL)
                         : Image.FromFile(@"..\..\Resources\sinImagen.jpg");
-
+                    
                     StringBuilder sb = new StringBuilder();
                     foreach (var producto in p.PRODUCTO2)
                     {
                         sb.Append(producto.NOMBRE).Append(", "); // Agregamos el producto seguido de una coma
                     }
 
-                    ProductosGridView.Rows.Add(thumbnail, p.NOMBRE, p.SKU, p.GTIN, sb.ToString() , p.CATEGORIAID);
+                    String categoriaNombre = (from categoria in conexion.CATEGORIA where categoria.ID == p.CATEGORIAID select categoria.NOMBRE).FirstOrDefault();
+
+                    ProductosGridView.Rows.Add(thumbnail, p.NOMBRE, p.SKU, p.GTIN, sb.ToString() , categoriaNombre );
                 }
 
                 ProductosGridView.Show();

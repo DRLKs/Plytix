@@ -24,18 +24,17 @@ namespace Plytix
         {
             InitializeComponent();
             btnCerrar_Paint();
-            this.FormBorderStyle = FormBorderStyle.None;  // Elimina los bordes
             this.MaximizeBox = false;  // Evita que el formulario pueda maximizarse
             this.MinimizeBox = false;  // Evita que el formulario pueda minimizarse
             this.formsQueLoLlama = formsQueLoLlama;
             conexion = new grupo11DBEntities();
+            CategoriasBoxCargar();  // Cargamos el ComboBox que contiene las categorias
+            CargarProductosRelacionados();  // Cargamos los Nombres de los productos relacionados
             if (sku != null)
             {
                 this.sku = sku;
                 PrepararEditor();
             }
-            CategoriasBoxCargar();  // Cargamos el ComboBox que contiene las categorias
-            CargarProductosRelacionados();  // Cargamos los Nombres de los productos relacionados
             imagePath = null;
         }
         /*
@@ -63,7 +62,10 @@ namespace Plytix
 
             if (p.PRODUCTO2.Count() > 0)
             {
-                
+                foreach( PRODUCTO pRel in ProductosRelacionadoscheckedListBox.)
+                {
+                    ProductosRelacionadoscheckedListBox. = pRel.NOMBRE;
+                }
             }
         }
 
@@ -95,8 +97,9 @@ namespace Plytix
                 else p.GTIN = null;
 
                 p.NOMBRE = textBoxNombre.Text;
-                if (imagePath == null) p.THUMBNAIL = null;
-                else p.THUMBNAIL = ConvertirImagenABlob(imagePath);
+
+                if (imagePath == null && p.THUMBNAIL == null ) p.THUMBNAIL = null;
+                else if(imagePath != null) p.THUMBNAIL = ConvertirImagenABlob(imagePath);
 
                 if (CategoriasComboBox.SelectedItem != null && CategoriasComboBox.SelectedItem.ToString() != "")
                 {
@@ -114,9 +117,12 @@ namespace Plytix
                 p.PRODUCTO1.Add(p);
                 foreach (String item in ProductosRelacionadoscheckedListBox.CheckedItems)
                 {
-                    seleccionadas.Add(item.ToString());
-                    pAux = (from producto in conexion.PRODUCTO where producto.NOMBRE == item select producto).FirstOrDefault();
-                    p.PRODUCTO2.Add(pAux);
+                    if( item != p.NOMBRE)
+                    {
+                        seleccionadas.Add(item.ToString());
+                        pAux = (from producto in conexion.PRODUCTO where producto.NOMBRE == item select producto).FirstOrDefault();
+                        p.PRODUCTO2.Add(pAux);
+                    }
                 }
                 /* Fin de Productos Relacionados */
                 try
@@ -127,8 +133,8 @@ namespace Plytix
                         if (textBoxGTIN.TextLength == 0) p.GTIN = null;
                     }
                     conexion.SaveChanges();
-                    this.Hide();
                     formsQueLoLlama.CargarProductos();
+                    this.Hide();
                 }
                 catch (Exception ex)
                 {
@@ -139,7 +145,7 @@ namespace Plytix
             }
             else
             {
-                MessageBox.Show("Debes rellenar obligatoriamente los apartados de SKU y NOMBRE");
+                MessageBox.Show("You must fill out the SKU and NAME sections");
             }
         }
 

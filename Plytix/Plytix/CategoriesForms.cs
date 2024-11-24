@@ -86,18 +86,18 @@ namespace Plytix
                 }
                 catch (FormatException)
                 {
-                    MessageBox.Show("Error: El ID no es válido");
+                    MessageBox.Show("Error: ID is invalid");
                 }
                 catch (Exception)   // Deberiamos añadir más excepciones
                 {
                     // Manejar otras excepciones generales
-                    MessageBox.Show("Error: ID o Nombre ya existen");
+                    MessageBox.Show("Error: ID or Name already exists");
                 }
 
             }
             else
             {
-                MessageBox.Show("Rellene antes los parámetros");
+                MessageBox.Show("You must fill in the parameters before");
             }
         }
 
