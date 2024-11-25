@@ -29,13 +29,16 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.idText = new System.Windows.Forms.TextBox();
+            this.ResumeText = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.descriptionText = new System.Windows.Forms.TextBox();
             this.SaveButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.comboBoxTipo = new System.Windows.Forms.ComboBox();
+            this.BotonSubir = new System.Windows.Forms.Button();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -44,16 +47,16 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(64, 87);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(190, 29);
+            this.label1.Size = new System.Drawing.Size(266, 29);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Add atributte id";
+            this.label1.Text = "Add Atributte Resume";
             // 
-            // idText
+            // ResumeText
             // 
-            this.idText.Location = new System.Drawing.Point(69, 130);
-            this.idText.Name = "idText";
-            this.idText.Size = new System.Drawing.Size(188, 22);
-            this.idText.TabIndex = 1;
+            this.ResumeText.Location = new System.Drawing.Point(69, 130);
+            this.ResumeText.Name = "ResumeText";
+            this.ResumeText.Size = new System.Drawing.Size(188, 22);
+            this.ResumeText.TabIndex = 1;
             // 
             // label2
             // 
@@ -109,19 +112,41 @@
             this.comboBoxTipo.Name = "comboBoxTipo";
             this.comboBoxTipo.Size = new System.Drawing.Size(121, 24);
             this.comboBoxTipo.TabIndex = 8;
+            this.comboBoxTipo.SelectedIndexChanged += new System.EventHandler(this.CambiaSeleccionTipo);
+            // 
+            // BotonSubir
+            // 
+            this.BotonSubir.Location = new System.Drawing.Point(115, 345);
+            this.BotonSubir.Name = "BotonSubir";
+            this.BotonSubir.Size = new System.Drawing.Size(75, 23);
+            this.BotonSubir.TabIndex = 10;
+            this.BotonSubir.Text = "Add Imagen";
+            this.BotonSubir.UseVisualStyleBackColor = true;
+            this.BotonSubir.Click += new System.EventHandler(this.SubirImagen_Click);
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.Location = new System.Drawing.Point(215, 328);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox.TabIndex = 11;
+            this.pictureBox.TabStop = false;
             // 
             // AtributteAddForm
             // 
             this.ClientSize = new System.Drawing.Size(691, 621);
+            this.Controls.Add(this.pictureBox);
+            this.Controls.Add(this.BotonSubir);
             this.Controls.Add(this.comboBoxTipo);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.descriptionText);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.idText);
+            this.Controls.Add(this.ResumeText);
             this.Controls.Add(this.label1);
             this.Name = "AtributteAddForm";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,12 +155,14 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox idText;
+        private System.Windows.Forms.TextBox ResumeText;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox descriptionText;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.ComboBox comboBoxTipo;
+        private System.Windows.Forms.Button BotonSubir;
+        private System.Windows.Forms.PictureBox pictureBox;
     }
 }

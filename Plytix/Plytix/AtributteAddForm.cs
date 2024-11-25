@@ -1,14 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Data.Entity.Validation; // Importar para capturar errores de validación
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using static Devart.Common.Utils;
 
 namespace Plytix
 {
     public partial class AtributteAddForm : Form
     {
         private string sku;
+        private string imagePath;
         private int id;
         private grupo11DBEntities conexion;
         private GestionAtributosForm padreForm;
@@ -17,15 +22,22 @@ namespace Plytix
         {
             InitializeComponent();
             TipoBoxCargar();
+            imagePath = null;
+            pictureBox.Hide();
+            BotonSubir.Hide();
+            label3.Hide();
+            descriptionText.Hide();
+            // Establecer el filtro para mostrar solo archivos de imagen
+            // Establecer el filtro para mostrar solo archivos de imagen
+
             this.sku = sku;
             this.id = id;
+            if ( id >= 0)
+            {
+                CargarEditor();
+            }
             padreForm = padre;
             conexion = new grupo11DBEntities();
-
-            if (id > 0) // Si se pasa un ID válido, cargar los datos existentes.
-            {
-                CargarDatos();
-            }
         }
 
         private void TipoBoxCargar()
@@ -42,44 +54,6 @@ namespace Plytix
             }
         }
 
-        private void CargarDatos()
-        {
-            try
-            {
-                // Buscar el atributo en la base de datos.
-                ATRIBUTO a = (from atributo in conexion.ATRIBUTO
-                              where atributo.ID == id
-                              select atributo).FirstOrDefault();
-
-                if (a == null)
-                {
-                    throw new Exception("The attribute could not be found in the database.");
-                }
-
-                // Asignar los valores del atributo a los campos de la interfaz.
-                comboBoxTipo.Text = a.TIPO;
-
-                switch (a.TIPO)
-                {
-                    case "IMAGE":
-                        // Aquí puedes cargar la imagen si es necesario.
-                        break;
-                    case "DESCRIPTION":
-                        descriptionText.Text = a.DESCRIPCION;
-                        break;
-                    case "PRICE":
-                        descriptionText.Text = a.PRECIO.ToString();
-                        break;
-                    default:
-                        throw new Exception("Unknown attribute type.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error loading data: " + ex.Message);
-            }
-        }
-
         private void cancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -91,7 +65,7 @@ namespace Plytix
             {
                 // Crear o actualizar el objeto ATRIBUTO.
                 ATRIBUTO a;
-                if (id > 0) // Actualizar un atributo existente.
+                if (id >= 0) // Actualizar un atributo existente.
                 {
                     a = (from atributo in conexion.ATRIBUTO
                          where atributo.ID == id
@@ -104,34 +78,54 @@ namespace Plytix
                 }
                 else // Crear un nuevo atributo.
                 {
-                    a = new ATRIBUTO
+                    a = new ATRIBUTO();
+                    
+                    if (sku != null)
                     {
-                        ID = conexion.ATRIBUTO.Any() ? conexion.ATRIBUTO.Max(atributo => atributo.ID) + 1 : 1
-                    };
-                    if (sku != null) a.PRODUCTO = conexion.PRODUCTO.FirstOrDefault(producto => producto.SKU == sku);
-
-                    conexion.ATRIBUTO.Add(a);
+                        a.PRODUCTOID = sku;
+                        a.PRODUCTO = conexion.PRODUCTO.FirstOrDefault(producto => producto.SKU == sku);
+                    }
+                    else
+                    {
+                        a.PRODUCTOID = null;
+                        a.PRODUCTO = null;
+                    }
                 }
 
                 // Validar y asignar los datos del atributo.
                 string tipoSeleccionado = comboBoxTipo.Text;
+                
                 if (string.IsNullOrEmpty(tipoSeleccionado))
                 {
                     throw new Exception("You must choose the type of attribute.");
                 }
                 a.TIPO = tipoSeleccionado;
-
-                if (string.IsNullOrEmpty(descriptionText.Text))
+                
+                if (string.IsNullOrEmpty(ResumeText.Text))
                 {
-                    throw new Exception("The description field cannot be empty.");
+                    throw new Exception("The resume field cannot be empty.");
+                }
+                a.Resumen = ResumeText.Text;
+
+                if (!new[] { "IMAGE", "DESCRIPTION", "PRICE" }.Contains(tipoSeleccionado))
+                {
+                    throw new Exception("Tipo de atributo no válido.");
                 }
 
                 switch (tipoSeleccionado)
                 {
                     case "IMAGE":
-                        a.IMAGEN = null; // Aquí podrías cargar una imagen si fuera necesario.
+                        if (string.IsNullOrEmpty(imagePath))
+                        {
+                            throw new Exception("Image Path null.");
+                        }
+                        a.IMAGEN = ConvertirImagenABlob(imagePath);
                         break;
                     case "DESCRIPTION":
+                        if (string.IsNullOrEmpty(descriptionText.Text))
+                        {
+                            throw new Exception("Description is null");
+                        }
                         a.DESCRIPCION = descriptionText.Text;
                         break;
                     case "PRICE":
@@ -146,8 +140,12 @@ namespace Plytix
                 }
 
                 // Guardar los cambios en la base de datos.
+
+                conexion.ATRIBUTO.AddOrUpdate(a);
+                System.Console.WriteLine(a.ID +  a.TIPO + a.DESCRIPCION + a.Resumen);
                 conexion.SaveChanges();
                 MessageBox.Show("Attribute saved successfully.");
+                padreForm.CargarAtributos();
                 this.Close(); // Cerrar la ventana al guardar.
             }
             catch (DbEntityValidationException dbEx)
@@ -163,7 +161,92 @@ namespace Plytix
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void CargarEditor()
+        {
+            ATRIBUTO a = (from atributo in conexion.ATRIBUTO where atributo.ID == id select atributo ).FirstOrDefault();
+
+            ResumeText.Text = a.Resumen;
+
+            string tipoSeleccionado = a.TIPO;
+            switch (tipoSeleccionado)
+            {
+                case "IMAGE":
+                    comboBoxTipo.SelectedIndex = 0;
+                    /* Añadir cosas */
+                    break;
+                case "DESCRIPTION":
+                    comboBoxTipo.SelectedIndex = 1;
+
+                    descriptionText.Text = a.DESCRIPCION;
+                    break;
+                case "PRICE":
+                    comboBoxTipo.SelectedIndex = 2;
+                    descriptionText.Text = a.PRECIO.ToString();
+                    break;
+                default:
+                    throw new Exception("Unknown attribute type.");
+            }
+        }
+
+        private void SubirImagen_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            // Establecer el filtro para mostrar solo archivos de imagen
+            openFileDialog.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.bmp;";
+
+            // Mostrar el cuadro de diálogo
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Obtener la ruta del archivo seleccionado
+                imagePath = openFileDialog.FileName;
+
+                // Mostrar la imagen en un PictureBox (si tienes uno en tu formulario)
+                pictureBox.Image = Image.FromFile(imagePath);
+            }
+        }
+        public byte[] ConvertirImagenABlob(string rutaImagen)
+        {
+            byte[] imagenBytes;
+            using (MemoryStream ms = new MemoryStream())
+            {
+                // Cargar la imagen en un MemoryStream
+                Image imagen = Image.FromFile(rutaImagen);
+                imagen.Save(ms, imagen.RawFormat); // Guardar la imagen en el stream
+                imagenBytes = ms.ToArray(); // Obtener el arreglo de bytes
+            }
+            return imagenBytes;
+        }
+
+        private void CambiaSeleccionTipo(object sender, EventArgs e)
+        {
+            string tipoSeleccionado = comboBoxTipo.Text;
+            switch (tipoSeleccionado)
+            {
+                case "IMAGE":
+                    pictureBox.Show();
+                    BotonSubir.Show();
+                    label3.Hide();
+                    descriptionText.Hide();
+                    break;
+                case "DESCRIPTION":
+                    pictureBox.Hide();
+                    BotonSubir.Hide();
+                    label3.Show();
+                    descriptionText.Show();
+                    break;
+                case "PRICE":
+                    pictureBox.Hide();
+                    BotonSubir.Hide();
+                    label3.Show();
+                    descriptionText.Show();
+                    break;
+                default:
+                    throw new Exception("Unknown attribute type.");
             }
         }
     }

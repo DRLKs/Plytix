@@ -21,14 +21,14 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Resumen" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
     <Property Name="TIPO" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
     <Property Name="DESCRIPCION" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
     <Property Name="IMAGEN" Type="Binary" MaxLength="65535" FixedLength="false" />
     <Property Name="PRECIO" Type="Single" />
-    <Property Name="PRODUCTOID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PRODUCTOID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="PRODUCTO" Relationship="grupo11DBModel.PROD_ID" FromRole="ATRIBUTO" ToRole="PRODUCTO" />
-    <Property Name="Resumen" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="CATEGORIA">
     <Key>
@@ -53,7 +53,7 @@
     <NavigationProperty Name="PRODUCTO2" Relationship="grupo11DBModel.PRODRELACIONADOS" FromRole="PRODUCTO1" ToRole="PRODUCTO" />
   </EntityType>
   <Association Name="PROD_ID">
-    <End Type="grupo11DBModel.PRODUCTO" Role="PRODUCTO" Multiplicity="1" />
+    <End Type="grupo11DBModel.PRODUCTO" Role="PRODUCTO" Multiplicity="0..1" />
     <End Type="grupo11DBModel.ATRIBUTO" Role="ATRIBUTO" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="PRODUCTO">

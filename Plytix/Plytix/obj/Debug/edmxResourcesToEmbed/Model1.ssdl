@@ -4,7 +4,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Resumen" Type="varchar" MaxLength="25" Nullable="false" />
     <Property Name="TIPO" Type="varchar" MaxLength="15" Nullable="false" />
     <Property Name="DESCRIPCION" Type="varchar" MaxLength="250" />

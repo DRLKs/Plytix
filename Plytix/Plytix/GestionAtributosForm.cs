@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -15,65 +16,84 @@ namespace Plytix
         private int numeroAtributos = 0;
         private grupo11DBEntities conexion;
         List<ATRIBUTO> listaAtributos;
-        
-
         private string sku;
 
         public GestionAtributosForm( string sku )
         {
             InitializeComponent();
             conexion = new grupo11DBEntities();
-            
             GridViewAtributos.AllowUserToAddRows = false;
-            listaAtributos = (from atributo in conexion.ATRIBUTO
-                              select atributo).ToList();
+            GridViewAtributos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             this.sku = sku;
             CargarAtributos();
         }
 
         public void CargarAtributos()
         {
-            GridViewAtributos.Show();
-            (from atributo in conexion.ATRIBUTO select atributo).ToList();
-            
-            RemainingAtributesLabel.Text = "Remaining available attributes: " + (5 - numeroAtributos);
-            GridViewAtributos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            if (numeroAtributos >= 0 && numeroAtributos < 5)
+            if (sku != null)
             {
+                listaAtributos = (from atributo in conexion.ATRIBUTO
+                                  where atributo.PRODUCTOID == this.sku
+                                  select atributo).ToList();
+            }
+            else
+            {
+                listaAtributos = (from atributo in conexion.ATRIBUTO
+                                                   select atributo).ToList();
+            }
 
-                // Configura columnas
-                if (GridViewAtributos.Columns.Count == 0)
+            GridViewAtributos.DataSource = null;
+            GridViewAtributos.Rows.Clear();
+            GridViewAtributos.Columns.Clear();
+
+            RemainingAtributesLabel.Text = "Remaining available attributes: " + (5 - listaAtributos.Count);
+            if (listaAtributos.Count >= 5) AddAtributoBotton.Hide();
+            else AddAtributoBotton.Show();
+
+            // Configura columnas
+            GridViewAtributos.Columns.Add("ID", "ID");
+            GridViewAtributos.Columns.Add("Resumen", "RESUME");
+            GridViewAtributos.Columns.Add("TIPO", "TYPE");
+            GridViewAtributos.Columns.Add("Valor", "VALUE");
+
+            GridViewAtributos.Columns.Add(new DataGridViewButtonColumn
+            {
+                Name = "Edit",
+                HeaderText = "EDIT",
+                Text = "✏️",
+                UseColumnTextForButtonValue = true
+            });
+
+            GridViewAtributos.Columns.Add(new DataGridViewButtonColumn
+            {
+                Name = "Delete",
+                HeaderText = "DELETE",
+                Text = "🗑️",
+                UseColumnTextForButtonValue = true
+            });
+
+            // Agregar filas
+            foreach (ATRIBUTO a in listaAtributos)
+            {
+                switch (a.TIPO)
                 {
-                    GridViewAtributos.Columns.Add("ID", "ID");
-                    GridViewAtributos.Columns.Add("RESUME", "RESUME");
-                    GridViewAtributos.Columns.Add("TYPE", "TYPE");
-                    GridViewAtributos.Columns.Add("DESCRIPTION", "DESCRIPTION");
-                    GridViewAtributos.Columns.Add(new DataGridViewButtonColumn
-                    {
-                        Name = "Edit",
-                        HeaderText = "EDIT",
-                        Text = "✏️",
-                        UseColumnTextForButtonValue = true
-                    });
+                    case "IMAGE":
+                        Image img = ConvertirBlobAImagen( a.IMAGEN );
+                        GridViewAtributos.Rows.Add(a.ID, a.Resumen, a.TIPO, img);
+                        break;
 
-                    GridViewAtributos.Columns.Add(new DataGridViewButtonColumn
-                    {
-                        Name = "Delete",
-                        HeaderText = "DELETE",
-                        Text = "🗑️",
-                        UseColumnTextForButtonValue = true
-                    });
-                }
+                    case "DESCRIPTION":
+                        GridViewAtributos.Rows.Add(a.ID, a.Resumen, a.TIPO, a.DESCRIPCION);
+                        break;
 
+                    case "PRICE":
+                        GridViewAtributos.Rows.Add(a.ID, a.Resumen, a.TIPO, a.PRECIO);
+                        break;
 
-
-                foreach (var a in listaAtributos)
-                {
-                    GridViewAtributos.Rows
-                        .Add(a.ID, a.DESCRIPCION, a.TIPO);
+                    default:
+                        throw new Exception("Tipo de atributo no soportado.");
                 }
             }
-            
         }
 
         private void plytixLabel_Click(object sender, EventArgs e)
@@ -99,7 +119,7 @@ namespace Plytix
                 return;
 
             // Identificar la columna donde ocurrió el clic
-            String resume = GridViewAtributos.Rows[e.RowIndex].Cells["RESUME"].Value.ToString();
+            String resume = GridViewAtributos.Rows[e.RowIndex].Cells["Resumen"].Value.ToString();
             int id = (from atributo in conexion.ATRIBUTO where atributo.Resumen == resume select atributo.ID).FirstOrDefault();
 
             string columnName = GridViewAtributos.Columns[e.ColumnIndex].Name;
@@ -134,6 +154,13 @@ namespace Plytix
             conexion.ATRIBUTO.Remove(p);
             conexion.SaveChanges();
             CargarAtributos();
+        }
+        private Image ConvertirBlobAImagen(byte[] blob)
+        {
+            using (MemoryStream ms = new MemoryStream(blob))
+            {
+                return Image.FromStream(ms);
+            }
         }
     }
 }

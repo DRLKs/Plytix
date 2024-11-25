@@ -92,8 +92,19 @@ namespace Plytix
                     p = (from producto in conexion.PRODUCTO where producto.SKU == this.sku select producto).FirstOrDefault();
                     if (textBoxSKU.Text != sku)     // Si modificamos el SKU necesitamos borrarlo y crear uno nuevo
                     {
+                        PRODUCTO pNuevo = new PRODUCTO
+                        {
+                            SKU = textBoxSKU.Text
+                        };
+                        List<ATRIBUTO> atributos = (from atrib in conexion.ATRIBUTO where atrib.PRODUCTOID == p.SKU select atrib).ToList();
+                        foreach( ATRIBUTO a in atributos)
+                        {
+                            a.PRODUCTOID = pNuevo.SKU;
+                            a.PRODUCTO = pNuevo;
+                            conexion.ATRIBUTO.AddOrUpdate(a);
+                        }
                         conexion.PRODUCTO.Remove(p);
-                        p.SKU = textBoxSKU.Text;
+                        p = pNuevo;
                     }
                 }
 
@@ -227,7 +238,6 @@ namespace Plytix
         {
             if( sku != null)
             {
-                this.Hide();
                 
                 var form = new GestionAtributosForm( sku );
                 form.Show();
