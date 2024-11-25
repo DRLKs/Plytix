@@ -4,16 +4,12 @@
     <EntitySetMapping Name="ATRIBUTO">
       <EntityTypeMapping TypeName="grupo11DBModel.ATRIBUTO">
         <MappingFragment StoreEntitySet="ATRIBUTO">
-          <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+          <ScalarProperty Name="Resumen" ColumnName="Resumen" />
+          <ScalarProperty Name="PRODUCTOID" ColumnName="PRODUCTOID" />
+          <ScalarProperty Name="PRECIO" ColumnName="PRECIO" />
+          <ScalarProperty Name="IMAGEN" ColumnName="IMAGEN" />
           <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="TIPO_ATRIBUTO">
-      <EntityTypeMapping TypeName="grupo11DBModel.TIPO_ATRIBUTO">
-        <MappingFragment StoreEntitySet="TIPO_ATRIBUTO">
-          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="TIPO" ColumnName="TIPO" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -29,7 +25,6 @@
     <EntitySetMapping Name="PRODUCTO">
       <EntityTypeMapping TypeName="grupo11DBModel.PRODUCTO">
         <MappingFragment StoreEntitySet="PRODUCTO">
-          <ScalarProperty Name="ATRIBUTOID" ColumnName="ATRIBUTOID" />
           <ScalarProperty Name="CATEGORIAID" ColumnName="CATEGORIAID" />
           <ScalarProperty Name="GTIN" ColumnName="GTIN" />
           <ScalarProperty Name="SKU" ColumnName="SKU" />

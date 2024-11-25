@@ -126,11 +126,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1305, 628);
+            this.Controls.Add(this.ProductosGridView);
             this.Controls.Add(this.textFiltroProductos);
             this.Controls.Add(this.NoProductsLabel);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Add);
-            this.Controls.Add(this.ProductosGridView);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Volver);
             this.Controls.Add(this.label1);

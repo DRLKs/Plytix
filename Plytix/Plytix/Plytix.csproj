@@ -203,9 +203,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource2.resx</DependentUpon>
     </Compile>
-    <Compile Include="TIPO_ATRIBUTO.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="AtributteAddForm.resx">
       <DependentUpon>AtributteAddForm.cs</DependentUpon>
     </EmbeddedResource>

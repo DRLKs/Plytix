@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+using System.Data.Entity.Validation; // Importar para capturar errores de validación
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Plytix
@@ -14,76 +11,160 @@ namespace Plytix
         private string sku;
         private int id;
         private grupo11DBEntities conexion;
-        public AtributteAddForm( string sku, int id )
+        private GestionAtributosForm padreForm;
+
+        public AtributteAddForm(string sku, int id, GestionAtributosForm padre)
         {
             InitializeComponent();
             TipoBoxCargar();
             this.sku = sku;
             this.id = id;
-            this.conexion = new grupo11DBEntities();
-        }
+            padreForm = padre;
+            conexion = new grupo11DBEntities();
 
-        private void SaveButton_Click(object sender, EventArgs e)
-        {
-            ATRIBUTO a;
-            if( id > 0)
+            if (id > 0) // Si se pasa un ID válido, cargar los datos existentes.
             {
-                a = (from atributo in conexion.ATRIBUTO select atributo).FirstOrDefault();
+                CargarDatos();
             }
-            else
-            {   
-                a = new ATRIBUTO();
-                int idSig = 1 + (conexion.ATRIBUTO.Any() ? conexion.ATRIBUTO.Max(atributo => atributo.ID) : 0);
-                a.ID = idSig;
-                a.PRODUCTO.Add((from producto in conexion.PRODUCTO select producto).FirstOrDefault());
-            }
-            try
-            {
-                string tipoSeleccionado = comboBoxTipo.Text;
-                if (tipoSeleccionado != null)
-                {
-                    a.TIPO_ATRIBUTO = (from t in conexion.TIPO_ATRIBUTO where t.NOMBRE == tipoSeleccionado select t).FirstOrDefault();
-                }
-
-                if( a.TIPO_ATRIBUTO == null)
-                {
-                    throw new Exception("You must choose the type of attribute");
-                }
-
-                if( descriptionText.Text != null && descriptionText.Text != "")
-                {
-                    a.DESCRIPCION = descriptionText.Text;
-                }
-                else
-                {
-                    throw new Exception("You must fill out the description section");
-                }
-
-                conexion.ATRIBUTO.Add(a);
-                conexion.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-            
         }
 
         private void TipoBoxCargar()
         {
-            comboBoxTipo.AutoCompleteMode = AutoCompleteMode.SuggestAppend; // Sugerir opciones mientras se escribe
-            comboBoxTipo.AutoCompleteSource = AutoCompleteSource.ListItems; // Usar la lista de ítems como fuente de autocompletado
+            // Configuración del ComboBox para autocompletar.
+            comboBoxTipo.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            comboBoxTipo.AutoCompleteSource = AutoCompleteSource.ListItems;
 
-            List<TIPO_ATRIBUTO> tipos = (from t in conexion.TIPO_ATRIBUTO select t).ToList();
-            foreach (TIPO_ATRIBUTO tipo in tipos)
+            // Lista de tipos permitidos.
+            List<string> tipos = new List<string> { "IMAGE", "DESCRIPTION", "PRICE" };
+            foreach (string tipo in tipos)
             {
-                comboBoxTipo.Items.Add(tipo.NOMBRE);
+                comboBoxTipo.Items.Add(tipo);
+            }
+        }
+
+        private void CargarDatos()
+        {
+            try
+            {
+                // Buscar el atributo en la base de datos.
+                ATRIBUTO a = (from atributo in conexion.ATRIBUTO
+                              where atributo.ID == id
+                              select atributo).FirstOrDefault();
+
+                if (a == null)
+                {
+                    throw new Exception("The attribute could not be found in the database.");
+                }
+
+                // Asignar los valores del atributo a los campos de la interfaz.
+                comboBoxTipo.Text = a.TIPO;
+
+                switch (a.TIPO)
+                {
+                    case "IMAGE":
+                        // Aquí puedes cargar la imagen si es necesario.
+                        break;
+                    case "DESCRIPTION":
+                        descriptionText.Text = a.DESCRIPCION;
+                        break;
+                    case "PRICE":
+                        descriptionText.Text = a.PRECIO.ToString();
+                        break;
+                    default:
+                        throw new Exception("Unknown attribute type.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading data: " + ex.Message);
             }
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void SaveButton_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                // Crear o actualizar el objeto ATRIBUTO.
+                ATRIBUTO a;
+                if (id > 0) // Actualizar un atributo existente.
+                {
+                    a = (from atributo in conexion.ATRIBUTO
+                         where atributo.ID == id
+                         select atributo).FirstOrDefault();
+
+                    if (a == null)
+                    {
+                        throw new Exception("The attribute could not be found for updating.");
+                    }
+                }
+                else // Crear un nuevo atributo.
+                {
+                    a = new ATRIBUTO
+                    {
+                        ID = conexion.ATRIBUTO.Any() ? conexion.ATRIBUTO.Max(atributo => atributo.ID) + 1 : 1
+                    };
+                    if (sku != null) a.PRODUCTO = conexion.PRODUCTO.FirstOrDefault(producto => producto.SKU == sku);
+
+                    conexion.ATRIBUTO.Add(a);
+                }
+
+                // Validar y asignar los datos del atributo.
+                string tipoSeleccionado = comboBoxTipo.Text;
+                if (string.IsNullOrEmpty(tipoSeleccionado))
+                {
+                    throw new Exception("You must choose the type of attribute.");
+                }
+                a.TIPO = tipoSeleccionado;
+
+                if (string.IsNullOrEmpty(descriptionText.Text))
+                {
+                    throw new Exception("The description field cannot be empty.");
+                }
+
+                switch (tipoSeleccionado)
+                {
+                    case "IMAGE":
+                        a.IMAGEN = null; // Aquí podrías cargar una imagen si fuera necesario.
+                        break;
+                    case "DESCRIPTION":
+                        a.DESCRIPCION = descriptionText.Text;
+                        break;
+                    case "PRICE":
+                        if (!float.TryParse(descriptionText.Text, out float precio))
+                        {
+                            throw new Exception("Invalid price format. Please enter a valid number.");
+                        }
+                        a.PRECIO = precio;
+                        break;
+                    default:
+                        throw new Exception("Unknown attribute type.");
+                }
+
+                // Guardar los cambios en la base de datos.
+                conexion.SaveChanges();
+                MessageBox.Show("Attribute saved successfully.");
+                this.Close(); // Cerrar la ventana al guardar.
+            }
+            catch (DbEntityValidationException dbEx)
+            {
+                // Capturar errores de validación específicos de Entity Framework.
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        MessageBox.Show($"Property: {validationError.PropertyName} Error: {validationError.ErrorMessage}");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
     }
 }

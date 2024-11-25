@@ -5,20 +5,12 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="328a5f5f862f44518ccde914929391bc" Name="Diagram1">
-        <EntityTypeShape EntityType="grupo11DBModel.ATRIBUTO" Width="1.5" PointX="3" PointY="3" />
-        <EntityTypeShape EntityType="grupo11DBModel.TIPO_ATRIBUTO" Width="1.5" PointX="6.75" PointY="1.875" />
-        <AssociationConnector Association="grupo11DBModel.TIPO" />
-        <EntityTypeShape EntityType="grupo11DBModel.CATEGORIA" Width="1.5" PointX="2.75" PointY="0.75" />
-        <EntityTypeShape EntityType="grupo11DBModel.PRODUCTO" Width="1.5" PointX="0.75" PointY="0.75" />
-        <AssociationConnector Association="grupo11DBModel.TIPO1" />
+        <EntityTypeShape EntityType="grupo11DBModel.ATRIBUTO" Width="1.5" PointX="5.25" PointY="1.125" />
+        <EntityTypeShape EntityType="grupo11DBModel.CATEGORIA" Width="1.5" PointX="0.75" PointY="1.5" />
+        <EntityTypeShape EntityType="grupo11DBModel.PRODUCTO" Width="1.5" PointX="3" PointY="1" />
+        <AssociationConnector Association="grupo11DBModel.PROD_ID" />
         <AssociationConnector Association="grupo11DBModel.Categoria1" />
-        <AssociationConnector Association="grupo11DBModel.PRODRELACIONADOS" ManuallyRouted="true" >
-          <ConnectorPoint PointX="1.2819230769230767" PointY="3.691793619791667" />
-          <ConnectorPoint PointX="1.2819230769230767" PointY="3.9417936197916674" />
-          <ConnectorPoint PointX="1.7284615384615383" PointY="3.9417936197916674" />
-          <ConnectorPoint PointX="1.7284615384615383" PointY="3.691793619791667" />
-        </AssociationConnector>
-        <AssociationConnector Association="grupo11DBModel.Atributo1" />
+        <AssociationConnector Association="grupo11DBModel.PRODRELACIONADOS" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

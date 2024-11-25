@@ -37,6 +37,7 @@
             this.AddAtributoBotton = new System.Windows.Forms.Button();
             this.textBuscarAtributo = new System.Windows.Forms.TextBox();
             this.RemainingAtributesLabel = new System.Windows.Forms.Label();
+            this.AvisoNoAtributos = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewAtributos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grupo11DBDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grupo11DBDataSet)).BeginInit();
@@ -69,12 +70,13 @@
             this.GridViewAtributos.AutoGenerateColumns = false;
             this.GridViewAtributos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridViewAtributos.DataSource = this.grupo11DBDataSetBindingSource;
-            this.GridViewAtributos.Location = new System.Drawing.Point(52, 177);
+            this.GridViewAtributos.Location = new System.Drawing.Point(52, 179);
             this.GridViewAtributos.Name = "GridViewAtributos";
             this.GridViewAtributos.RowHeadersWidth = 51;
             this.GridViewAtributos.RowTemplate.Height = 24;
             this.GridViewAtributos.Size = new System.Drawing.Size(942, 303);
             this.GridViewAtributos.TabIndex = 2;
+            this.GridViewAtributos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AtributosGridClickar);
             // 
             // grupo11DBDataSetBindingSource
             // 
@@ -112,6 +114,16 @@
             this.RemainingAtributesLabel.TabIndex = 5;
             this.RemainingAtributesLabel.Text = "Add Atributtes";
             // 
+            // AvisoNoAtributos
+            // 
+            this.AvisoNoAtributos.AutoSize = true;
+            this.AvisoNoAtributos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AvisoNoAtributos.Location = new System.Drawing.Point(414, 246);
+            this.AvisoNoAtributos.Name = "AvisoNoAtributos";
+            this.AvisoNoAtributos.Size = new System.Drawing.Size(320, 175);
+            this.AvisoNoAtributos.TabIndex = 6;
+            this.AvisoNoAtributos.Text = "There are no user attributes yet.\n\n\n\n\n\n\n";
+            // 
             // GestionAtributosForm
             // 
             this.ClientSize = new System.Drawing.Size(1070, 653);
@@ -121,6 +133,7 @@
             this.Controls.Add(this.GridViewAtributos);
             this.Controls.Add(this.plytixLabel);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.AvisoNoAtributos);
             this.Name = "GestionAtributosForm";
             ((System.ComponentModel.ISupportInitialize)(this.GridViewAtributos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grupo11DBDataSetBindingSource)).EndInit();
@@ -140,5 +153,6 @@
         private System.Windows.Forms.Button AddAtributoBotton;
         private System.Windows.Forms.TextBox textBuscarAtributo;
         private System.Windows.Forms.Label RemainingAtributesLabel;
+        private System.Windows.Forms.Label AvisoNoAtributos;
     }
 }

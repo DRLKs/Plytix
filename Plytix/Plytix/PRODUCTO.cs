@@ -16,6 +16,7 @@ namespace Plytix
     {
         public PRODUCTO()
         {
+            this.ATRIBUTO = new HashSet<ATRIBUTO>();
             this.PRODUCTO1 = new HashSet<PRODUCTO>();
             this.PRODUCTO2 = new HashSet<PRODUCTO>();
         }
@@ -25,11 +26,10 @@ namespace Plytix
         public string SKU { get; set; }
         public string GTIN { get; set; }
         public Nullable<int> CATEGORIAID { get; set; }
-        public Nullable<int> ATRIBUTOID { get; set; }
     
+        public virtual ICollection<ATRIBUTO> ATRIBUTO { get; set; }
         public virtual CATEGORIA CATEGORIA { get; set; }
         public virtual ICollection<PRODUCTO> PRODUCTO1 { get; set; }
         public virtual ICollection<PRODUCTO> PRODUCTO2 { get; set; }
-        public virtual ATRIBUTO ATRIBUTO { get; set; }
     }
 }
