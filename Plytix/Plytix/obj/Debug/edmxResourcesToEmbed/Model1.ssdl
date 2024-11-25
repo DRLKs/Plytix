@@ -5,12 +5,13 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Resumen" Type="varchar" MaxLength="25" Nullable="false" />
     <Property Name="TIPO" Type="varchar" MaxLength="15" Nullable="false" />
-    <Property Name="DESCRIPCION" Type="varchar" MaxLength="250" />
-    <Property Name="IMAGEN" Type="blob" />
-    <Property Name="PRECIO" Type="float" />
-    <Property Name="PRODUCTOID" Type="varchar" MaxLength="50" />
+    <Property Name="STRING" Type="varchar" MaxLength="250" />
+    <Property Name="ARCHIVO" Type="blob" />
+    <Property Name="FLOAT" Type="float" />
+    <Property Name="INT" Type="int" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="PRODUCTOID" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="CATEGORIA">
     <Key>
@@ -49,18 +50,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="PROD_ID">
-    <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="0..1" />
-    <End Role="ATRIBUTO" Type="Self.ATRIBUTO" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="PRODUCTO">
-        <PropertyRef Name="SKU" />
-      </Principal>
-      <Dependent Role="ATRIBUTO">
-        <PropertyRef Name="PRODUCTOID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="RELP1">
     <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="1" />
     <End Role="PRODRELACIONADOS" Type="Self.PRODRELACIONADOS" Multiplicity="*" />
@@ -93,10 +82,6 @@
     <AssociationSet Name="Categoria1" Association="Self.Categoria1">
       <End Role="CATEGORIA" EntitySet="CATEGORIA" />
       <End Role="PRODUCTO" EntitySet="PRODUCTO" />
-    </AssociationSet>
-    <AssociationSet Name="PROD_ID" Association="Self.PROD_ID">
-      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
-      <End Role="ATRIBUTO" EntitySet="ATRIBUTO" />
     </AssociationSet>
     <AssociationSet Name="RELP1" Association="Self.RELP1">
       <End Role="PRODUCTO" EntitySet="PRODUCTO" />

@@ -5,11 +5,12 @@
       <EntityTypeMapping TypeName="grupo11DBModel.ATRIBUTO">
         <MappingFragment StoreEntitySet="ATRIBUTO">
           <ScalarProperty Name="PRODUCTOID" ColumnName="PRODUCTOID" />
-          <ScalarProperty Name="PRECIO" ColumnName="PRECIO" />
-          <ScalarProperty Name="IMAGEN" ColumnName="IMAGEN" />
-          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="INT" ColumnName="INT" />
+          <ScalarProperty Name="FLOAT" ColumnName="FLOAT" />
+          <ScalarProperty Name="ARCHIVO" ColumnName="ARCHIVO" />
+          <ScalarProperty Name="STRING" ColumnName="STRING" />
           <ScalarProperty Name="TIPO" ColumnName="TIPO" />
-          <ScalarProperty Name="Resumen" ColumnName="Resumen" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

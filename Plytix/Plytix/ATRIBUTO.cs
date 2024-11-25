@@ -15,13 +15,12 @@ namespace Plytix
     public partial class ATRIBUTO
     {
         public int ID { get; set; }
-        public string Resumen { get; set; }
         public string TIPO { get; set; }
-        public string DESCRIPCION { get; set; }
-        public byte[] IMAGEN { get; set; }
-        public Nullable<float> PRECIO { get; set; }
+        public string STRING { get; set; }
+        public byte[] ARCHIVO { get; set; }
+        public Nullable<float> FLOAT { get; set; }
+        public Nullable<int> INT { get; set; }
+        public string NOMBRE { get; set; }
         public string PRODUCTOID { get; set; }
-    
-        public virtual PRODUCTO PRODUCTO { get; set; }
     }
 }

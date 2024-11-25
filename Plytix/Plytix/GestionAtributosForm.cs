@@ -23,27 +23,33 @@ namespace Plytix
             InitializeComponent();
             conexion = new grupo11DBEntities();
             this.sku = sku;
+            this.FormClosing += MainForm_FormClosing;   // Para cerrar el programa no solo el FORMS
+            GridViewAtributos.AllowUserToAddRows = false;
             CargarAtributos();
         }
 
         public void CargarAtributos()
         {
-            if (sku != null)
+            GridViewAtributos.DataSource = null;
+
+            GridViewAtributos.Columns.Clear(); // Asegúrate de que no haya columnas duplicadas
+            GridViewAtributos.Rows.Clear();    // Limpia filas anteriores, si las hubiera
+
+            if (sku != null)    /* Estaría especificado el producto */
             {
                 listaAtributos = (from atributo in conexion.ATRIBUTO
                                   where atributo.PRODUCTOID == this.sku
                                   select atributo).ToList();
             }
-            else
+            else                /* Todos los productos */
             {
-                listaAtributos = (from atributo in conexion.ATRIBUTO
-                                                   select atributo).ToList();
+                listaAtributos = (from atributo in conexion.ATRIBUTO select atributo).ToList();
             }
 
-            GridViewAtributos.DataSource = listaAtributos;
+            if (this.sku != null) RemainingAtributesLabel.Text = "Remaining available attributes: " + (5 - listaAtributos.Count);  /* En los generales no sale */
+            else RemainingAtributesLabel.Hide();
 
-            RemainingAtributesLabel.Text = "Remaining available attributes: " + (5 - listaAtributos.Count);
-            if (listaAtributos.Count >= 5)
+            if (listaAtributos.Count >= 5 && this.sku != null)  /* No permitimos añadir más productos */
             {
                 AddAtributoBotton.Hide();
                 AddAttributesLabel.Hide();
@@ -52,6 +58,7 @@ namespace Plytix
 
             // Configura columnas
             GridViewAtributos.Columns.Add("ID", "ID");
+            GridViewAtributos.Columns.Add("NOMBRE", "NAME");
             GridViewAtributos.Columns.Add("TIPO", "TYPE");
             GridViewAtributos.Columns.Add("Valor", "VALUE");
 
@@ -76,17 +83,21 @@ namespace Plytix
             {
                 switch (a.TIPO)
                 {
-                    case "IMAGE":
-                        Image img = ConvertirBlobAImagen( a.IMAGEN );
-                        GridViewAtributos.Rows.Add(a.ID, a.Resumen, a.TIPO, img);
+                    case "ARCHIVO":
+                        Image img = ConvertirBlobAImagen( a.ARCHIVO );
+                        GridViewAtributos.Rows.Add(a.ID, a.NOMBRE, a.TIPO, img);
                         break;
 
-                    case "DESCRIPTION":
-                        GridViewAtributos.Rows.Add(a.ID, a.Resumen, a.TIPO, a.DESCRIPCION);
+                    case "STRING":
+                        GridViewAtributos.Rows.Add(a.ID, a.NOMBRE, a.TIPO, a.STRING);
                         break;
 
-                    case "PRICE":
-                        GridViewAtributos.Rows.Add(a.ID, a.Resumen, a.TIPO, a.PRECIO);
+                    case "FLOAT":
+                        GridViewAtributos.Rows.Add(a.ID, a.NOMBRE, a.TIPO, a.FLOAT.ToString());
+                        break;
+
+                    case "INT":
+                        GridViewAtributos.Rows.Add(a.ID, a.NOMBRE, a.TIPO, a.INT.ToString());
                         break;
 
                     default:
@@ -118,8 +129,8 @@ namespace Plytix
                 return;
 
             // Identificar la columna donde ocurrió el clic
-            String resume = GridViewAtributos.Rows[e.RowIndex].Cells["Resumen"].Value.ToString();
-            int id = (from atributo in conexion.ATRIBUTO where atributo.Resumen == resume select atributo.ID).FirstOrDefault();
+
+            int id = (int) GridViewAtributos.Rows[e.RowIndex].Cells["ID"].Value;
 
             string columnName = GridViewAtributos.Columns[e.ColumnIndex].Name;
 
@@ -168,5 +179,12 @@ namespace Plytix
             mainForm.Show();
             this.Hide();
         }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Cierra toda la aplicación
+            Application.Exit();
+        }
+
     }
 }

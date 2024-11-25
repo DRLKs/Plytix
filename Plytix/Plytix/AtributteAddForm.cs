@@ -46,7 +46,7 @@ namespace Plytix
             comboBoxTipo.AutoCompleteSource = AutoCompleteSource.ListItems;
 
             // Lista de tipos permitidos.
-            List<string> tipos = new List<string> { "IMAGE", "DESCRIPTION", "PRICE" };
+            List<string> tipos = new List<string> { "STRING", "ARCHIVO", "FLOAT", "INT" };
             foreach (string tipo in tipos)
             {
                 comboBoxTipo.Items.Add(tipo);
@@ -78,17 +78,7 @@ namespace Plytix
                 else // Crear un nuevo atributo.
                 {
                     a = new ATRIBUTO();
-                    
-                    if (sku != null)
-                    {
-                        a.PRODUCTOID = sku;
-                        a.PRODUCTO = conexion.PRODUCTO.FirstOrDefault(producto => producto.SKU == sku);
-                    }
-                    else
-                    {
-                        a.PRODUCTOID = null;
-                        a.PRODUCTO = null;
-                    }
+                    a.PRODUCTOID = sku;
                 }
 
                 // Validar y asignar los datos del atributo.
@@ -104,35 +94,42 @@ namespace Plytix
                 {
                     throw new Exception("The resume field cannot be empty.");
                 }
-                a.Resumen = ResumeText.Text;
+                a.NOMBRE = ResumeText.Text;
 
-                if (!new[] { "IMAGE", "DESCRIPTION", "PRICE" }.Contains(tipoSeleccionado))
+                if (!new[] { "STRING", "ARCHIVO", "FLOAT", "INT" }.Contains(tipoSeleccionado))
                 {
                     throw new Exception("Tipo de atributo no válido.");
                 }
 
                 switch (tipoSeleccionado)
                 {
-                    case "IMAGE":
+                    case "ARCHIVO":
                         if (string.IsNullOrEmpty(imagePath))
                         {
                             throw new Exception("Image Path null.");
                         }
-                        a.IMAGEN = ConvertirImagenABlob(imagePath);
+                        a.ARCHIVO = ConvertirImagenABlob(imagePath);
                         break;
-                    case "DESCRIPTION":
+                    case "STRING":
                         if (string.IsNullOrEmpty(descriptionText.Text))
                         {
-                            throw new Exception("Description is null");
+                            throw new Exception("String is null");
                         }
-                        a.DESCRIPCION = descriptionText.Text;
+                        a.STRING = descriptionText.Text;
                         break;
-                    case "PRICE":
-                        if (!float.TryParse(descriptionText.Text, out float precio))
+                    case "FLOAT":
+                        if (!float.TryParse(descriptionText.Text, out float aux))
                         {
                             throw new Exception("Invalid price format. Please enter a valid number.");
                         }
-                        a.PRECIO = precio;
+                        a.FLOAT = aux;
+                        break;
+                    case "INT":
+                        if (!Int32.TryParse(descriptionText.Text, out int aux2))
+                        {
+                            throw new Exception("Invalid price format. Please enter a valid number.");
+                        }
+                        a.INT = aux2;
                         break;
                     default:
                         throw new Exception("Unknown attribute type.");
@@ -141,9 +138,7 @@ namespace Plytix
                 // Guardar los cambios en la base de datos.
 
                 conexion.ATRIBUTO.AddOrUpdate(a);
-                System.Console.WriteLine(a.ID +  a.TIPO + a.DESCRIPCION + a.Resumen);
                 conexion.SaveChanges();
-                MessageBox.Show("Attribute saved successfully.");
                 padreForm.CargarAtributos();
                 this.Close(); // Cerrar la ventana al guardar.
             }
@@ -157,23 +152,27 @@ namespace Plytix
         {
             ATRIBUTO a = (from atributo in conexion.ATRIBUTO where atributo.ID == id select atributo ).FirstOrDefault();
 
-            ResumeText.Text = a.Resumen;
+            ResumeText.Text = a.NOMBRE;
 
             string tipoSeleccionado = a.TIPO;
-            switch (tipoSeleccionado)
+            switch (tipoSeleccionado)   /* Introducimos el contenido en los TextBox */
             {
-                case "IMAGE":
+                case "ARCHIVO":
                     comboBoxTipo.SelectedIndex = 0;
                     /* Añadir cosas */
                     break;
-                case "DESCRIPTION":
+                case "STRING":
                     comboBoxTipo.SelectedIndex = 1;
 
-                    descriptionText.Text = a.DESCRIPCION;
+                    descriptionText.Text = a.STRING;
                     break;
-                case "PRICE":
+                case "FLOAT":
                     comboBoxTipo.SelectedIndex = 2;
-                    descriptionText.Text = a.PRECIO.ToString();
+                    descriptionText.Text = a.FLOAT.ToString();
+                    break;
+                case "INT":
+                    comboBoxTipo.SelectedIndex = 2;
+                    descriptionText.Text = a.INT.ToString();
                     break;
                 default:
                     throw new Exception("Unknown attribute type.");
@@ -213,29 +212,21 @@ namespace Plytix
         private void CambiaSeleccionTipo(object sender, EventArgs e)
         {
             string tipoSeleccionado = comboBoxTipo.Text;
-            switch (tipoSeleccionado)
+            if (tipoSeleccionado == "ARCHIVO")
             {
-                case "IMAGE":
-                    pictureBox.Show();
-                    BotonSubir.Show();
-                    label3.Hide();
-                    descriptionText.Hide();
-                    break;
-                case "DESCRIPTION":
-                    pictureBox.Hide();
-                    BotonSubir.Hide();
-                    label3.Show();
-                    descriptionText.Show();
-                    break;
-                case "PRICE":
-                    pictureBox.Hide();
-                    BotonSubir.Hide();
-                    label3.Show();
-                    descriptionText.Show();
-                    break;
-                default:
-                    throw new Exception("Unknown attribute type.");
+
+                pictureBox.Show();
+                BotonSubir.Show();
+                label3.Hide();
+                descriptionText.Hide();
             }
+            else
+            {
+                pictureBox.Hide();
+                BotonSubir.Hide();
+                label3.Show();
+                descriptionText.Show();
+            }                    
         }
     }
 }

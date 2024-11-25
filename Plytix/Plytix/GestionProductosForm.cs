@@ -54,22 +54,22 @@ namespace Plytix
                 {
                     ProductosGridView.Columns.Add(new DataGridViewImageColumn
                     {
-                        Name = "Thumbnail",
-                        HeaderText = "Thumbnail",
+                        Name = "THUMBNAIL",
+                        HeaderText = "THUMBNAIL",
                         ImageLayout = DataGridViewImageCellLayout.Zoom
                     });
 
-                    ProductosGridView.Columns.Add("Name", "Nombre");
+                    ProductosGridView.Columns.Add("Name", "NAME");
                     ProductosGridView.Columns.Add("SKU", "SKU");
                     ProductosGridView.Columns.Add("GTIN", "GTIN");
                     ProductosGridView.Columns.Add("Related products", "Related products");
-                    ProductosGridView.Columns.Add("Categoria", "Category");
+                    ProductosGridView.Columns.Add("Categoria", "CATEGORY");
                     ProductosGridView.Columns[4].Visible = false; // Oculto los productos relacionados
 
                     ProductosGridView.Columns.Add(new DataGridViewButtonColumn
                     {
                         Name = "Edit",
-                        HeaderText = "Edit",
+                        HeaderText = "EDIT",
                         Text = "✏️",
                         UseColumnTextForButtonValue = true
                     });
@@ -77,7 +77,7 @@ namespace Plytix
                     ProductosGridView.Columns.Add(new DataGridViewButtonColumn
                     {
                         Name = "Delete",
-                        HeaderText = "Delete",
+                        HeaderText = "DELETE",
                         Text = "🗑️",
                         UseColumnTextForButtonValue = true
                     });

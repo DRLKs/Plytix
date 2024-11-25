@@ -70,7 +70,7 @@ namespace Plytix
 
         private void AtributosClick(object sender, EventArgs e)
         {
-            var atributtesForm = new GestionAtributosForm( "1" );
+            var atributtesForm = new GestionAtributosForm( null );
             atributtesForm.Show();
             this.Hide();
         }

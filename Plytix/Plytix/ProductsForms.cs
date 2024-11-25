@@ -100,7 +100,6 @@ namespace Plytix
                         foreach( ATRIBUTO a in atributos)
                         {
                             a.PRODUCTOID = pNuevo.SKU;
-                            a.PRODUCTO = pNuevo;
                             conexion.ATRIBUTO.AddOrUpdate(a);
                         }
                         conexion.PRODUCTO.Remove(p);
@@ -150,8 +149,8 @@ namespace Plytix
                         if (textBoxGTIN.TextLength == 0) p.GTIN = null;
                     }
                     conexion.SaveChanges();
-                    formsQueLoLlama.CargarProductos();
                     this.Close();
+                    formsQueLoLlama.CargarProductos();
                 }
                 catch (Exception ex)
                 {

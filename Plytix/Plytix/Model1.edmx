@@ -10,12 +10,13 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Resumen" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="TIPO" Type="varchar" MaxLength="15" Nullable="false" />
-          <Property Name="DESCRIPCION" Type="varchar" MaxLength="250" />
-          <Property Name="IMAGEN" Type="blob" />
-          <Property Name="PRECIO" Type="float" />
-          <Property Name="PRODUCTOID" Type="varchar" MaxLength="50" />
+          <Property Name="STRING" Type="varchar" MaxLength="250" />
+          <Property Name="ARCHIVO" Type="blob" />
+          <Property Name="FLOAT" Type="float" />
+          <Property Name="INT" Type="int" />
+          <Property Name="NOMBRE" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="PRODUCTOID" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="CATEGORIA">
           <Key>
@@ -54,18 +55,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="PROD_ID">
-          <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="0..1" />
-          <End Role="ATRIBUTO" Type="Self.ATRIBUTO" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PRODUCTO">
-              <PropertyRef Name="SKU" />
-            </Principal>
-            <Dependent Role="ATRIBUTO">
-              <PropertyRef Name="PRODUCTOID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="RELP1">
           <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="1" />
           <End Role="PRODRELACIONADOS" Type="Self.PRODRELACIONADOS" Multiplicity="*" />
@@ -99,10 +88,6 @@
             <End Role="CATEGORIA" EntitySet="CATEGORIA" />
             <End Role="PRODUCTO" EntitySet="PRODUCTO" />
           </AssociationSet>
-          <AssociationSet Name="PROD_ID" Association="Self.PROD_ID">
-            <End Role="PRODUCTO" EntitySet="PRODUCTO" />
-            <End Role="ATRIBUTO" EntitySet="ATRIBUTO" />
-          </AssociationSet>
           <AssociationSet Name="RELP1" Association="Self.RELP1">
             <End Role="PRODUCTO" EntitySet="PRODUCTO" />
             <End Role="PRODRELACIONADOS" EntitySet="PRODRELACIONADOS" />
@@ -120,10 +105,6 @@
           <EntitySet Name="ATRIBUTO" EntityType="grupo11DBModel.ATRIBUTO" />
           <EntitySet Name="CATEGORIA" EntityType="grupo11DBModel.CATEGORIA" />
           <EntitySet Name="PRODUCTO" EntityType="grupo11DBModel.PRODUCTO" />
-          <AssociationSet Name="PROD_ID" Association="grupo11DBModel.PROD_ID">
-            <End Role="PRODUCTO" EntitySet="PRODUCTO" />
-            <End Role="ATRIBUTO" EntitySet="ATRIBUTO" />
-          </AssociationSet>
           <AssociationSet Name="Categoria1" Association="grupo11DBModel.Categoria1">
             <End Role="CATEGORIA" EntitySet="CATEGORIA" />
             <End Role="PRODUCTO" EntitySet="PRODUCTO" />
@@ -138,13 +119,13 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Resumen" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
           <Property Name="TIPO" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
-          <Property Name="DESCRIPCION" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="IMAGEN" Type="Binary" MaxLength="65535" FixedLength="false" />
-          <Property Name="PRECIO" Type="Single" />
-          <Property Name="PRODUCTOID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="PRODUCTO" Relationship="grupo11DBModel.PROD_ID" FromRole="ATRIBUTO" ToRole="PRODUCTO" />
+          <Property Name="STRING" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ARCHIVO" Type="Binary" MaxLength="65535" FixedLength="false" />
+          <Property Name="FLOAT" Type="Single" />
+          <Property Name="INT" Type="Int32" />
+          <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Name="PRODUCTOID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="CATEGORIA">
           <Key>
@@ -163,23 +144,10 @@
           <Property Name="SKU" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="GTIN" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
           <Property Name="CATEGORIAID" Type="Int32" />
-          <NavigationProperty Name="ATRIBUTO" Relationship="grupo11DBModel.PROD_ID" FromRole="PRODUCTO" ToRole="ATRIBUTO" />
           <NavigationProperty Name="CATEGORIA" Relationship="grupo11DBModel.Categoria1" FromRole="PRODUCTO" ToRole="CATEGORIA" />
           <NavigationProperty Name="PRODUCTO1" Relationship="grupo11DBModel.PRODRELACIONADOS" FromRole="PRODUCTO" ToRole="PRODUCTO1" />
           <NavigationProperty Name="PRODUCTO2" Relationship="grupo11DBModel.PRODRELACIONADOS" FromRole="PRODUCTO1" ToRole="PRODUCTO" />
         </EntityType>
-        <Association Name="PROD_ID">
-          <End Type="grupo11DBModel.PRODUCTO" Role="PRODUCTO" Multiplicity="0..1" />
-          <End Type="grupo11DBModel.ATRIBUTO" Role="ATRIBUTO" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PRODUCTO">
-              <PropertyRef Name="SKU" />
-            </Principal>
-            <Dependent Role="ATRIBUTO">
-              <PropertyRef Name="PRODUCTOID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="Categoria1">
           <End Type="grupo11DBModel.CATEGORIA" Role="CATEGORIA" Multiplicity="0..1" />
           <End Type="grupo11DBModel.PRODUCTO" Role="PRODUCTO" Multiplicity="*" />
@@ -206,11 +174,12 @@
             <EntityTypeMapping TypeName="grupo11DBModel.ATRIBUTO">
               <MappingFragment StoreEntitySet="ATRIBUTO">
                 <ScalarProperty Name="PRODUCTOID" ColumnName="PRODUCTOID" />
-                <ScalarProperty Name="PRECIO" ColumnName="PRECIO" />
-                <ScalarProperty Name="IMAGEN" ColumnName="IMAGEN" />
-                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="INT" ColumnName="INT" />
+                <ScalarProperty Name="FLOAT" ColumnName="FLOAT" />
+                <ScalarProperty Name="ARCHIVO" ColumnName="ARCHIVO" />
+                <ScalarProperty Name="STRING" ColumnName="STRING" />
                 <ScalarProperty Name="TIPO" ColumnName="TIPO" />
-                <ScalarProperty Name="Resumen" ColumnName="Resumen" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

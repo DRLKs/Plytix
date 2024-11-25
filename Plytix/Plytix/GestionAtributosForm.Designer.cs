@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.plytixLabel = new System.Windows.Forms.Label();
-            this.GridViewAtributos = new System.Windows.Forms.DataGridView();
             this.grupo11DBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.grupo11DBDataSet = new Plytix.grupo11DBDataSet();
             this.AddAtributoBotton = new System.Windows.Forms.Button();
@@ -41,9 +40,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.AddAttributesLabel = new System.Windows.Forms.Label();
             this.Volver = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.GridViewAtributos)).BeginInit();
+            this.GridViewAtributos = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.grupo11DBDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grupo11DBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewAtributos)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -67,21 +67,6 @@
             this.plytixLabel.TabIndex = 1;
             this.plytixLabel.Text = "PLYTIX";
             this.plytixLabel.Click += new System.EventHandler(this.plytixLabel_Click);
-            // 
-            // GridViewAtributos
-            // 
-            this.GridViewAtributos.AutoGenerateColumns = false;
-            this.GridViewAtributos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.GridViewAtributos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridViewAtributos.DataSource = this.grupo11DBDataSetBindingSource;
-            this.GridViewAtributos.Location = new System.Drawing.Point(52, 179);
-            this.GridViewAtributos.Name = "GridViewAtributos";
-            this.GridViewAtributos.ReadOnly = true;
-            this.GridViewAtributos.RowHeadersWidth = 51;
-            this.GridViewAtributos.RowTemplate.Height = 24;
-            this.GridViewAtributos.Size = new System.Drawing.Size(942, 303);
-            this.GridViewAtributos.TabIndex = 2;
-            this.GridViewAtributos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AtributosGridClickar);
             // 
             // grupo11DBDataSetBindingSource
             // 
@@ -161,23 +146,35 @@
             this.Volver.UseVisualStyleBackColor = true;
             this.Volver.Click += new System.EventHandler(this.Volver_Click);
             // 
+            // GridViewAtributos
+            // 
+            this.GridViewAtributos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.GridViewAtributos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridViewAtributos.Location = new System.Drawing.Point(30, 162);
+            this.GridViewAtributos.Name = "GridViewAtributos";
+            this.GridViewAtributos.RowHeadersWidth = 51;
+            this.GridViewAtributos.RowTemplate.Height = 24;
+            this.GridViewAtributos.Size = new System.Drawing.Size(1028, 320);
+            this.GridViewAtributos.TabIndex = 12;
+            this.GridViewAtributos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AtributosGridClickar);
+            // 
             // GestionAtributosForm
             // 
             this.ClientSize = new System.Drawing.Size(1070, 653);
+            this.Controls.Add(this.GridViewAtributos);
             this.Controls.Add(this.Volver);
             this.Controls.Add(this.AddAttributesLabel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.RemainingAtributesLabel);
             this.Controls.Add(this.textBuscarAtributo);
             this.Controls.Add(this.AddAtributoBotton);
-            this.Controls.Add(this.GridViewAtributos);
             this.Controls.Add(this.plytixLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.AvisoNoAtributos);
             this.Name = "GestionAtributosForm";
-            ((System.ComponentModel.ISupportInitialize)(this.GridViewAtributos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grupo11DBDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grupo11DBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewAtributos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,7 +184,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label plytixLabel;
-        private System.Windows.Forms.DataGridView GridViewAtributos;
         private System.Windows.Forms.BindingSource grupo11DBDataSetBindingSource;
         private grupo11DBDataSet grupo11DBDataSet;
         private System.Windows.Forms.Button AddAtributoBotton;
@@ -197,5 +193,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label AddAttributesLabel;
         private System.Windows.Forms.Button Volver;
+        private System.Windows.Forms.DataGridView GridViewAtributos;
     }
 }
