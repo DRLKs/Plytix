@@ -117,14 +117,14 @@ namespace Plytix
 
             if (columnName == "Edit") // Columna Editar
             {
-                // Obtener datos del producto seleccionado
+                // Obtener datos de la categoría seleccionada
                 int id = (int) CategoriasGridView.Rows[e.RowIndex].Cells["ID"].Value;
                 EditarCategoria(id);
             }
             else if (columnName == "Delete") // Columna Eliminar
             {
                 // Confirmar antes de eliminar
-                DialogResult result = MessageBox.Show("¿Estás seguro de que deseas eliminar este producto?",
+                DialogResult result = MessageBox.Show("¿Estás seguro de que deseas eliminar esta categoría?",
                                                       "Confirmar eliminación", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {

@@ -184,27 +184,44 @@ namespace Plytix
 
         private void SubirImagenClick(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-
-            // Establecer el filtro para mostrar solo archivos de imagen
-            openFileDialog.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.bmp;";
-
-            // Mostrar el cuadro de diálogo
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            try
             {
-                // Obtener la ruta del archivo seleccionado
-                imagePath = openFileDialog.FileName;
+                OpenFileDialog openFileDialog = new OpenFileDialog();
 
-                // Mostrar la imagen en un PictureBox (si tienes uno en tu formulario)
-                pictureBox.Image = Image.FromFile(imagePath);
+                // Establecer el filtro para mostrar solo archivos de imagen
+                openFileDialog.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.bmp;";
+
+                // Mostrar el cuadro de diálogo
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Obtener la ruta del archivo seleccionado
+                    imagePath = openFileDialog.FileName;
+
+                    // Mostrar la imagen en un PictureBox (si tienes uno en tu formulario)
+                    pictureBox.Image = Image.FromFile(imagePath);
+                }
             }
+            catch 
+            {
+                MessageBox.Show("Error. No ha sido posible cargar la imagen");
+            }
+            
         }
         private Image ConvertirBlobAImagen(byte[] blob)
         {
-            using (MemoryStream ms = new MemoryStream(blob))
+            try
             {
-                return Image.FromStream(ms);
+                using (MemoryStream ms = new MemoryStream(blob))
+                {
+                    return Image.FromStream(ms);
+                }
             }
+            catch
+            {
+                MessageBox.Show("Error. No ha sido posible cargar la imagen");
+            }
+            return null;
+            
         }
 
         private void CategoriasBoxCargar()

@@ -38,6 +38,9 @@
             this.textBuscarAtributo = new System.Windows.Forms.TextBox();
             this.RemainingAtributesLabel = new System.Windows.Forms.Label();
             this.AvisoNoAtributos = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.AddAttributesLabel = new System.Windows.Forms.Label();
+            this.Volver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewAtributos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grupo11DBDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grupo11DBDataSet)).BeginInit();
@@ -68,10 +71,12 @@
             // GridViewAtributos
             // 
             this.GridViewAtributos.AutoGenerateColumns = false;
+            this.GridViewAtributos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridViewAtributos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridViewAtributos.DataSource = this.grupo11DBDataSetBindingSource;
             this.GridViewAtributos.Location = new System.Drawing.Point(52, 179);
             this.GridViewAtributos.Name = "GridViewAtributos";
+            this.GridViewAtributos.ReadOnly = true;
             this.GridViewAtributos.RowHeadersWidth = 51;
             this.GridViewAtributos.RowTemplate.Height = 24;
             this.GridViewAtributos.Size = new System.Drawing.Size(942, 303);
@@ -104,15 +109,16 @@
             this.textBuscarAtributo.Name = "textBuscarAtributo";
             this.textBuscarAtributo.Size = new System.Drawing.Size(212, 22);
             this.textBuscarAtributo.TabIndex = 4;
+            this.textBuscarAtributo.Visible = false;
             // 
             // RemainingAtributesLabel
             // 
             this.RemainingAtributesLabel.AutoSize = true;
-            this.RemainingAtributesLabel.Location = new System.Drawing.Point(675, 138);
+            this.RemainingAtributesLabel.Location = new System.Drawing.Point(619, 134);
             this.RemainingAtributesLabel.Name = "RemainingAtributesLabel";
-            this.RemainingAtributesLabel.Size = new System.Drawing.Size(90, 16);
+            this.RemainingAtributesLabel.Size = new System.Drawing.Size(202, 16);
             this.RemainingAtributesLabel.TabIndex = 5;
-            this.RemainingAtributesLabel.Text = "Add Atributtes";
+            this.RemainingAtributesLabel.Text = "Remaining available attributes: X";
             // 
             // AvisoNoAtributos
             // 
@@ -124,9 +130,43 @@
             this.AvisoNoAtributos.TabIndex = 6;
             this.AvisoNoAtributos.Text = "There are no user attributes yet.\n\n\n\n\n\n\n";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(334, 37);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(99, 29);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Buscar:";
+            this.label3.Visible = false;
+            // 
+            // AddAttributesLabel
+            // 
+            this.AddAttributesLabel.AutoSize = true;
+            this.AddAttributesLabel.Location = new System.Drawing.Point(869, 134);
+            this.AddAttributesLabel.Name = "AddAttributesLabel";
+            this.AddAttributesLabel.Size = new System.Drawing.Size(90, 16);
+            this.AddAttributesLabel.TabIndex = 10;
+            this.AddAttributesLabel.Text = "Add Atributtes";
+            // 
+            // Volver
+            // 
+            this.Volver.Location = new System.Drawing.Point(140, 40);
+            this.Volver.Name = "Volver";
+            this.Volver.Size = new System.Drawing.Size(75, 23);
+            this.Volver.TabIndex = 11;
+            this.Volver.Text = "Return";
+            this.Volver.UseVisualStyleBackColor = true;
+            this.Volver.Click += new System.EventHandler(this.Volver_Click);
+            // 
             // GestionAtributosForm
             // 
             this.ClientSize = new System.Drawing.Size(1070, 653);
+            this.Controls.Add(this.Volver);
+            this.Controls.Add(this.AddAttributesLabel);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.RemainingAtributesLabel);
             this.Controls.Add(this.textBuscarAtributo);
             this.Controls.Add(this.AddAtributoBotton);
@@ -154,5 +194,8 @@
         private System.Windows.Forms.TextBox textBuscarAtributo;
         private System.Windows.Forms.Label RemainingAtributesLabel;
         private System.Windows.Forms.Label AvisoNoAtributos;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label AddAttributesLabel;
+        private System.Windows.Forms.Button Volver;
     }
 }

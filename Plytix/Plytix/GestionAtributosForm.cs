@@ -22,8 +22,6 @@ namespace Plytix
         {
             InitializeComponent();
             conexion = new grupo11DBEntities();
-            GridViewAtributos.AllowUserToAddRows = false;
-            GridViewAtributos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             this.sku = sku;
             CargarAtributos();
         }
@@ -42,12 +40,14 @@ namespace Plytix
                                                    select atributo).ToList();
             }
 
-            GridViewAtributos.DataSource = null;
-            GridViewAtributos.Rows.Clear();
-            GridViewAtributos.Columns.Clear();
+            GridViewAtributos.DataSource = listaAtributos;
 
             RemainingAtributesLabel.Text = "Remaining available attributes: " + (5 - listaAtributos.Count);
-            if (listaAtributos.Count >= 5) AddAtributoBotton.Hide();
+            if (listaAtributos.Count >= 5)
+            {
+                AddAtributoBotton.Hide();
+                AddAttributesLabel.Hide();
+            }
             else AddAtributoBotton.Show();
 
             // Configura columnas
@@ -161,6 +161,13 @@ namespace Plytix
             {
                 return Image.FromStream(ms);
             }
+        }
+
+        private void Volver_Click(object sender, EventArgs e)
+        {
+            var mainForm = new MainForms();
+            mainForm.Show();
+            this.Hide();
         }
     }
 }

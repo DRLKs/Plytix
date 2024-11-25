@@ -164,7 +164,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(320, 318);
+            this.label6.Location = new System.Drawing.Point(316, 293);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(167, 29);
             this.label6.TabIndex = 20;
@@ -179,11 +179,12 @@
             this.label7.Size = new System.Drawing.Size(259, 29);
             this.label7.TabIndex = 21;
             this.label7.Text = "Add Related Products";
+            this.label7.Visible = false;
             // 
             // CategoriasComboBox
             // 
             this.CategoriasComboBox.FormattingEnabled = true;
-            this.CategoriasComboBox.Location = new System.Drawing.Point(150, 326);
+            this.CategoriasComboBox.Location = new System.Drawing.Point(337, 341);
             this.CategoriasComboBox.Name = "CategoriasComboBox";
             this.CategoriasComboBox.Size = new System.Drawing.Size(121, 24);
             this.CategoriasComboBox.TabIndex = 22;
@@ -195,6 +196,7 @@
             this.ProductosRelacionadoscheckedListBox.Name = "ProductosRelacionadoscheckedListBox";
             this.ProductosRelacionadoscheckedListBox.Size = new System.Drawing.Size(292, 72);
             this.ProductosRelacionadoscheckedListBox.TabIndex = 23;
+            this.ProductosRelacionadoscheckedListBox.Visible = false;
             // 
             // AttributesName
             // 

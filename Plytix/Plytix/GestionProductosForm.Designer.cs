@@ -37,6 +37,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.NoProductsLabel = new System.Windows.Forms.Label();
             this.textFiltroProductos = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ProductosGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,9 +75,11 @@
             // 
             // ProductosGridView
             // 
+            this.ProductosGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ProductosGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ProductosGridView.Location = new System.Drawing.Point(44, 162);
             this.ProductosGridView.Name = "ProductosGridView";
+            this.ProductosGridView.ReadOnly = true;
             this.ProductosGridView.RowHeadersWidth = 51;
             this.ProductosGridView.RowTemplate.Height = 24;
             this.ProductosGridView.Size = new System.Drawing.Size(1301, 327);
@@ -119,13 +122,27 @@
             this.textFiltroProductos.Name = "textFiltroProductos";
             this.textFiltroProductos.Size = new System.Drawing.Size(127, 22);
             this.textFiltroProductos.TabIndex = 7;
+            this.textFiltroProductos.Visible = false;
             this.textFiltroProductos.TextChanged += new System.EventHandler(this.NuevoFiltroProductos);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(454, 66);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(99, 29);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Buscar:";
+            this.label3.Visible = false;
             // 
             // GestionProductosForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1305, 628);
+            this.ClientSize = new System.Drawing.Size(1371, 628);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.ProductosGridView);
             this.Controls.Add(this.textFiltroProductos);
             this.Controls.Add(this.NoProductsLabel);
@@ -153,5 +170,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label NoProductsLabel;
         private System.Windows.Forms.TextBox textFiltroProductos;
+        private System.Windows.Forms.Label label3;
     }
 }

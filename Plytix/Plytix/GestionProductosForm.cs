@@ -42,14 +42,13 @@ namespace Plytix
             }
             else
             {
-                listaProductos = (from producto in conexion.PRODUCTO
+                listaProductos = (from producto in conexion.PRODUCTO 
                                   where producto.NOMBRE.Contains(filtro)
                                   select producto).ToList();
             }
 
             if (listaProductos.Count > 0)
             {
-                ProductosGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 // Configura columnas
                 if (ProductosGridView.Columns.Count == 0)
                 {
@@ -65,6 +64,7 @@ namespace Plytix
                     ProductosGridView.Columns.Add("GTIN", "GTIN");
                     ProductosGridView.Columns.Add("Related products", "Related products");
                     ProductosGridView.Columns.Add("Categoria", "Category");
+                    ProductosGridView.Columns[4].Visible = false; // Oculto los productos relacionados
 
                     ProductosGridView.Columns.Add(new DataGridViewButtonColumn
                     {
@@ -81,6 +81,7 @@ namespace Plytix
                         Text = "🗑️",
                         UseColumnTextForButtonValue = true
                     });
+
                 }
 
                 // Agrega los datos al DataGridView

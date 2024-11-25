@@ -28,7 +28,6 @@ namespace Plytix
             label3.Hide();
             descriptionText.Hide();
             // Establecer el filtro para mostrar solo archivos de imagen
-            // Establecer el filtro para mostrar solo archivos de imagen
 
             this.sku = sku;
             this.id = id;
@@ -148,20 +147,9 @@ namespace Plytix
                 padreForm.CargarAtributos();
                 this.Close(); // Cerrar la ventana al guardar.
             }
-            catch (DbEntityValidationException dbEx)
-            {
-                // Capturar errores de validación específicos de Entity Framework.
-                foreach (var validationErrors in dbEx.EntityValidationErrors)
-                {
-                    foreach (var validationError in validationErrors.ValidationErrors)
-                    {
-                        MessageBox.Show($"Property: {validationError.PropertyName} Error: {validationError.ErrorMessage}");
-                    }
-                }
-            }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message + ex.StackTrace);
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
 
