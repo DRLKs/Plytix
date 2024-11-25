@@ -114,7 +114,7 @@
             // RemainingAtributesLabel
             // 
             this.RemainingAtributesLabel.AutoSize = true;
-            this.RemainingAtributesLabel.Location = new System.Drawing.Point(619, 134);
+            this.RemainingAtributesLabel.Location = new System.Drawing.Point(49, 499);
             this.RemainingAtributesLabel.Name = "RemainingAtributesLabel";
             this.RemainingAtributesLabel.Size = new System.Drawing.Size(202, 16);
             this.RemainingAtributesLabel.TabIndex = 5;

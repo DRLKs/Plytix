@@ -52,7 +52,6 @@ namespace Plytix
 
             // Configura columnas
             GridViewAtributos.Columns.Add("ID", "ID");
-            GridViewAtributos.Columns.Add("Resumen", "RESUME");
             GridViewAtributos.Columns.Add("TIPO", "TYPE");
             GridViewAtributos.Columns.Add("Valor", "VALUE");
 

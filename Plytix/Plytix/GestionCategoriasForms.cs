@@ -69,6 +69,9 @@ namespace Plytix
                         Text = "🗑️",
                         UseColumnTextForButtonValue = true
                     });
+
+                    CategoriasGridView.Columns[2].Visible = false;  // Ocultar la columna de assets (No hay que implementarla)
+                   
                 }
                 int numProd;
                 // Agrega los datos al DataGridView
@@ -79,7 +82,7 @@ namespace Plytix
                                select p).Count();
                     CategoriasGridView.Rows.Add(c.ID,c.NOMBRE, "0", numProd);
                 }
-
+                
                 CategoriasGridView.Show();
                 CategoriasGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
@@ -148,6 +151,10 @@ namespace Plytix
 
         private void EliminarCategoria( int id)
         {
+            var productosCategoriaEliminada = from prod in conexion.PRODUCTO
+                                              where prod.CATEGORIAID == id
+                                              select prod;
+
             CATEGORIA c = (from categoria in conexion.CATEGORIA
                            where categoria.ID == id
                            select categoria).FirstOrDefault();
