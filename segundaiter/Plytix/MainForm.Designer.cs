@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.productosButton = new System.Windows.Forms.Button();
             this.categoriasButton = new System.Windows.Forms.Button();
             this.atributosButton = new System.Windows.Forms.Button();
@@ -98,6 +99,7 @@
             this.Controls.Add(this.atributosButton);
             this.Controls.Add(this.categoriasButton);
             this.Controls.Add(this.productosButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Home";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

@@ -11,7 +11,7 @@
     <Property Name="FLOAT" Type="float" />
     <Property Name="INT" Type="int" />
     <Property Name="NOMBRE" Type="varchar" MaxLength="45" Nullable="false" />
-    <Property Name="PRODUCTOID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PRODUCTOID" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="CATEGORIA">
     <Key>
@@ -19,6 +19,14 @@
     </Key>
     <Property Name="ID" Type="int" Nullable="false" />
     <Property Name="NOMBRE" Type="varchar" MaxLength="45" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PROD_CATE">
+    <Key>
+      <PropertyRef Name="PRODUCTOID" />
+      <PropertyRef Name="CATEGORIAID" />
+    </Key>
+    <Property Name="PRODUCTOID" Type="int" Nullable="false" />
+    <Property Name="CATEGORIAID" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="PRODRELACIONADOS">
     <Key>
@@ -30,66 +38,57 @@
   </EntityType>
   <EntityType Name="PRODUCTO">
     <Key>
-      <PropertyRef Name="SKU" />
+      <PropertyRef Name="ID" />
     </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="THUMBNAIL" Type="blob" />
     <Property Name="NOMBRE" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="SKU" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="GTIN" Type="varchar" MaxLength="45" />
-    <Property Name="CATEGORIAID" Type="int" />
   </EntityType>
-  <Association Name="Categoria1">
-    <End Role="CATEGORIA" Type="Self.CATEGORIA" Multiplicity="0..1" />
-    <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="*" />
+  <Association Name="CATEGORIAREL">
+    <End Role="CATEGORIA" Type="Self.CATEGORIA" Multiplicity="1" />
+    <End Role="PROD_CATE" Type="Self.PROD_CATE" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="CATEGORIA">
         <PropertyRef Name="ID" />
       </Principal>
-      <Dependent Role="PRODUCTO">
+      <Dependent Role="PROD_CATE">
         <PropertyRef Name="CATEGORIAID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="RELP1">
+  <Association Name="PRODUCTOREL">
     <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="1" />
-    <End Role="PRODRELACIONADOS" Type="Self.PRODRELACIONADOS" Multiplicity="*" />
+    <End Role="PROD_CATE" Type="Self.PROD_CATE" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="PRODUCTO">
-        <PropertyRef Name="SKU" />
+        <PropertyRef Name="ID" />
       </Principal>
-      <Dependent Role="PRODRELACIONADOS">
-        <PropertyRef Name="PROD1" />
+      <Dependent Role="PROD_CATE">
+        <PropertyRef Name="PRODUCTOID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="RELP2">
-    <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="1" />
-    <End Role="PRODRELACIONADOS" Type="Self.PRODRELACIONADOS" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="PRODUCTO">
-        <PropertyRef Name="SKU" />
-      </Principal>
-      <Dependent Role="PRODRELACIONADOS">
-        <PropertyRef Name="PROD2" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
+  <!--Errores durante la generación:
+advertencia 6035: La relación 'RELP1' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+        <Association Name="RELP1" />-->
+  <!--Errores durante la generación:
+advertencia 6035: La relación 'RELP2' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+        <Association Name="RELP2" />-->
   <EntityContainer Name="grupo11DBModelStoreContainer">
     <EntitySet Name="ATRIBUTO" EntityType="Self.ATRIBUTO" Schema="grupo11DB" store:Type="Tables" />
     <EntitySet Name="CATEGORIA" EntityType="Self.CATEGORIA" Schema="grupo11DB" store:Type="Tables" />
+    <EntitySet Name="PROD_CATE" EntityType="Self.PROD_CATE" Schema="grupo11DB" store:Type="Tables" />
     <EntitySet Name="PRODRELACIONADOS" EntityType="Self.PRODRELACIONADOS" Schema="grupo11DB" store:Type="Tables" />
     <EntitySet Name="PRODUCTO" EntityType="Self.PRODUCTO" Schema="grupo11DB" store:Type="Tables" />
-    <AssociationSet Name="Categoria1" Association="Self.Categoria1">
+    <AssociationSet Name="CATEGORIAREL" Association="Self.CATEGORIAREL">
       <End Role="CATEGORIA" EntitySet="CATEGORIA" />
-      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+      <End Role="PROD_CATE" EntitySet="PROD_CATE" />
     </AssociationSet>
-    <AssociationSet Name="RELP1" Association="Self.RELP1">
+    <AssociationSet Name="PRODUCTOREL" Association="Self.PRODUCTOREL">
       <End Role="PRODUCTO" EntitySet="PRODUCTO" />
-      <End Role="PRODRELACIONADOS" EntitySet="PRODRELACIONADOS" />
-    </AssociationSet>
-    <AssociationSet Name="RELP2" Association="Self.RELP2">
-      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
-      <End Role="PRODRELACIONADOS" EntitySet="PRODRELACIONADOS" />
+      <End Role="PROD_CATE" EntitySet="PROD_CATE" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

@@ -16,6 +16,7 @@ namespace Plytix
         public CategoriasListarForm()
         {
             InitializeComponent();
+            this.FormClosing += MainForm_FormClosing;   // Para cerrar el programa no solo el FORMS
         }
 
         public void CategoriasListarForm_Load(object sender, EventArgs e)
@@ -108,6 +109,11 @@ namespace Plytix
             MainForm form = new MainForm();
             form.Show();
             Close();
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

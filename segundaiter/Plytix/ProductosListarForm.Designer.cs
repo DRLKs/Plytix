@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductosListarForm));
             this.ProductosGridView = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.plytixLabel = new System.Windows.Forms.Label();
@@ -125,6 +126,7 @@
             this.Controls.Add(this.plytixLabel);
             this.Controls.Add(this.ProductosGridView);
             this.Controls.Add(this.label2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ProductosListarForm";
             this.Text = "Home > Products";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

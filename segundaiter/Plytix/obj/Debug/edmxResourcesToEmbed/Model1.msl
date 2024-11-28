@@ -23,23 +23,31 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="PRODRELACIONADOS">
+      <EntityTypeMapping TypeName="grupo11DBModel.PRODRELACIONADOS">
+        <MappingFragment StoreEntitySet="PRODRELACIONADOS">
+          <ScalarProperty Name="PROD2" ColumnName="PROD2" />
+          <ScalarProperty Name="PROD1" ColumnName="PROD1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="PRODUCTO">
       <EntityTypeMapping TypeName="grupo11DBModel.PRODUCTO">
         <MappingFragment StoreEntitySet="PRODUCTO">
-          <ScalarProperty Name="CATEGORIAID" ColumnName="CATEGORIAID" />
           <ScalarProperty Name="GTIN" ColumnName="GTIN" />
           <ScalarProperty Name="SKU" ColumnName="SKU" />
           <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
           <ScalarProperty Name="THUMBNAIL" ColumnName="THUMBNAIL" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="PRODRELACIONADOS" TypeName="grupo11DBModel.PRODRELACIONADOS" StoreEntitySet="PRODRELACIONADOS">
-      <EndProperty Name="PRODUCTO1">
-        <ScalarProperty Name="SKU" ColumnName="PROD2" />
-      </EndProperty>
+    <AssociationSetMapping Name="PROD_CATE" TypeName="grupo11DBModel.PROD_CATE" StoreEntitySet="PROD_CATE">
       <EndProperty Name="PRODUCTO">
-        <ScalarProperty Name="SKU" ColumnName="PROD1" />
+        <ScalarProperty Name="ID" ColumnName="PRODUCTOID" />
+      </EndProperty>
+      <EndProperty Name="CATEGORIA">
+        <ScalarProperty Name="ID" ColumnName="CATEGORIAID" />
       </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>

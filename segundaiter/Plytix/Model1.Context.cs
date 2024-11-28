@@ -27,6 +27,7 @@ namespace Plytix
     
         public DbSet<ATRIBUTO> ATRIBUTO { get; set; }
         public DbSet<CATEGORIA> CATEGORIA { get; set; }
+        public DbSet<PRODRELACIONADOS> PRODRELACIONADOS { get; set; }
         public DbSet<PRODUCTO> PRODUCTO { get; set; }
     }
 }

@@ -43,9 +43,7 @@ namespace Plytix
 
             // IMPORTANTE: METER DENTRO DE UN if(seleccionado.categorias != null) para que no pete si el producto no tiene ninguna categoría
 
-            var categoriasProducto = (from c in bd.CATEGORIA // Para que aparezcan las categorías (CAMBIAR A LISTA PQ UN PRODUCTO PUEDE TENER MUCHAS CATEGORÍAS)
-                                     where c.ID == seleccionado.CATEGORIA.ID
-                                     select c).ToList();
+            var categoriasProducto = seleccionado.CATEGORIA.ToList();
             categoriaListBox.DataSource = bd.CATEGORIA.ToList();
             categoriaListBox.ClearSelected();
             if (categoriasProducto != null)

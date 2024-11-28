@@ -11,6 +11,7 @@ namespace Plytix
         public ProductosListarForm()
         {
             InitializeComponent();
+            this.FormClosing += MainForm_FormClosing;   // Para cerrar el programa no solo el FORMS
         }
 
         public void ProductosListarForm_Load(object sender, EventArgs e)
@@ -88,6 +89,11 @@ namespace Plytix
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

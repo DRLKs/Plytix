@@ -22,8 +22,15 @@ namespace Plytix
         {
             try
             {
-                CATEGORIA categoria = new CATEGORIA();
-                categoria.NOMBRE = textBoxNombre.Text;
+                if(textBoxNombre.Text == "" || textBoxNombre.Text == null)
+                {
+                    throw new Exception("Debe rellenar antes el campo NAME");
+                }
+                CATEGORIA categoria = new CATEGORIA
+                {   
+                    NOMBRE = textBoxNombre.Text,
+                    PRODUCTO = new HashSet<PRODUCTO>()
+                };
                 bd.CATEGORIA.Add(categoria);
                 bd.SaveChanges();
 
@@ -32,7 +39,7 @@ namespace Plytix
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message + ex.StackTrace);
             }
             
         }
