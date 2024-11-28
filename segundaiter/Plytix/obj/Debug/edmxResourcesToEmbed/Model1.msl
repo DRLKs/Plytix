@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="grupo11DBModelStoreContainer" CdmEntityContainer="grupo11DBEntities">
+    <EntitySetMapping Name="ATRIBUTO">
+      <EntityTypeMapping TypeName="grupo11DBModel.ATRIBUTO">
+        <MappingFragment StoreEntitySet="ATRIBUTO">
+          <ScalarProperty Name="PRODUCTOID" ColumnName="PRODUCTOID" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="INT" ColumnName="INT" />
+          <ScalarProperty Name="FLOAT" ColumnName="FLOAT" />
+          <ScalarProperty Name="ARCHIVO" ColumnName="ARCHIVO" />
+          <ScalarProperty Name="STRING" ColumnName="STRING" />
+          <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CATEGORIA">
+      <EntityTypeMapping TypeName="grupo11DBModel.CATEGORIA">
+        <MappingFragment StoreEntitySet="CATEGORIA">
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCTO">
+      <EntityTypeMapping TypeName="grupo11DBModel.PRODUCTO">
+        <MappingFragment StoreEntitySet="PRODUCTO">
+          <ScalarProperty Name="CATEGORIAID" ColumnName="CATEGORIAID" />
+          <ScalarProperty Name="GTIN" ColumnName="GTIN" />
+          <ScalarProperty Name="SKU" ColumnName="SKU" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="THUMBNAIL" ColumnName="THUMBNAIL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="PRODRELACIONADOS" TypeName="grupo11DBModel.PRODRELACIONADOS" StoreEntitySet="PRODRELACIONADOS">
+      <EndProperty Name="PRODUCTO1">
+        <ScalarProperty Name="SKU" ColumnName="PROD2" />
+      </EndProperty>
+      <EndProperty Name="PRODUCTO">
+        <ScalarProperty Name="SKU" ColumnName="PROD1" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

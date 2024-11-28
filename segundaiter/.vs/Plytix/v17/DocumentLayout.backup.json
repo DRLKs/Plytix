@@ -1,0 +1,232 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\plytix\\categoriaslistarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\categoriaslistarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\plytix\\categoriaslistarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\categoriaslistarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\plytix\\categoriasa\u00F1adirform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\categoriasa\u00F1adirform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\plytix\\categoriasa\u00F1adirform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\categoriasa\u00F1adirform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\plytix\\productoseditarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\productoseditarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\plytix\\productoseditarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\productoseditarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|c:\\users\\franc\\desktop\\ing. requisitos\\plytix\\plytix-implementacion\\plytix\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\plytix\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\plytix\\productoslistarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\productoslistarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\plytix\\productoslistarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\productoslistarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\plytix\\categoriaseditarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\categoriaseditarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\plytix\\categoriaseditarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\categoriaseditarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\plytix\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MainForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\Plytix\\MainForm.cs",
+              "RelativeDocumentMoniker": "Plytix\\MainForm.cs",
+              "ToolTip": "C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\Plytix\\MainForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Plytix\\MainForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T13:04:01.073Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CategoriasA\u00F1adirForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\Plytix\\CategoriasA\u00F1adirForm.cs",
+              "RelativeDocumentMoniker": "Plytix\\CategoriasA\u00F1adirForm.cs",
+              "ToolTip": "C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\Plytix\\CategoriasA\u00F1adirForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Plytix\\CategoriasA\u00F1adirForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T13:00:24.224Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CategoriasA\u00F1adirForm.cs",
+              "DocumentMoniker": "C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\Plytix\\CategoriasA\u00F1adirForm.cs",
+              "RelativeDocumentMoniker": "Plytix\\CategoriasA\u00F1adirForm.cs",
+              "ToolTip": "C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\Plytix\\CategoriasA\u00F1adirForm.cs",
+              "RelativeToolTip": "Plytix\\CategoriasA\u00F1adirForm.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwBQAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T13:03:14.084Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CategoriasListarForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\Plytix\\CategoriasListarForm.cs",
+              "RelativeDocumentMoniker": "Plytix\\CategoriasListarForm.cs",
+              "ToolTip": "C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\Plytix\\CategoriasListarForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Plytix\\CategoriasListarForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T11:53:38.205Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CategoriasListarForm.cs",
+              "DocumentMoniker": "C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\Plytix\\CategoriasListarForm.cs",
+              "RelativeDocumentMoniker": "Plytix\\CategoriasListarForm.cs",
+              "ToolTip": "C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\Plytix\\CategoriasListarForm.cs",
+              "RelativeToolTip": "Plytix\\CategoriasListarForm.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAjwBYAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T11:58:48.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProductosEditarForm.cs",
+              "DocumentMoniker": "C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\Plytix\\ProductosEditarForm.cs",
+              "RelativeDocumentMoniker": "Plytix\\ProductosEditarForm.cs",
+              "ToolTip": "C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\Plytix\\ProductosEditarForm.cs",
+              "RelativeToolTip": "Plytix\\ProductosEditarForm.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAArwCwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T12:44:08.93Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProductosEditarForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\Plytix\\ProductosEditarForm.cs",
+              "RelativeDocumentMoniker": "Plytix\\ProductosEditarForm.cs",
+              "ToolTip": "C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\Plytix\\ProductosEditarForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Plytix\\ProductosEditarForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T12:44:07.289Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ProductosListarForm.cs",
+              "DocumentMoniker": "C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\Plytix\\ProductosListarForm.cs",
+              "RelativeDocumentMoniker": "Plytix\\ProductosListarForm.cs",
+              "ToolTip": "C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\Plytix\\ProductosListarForm.cs",
+              "RelativeToolTip": "Plytix\\ProductosListarForm.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAIA6wBkAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T11:59:46.888Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ProductosListarForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\Plytix\\ProductosListarForm.cs",
+              "RelativeDocumentMoniker": "Plytix\\ProductosListarForm.cs",
+              "ToolTip": "C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\Plytix\\ProductosListarForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Plytix\\ProductosListarForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T13:04:05.293Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\Plytix\\MainForm.cs",
+              "RelativeDocumentMoniker": "Plytix\\MainForm.cs",
+              "ToolTip": "C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\Plytix\\MainForm.cs",
+              "RelativeToolTip": "Plytix\\MainForm.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAD4vzMAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T13:22:11.265Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CategoriasEditarForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\Plytix\\CategoriasEditarForm.cs",
+              "RelativeDocumentMoniker": "Plytix\\CategoriasEditarForm.cs",
+              "ToolTip": "C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\Plytix\\CategoriasEditarForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Plytix\\CategoriasEditarForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T12:49:19.898Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CategoriasEditarForm.cs",
+              "DocumentMoniker": "C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\Plytix\\CategoriasEditarForm.cs",
+              "RelativeDocumentMoniker": "Plytix\\CategoriasEditarForm.cs",
+              "ToolTip": "C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\Plytix\\CategoriasEditarForm.cs",
+              "RelativeToolTip": "Plytix\\CategoriasEditarForm.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAIAwwCEAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T12:49:33.339Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CATEGORIA.cs",
+              "DocumentMoniker": "C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\Plytix\\CATEGORIA.cs",
+              "RelativeDocumentMoniker": "Plytix\\CATEGORIA.cs",
+              "ToolTip": "C:\\Users\\franc\\Desktop\\ING. REQUISITOS\\Plytix\\Plytix-Implementacion\\Plytix\\CATEGORIA.cs",
+              "RelativeToolTip": "Plytix\\CATEGORIA.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T08:20:20.522Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
