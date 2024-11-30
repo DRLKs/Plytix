@@ -20,6 +20,8 @@ namespace Plytix
             categoria = (from c in bd.CATEGORIA
                         where c.ID == id
                         select c).First();
+
+            textBoxNombre.Focus();
         }
 
         private void CategoriaEditarForm_Load(object sender, EventArgs e)
@@ -28,6 +30,20 @@ namespace Plytix
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
+        {
+            EditarCategoria();
+        }
+
+        private void textBoxNombre_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) // Detecta si se presionó Enter
+            {
+                e.SuppressKeyPress = true; // Previene el sonido "beep" que puede ocurrir
+                EditarCategoria(); 
+            }
+        }
+
+        private void EditarCategoria()
         {
             categoria.NOMBRE = textBoxNombre.Text;
             bd.SaveChanges();

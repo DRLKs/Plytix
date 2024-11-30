@@ -108,7 +108,7 @@ namespace Plytix
         {
             MainForm form = new MainForm();
             form.Show();
-            Close();
+            this.Close();
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)

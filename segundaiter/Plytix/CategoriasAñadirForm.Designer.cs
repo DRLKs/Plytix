@@ -42,6 +42,7 @@
             this.textBoxNombre.Size = new System.Drawing.Size(253, 30);
             this.textBoxNombre.TabIndex = 40;
             this.textBoxNombre.TabStop = false;
+            this.textBoxNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxNombre_KeyDown);
             // 
             // label5
             // 

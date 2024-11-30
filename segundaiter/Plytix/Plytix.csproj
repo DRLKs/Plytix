@@ -131,9 +131,13 @@
     <Compile Include="CategoriasListarForm.Designer.cs">
       <DependentUpon>CategoriasListarForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Conexion.cs" />
-    <Compile Include="ConexionMySQL.cs" />
-    <Compile Include="Consulta.cs" />
+    <Compile Include="ProductosAñadirForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include=".Designer.cs">
+      <DependentUpon>ProductosAñadirForm.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="grupo11DBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -208,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CategoriasListarForm.resx">
       <DependentUpon>CategoriasListarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductosAñadirForm.resx">
+      <DependentUpon>ProductosAñadirForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

@@ -16,18 +16,33 @@ namespace Plytix
         public CategoriasAñadirForm()
         {
             InitializeComponent();
+            textBoxNombre.Focus();
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            GuardarCategoria();
+        }
+
+        private void textBoxNombre_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) // Detecta si se presionó Enter
+            {
+                e.SuppressKeyPress = true; // Previene el sonido "beep" que puede ocurrir
+                GuardarCategoria();
+            }
+        }
+
+        private void GuardarCategoria()
+        {
             try
             {
-                if(textBoxNombre.Text == "" || textBoxNombre.Text == null)
+                if (textBoxNombre.Text == "" || textBoxNombre.Text == null)
                 {
                     throw new Exception("Debe rellenar antes el campo NAME");
                 }
                 CATEGORIA categoria = new CATEGORIA
-                {   
+                {
                     NOMBRE = textBoxNombre.Text,
                     PRODUCTO = new HashSet<PRODUCTO>()
                 };
@@ -41,7 +56,6 @@ namespace Plytix
             {
                 MessageBox.Show("Error: " + ex.Message + ex.StackTrace);
             }
-            
         }
     }
 }
