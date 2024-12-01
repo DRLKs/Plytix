@@ -337,3 +337,4 @@ C:\Users\David\Documents\GIT\Plytix\segundaiter\Plytix\obj\Debug\Plytix.csproj.C
 C:\Users\David\Documents\GIT\Plytix\segundaiter\Plytix\obj\Debug\Plytix.csproj.Up2Date
 C:\Users\David\Documents\GIT\Plytix\segundaiter\Plytix\obj\Debug\Plytix.exe
 C:\Users\David\Documents\GIT\Plytix\segundaiter\Plytix\obj\Debug\Plytix.pdb
+C:\Users\David\Documents\GIT\Plytix\segundaiter\Plytix\obj\Debug\Plytix.ProductosAñadirForm.resources

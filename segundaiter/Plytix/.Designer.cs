@@ -33,7 +33,6 @@
             this.productosRelacionadosListBox = new System.Windows.Forms.CheckedListBox();
             this.label7 = new System.Windows.Forms.Label();
             this.atributosListBox = new System.Windows.Forms.CheckedListBox();
-            this.categoriaListBox = new System.Windows.Forms.CheckedListBox();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.textBoxSKU = new System.Windows.Forms.TextBox();
@@ -47,6 +46,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.categoriaListBox = new System.Windows.Forms.CheckedListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,17 +92,6 @@
             this.atributosListBox.Size = new System.Drawing.Size(253, 72);
             this.atributosListBox.TabIndex = 59;
             this.atributosListBox.TabStop = false;
-            // 
-            // categoriaListBox
-            // 
-            this.categoriaListBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.categoriaListBox.CheckOnClick = true;
-            this.categoriaListBox.FormattingEnabled = true;
-            this.categoriaListBox.Location = new System.Drawing.Point(445, 75);
-            this.categoriaListBox.Name = "categoriaListBox";
-            this.categoriaListBox.Size = new System.Drawing.Size(253, 72);
-            this.categoriaListBox.TabIndex = 58;
-            this.categoriaListBox.TabStop = false;
             // 
             // label6
             // 
@@ -232,11 +222,33 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.SaveButtonClick);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(367, 186);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(72, 24);
+            this.button3.TabIndex = 65;
+            this.button3.Text = "Generate";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.GenerateGTINClick);
+            // 
+            // categoriaListBox
+            // 
+            this.categoriaListBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.categoriaListBox.CheckOnClick = true;
+            this.categoriaListBox.FormattingEnabled = true;
+            this.categoriaListBox.Location = new System.Drawing.Point(445, 75);
+            this.categoriaListBox.Name = "categoriaListBox";
+            this.categoriaListBox.Size = new System.Drawing.Size(253, 72);
+            this.categoriaListBox.TabIndex = 58;
+            this.categoriaListBox.TabStop = false;
+            // 
             // ProductosAñadirForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -269,7 +281,6 @@
         private System.Windows.Forms.CheckedListBox productosRelacionadosListBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckedListBox atributosListBox;
-        private System.Windows.Forms.CheckedListBox categoriaListBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.TextBox textBoxSKU;
@@ -283,5 +294,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.CheckedListBox categoriaListBox;
     }
 }

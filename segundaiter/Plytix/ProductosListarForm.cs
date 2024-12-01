@@ -86,14 +86,25 @@ namespace Plytix
             Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void AddProductButton_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioAddProducto();
+        }
+        private void AddProductLabel_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioAddProducto();
+        }
+
+        private void AbrirFormularioAddProducto()
+        {
+            ProductosAñadirForm productosAddForm = new ProductosAñadirForm();
+            productosAddForm.Owner = this;
+            productosAddForm.ShowDialog();
         }
     }
 }

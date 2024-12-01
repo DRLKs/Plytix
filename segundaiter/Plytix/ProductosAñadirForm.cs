@@ -20,46 +20,45 @@ namespace Plytix
         {
             InitializeComponent();
             bd = new grupo11DBEntities();
+            CargarFormulario();
         }
 
         private void SaveButtonClick(object sender, EventArgs e)
         {
             try
             {
-                if (textBoxNombre.Text != "")
+                ValidarGuardadoProducto();  // Comprueba que todos los datos sean correctos
+
+                PRODUCTO productoNuevo = new PRODUCTO();
+                /* OBLIGATORIOS */
+                productoNuevo.NOMBRE = textBoxNombre.Text;
+                productoNuevo.SKU = textBoxSKU.Text;
+                productoNuevo.THUMBNAIL = ConvertirImagenABlob(imagePath);
+
+                /* OPCIONALES */
+                if( textBoxGTIN.Text.Length > 0 )
                 {
-                    throw new Exception("Empty Product Name");
-                }
-                else if (textBoxSKU.Text != "")
-                {
-                    throw new Exception("Empty SKU");
-                }else if( imagePath == null)
-                {
-                    throw new Exception("Empty Thumbnail");
-                }
-                else
-                {
-                    PRODUCTO productoNuevo = new PRODUCTO();
-                    productoNuevo.NOMBRE = textBoxNombre.Text;
-                    productoNuevo.SKU = textBoxSKU.Text; // Es unico y no se debe cambiar a no ser que le asignemos al producto un identificador ID
-                                                         // Hay que hacer una función que valide si el SKU es válido
                     productoNuevo.GTIN = textBoxGTIN.Text;
-                    productoNuevo.THUMBNAIL = ConvertirImagenABlob(imagePath);
-
-
-
-
-                    bd.SaveChanges();
-                    if (this.Owner is ProductosListarForm parentForm) parentForm.ProductosListarForm_Load(null, null); // Para recargar los datos del grid en la ventana abierta         
-                    Close();
                 }
+
+                if( categoriaListBox.SelectedItems.Count > 0 )
+                {   
+                    foreach( CATEGORIA categoias in categoriaListBox.SelectedItems)
+                    {
+                        productoNuevo.CATEGORIA.Add( categoias );
+                    }
+                }
+
+                bd.SaveChanges();
+                if (this.Owner is ProductosListarForm parentForm) parentForm.ProductosListarForm_Load(null, null); // Para recargar los datos del grid en la ventana abierta         
+                Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
             
-        }
+    }
 
         private void SaveImage(object sender, EventArgs e)
         {
@@ -98,5 +97,94 @@ namespace Plytix
             }
             return imagenBytes;
         }
+
+        private bool ValidarGTIN(string gtin)
+        {
+            if (string.IsNullOrWhiteSpace(gtin) || (gtin.Length != 8 && gtin.Length != 12 && gtin.Length != 13 && gtin.Length != 14))
+                return false;
+
+            int sum = 0;
+            bool isOdd = true; // Empieza desde el dígito más a la derecha
+
+            for (int i = gtin.Length - 1; i >= 0; i--)
+            {
+                int digit = int.Parse(gtin[i].ToString());
+                sum += isOdd ? digit * 3 : digit;
+                isOdd = !isOdd;
+            }
+
+            return sum % 10 == 0;
+        }
+
+        private string GenerarGTINAleatorio()
+        {
+            int longitud = 14;
+            if (longitud != 8 && longitud != 12 && longitud != 13 && longitud != 14)
+                throw new ArgumentException("La longitud debe ser 8, 12, 13 o 14.");
+
+            Random random = new Random();
+            int[] gtin = new int[longitud];
+
+            // Generar los primeros (longitud - 1) dígitos aleatorios
+            for (int i = 0; i < longitud - 1; i++)
+            {
+                gtin[i] = random.Next(0, 10);
+            }
+
+            // Calcular el checksum para el último dígito
+            int sum = 0;
+            bool isOdd = true;
+
+            for (int i = longitud - 2; i >= 0; i--)
+            {
+                sum += isOdd ? gtin[i] * 3 : gtin[i];
+                isOdd = !isOdd;
+            }
+
+            int checksum = (10 - (sum % 10)) % 10;
+            gtin[longitud - 1] = checksum;
+
+            // Convertir el array a una cadena
+            return string.Join("", gtin);
+        }
+
+        private void GenerateGTINClick(object sender, EventArgs e)
+        {
+            textBoxGTIN.Text = GenerarGTINAleatorio();
+        }
+
+        private void ValidarGuardadoProducto()
+        {
+            if (textBoxNombre.Text != "")
+            {
+                throw new Exception("Empty Product Name");
+            }
+            else if (textBoxSKU.Text != "")
+            {
+                throw new Exception("Empty SKU");
+            }
+            else if (imagePath == null)
+            {
+                throw new Exception("Empty Thumbnail");
+            }
+            else if (textBoxGTIN.Text != "")
+            {
+                if (!ValidarGTIN(textBoxGTIN.Text))
+                {
+                    throw new Exception("El GTIN no es válido");
+                }
+            }
+        }
+
+        private void CargarFormulario()
+        {
+            atributosListBox.DataSource = bd.ATRIBUTO.ToList();
+            atributosListBox.SelectedItem = null;
+
+            categoriaListBox.DataSource = bd.ATRIBUTO.ToList();
+            categoriaListBox.SelectedItem = null;
+            categoriaListBox.SelectionMode = SelectionMode.MultiExtended;
+        }
+
     }
 }

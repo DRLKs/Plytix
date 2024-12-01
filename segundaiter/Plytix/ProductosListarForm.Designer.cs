@@ -102,7 +102,7 @@
             this.button1.TabIndex = 14;
             this.button1.Text = "+";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.AddProductButton_Click);
             // 
             // Add
             // 
@@ -115,6 +115,7 @@
             this.Add.TabIndex = 13;
             this.Add.Text = "Add Product";
             this.Add.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Add.Click += new System.EventHandler(this.AddProductLabel_Click);
             // 
             // ProductosListarForm
             // 
