@@ -30,11 +30,18 @@
   </EntityType>
   <EntityType Name="PRODRELACIONADOS">
     <Key>
-      <PropertyRef Name="PROD1" />
-      <PropertyRef Name="PROD2" />
+      <PropertyRef Name="ID" />
     </Key>
-    <Property Name="PROD1" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="PROD2" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProdRelacionadosProd">
+    <Key>
+      <PropertyRef Name="IDRel" />
+      <PropertyRef Name="IDProd" />
+    </Key>
+    <Property Name="IDRel" Type="int" Nullable="false" />
+    <Property Name="IDProd" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="PRODUCTO">
     <Key>
@@ -72,17 +79,36 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <!--Errores durante la generación:
-advertencia 6035: La relación 'RELP1' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
-        <Association Name="RELP1" />-->
-  <!--Errores durante la generación:
-advertencia 6035: La relación 'RELP2' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
-        <Association Name="RELP2" />-->
+  <Association Name="Rel_Prod">
+    <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="1" />
+    <End Role="ProdRelacionadosProd" Type="Self.ProdRelacionadosProd" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProdRelacionadosProd">
+        <PropertyRef Name="IDProd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Rel_Rel">
+    <End Role="PRODRELACIONADOS" Type="Self.PRODRELACIONADOS" Multiplicity="1" />
+    <End Role="ProdRelacionadosProd" Type="Self.ProdRelacionadosProd" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODRELACIONADOS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProdRelacionadosProd">
+        <PropertyRef Name="IDRel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="grupo11DBModelStoreContainer">
     <EntitySet Name="ATRIBUTO" EntityType="Self.ATRIBUTO" Schema="grupo11DB" store:Type="Tables" />
     <EntitySet Name="CATEGORIA" EntityType="Self.CATEGORIA" Schema="grupo11DB" store:Type="Tables" />
     <EntitySet Name="PROD_CATE" EntityType="Self.PROD_CATE" Schema="grupo11DB" store:Type="Tables" />
     <EntitySet Name="PRODRELACIONADOS" EntityType="Self.PRODRELACIONADOS" Schema="grupo11DB" store:Type="Tables" />
+    <EntitySet Name="ProdRelacionadosProd" EntityType="Self.ProdRelacionadosProd" Schema="grupo11DB" store:Type="Tables" />
     <EntitySet Name="PRODUCTO" EntityType="Self.PRODUCTO" Schema="grupo11DB" store:Type="Tables" />
     <AssociationSet Name="CATEGORIAREL" Association="Self.CATEGORIAREL">
       <End Role="CATEGORIA" EntitySet="CATEGORIA" />
@@ -91,6 +117,14 @@ advertencia 6035: La relación 'RELP2' tiene columnas que no forman parte de la 
     <AssociationSet Name="PRODUCTOREL" Association="Self.PRODUCTOREL">
       <End Role="PRODUCTO" EntitySet="PRODUCTO" />
       <End Role="PROD_CATE" EntitySet="PROD_CATE" />
+    </AssociationSet>
+    <AssociationSet Name="Rel_Prod" Association="Self.Rel_Prod">
+      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+      <End Role="ProdRelacionadosProd" EntitySet="ProdRelacionadosProd" />
+    </AssociationSet>
+    <AssociationSet Name="Rel_Rel" Association="Self.Rel_Rel">
+      <End Role="PRODRELACIONADOS" EntitySet="PRODRELACIONADOS" />
+      <End Role="ProdRelacionadosProd" EntitySet="ProdRelacionadosProd" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

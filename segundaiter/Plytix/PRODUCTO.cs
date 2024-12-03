@@ -17,6 +17,7 @@ namespace Plytix
         public PRODUCTO()
         {
             this.CATEGORIA = new HashSet<CATEGORIA>();
+            this.PRODRELACIONADOS = new HashSet<PRODRELACIONADOS>();
         }
     
         public int ID { get; set; }
@@ -28,5 +29,6 @@ namespace Plytix
         public Nullable<System.DateTime> FECHA_EDICION { get; set; }
     
         public virtual ICollection<CATEGORIA> CATEGORIA { get; set; }
+        public virtual ICollection<PRODRELACIONADOS> PRODRELACIONADOS { get; set; }
     }
 }

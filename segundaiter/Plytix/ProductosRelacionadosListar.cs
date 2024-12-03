@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Plytix
 {
-    public partial class Form1 : Form
+    public partial class ProductosRelacionadosListar : Form
     {
         grupo11DBEntities db;
-        public Form1()
+        public ProductosRelacionadosListar()
         {
             InitializeComponent();
             db = new grupo11DBEntities();

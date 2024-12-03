@@ -26,8 +26,8 @@
     <EntitySetMapping Name="PRODRELACIONADOS">
       <EntityTypeMapping TypeName="grupo11DBModel.PRODRELACIONADOS">
         <MappingFragment StoreEntitySet="PRODRELACIONADOS">
-          <ScalarProperty Name="PROD2" ColumnName="PROD2" />
-          <ScalarProperty Name="PROD1" ColumnName="PROD1" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -50,6 +50,14 @@
       </EndProperty>
       <EndProperty Name="CATEGORIA">
         <ScalarProperty Name="ID" ColumnName="CATEGORIAID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ProdRelacionadosProd" TypeName="grupo11DBModel.ProdRelacionadosProd" StoreEntitySet="ProdRelacionadosProd">
+      <EndProperty Name="PRODRELACIONADOS">
+        <ScalarProperty Name="ID" ColumnName="IDRel" />
+      </EndProperty>
+      <EndProperty Name="PRODUCTO">
+        <ScalarProperty Name="ID" ColumnName="IDProd" />
       </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>

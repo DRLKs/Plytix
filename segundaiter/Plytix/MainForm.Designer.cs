@@ -33,6 +33,8 @@
             this.categoriasButton = new System.Windows.Forms.Button();
             this.atributosButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // productosButton
@@ -90,11 +92,32 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "PLYTIX";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(633, 427);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Related Products";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.ProductosRelacionados_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(1127, 25);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Cuenta";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1405, 556);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.atributosButton);
             this.Controls.Add(this.categoriasButton);
@@ -115,5 +138,7 @@
         private System.Windows.Forms.Button categoriasButton;
         private System.Windows.Forms.Button atributosButton;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

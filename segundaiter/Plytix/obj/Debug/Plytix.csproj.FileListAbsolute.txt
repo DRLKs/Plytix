@@ -338,4 +338,4 @@ C:\Users\David\Documents\GIT\Plytix\segundaiter\Plytix\obj\Debug\Plytix.csproj.U
 C:\Users\David\Documents\GIT\Plytix\segundaiter\Plytix\obj\Debug\Plytix.exe
 C:\Users\David\Documents\GIT\Plytix\segundaiter\Plytix\obj\Debug\Plytix.pdb
 C:\Users\David\Documents\GIT\Plytix\segundaiter\Plytix\obj\Debug\Plytix.ProductosAñadirForm.resources
-C:\Users\David\Documents\GIT\Plytix\segundaiter\Plytix\obj\Debug\Plytix.Form1.resources
+C:\Users\David\Documents\GIT\Plytix\segundaiter\Plytix\obj\Debug\Plytix.ProductosRelacionadosListar.resources

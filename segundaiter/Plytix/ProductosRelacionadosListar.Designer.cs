@@ -1,6 +1,6 @@
 ﻿namespace Plytix
 {
-    partial class Form1
+    partial class ProductosRelacionadosListar
     {
         /// <summary>
         /// Required designer variable.
@@ -59,7 +59,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1286, 565);
             this.Controls.Add(this.plytixLabel);
             this.Controls.Add(this.ProductosRelaciondosdataGridView);
             this.Name = "Form1";

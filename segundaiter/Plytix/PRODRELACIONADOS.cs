@@ -14,7 +14,16 @@ namespace Plytix
     
     public partial class PRODRELACIONADOS
     {
+        public PRODRELACIONADOS()
+        {
+            this.PRODUCTO = new HashSet<PRODUCTO>();
+        }
+    
         public string PROD1 { get; set; }
         public string PROD2 { get; set; }
+        public int ID { get; set; }
+        public string NAME { get; set; }
+    
+        public virtual ICollection<PRODUCTO> PRODUCTO { get; set; }
     }
 }

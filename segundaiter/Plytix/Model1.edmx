@@ -35,11 +35,18 @@
         </EntityType>
         <EntityType Name="PRODRELACIONADOS">
           <Key>
-            <PropertyRef Name="PROD1" />
-            <PropertyRef Name="PROD2" />
+            <PropertyRef Name="ID" />
           </Key>
-          <Property Name="PROD1" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="PROD2" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProdRelacionadosProd">
+          <Key>
+            <PropertyRef Name="IDRel" />
+            <PropertyRef Name="IDProd" />
+          </Key>
+          <Property Name="IDRel" Type="int" Nullable="false" />
+          <Property Name="IDProd" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="PRODUCTO">
           <Key>
@@ -77,17 +84,36 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <!--Errores durante la generación:
-advertencia 6035: La relación 'RELP1' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
-        <Association Name="RELP1" />-->
-        <!--Errores durante la generación:
-advertencia 6035: La relación 'RELP2' tiene columnas que no forman parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
-        <Association Name="RELP2" />-->
+        <Association Name="Rel_Prod">
+          <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="1" />
+          <End Role="ProdRelacionadosProd" Type="Self.ProdRelacionadosProd" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ProdRelacionadosProd">
+              <PropertyRef Name="IDProd" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Rel_Rel">
+          <End Role="PRODRELACIONADOS" Type="Self.PRODRELACIONADOS" Multiplicity="1" />
+          <End Role="ProdRelacionadosProd" Type="Self.ProdRelacionadosProd" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODRELACIONADOS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ProdRelacionadosProd">
+              <PropertyRef Name="IDRel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="grupo11DBModelStoreContainer">
           <EntitySet Name="ATRIBUTO" EntityType="Self.ATRIBUTO" Schema="grupo11DB" store:Type="Tables" />
           <EntitySet Name="CATEGORIA" EntityType="Self.CATEGORIA" Schema="grupo11DB" store:Type="Tables" />
           <EntitySet Name="PROD_CATE" EntityType="Self.PROD_CATE" Schema="grupo11DB" store:Type="Tables" />
           <EntitySet Name="PRODRELACIONADOS" EntityType="Self.PRODRELACIONADOS" Schema="grupo11DB" store:Type="Tables" />
+          <EntitySet Name="ProdRelacionadosProd" EntityType="Self.ProdRelacionadosProd" Schema="grupo11DB" store:Type="Tables" />
           <EntitySet Name="PRODUCTO" EntityType="Self.PRODUCTO" Schema="grupo11DB" store:Type="Tables" />
           <AssociationSet Name="CATEGORIAREL" Association="Self.CATEGORIAREL">
             <End Role="CATEGORIA" EntitySet="CATEGORIA" />
@@ -96,6 +122,14 @@ advertencia 6035: La relación 'RELP2' tiene columnas que no forman parte de la 
           <AssociationSet Name="PRODUCTOREL" Association="Self.PRODUCTOREL">
             <End Role="PRODUCTO" EntitySet="PRODUCTO" />
             <End Role="PROD_CATE" EntitySet="PROD_CATE" />
+          </AssociationSet>
+          <AssociationSet Name="Rel_Prod" Association="Self.Rel_Prod">
+            <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+            <End Role="ProdRelacionadosProd" EntitySet="ProdRelacionadosProd" />
+          </AssociationSet>
+          <AssociationSet Name="Rel_Rel" Association="Self.Rel_Rel">
+            <End Role="PRODRELACIONADOS" EntitySet="PRODRELACIONADOS" />
+            <End Role="ProdRelacionadosProd" EntitySet="ProdRelacionadosProd" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -110,6 +144,10 @@ advertencia 6035: La relación 'RELP2' tiene columnas que no forman parte de la 
           <AssociationSet Name="PROD_CATE" Association="grupo11DBModel.PROD_CATE">
             <End Role="CATEGORIA" EntitySet="CATEGORIA" />
             <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+          </AssociationSet>
+          <AssociationSet Name="ProdRelacionadosProd" Association="grupo11DBModel.ProdRelacionadosProd">
+            <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+            <End Role="PRODRELACIONADOS" EntitySet="PRODRELACIONADOS" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="ATRIBUTO">
@@ -137,9 +175,13 @@ advertencia 6035: La relación 'RELP2' tiene columnas que no forman parte de la 
           <Key>
             <PropertyRef Name="PROD1" />
             <PropertyRef Name="PROD2" />
+            <PropertyRef Name="ID" />
           </Key>
           <Property Name="PROD1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="PROD2" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PRODUCTO" Relationship="grupo11DBModel.ProdRelacionadosProd" FromRole="PRODRELACIONADOS" ToRole="PRODUCTO" />
         </EntityType>
         <EntityType Name="PRODUCTO">
           <Key>
@@ -153,10 +195,15 @@ advertencia 6035: La relación 'RELP2' tiene columnas que no forman parte de la 
           <NavigationProperty Name="CATEGORIA" Relationship="grupo11DBModel.PROD_CATE" FromRole="PRODUCTO" ToRole="CATEGORIA" />
           <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
           <Property Name="FECHA_EDICION" Type="DateTime" />
+          <NavigationProperty Name="PRODRELACIONADOS" Relationship="grupo11DBModel.ProdRelacionadosProd" FromRole="PRODUCTO" ToRole="PRODRELACIONADOS" />
         </EntityType>
         <Association Name="PROD_CATE">
           <End Type="grupo11DBModel.CATEGORIA" Role="CATEGORIA" Multiplicity="*" />
           <End Type="grupo11DBModel.PRODUCTO" Role="PRODUCTO" Multiplicity="*" />
+        </Association>
+        <Association Name="ProdRelacionadosProd">
+          <End Type="grupo11DBModel.PRODUCTO" Role="PRODUCTO" Multiplicity="*" />
+          <End Type="grupo11DBModel.PRODRELACIONADOS" Role="PRODRELACIONADOS" Multiplicity="*" />
         </Association>
         </Schema>
     </edmx:ConceptualModels>
@@ -189,8 +236,8 @@ advertencia 6035: La relación 'RELP2' tiene columnas que no forman parte de la 
           <EntitySetMapping Name="PRODRELACIONADOS">
             <EntityTypeMapping TypeName="grupo11DBModel.PRODRELACIONADOS">
               <MappingFragment StoreEntitySet="PRODRELACIONADOS">
-                <ScalarProperty Name="PROD2" ColumnName="PROD2" />
-                <ScalarProperty Name="PROD1" ColumnName="PROD1" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -213,6 +260,14 @@ advertencia 6035: La relación 'RELP2' tiene columnas que no forman parte de la 
             </EndProperty>
             <EndProperty Name="CATEGORIA">
               <ScalarProperty Name="ID" ColumnName="CATEGORIAID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="ProdRelacionadosProd" TypeName="grupo11DBModel.ProdRelacionadosProd" StoreEntitySet="ProdRelacionadosProd">
+            <EndProperty Name="PRODRELACIONADOS">
+              <ScalarProperty Name="ID" ColumnName="IDRel" />
+            </EndProperty>
+            <EndProperty Name="PRODUCTO">
+              <ScalarProperty Name="ID" ColumnName="IDProd" />
             </EndProperty>
           </AssociationSetMapping>
         </EntityContainerMapping>

@@ -9,6 +9,10 @@
       <End Role="CATEGORIA" EntitySet="CATEGORIA" />
       <End Role="PRODUCTO" EntitySet="PRODUCTO" />
     </AssociationSet>
+    <AssociationSet Name="ProdRelacionadosProd" Association="grupo11DBModel.ProdRelacionadosProd">
+      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+      <End Role="PRODRELACIONADOS" EntitySet="PRODRELACIONADOS" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="ATRIBUTO">
     <Key>
@@ -35,9 +39,13 @@
     <Key>
       <PropertyRef Name="PROD1" />
       <PropertyRef Name="PROD2" />
+      <PropertyRef Name="ID" />
     </Key>
     <Property Name="PROD1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="PROD2" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PRODUCTO" Relationship="grupo11DBModel.ProdRelacionadosProd" FromRole="PRODRELACIONADOS" ToRole="PRODUCTO" />
   </EntityType>
   <EntityType Name="PRODUCTO">
     <Key>
@@ -51,9 +59,14 @@
     <NavigationProperty Name="CATEGORIA" Relationship="grupo11DBModel.PROD_CATE" FromRole="PRODUCTO" ToRole="CATEGORIA" />
     <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
     <Property Name="FECHA_EDICION" Type="DateTime" />
+    <NavigationProperty Name="PRODRELACIONADOS" Relationship="grupo11DBModel.ProdRelacionadosProd" FromRole="PRODUCTO" ToRole="PRODRELACIONADOS" />
   </EntityType>
   <Association Name="PROD_CATE">
     <End Type="grupo11DBModel.CATEGORIA" Role="CATEGORIA" Multiplicity="*" />
     <End Type="grupo11DBModel.PRODUCTO" Role="PRODUCTO" Multiplicity="*" />
+  </Association>
+  <Association Name="ProdRelacionadosProd">
+    <End Type="grupo11DBModel.PRODUCTO" Role="PRODUCTO" Multiplicity="*" />
+    <End Type="grupo11DBModel.PRODRELACIONADOS" Role="PRODRELACIONADOS" Multiplicity="*" />
   </Association>
 </Schema>

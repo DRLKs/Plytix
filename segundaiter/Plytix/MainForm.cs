@@ -40,6 +40,13 @@ namespace Plytix
         {
             Application.Exit();
         }
+
+        private void ProductosRelacionados_Click(object sender, EventArgs e)
+        {
+            ProductosRelacionadosListar form = new ProductosRelacionadosListar();
+            form.ShowDialog();
+            Hide();
+        }
     }
 }
 
