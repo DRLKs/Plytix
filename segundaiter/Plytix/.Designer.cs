@@ -55,7 +55,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(469, 301);
+            this.label8.Location = new System.Drawing.Point(499, 350);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(207, 29);
             this.label8.TabIndex = 62;
@@ -66,7 +66,7 @@
             this.productosRelacionadosListBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.productosRelacionadosListBox.CheckOnClick = true;
             this.productosRelacionadosListBox.FormattingEnabled = true;
-            this.productosRelacionadosListBox.Location = new System.Drawing.Point(445, 333);
+            this.productosRelacionadosListBox.Location = new System.Drawing.Point(474, 382);
             this.productosRelacionadosListBox.Name = "productosRelacionadosListBox";
             this.productosRelacionadosListBox.Size = new System.Drawing.Size(253, 72);
             this.productosRelacionadosListBox.TabIndex = 61;
@@ -76,7 +76,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(507, 176);
+            this.label7.Location = new System.Drawing.Point(540, 197);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(120, 29);
             this.label7.TabIndex = 60;
@@ -87,7 +87,7 @@
             this.atributosListBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.atributosListBox.CheckOnClick = true;
             this.atributosListBox.FormattingEnabled = true;
-            this.atributosListBox.Location = new System.Drawing.Point(445, 208);
+            this.atributosListBox.Location = new System.Drawing.Point(474, 229);
             this.atributosListBox.Name = "atributosListBox";
             this.atributosListBox.Size = new System.Drawing.Size(253, 72);
             this.atributosListBox.TabIndex = 59;
@@ -97,7 +97,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(507, 36);
+            this.label6.Location = new System.Drawing.Point(540, 40);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(135, 29);
             this.label6.TabIndex = 57;
@@ -214,7 +214,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(384, 381);
+            this.button2.Location = new System.Drawing.Point(367, 506);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 64;
@@ -226,7 +226,7 @@
             // 
             this.button3.Location = new System.Drawing.Point(367, 186);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(72, 24);
+            this.button3.Size = new System.Drawing.Size(83, 24);
             this.button3.TabIndex = 65;
             this.button3.Text = "Generate";
             this.button3.UseVisualStyleBackColor = true;
@@ -237,7 +237,7 @@
             this.categoriaListBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.categoriaListBox.CheckOnClick = true;
             this.categoriaListBox.FormattingEnabled = true;
-            this.categoriaListBox.Location = new System.Drawing.Point(445, 75);
+            this.categoriaListBox.Location = new System.Drawing.Point(474, 84);
             this.categoriaListBox.Name = "categoriaListBox";
             this.categoriaListBox.Size = new System.Drawing.Size(253, 72);
             this.categoriaListBox.TabIndex = 58;
@@ -247,7 +247,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 535);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label9);

@@ -61,14 +61,14 @@ namespace Plytix
         // BOTÓN DE GUARDAR
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            var seleccionado = (from p in bd.PRODUCTO
+            var productoSeleccionado = (from p in bd.PRODUCTO
                                 where p.SKU == sku
                                 select p).First();
-            seleccionado.NOMBRE = textBoxNombre.Text;
-            seleccionado.SKU = textBoxSKU.Text; // Es unico y no se debe cambiar a no ser que le asignemos al producto un identificador ID
-                                                // Hay que hacer una función que valide si el SKU es válido
-            seleccionado.GTIN = textBoxGTIN.Text;
-
+            productoSeleccionado.NOMBRE = textBoxNombre.Text;
+            productoSeleccionado.SKU = textBoxSKU.Text; // Es unico y no se debe cambiar a no ser que le asignemos al producto un identificador ID
+                                                        // Hay que hacer una función que valide si el SKU es válido
+            productoSeleccionado.GTIN = textBoxGTIN.Text;
+            productoSeleccionado.FECHA_EDICION = DateTime.Now;
 
 
             bd.SaveChanges();

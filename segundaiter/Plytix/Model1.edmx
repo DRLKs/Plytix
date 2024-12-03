@@ -22,7 +22,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NOMBRE" Type="varchar" MaxLength="45" Nullable="false" />
         </EntityType>
         <EntityType Name="PROD_CATE">
@@ -50,6 +50,8 @@
           <Property Name="NOMBRE" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="SKU" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="GTIN" Type="varchar" MaxLength="45" />
+          <Property Name="FECHA_CREACION" Type="date" Nullable="false" />
+          <Property Name="FECHA_EDICION" Type="date" />
         </EntityType>
         <Association Name="CATEGORIAREL">
           <End Role="CATEGORIA" Type="Self.CATEGORIA" Multiplicity="1" />
@@ -149,6 +151,8 @@ advertencia 6035: La relación 'RELP2' tiene columnas que no forman parte de la 
           <Property Name="SKU" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="GTIN" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="CATEGORIA" Relationship="grupo11DBModel.PROD_CATE" FromRole="PRODUCTO" ToRole="CATEGORIA" />
+          <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+          <Property Name="FECHA_EDICION" Type="DateTime" />
         </EntityType>
         <Association Name="PROD_CATE">
           <End Type="grupo11DBModel.CATEGORIA" Role="CATEGORIA" Multiplicity="*" />
@@ -193,6 +197,8 @@ advertencia 6035: La relación 'RELP2' tiene columnas que no forman parte de la 
           <EntitySetMapping Name="PRODUCTO">
             <EntityTypeMapping TypeName="grupo11DBModel.PRODUCTO">
               <MappingFragment StoreEntitySet="PRODUCTO">
+                <ScalarProperty Name="FECHA_EDICION" ColumnName="FECHA_EDICION" />
+                <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
                 <ScalarProperty Name="GTIN" ColumnName="GTIN" />
                 <ScalarProperty Name="SKU" ColumnName="SKU" />
                 <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />

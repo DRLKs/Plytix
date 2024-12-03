@@ -49,6 +49,8 @@
     <Property Name="SKU" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="GTIN" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="CATEGORIA" Relationship="grupo11DBModel.PROD_CATE" FromRole="PRODUCTO" ToRole="CATEGORIA" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
+    <Property Name="FECHA_EDICION" Type="DateTime" />
   </EntityType>
   <Association Name="PROD_CATE">
     <End Type="grupo11DBModel.CATEGORIA" Role="CATEGORIA" Multiplicity="*" />

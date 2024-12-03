@@ -17,7 +17,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NOMBRE" Type="varchar" MaxLength="45" Nullable="false" />
   </EntityType>
   <EntityType Name="PROD_CATE">
@@ -45,6 +45,8 @@
     <Property Name="NOMBRE" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="SKU" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="GTIN" Type="varchar" MaxLength="45" />
+    <Property Name="FECHA_CREACION" Type="date" Nullable="false" />
+    <Property Name="FECHA_EDICION" Type="date" />
   </EntityType>
   <Association Name="CATEGORIAREL">
     <End Role="CATEGORIA" Type="Self.CATEGORIA" Multiplicity="1" />

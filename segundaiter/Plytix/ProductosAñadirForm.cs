@@ -34,9 +34,11 @@ namespace Plytix
                 productoNuevo.NOMBRE = textBoxNombre.Text;
                 productoNuevo.SKU = textBoxSKU.Text;
                 productoNuevo.THUMBNAIL = ConvertirImagenABlob(imagePath);
+                productoNuevo.FECHA_CREACION = DateTime.Now;
+                productoNuevo.FECHA_EDICION  = DateTime.Now;
 
                 /* OPCIONALES */
-                if( textBoxGTIN.Text.Length > 0 )
+                if ( textBoxGTIN.Text.Length > 0 )
                 {
                     productoNuevo.GTIN = textBoxGTIN.Text;
                 }
@@ -49,6 +51,7 @@ namespace Plytix
                     }
                 }
 
+                bd.PRODUCTO.Add( productoNuevo );
                 bd.SaveChanges();
                 if (this.Owner is ProductosListarForm parentForm) parentForm.ProductosListarForm_Load(null, null); // Para recargar los datos del grid en la ventana abierta         
                 Close();
@@ -155,11 +158,11 @@ namespace Plytix
 
         private void ValidarGuardadoProducto()
         {
-            if (textBoxNombre.Text != "")
+            if (textBoxNombre.Text == "")
             {
                 throw new Exception("Empty Product Name");
             }
-            else if (textBoxSKU.Text != "")
+            else if (textBoxSKU.Text == "")
             {
                 throw new Exception("Empty SKU");
             }
@@ -181,9 +184,8 @@ namespace Plytix
             atributosListBox.DataSource = bd.ATRIBUTO.ToList();
             atributosListBox.SelectedItem = null;
 
-            categoriaListBox.DataSource = bd.ATRIBUTO.ToList();
+            categoriaListBox.DataSource = bd.CATEGORIA .ToList();
             categoriaListBox.SelectedItem = null;
-            categoriaListBox.SelectionMode = SelectionMode.MultiExtended;
         }
 
     }
