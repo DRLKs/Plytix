@@ -12,11 +12,10 @@ namespace Plytix
 {
     public partial class ProductosRelacionadosListar : Form
     {
-        grupo11DBEntities db;
+        grupo11DBEntities db = new grupo11DBEntities();
         public ProductosRelacionadosListar()
         {
             InitializeComponent();
-            db = new grupo11DBEntities();
             CargarProductosRelacionados();
         }
 

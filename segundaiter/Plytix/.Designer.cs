@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductosAñadirForm));
-            this.label8 = new System.Windows.Forms.Label();
-            this.productosRelacionadosListBox = new System.Windows.Forms.CheckedListBox();
             this.label7 = new System.Windows.Forms.Label();
             this.atributosListBox = new System.Windows.Forms.CheckedListBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -50,27 +48,6 @@
             this.categoriaListBox = new System.Windows.Forms.CheckedListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(499, 350);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(207, 29);
-            this.label8.TabIndex = 62;
-            this.label8.Text = "Related Products";
-            // 
-            // productosRelacionadosListBox
-            // 
-            this.productosRelacionadosListBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.productosRelacionadosListBox.CheckOnClick = true;
-            this.productosRelacionadosListBox.FormattingEnabled = true;
-            this.productosRelacionadosListBox.Location = new System.Drawing.Point(474, 382);
-            this.productosRelacionadosListBox.Name = "productosRelacionadosListBox";
-            this.productosRelacionadosListBox.Size = new System.Drawing.Size(253, 72);
-            this.productosRelacionadosListBox.TabIndex = 61;
-            this.productosRelacionadosListBox.TabStop = false;
             // 
             // label7
             // 
@@ -251,8 +228,6 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.productosRelacionadosListBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.atributosListBox);
             this.Controls.Add(this.categoriaListBox);
@@ -269,6 +244,7 @@
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ProductosAñadirForm";
+            this.Text = "Add Product";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -276,9 +252,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.CheckedListBox productosRelacionadosListBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckedListBox atributosListBox;
         private System.Windows.Forms.Label label6;
