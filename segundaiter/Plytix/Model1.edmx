@@ -58,7 +58,7 @@
           <Property Name="SKU" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="GTIN" Type="varchar" MaxLength="45" />
           <Property Name="FECHA_CREACION" Type="date" Nullable="false" />
-          <Property Name="FECHA_EDICION" Type="date" />
+          <Property Name="FECHA_EDICION" Type="date" Nullable="false" />
         </EntityType>
         <Association Name="CATEGORIAREL">
           <End Role="CATEGORIA" Type="Self.CATEGORIA" Multiplicity="1" />
@@ -167,18 +167,14 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="PRODUCTO" Relationship="grupo11DBModel.PROD_CATE" FromRole="CATEGORIA" ToRole="PRODUCTO" />
         </EntityType>
         <EntityType Name="PRODRELACIONADOS">
           <Key>
-            <PropertyRef Name="PROD1" />
-            <PropertyRef Name="PROD2" />
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="PROD1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="PROD2" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="PRODUCTO" Relationship="grupo11DBModel.ProdRelacionadosProd" FromRole="PRODRELACIONADOS" ToRole="PRODUCTO" />
@@ -192,9 +188,9 @@
           <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="SKU" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="GTIN" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="CATEGORIA" Relationship="grupo11DBModel.PROD_CATE" FromRole="PRODUCTO" ToRole="CATEGORIA" />
           <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
-          <Property Name="FECHA_EDICION" Type="DateTime" />
+          <Property Name="FECHA_EDICION" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="CATEGORIA" Relationship="grupo11DBModel.PROD_CATE" FromRole="PRODUCTO" ToRole="CATEGORIA" />
           <NavigationProperty Name="PRODRELACIONADOS" Relationship="grupo11DBModel.ProdRelacionadosProd" FromRole="PRODUCTO" ToRole="PRODRELACIONADOS" />
         </EntityType>
         <Association Name="PROD_CATE">

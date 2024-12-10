@@ -19,17 +19,25 @@ namespace Plytix
         }
 
         private void productosButton_Click(object sender, EventArgs e)
-        {
+        {   
+            panelMain.Controls.Clear();
             ProductosListarForm form = new ProductosListarForm();
-            form.ShowDialog();
-            Hide();
+            form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(form);
+            form.Show();
         }
 
         private void categoriasButton_Click(object sender, EventArgs e)
         {
+            panelMain.Controls.Clear();
             CategoriasListarForm form = new CategoriasListarForm();
-            form.ShowDialog();
-            Hide();
+            form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(form);
+            form.Show();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -43,9 +51,13 @@ namespace Plytix
 
         private void ProductosRelacionados_Click(object sender, EventArgs e)
         {
+            panelMain.Controls.Clear();
             ProductosRelacionadosListar form = new ProductosRelacionadosListar();
-            form.ShowDialog();
-            Hide();
+            form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(form);
+            form.Show();
         }
     }
 }

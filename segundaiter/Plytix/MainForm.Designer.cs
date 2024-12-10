@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.panelMain = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // productosButton
@@ -44,7 +45,7 @@
             this.productosButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.productosButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.productosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productosButton.Location = new System.Drawing.Point(122, 243);
+            this.productosButton.Location = new System.Drawing.Point(113, 43);
             this.productosButton.Name = "productosButton";
             this.productosButton.Size = new System.Drawing.Size(211, 95);
             this.productosButton.TabIndex = 0;
@@ -59,7 +60,7 @@
             this.categoriasButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.categoriasButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.categoriasButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.categoriasButton.Location = new System.Drawing.Point(570, 243);
+            this.categoriasButton.Location = new System.Drawing.Point(330, 43);
             this.categoriasButton.Name = "categoriasButton";
             this.categoriasButton.Size = new System.Drawing.Size(211, 95);
             this.categoriasButton.TabIndex = 1;
@@ -74,7 +75,7 @@
             this.atributosButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.atributosButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.atributosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.atributosButton.Location = new System.Drawing.Point(1025, 243);
+            this.atributosButton.Location = new System.Drawing.Point(547, 43);
             this.atributosButton.Name = "atributosButton";
             this.atributosButton.Size = new System.Drawing.Size(211, 95);
             this.atributosButton.TabIndex = 2;
@@ -86,7 +87,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Purple;
-            this.label1.Location = new System.Drawing.Point(36, 25);
+            this.label1.Location = new System.Drawing.Point(2, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 29);
             this.label1.TabIndex = 3;
@@ -95,9 +96,9 @@
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Location = new System.Drawing.Point(633, 427);
+            this.button1.Location = new System.Drawing.Point(1077, 26);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(175, 23);
             this.button1.TabIndex = 4;
             this.button1.Text = "Related Products";
             this.button1.UseVisualStyleBackColor = true;
@@ -106,24 +107,32 @@
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(1161, 33);
+            this.button2.Location = new System.Drawing.Point(862, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 5;
             this.button2.Text = "Cuenta";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // panelMain
+            // 
+            this.panelMain.Location = new System.Drawing.Point(-3, 144);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(1805, 889);
+            this.panelMain.TabIndex = 6;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1405, 556);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(1802, 1034);
             this.Controls.Add(this.atributosButton);
             this.Controls.Add(this.categoriasButton);
             this.Controls.Add(this.productosButton);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panelMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Home";
@@ -142,5 +151,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel panelMain;
     }
 }

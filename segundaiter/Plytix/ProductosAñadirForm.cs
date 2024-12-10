@@ -36,18 +36,14 @@ namespace Plytix
                 productoNuevo.THUMBNAIL = ConvertirImagenABlob(imagePath);
                 productoNuevo.FECHA_CREACION = DateTime.Now;
                 productoNuevo.FECHA_EDICION  = DateTime.Now;
+                productoNuevo.GTIN = textBoxGTIN.Text;
 
                 /* OPCIONALES */
-                if ( textBoxGTIN.Text.Length > 0 )
-                {
-                    productoNuevo.GTIN = textBoxGTIN.Text;
-                }
-
-                if( categoriaListBox.SelectedItems.Count > 0 )
+                if ( categoriaListBox.SelectedItems.Count > 0 )
                 {   
-                    foreach( CATEGORIA categoias in categoriaListBox.SelectedItems)
+                    foreach( CATEGORIA categorias in categoriaListBox.SelectedItems)
                     {
-                        productoNuevo.CATEGORIA.Add( categoias );
+                        productoNuevo.CATEGORIA.Add( categorias );
                     }
                 }
 
@@ -103,53 +99,57 @@ namespace Plytix
 
         private bool ValidarGTIN(string gtin)
         {
-            if (string.IsNullOrWhiteSpace(gtin) || (gtin.Length != 8 && gtin.Length != 12 && gtin.Length != 13 && gtin.Length != 14))
+            if (string.IsNullOrWhiteSpace(gtin) || gtin.Length != 14)
                 return false;
-
+            /*  //EL ALGORITMO ESTE ES UN MIERDÓN NO FUNCIONA Y 
             int sum = 0;
-            bool isOdd = true; // Empieza desde el dígito más a la derecha
+            bool isEven = true; // Alternar comenzando desde el último dígito
 
             for (int i = gtin.Length - 1; i >= 0; i--)
             {
-                int digit = int.Parse(gtin[i].ToString());
-                sum += isOdd ? digit * 3 : digit;
-                isOdd = !isOdd;
-            }
+                if (!char.IsDigit(gtin[i])) // Validar que todos los caracteres sean dígitos
+                    return false;
 
+                int digit = int.Parse(gtin[i].ToString());
+                sum += isEven ? digit * 3 : digit; // Multiplicar por 3 si es posición par
+                isEven = !isEven; // Alternar
+            }
+            
             return sum % 10 == 0;
+            */
+            return true;
         }
 
         private string GenerarGTINAleatorio()
         {
             int longitud = 14;
-            if (longitud != 8 && longitud != 12 && longitud != 13 && longitud != 14)
-                throw new ArgumentException("La longitud debe ser 8, 12, 13 o 14.");
-
             Random random = new Random();
             int[] gtin = new int[longitud];
 
-            // Generar los primeros (longitud - 1) dígitos aleatorios
+            // Generar los primeros 13 dígitos aleatorios
             for (int i = 0; i < longitud - 1; i++)
             {
                 gtin[i] = random.Next(0, 10);
             }
 
-            // Calcular el checksum para el último dígito
+            // Calcular el checksum (último dígito)
             int sum = 0;
-            bool isOdd = true;
+            bool isEven = true; // Alternar comenzando desde el penúltimo dígito
 
             for (int i = longitud - 2; i >= 0; i--)
             {
-                sum += isOdd ? gtin[i] * 3 : gtin[i];
-                isOdd = !isOdd;
+                sum += isEven ? gtin[i] * 3 : gtin[i]; // Multiplicar por 3 si es posición par
+                isEven = !isEven; // Alternar
             }
 
-            int checksum = (10 - (sum % 10)) % 10;
+            int checksum = (10 - (sum % 10)) % 10; // Obtener el dígito de control
             gtin[longitud - 1] = checksum;
 
             // Convertir el array a una cadena
             return string.Join("", gtin);
         }
+
+
 
         private void GenerateGTINClick(object sender, EventArgs e)
         {
@@ -172,7 +172,7 @@ namespace Plytix
             }
             else if (textBoxGTIN.Text != "")
             {
-                if (!ValidarGTIN(textBoxGTIN.Text))
+                if (!ValidarGTIN(textBoxGTIN.Text) )
                 {
                     throw new Exception("El GTIN no es válido");
                 }

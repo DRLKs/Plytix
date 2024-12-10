@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.addLabel = new System.Windows.Forms.Label();
-            this.plytixLabel = new System.Windows.Forms.Label();
             this.CategoriasGridView = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.CategoriasGridView)).BeginInit();
@@ -62,19 +61,6 @@
             this.addLabel.Text = "Add Category";
             this.addLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // plytixLabel
-            // 
-            this.plytixLabel.AutoSize = true;
-            this.plytixLabel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.plytixLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.plytixLabel.ForeColor = System.Drawing.Color.Purple;
-            this.plytixLabel.Location = new System.Drawing.Point(20, 20);
-            this.plytixLabel.Name = "plytixLabel";
-            this.plytixLabel.Size = new System.Drawing.Size(98, 29);
-            this.plytixLabel.TabIndex = 17;
-            this.plytixLabel.Text = "PLYTIX";
-            this.plytixLabel.Click += new System.EventHandler(this.plytixLabel_Click);
-            // 
             // CategoriasGridView
             // 
             this.CategoriasGridView.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -83,14 +69,14 @@
             this.CategoriasGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CategoriasGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.CategoriasGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.CategoriasGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.CategoriasGridView.DefaultCellStyle = dataGridViewCellStyle1;
             this.CategoriasGridView.GridColor = System.Drawing.SystemColors.Control;
             this.CategoriasGridView.Location = new System.Drawing.Point(38, 152);
             this.CategoriasGridView.MultiSelect = false;
@@ -122,7 +108,6 @@
             this.ClientSize = new System.Drawing.Size(1378, 843);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.addLabel);
-            this.Controls.Add(this.plytixLabel);
             this.Controls.Add(this.CategoriasGridView);
             this.Controls.Add(this.label2);
             this.Name = "CategoriasListarForm";
@@ -139,7 +124,6 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label addLabel;
-        private System.Windows.Forms.Label plytixLabel;
         private System.Windows.Forms.DataGridView CategoriasGridView;
         private System.Windows.Forms.Label label2;
     }

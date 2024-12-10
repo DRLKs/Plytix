@@ -26,7 +26,7 @@ namespace Plytix
         public string SKU { get; set; }
         public string GTIN { get; set; }
         public System.DateTime FECHA_CREACION { get; set; }
-        public Nullable<System.DateTime> FECHA_EDICION { get; set; }
+        public System.DateTime FECHA_EDICION { get; set; }
     
         public virtual ICollection<CATEGORIA> CATEGORIA { get; set; }
         public virtual ICollection<PRODRELACIONADOS> PRODRELACIONADOS { get; set; }

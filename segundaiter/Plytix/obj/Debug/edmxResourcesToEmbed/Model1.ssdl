@@ -53,7 +53,7 @@
     <Property Name="SKU" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="GTIN" Type="varchar" MaxLength="45" />
     <Property Name="FECHA_CREACION" Type="date" Nullable="false" />
-    <Property Name="FECHA_EDICION" Type="date" />
+    <Property Name="FECHA_EDICION" Type="date" Nullable="false" />
   </EntityType>
   <Association Name="CATEGORIAREL">
     <End Role="CATEGORIA" Type="Self.CATEGORIA" Multiplicity="1" />
