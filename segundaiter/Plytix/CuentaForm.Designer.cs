@@ -33,8 +33,8 @@
             this.numeroAtributos = new System.Windows.Forms.Label();
             this.numeroCategorias = new System.Windows.Forms.Label();
             this.numeroAssets = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.CrearCSVButton = new System.Windows.Forms.Button();
+            this.CrearJSONButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // numeroProductos
@@ -77,31 +77,33 @@
             this.numeroAssets.TabIndex = 3;
             this.numeroAssets.Text = "label1";
             // 
-            // button1
+            // CrearCSVButton
             // 
-            this.button1.Location = new System.Drawing.Point(690, 103);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "CSV";
-            this.button1.UseVisualStyleBackColor = true;
+            this.CrearCSVButton.Location = new System.Drawing.Point(690, 103);
+            this.CrearCSVButton.Name = "CrearCSVButton";
+            this.CrearCSVButton.Size = new System.Drawing.Size(75, 23);
+            this.CrearCSVButton.TabIndex = 4;
+            this.CrearCSVButton.Text = "CSV";
+            this.CrearCSVButton.UseVisualStyleBackColor = true;
+            this.CrearCSVButton.Click += new System.EventHandler(this.CrearCSVClick);
             // 
-            // button2
+            // CrearJSONButton
             // 
-            this.button2.Location = new System.Drawing.Point(690, 143);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "JSON";
-            this.button2.UseVisualStyleBackColor = true;
+            this.CrearJSONButton.Location = new System.Drawing.Point(690, 209);
+            this.CrearJSONButton.Name = "CrearJSONButton";
+            this.CrearJSONButton.Size = new System.Drawing.Size(75, 23);
+            this.CrearJSONButton.TabIndex = 5;
+            this.CrearJSONButton.Text = "JSON";
+            this.CrearJSONButton.UseVisualStyleBackColor = true;
+            this.CrearJSONButton.Click += new System.EventHandler(this.CrearJSONClick);
             // 
             // CuentaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.CrearJSONButton);
+            this.Controls.Add(this.CrearCSVButton);
             this.Controls.Add(this.numeroAssets);
             this.Controls.Add(this.numeroCategorias);
             this.Controls.Add(this.numeroAtributos);
@@ -120,7 +122,7 @@
         private System.Windows.Forms.Label numeroAtributos;
         private System.Windows.Forms.Label numeroCategorias;
         private System.Windows.Forms.Label numeroAssets;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button CrearCSVButton;
+        private System.Windows.Forms.Button CrearJSONButton;
     }
 }

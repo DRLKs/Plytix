@@ -143,6 +143,12 @@
     <Compile Include="CuentaForm.Designer.cs">
       <DependentUpon>CuentaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AtributosAñadirForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AtributosAñadirForm.Designer.cs">
+      <DependentUpon>AtributosAñadirForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductosRelacionadosListar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +228,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource2.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AtributosAñadirForm.resx">
+      <DependentUpon>AtributosAñadirForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AtributosListarForm.resx">
       <DependentUpon>AtributosListarForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.AtributosGridView = new System.Windows.Forms.DataGridView();
             this.buttonAddLabel = new System.Windows.Forms.Button();
             this.addLabel = new System.Windows.Forms.Label();
@@ -43,14 +43,14 @@
             this.AtributosGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.AtributosGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.AtributosGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.AtributosGridView.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.AtributosGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.AtributosGridView.GridColor = System.Drawing.SystemColors.Control;
             this.AtributosGridView.Location = new System.Drawing.Point(2, 104);
             this.AtributosGridView.MultiSelect = false;
@@ -73,6 +73,7 @@
             this.buttonAddLabel.TabIndex = 20;
             this.buttonAddLabel.Text = "+";
             this.buttonAddLabel.UseVisualStyleBackColor = true;
+            this.buttonAddLabel.Click += new System.EventHandler(this.AddAtributoClick);
             // 
             // addLabel
             // 
@@ -81,9 +82,9 @@
             this.addLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.addLabel.Location = new System.Drawing.Point(1110, 28);
             this.addLabel.Name = "addLabel";
-            this.addLabel.Size = new System.Drawing.Size(133, 25);
+            this.addLabel.Size = new System.Drawing.Size(125, 25);
             this.addLabel.TabIndex = 21;
-            this.addLabel.Text = "Add Category";
+            this.addLabel.Text = "Add Atributte";
             this.addLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // AtributosListarForm

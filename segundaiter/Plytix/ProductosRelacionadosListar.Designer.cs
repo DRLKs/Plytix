@@ -28,41 +28,58 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductosRelacionadosListar));
             this.ProductosRelaciondosdataGridView = new System.Windows.Forms.DataGridView();
-            this.plytixLabel = new System.Windows.Forms.Label();
+            this.addLabel = new System.Windows.Forms.Label();
+            this.buttonAddLabel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ProductosRelaciondosdataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // ProductosRelaciondosdataGridView
             // 
             this.ProductosRelaciondosdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ProductosRelaciondosdataGridView.Location = new System.Drawing.Point(12, 235);
+            this.ProductosRelaciondosdataGridView.Location = new System.Drawing.Point(230, 225);
             this.ProductosRelaciondosdataGridView.Name = "ProductosRelaciondosdataGridView";
             this.ProductosRelaciondosdataGridView.RowHeadersWidth = 51;
             this.ProductosRelaciondosdataGridView.RowTemplate.Height = 24;
             this.ProductosRelaciondosdataGridView.Size = new System.Drawing.Size(792, 187);
             this.ProductosRelaciondosdataGridView.TabIndex = 0;
             // 
-            // plytixLabel
+            // addLabel
             // 
-            this.plytixLabel.AutoSize = true;
-            this.plytixLabel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.plytixLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.plytixLabel.ForeColor = System.Drawing.Color.Purple;
-            this.plytixLabel.Location = new System.Drawing.Point(23, 20);
-            this.plytixLabel.Name = "plytixLabel";
-            this.plytixLabel.Size = new System.Drawing.Size(98, 29);
-            this.plytixLabel.TabIndex = 13;
-            this.plytixLabel.Text = "PLYTIX";
+            this.addLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.addLabel.AutoSize = true;
+            this.addLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.addLabel.Location = new System.Drawing.Point(814, 150);
+            this.addLabel.Name = "addLabel";
+            this.addLabel.Size = new System.Drawing.Size(123, 25);
+            this.addLabel.TabIndex = 23;
+            this.addLabel.Text = "Add Relation";
+            this.addLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Form1
+            // buttonAddLabel
+            // 
+            this.buttonAddLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonAddLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAddLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.buttonAddLabel.Location = new System.Drawing.Point(953, 138);
+            this.buttonAddLabel.Name = "buttonAddLabel";
+            this.buttonAddLabel.Size = new System.Drawing.Size(54, 49);
+            this.buttonAddLabel.TabIndex = 22;
+            this.buttonAddLabel.Text = "+";
+            this.buttonAddLabel.UseVisualStyleBackColor = true;
+            this.buttonAddLabel.Click += new System.EventHandler(this.AddRelatedProduct_Click);
+            // 
+            // ProductosRelacionadosListar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1286, 565);
-            this.Controls.Add(this.plytixLabel);
+            this.Controls.Add(this.addLabel);
+            this.Controls.Add(this.buttonAddLabel);
             this.Controls.Add(this.ProductosRelaciondosdataGridView);
-            this.Name = "Form1";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "ProductosRelacionadosListar";
             this.Text = "RelatedProducts";
             ((System.ComponentModel.ISupportInitialize)(this.ProductosRelaciondosdataGridView)).EndInit();
             this.ResumeLayout(false);
@@ -73,6 +90,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView ProductosRelaciondosdataGridView;
-        private System.Windows.Forms.Label plytixLabel;
+        private System.Windows.Forms.Label addLabel;
+        private System.Windows.Forms.Button buttonAddLabel;
     }
 }

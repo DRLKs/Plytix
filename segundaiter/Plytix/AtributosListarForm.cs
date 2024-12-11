@@ -65,5 +65,12 @@ namespace Plytix
 
             });
         }
+
+        private void AddAtributoClick(object sender, EventArgs e)
+        {
+            AtributosAñadirForm productosAddForm = new AtributosAñadirForm();
+            productosAddForm.Owner = this;
+            productosAddForm.ShowDialog();
+        }
     }
 }

@@ -81,6 +81,17 @@ namespace Plytix
             panelMain.Controls.Add(form);
             form.Show();
         }
+
+        private void RelatedProducts_Click(object sender, EventArgs e)
+        {
+            panelMain.Controls.Clear();
+            ProductosRelacionadosListar form = new ProductosRelacionadosListar();
+            form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(form);
+            form.Show();
+        }
     }
 }
 
