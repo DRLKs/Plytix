@@ -16,7 +16,8 @@ namespace Plytix
         public AtributosAñadirForm()
         {
             InitializeComponent();
-             bd = new grupo11DBEntities();
+            bd = new grupo11DBEntities();
+            CargarComboBox();
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
@@ -26,15 +27,20 @@ namespace Plytix
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            if(textBoxName.Text != null && textBoxName.Text != "")
+            var tiposDisponibles = new[] { "Text", "Integer", "Decimal", "Image" };
+
+            if ( !tiposDisponibles.Contains(comboBoxTipos.SelectedItem))
             {
-                PRODRELACIONADOS nuevoProductoRelacionado = new PRODRELACIONADOS
+                MessageBox.Show("You must select a type from those available");
+            }
+            else if(textBoxName.Text != null && textBoxName.Text != "")
+            {
+                ATRIBUTO nuevoAtributo = new ATRIBUTO
                 {
-                    NAME = textBoxName.Text
-                    // FALTA ELEGIR TIPO
-                    // NO LOS AÑADE
+                    NOMBRE = textBoxName.Text,
+                    TIPO = comboBoxTipos.SelectedItem.ToString()
                 };
-                bd.PRODRELACIONADOS.Add(nuevoProductoRelacionado);
+                bd.ATRIBUTO.Add(nuevoAtributo);
                 bd.SaveChanges();
                 if (this.Owner is ProductosRelacionadosListar parentForm) parentForm.CargarProductosRelacionados(); // Para recargar los datos del grid en la ventana abierta         
                 Close();
@@ -43,6 +49,13 @@ namespace Plytix
             {
                 MessageBox.Show("You must fill in the name of the relationship");
             }
+        }
+
+        private void CargarComboBox()
+        {
+            var tipos = new[] { "Text", "Integer", "Decimal", "Image" };
+            comboBoxTipos.DataSource = tipos;
+            comboBoxTipos.SelectedItem = null;
         }
     }
 }

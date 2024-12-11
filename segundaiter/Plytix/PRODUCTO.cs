@@ -19,7 +19,11 @@ namespace Plytix
             this.CATEGORIA = new HashSet<CATEGORIA>();
             this.PRODRELACIONADOS = new HashSet<PRODRELACIONADOS>();
         }
-    
+
+        public override string ToString()
+        {
+            return NOMBRE;
+        }
         public int ID { get; set; }
         public byte[] THUMBNAIL { get; set; }
         public string NOMBRE { get; set; }

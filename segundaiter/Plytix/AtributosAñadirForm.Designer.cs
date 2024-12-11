@@ -33,11 +33,12 @@
             this.CancelButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
+            this.comboBoxTipos = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(314, 135);
+            this.SaveButton.Location = new System.Drawing.Point(312, 198);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(75, 23);
             this.SaveButton.TabIndex = 0;
@@ -47,7 +48,7 @@
             // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(417, 135);
+            this.CancelButton.Location = new System.Drawing.Point(428, 198);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(75, 23);
             this.CancelButton.TabIndex = 1;
@@ -71,11 +72,20 @@
             this.textBoxName.Size = new System.Drawing.Size(100, 22);
             this.textBoxName.TabIndex = 3;
             // 
+            // comboBoxTipos
+            // 
+            this.comboBoxTipos.FormattingEnabled = true;
+            this.comboBoxTipos.Location = new System.Drawing.Point(355, 105);
+            this.comboBoxTipos.Name = "comboBoxTipos";
+            this.comboBoxTipos.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxTipos.TabIndex = 4;
+            // 
             // AtributosAñadirForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBoxTipos);
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CancelButton);
@@ -94,5 +104,6 @@
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.ComboBox comboBoxTipos;
     }
 }

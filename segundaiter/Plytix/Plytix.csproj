@@ -149,6 +149,12 @@
     <Compile Include="AtributosAñadirForm.Designer.cs">
       <DependentUpon>AtributosAñadirForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductosRelacionadosAñadirForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductosRelacionadosAñadirForm.Designer.cs">
+      <DependentUpon>ProductosRelacionadosAñadirForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductosRelacionadosListar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,6 +251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CuentaForm.resx">
       <DependentUpon>CuentaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductosRelacionadosAñadirForm.resx">
+      <DependentUpon>ProductosRelacionadosAñadirForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductosRelacionadosListar.resx">
       <DependentUpon>ProductosRelacionadosListar.cs</DependentUpon>

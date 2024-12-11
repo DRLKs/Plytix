@@ -148,8 +148,6 @@ namespace Plytix
             return string.Join("", gtin);
         }
 
-
-
         private void GenerateGTINClick(object sender, EventArgs e)
         {
             textBoxGTIN.Text = GenerarGTINAleatorio();

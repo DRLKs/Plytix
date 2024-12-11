@@ -25,6 +25,8 @@ namespace Plytix
             // Deja vacío el Grid view 
             ProductosRelaciondosdataGridView.DataSource = null;
             ProductosRelaciondosdataGridView.Columns.Clear();
+            ProductosRelaciondosdataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
+            ProductosRelaciondosdataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             // Cargo las columnas de las categorías con los campos necesarios
             var seleccion = from PR in db.PRODRELACIONADOS
@@ -68,7 +70,9 @@ namespace Plytix
 
         private void AddRelatedProduct_Click(object sender, EventArgs e)
         {
-
+            ProductosRelacionadosAñadirForm categoriaEditarForm = new ProductosRelacionadosAñadirForm();
+            categoriaEditarForm.Owner = this;
+            categoriaEditarForm.ShowDialog();
         }
     }
 }
