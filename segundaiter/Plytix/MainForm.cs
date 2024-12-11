@@ -59,6 +59,28 @@ namespace Plytix
             panelMain.Controls.Add(form);
             form.Show();
         }
+
+        private void Atributos_Click(object sender, EventArgs e)
+        {
+            panelMain.Controls.Clear();
+            AtributosListarForm form = new AtributosListarForm();
+            form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(form);
+            form.Show();
+        }
+
+        private void Account_Click(object sender, EventArgs e)
+        {
+            panelMain.Controls.Clear();
+            CuentaForm form = new CuentaForm();
+            form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(form);
+            form.Show();
+        }
     }
 }
 

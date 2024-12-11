@@ -18,7 +18,12 @@ namespace Plytix
         {
             this.PRODUCTO = new HashSet<PRODUCTO>();
         }
-    
+
+        public override string ToString()
+        {
+            return NOMBRE;
+        }
+
         public int ID { get; set; }
         public string NOMBRE { get; set; }
     

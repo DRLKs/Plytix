@@ -131,6 +131,18 @@
     <Compile Include="CategoriasListarForm.Designer.cs">
       <DependentUpon>CategoriasListarForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AtributosListarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AtributosListarForm.Designer.cs">
+      <DependentUpon>AtributosListarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CuentaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CuentaForm.Designer.cs">
+      <DependentUpon>CuentaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductosRelacionadosListar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +222,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource2.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AtributosListarForm.resx">
+      <DependentUpon>AtributosListarForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CategoriasAñadirForm.resx">
       <DependentUpon>CategoriasAñadirForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CategoriasListarForm.resx">
       <DependentUpon>CategoriasListarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CuentaForm.resx">
+      <DependentUpon>CuentaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductosRelacionadosListar.resx">
       <DependentUpon>ProductosRelacionadosListar.cs</DependentUpon>

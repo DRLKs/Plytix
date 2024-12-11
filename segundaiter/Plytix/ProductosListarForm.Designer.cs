@@ -54,7 +54,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.ProductosGridView.DefaultCellStyle = dataGridViewCellStyle1;
             this.ProductosGridView.GridColor = System.Drawing.SystemColors.Control;
-            this.ProductosGridView.Location = new System.Drawing.Point(97, 160);
+            this.ProductosGridView.Location = new System.Drawing.Point(106, 119);
             this.ProductosGridView.MultiSelect = false;
             this.ProductosGridView.Name = "ProductosGridView";
             this.ProductosGridView.ReadOnly = true;
@@ -71,7 +71,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(108, 128);
+            this.label2.Location = new System.Drawing.Point(101, 62);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(230, 29);
             this.label2.TabIndex = 7;
@@ -82,7 +82,7 @@
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button1.Location = new System.Drawing.Point(1251, 105);
+            this.button1.Location = new System.Drawing.Point(1277, 50);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(54, 49);
             this.button1.TabIndex = 14;
@@ -95,7 +95,7 @@
             this.Add.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Add.AutoSize = true;
             this.Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.Add.Location = new System.Drawing.Point(1104, 117);
+            this.Add.Location = new System.Drawing.Point(1142, 62);
             this.Add.Name = "Add";
             this.Add.Size = new System.Drawing.Size(120, 25);
             this.Add.TabIndex = 13;

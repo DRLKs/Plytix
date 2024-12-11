@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -60,7 +61,7 @@ namespace Plytix
 
         // BOTÓN DE GUARDAR
         private void buttonSave_Click(object sender, EventArgs e)
-        {
+        {   
             var productoSeleccionado = (from p in bd.PRODUCTO
                                 where p.SKU == sku
                                 select p).First();
@@ -70,8 +71,30 @@ namespace Plytix
             productoSeleccionado.GTIN = textBoxGTIN.Text;
             productoSeleccionado.FECHA_EDICION = DateTime.Now;
 
+            /* Limpiamos las relaciones entre categorias y productos */
+            productoSeleccionado.CATEGORIA.Clear();
+            foreach( CATEGORIA categoria in categoriaListBox.Items)
+            {
+                categoria.PRODUCTO.Remove(productoSeleccionado);
+            }
 
-            bd.SaveChanges();
+            /* Añadimos las relaciones entre categorías y productos seleccionados */
+            foreach( CATEGORIA categoria in categoriaListBox.SelectedItems) /* FUNCIONA MAL */
+            {
+                Console.WriteLine(categoria.NOMBRE);    /* DEPURACIÓN */
+                productoSeleccionado.CATEGORIA.Add(categoria);
+                categoria.PRODUCTO.Add(productoSeleccionado);
+            }
+
+            bd.PRODUCTO.AddOrUpdate();
+            try
+            {
+                bd.SaveChanges();
+            }
+            catch( Exception)
+            {
+                    MessageBox.Show("You haven't made any changes");
+            }
             if (this.Owner is ProductosListarForm parentForm) parentForm.ProductosListarForm_Load(null, null); // Para recargar los datos del grid en la ventana abierta         
             Close();
         }

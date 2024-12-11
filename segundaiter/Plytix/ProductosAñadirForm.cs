@@ -39,12 +39,11 @@ namespace Plytix
                 productoNuevo.GTIN = textBoxGTIN.Text;
 
                 /* OPCIONALES */
-                if ( categoriaListBox.SelectedItems.Count > 0 )
-                {   
-                    foreach( CATEGORIA categorias in categoriaListBox.SelectedItems)
-                    {
-                        productoNuevo.CATEGORIA.Add( categorias );
-                    }
+                /* Añadimos las relaciones entre categorías y productos seleccionados*/
+                foreach (CATEGORIA categoria in categoriaListBox.SelectedItems)
+                {
+                    productoNuevo.CATEGORIA.Add(categoria);
+                    categoria.PRODUCTO.Add(productoNuevo);
                 }
 
                 bd.PRODUCTO.Add( productoNuevo );

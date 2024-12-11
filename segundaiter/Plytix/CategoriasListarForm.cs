@@ -70,9 +70,9 @@ namespace Plytix
         private void CategoriasGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string columnName = CategoriasGridView.Columns[e.ColumnIndex].Name; // Columna desde la que ocurrió el click
-            string nombreCategoria = (CategoriasGridView.Rows[e.RowIndex].Cells[0].Value).ToString();
+            string nombreCategoria = (CategoriasGridView.Rows[e.RowIndex].Cells["NAME"].Value).ToString();
             CATEGORIA categoria = (from c in bd.CATEGORIA
-                                  where c.NOMBRE.Equals(nombreCategoria)
+                                  where c.NOMBRE == nombreCategoria
                                   select c).First();
 
             if (columnName == "Edit") // Columna Editar
@@ -84,15 +84,18 @@ namespace Plytix
             }
             else if (columnName == "Delete") // Columna Eliminar
             {
-                DialogResult result = MessageBox.Show("Are you sure you want to delete this category?",
-                                                      "Confirmation", MessageBoxButtons.YesNo);
-
-                if (result == DialogResult.Yes)
+                if (categoria.PRODUCTO.Count > 0)
                 {
-                    bd.CATEGORIA.Remove(categoria);
-                    bd.SaveChanges();
-                    CategoriasGridView.ClearSelection();
-                    CategoriasListarForm_Load(null, null);
+                    DialogResult result = MessageBox.Show("Are you sure you want to delete this category?",
+                                                          "Confirmation", MessageBoxButtons.YesNo);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        bd.CATEGORIA.Remove(categoria);
+                        bd.SaveChanges();
+                        CategoriasGridView.ClearSelection();
+                        CategoriasListarForm_Load(null, null);
+                    }
                 }
             }
         }

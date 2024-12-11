@@ -41,7 +41,7 @@
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button1.Location = new System.Drawing.Point(1285, 97);
+            this.button1.Location = new System.Drawing.Point(1264, 36);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(54, 49);
             this.button1.TabIndex = 19;
@@ -54,7 +54,7 @@
             this.addLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.addLabel.AutoSize = true;
             this.addLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.addLabel.Location = new System.Drawing.Point(1129, 109);
+            this.addLabel.Location = new System.Drawing.Point(1114, 44);
             this.addLabel.Name = "addLabel";
             this.addLabel.Size = new System.Drawing.Size(133, 25);
             this.addLabel.TabIndex = 18;
@@ -78,7 +78,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.CategoriasGridView.DefaultCellStyle = dataGridViewCellStyle1;
             this.CategoriasGridView.GridColor = System.Drawing.SystemColors.Control;
-            this.CategoriasGridView.Location = new System.Drawing.Point(38, 152);
+            this.CategoriasGridView.Location = new System.Drawing.Point(38, 91);
             this.CategoriasGridView.MultiSelect = false;
             this.CategoriasGridView.Name = "CategoriasGridView";
             this.CategoriasGridView.ReadOnly = true;
@@ -95,7 +95,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(33, 117);
+            this.label2.Location = new System.Drawing.Point(33, 44);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(253, 29);
             this.label2.TabIndex = 15;
