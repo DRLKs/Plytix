@@ -137,6 +137,9 @@
     <Compile Include="AtributosListarForm.Designer.cs">
       <DependentUpon>AtributosListarForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CUENTA.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="CuentaForm.cs">
       <SubType>Form</SubType>
     </Compile>

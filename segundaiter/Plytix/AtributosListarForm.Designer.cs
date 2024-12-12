@@ -62,6 +62,7 @@
             this.AtributosGridView.RowTemplate.Height = 24;
             this.AtributosGridView.Size = new System.Drawing.Size(1301, 199);
             this.AtributosGridView.TabIndex = 17;
+            this.AtributosGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AtributosGridView_CellContentClick);
             // 
             // buttonAddLabel
             // 

@@ -84,6 +84,13 @@ namespace Plytix
             }
             else if (columnName == "Delete") // Columna Eliminar
             {
+                if(categoria.PRODUCTO.Count == 0)
+                {
+                    bd.CATEGORIA.Remove(categoria);
+                    bd.SaveChanges();
+                    CategoriasListarForm_Load(null, null);
+
+                }
                 if (categoria.PRODUCTO.Count > 0)
                 {
                     DialogResult result = MessageBox.Show("Are you sure you want to delete this category?",
@@ -97,6 +104,7 @@ namespace Plytix
                         CategoriasListarForm_Load(null, null);
                     }
                 }
+
             }
         }
 

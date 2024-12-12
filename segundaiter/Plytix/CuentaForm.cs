@@ -20,6 +20,9 @@ namespace Plytix
 
         public void CargarLabels()
         {
+            CUENTA cuenta = bd.CUENTA.First(p => p.ID == 0);
+            NombreCuentaLabel.Text = cuenta.nombre;
+
             int numProductos = bd.PRODUCTO.Count();
             numeroProductos.Text = "Number of Products = " + numProductos;
 
@@ -29,7 +32,6 @@ namespace Plytix
             int numAtributes = bd.ATRIBUTO.Count();
             numeroAtributos.Text = "Number of Atributtes = " + numAtributes;
 
-            numeroAssets.Text = "Number os Assets = 0";
         }
 
         private void CrearCSVClick(object sender, EventArgs e)

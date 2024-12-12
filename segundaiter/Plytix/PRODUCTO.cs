@@ -18,12 +18,9 @@ namespace Plytix
         {
             this.CATEGORIA = new HashSet<CATEGORIA>();
             this.PRODRELACIONADOS = new HashSet<PRODRELACIONADOS>();
+            this.ATRIBUTO = new HashSet<ATRIBUTO>();
         }
-
-        public override string ToString()
-        {
-            return NOMBRE;
-        }
+    
         public int ID { get; set; }
         public byte[] THUMBNAIL { get; set; }
         public string NOMBRE { get; set; }
@@ -34,5 +31,6 @@ namespace Plytix
     
         public virtual ICollection<CATEGORIA> CATEGORIA { get; set; }
         public virtual ICollection<PRODRELACIONADOS> PRODRELACIONADOS { get; set; }
+        public virtual ICollection<ATRIBUTO> ATRIBUTO { get; set; }
     }
 }

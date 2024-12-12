@@ -30,32 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductosRelacionadosListar));
             this.ProductosRelaciondosdataGridView = new System.Windows.Forms.DataGridView();
-            this.addLabel = new System.Windows.Forms.Label();
             this.buttonAddLabel = new System.Windows.Forms.Button();
+            this.addLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ProductosRelaciondosdataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // ProductosRelaciondosdataGridView
             // 
             this.ProductosRelaciondosdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ProductosRelaciondosdataGridView.Location = new System.Drawing.Point(230, 225);
+            this.ProductosRelaciondosdataGridView.Location = new System.Drawing.Point(215, 221);
             this.ProductosRelaciondosdataGridView.Name = "ProductosRelaciondosdataGridView";
             this.ProductosRelaciondosdataGridView.RowHeadersWidth = 51;
             this.ProductosRelaciondosdataGridView.RowTemplate.Height = 24;
             this.ProductosRelaciondosdataGridView.Size = new System.Drawing.Size(792, 187);
             this.ProductosRelaciondosdataGridView.TabIndex = 0;
-            // 
-            // addLabel
-            // 
-            this.addLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.addLabel.AutoSize = true;
-            this.addLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.addLabel.Location = new System.Drawing.Point(814, 150);
-            this.addLabel.Name = "addLabel";
-            this.addLabel.Size = new System.Drawing.Size(123, 25);
-            this.addLabel.TabIndex = 23;
-            this.addLabel.Text = "Add Relation";
-            this.addLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonAddLabel
             // 
@@ -69,6 +57,18 @@
             this.buttonAddLabel.Text = "+";
             this.buttonAddLabel.UseVisualStyleBackColor = true;
             this.buttonAddLabel.Click += new System.EventHandler(this.AddRelatedProduct_Click);
+            // 
+            // addLabel
+            // 
+            this.addLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.addLabel.AutoSize = true;
+            this.addLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.addLabel.Location = new System.Drawing.Point(814, 150);
+            this.addLabel.Name = "addLabel";
+            this.addLabel.Size = new System.Drawing.Size(123, 25);
+            this.addLabel.TabIndex = 23;
+            this.addLabel.Text = "Add Relation";
+            this.addLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ProductosRelacionadosListar
             // 
@@ -90,7 +90,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView ProductosRelaciondosdataGridView;
-        private System.Windows.Forms.Label addLabel;
         private System.Windows.Forms.Button buttonAddLabel;
+        private System.Windows.Forms.Label addLabel;
     }
 }

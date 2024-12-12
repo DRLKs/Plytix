@@ -12,16 +12,11 @@ namespace Plytix
     using System;
     using System.Collections.Generic;
     
-    public partial class CATEGORIA
+    public partial class CUENTA
     {
-        public CATEGORIA()
-        {
-            this.PRODUCTO = new HashSet<PRODUCTO>();
-        }
-    
         public int ID { get; set; }
-        public string NOMBRE { get; set; }
-    
-        public virtual ICollection<PRODUCTO> PRODUCTO { get; set; }
+        public string nombre { get; set; }
+        public System.DateTime fechaCreacion { get; set; }
+        public byte[] thumbnail { get; set; }
     }
 }

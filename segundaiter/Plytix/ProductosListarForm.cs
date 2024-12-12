@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity.Migrations;
 using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 
 namespace Plytix
@@ -18,17 +21,20 @@ namespace Plytix
         {
             // Deja vacío el Grid view 
             ProductosGridView.DataSource = null;
-            ProductosGridView.Columns.Clear();  
-
+            ProductosGridView.Columns.Clear();
+           
+            // Tamaño: 45, Precio: 78, Altura: 78
             // Cargo las columnas de los productos con los campos necesarios
-            var seleccion = from p in bd.PRODUCTO
-                            select new
+            var seleccion = bd.PRODUCTO
+                            .AsEnumerable()
+                            .Select(p => new
                             {
                                 THUMBNAIL = p.THUMBNAIL,
                                 NAME = p.NOMBRE,
-                                p.SKU
-                            };
-            ProductosGridView.DataSource = seleccion.ToList();
+                                SKU = p.SKU,
+                                ATRIBUTOS = atributosProductos(p)
+                            }).ToList();
+            ProductosGridView.DataSource = seleccion;
             ProductosGridView.ClearSelection();
 
             // Añado las columnas con los botones de editar y eliminar
@@ -50,33 +56,58 @@ namespace Plytix
             });
         }
 
+        private String atributosProductos (PRODUCTO prod)
+        {
+            int cont = 0;
+            StringBuilder sb = new StringBuilder();
+            //for(ATRIBUTO atr in prod.ATRIBUTO)
+            //{
+            //  sb.Append(atr.NOMBRE + ": ");
+            //  sb.Append(atr.valor);
+            //}
+            
+            
+            return sb.ToString();
+            
+        }
+
         // Si se ha pulsado alguna celda (nos interesan las de editar y eliminar)
         private void ProductosGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string columnName = ProductosGridView.Columns[e.ColumnIndex].Name; // Columna desde la que ocurrió el click
-            String sku = ProductosGridView.Rows[e.RowIndex].Cells["SKU"].Value.ToString();
-            if (columnName == "Edit") // Columna Editar
+            try
             {
-                ProductosEditarForm productosEditarForm = new ProductosEditarForm(sku);
-                productosEditarForm.Owner = this;
-                productosEditarForm.ShowDialog();                
-            }
-            else if (columnName == "Delete") // Columna Eliminar
-            {
-                DialogResult result = MessageBox.Show("Are you sure you want to delete this product?",
-                                                      "Confirmation", MessageBoxButtons.YesNo);
+                string columnName = ProductosGridView.Columns[e.ColumnIndex].Name; // Columna desde la que ocurrió el click
+                String sku = ProductosGridView.Rows[e.RowIndex].Cells["SKU"].Value.ToString();
+                PRODUCTO producto = (from p in bd.PRODUCTO
+                                     where p.SKU == sku
+                                     select p).FirstOrDefault();
 
-                if (result == DialogResult.Yes)
+                if (columnName == "Edit") // Columna Editar
                 {
-                    PRODUCTO dlt = (from p in bd.PRODUCTO
-                                   where p.SKU == sku
-                                   select p).FirstOrDefault();
-                    bd.PRODUCTO.Remove(dlt);
-                    bd.SaveChanges();
-                    ProductosGridView.ClearSelection();
-                    ProductosListarForm_Load(null, null);
+                    ProductosEditarForm productosEditarForm = new ProductosEditarForm(sku);
+                    productosEditarForm.Owner = this;
+                    productosEditarForm.ShowDialog();
+                }
+                else if (columnName == "Delete") // Columna Eliminar
+                {
+                    DialogResult result = MessageBox.Show("Are you sure you want to delete this product?",
+                                                          "Confirmation", MessageBoxButtons.YesNo);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        bd.PRODUCTO.Remove(producto);
+                        bd.SaveChanges();
+                        ProductosGridView.ClearSelection();
+                        ProductosListarForm_Load(null, null);
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.Message);
+
+            }
+
         }
 
         private void plytixLabel_Click(object sender, EventArgs e)

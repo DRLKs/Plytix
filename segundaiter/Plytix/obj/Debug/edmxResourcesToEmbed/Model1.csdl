@@ -13,6 +13,11 @@
       <End Role="PRODUCTO" EntitySet="PRODUCTO" />
       <End Role="PRODRELACIONADOS" EntitySet="PRODRELACIONADOS" />
     </AssociationSet>
+    <EntitySet Name="CUENTA" EntityType="grupo11DBModel.CUENTA" />
+    <AssociationSet Name="PRODUCTO_ATRIBUTO" Association="grupo11DBModel.PRODUCTO_ATRIBUTO">
+      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+      <End Role="ATRIBUTO" EntitySet="ATRIBUTO" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="ATRIBUTO">
     <Key>
@@ -26,6 +31,7 @@
     <Property Name="INT" Type="Int32" />
     <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
     <Property Name="PRODUCTOID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PRODUCTO" Relationship="grupo11DBModel.PRODUCTO_ATRIBUTO" FromRole="ATRIBUTO" ToRole="PRODUCTO" />
   </EntityType>
   <EntityType Name="CATEGORIA">
     <Key>
@@ -56,6 +62,7 @@
     <Property Name="FECHA_EDICION" Type="DateTime" Nullable="false" />
     <NavigationProperty Name="CATEGORIA" Relationship="grupo11DBModel.PROD_CATE" FromRole="PRODUCTO" ToRole="CATEGORIA" />
     <NavigationProperty Name="PRODRELACIONADOS" Relationship="grupo11DBModel.ProdRelacionadosProd" FromRole="PRODUCTO" ToRole="PRODRELACIONADOS" />
+    <NavigationProperty Name="ATRIBUTO" Relationship="grupo11DBModel.PRODUCTO_ATRIBUTO" FromRole="PRODUCTO" ToRole="ATRIBUTO" />
   </EntityType>
   <Association Name="PROD_CATE">
     <End Type="grupo11DBModel.CATEGORIA" Role="CATEGORIA" Multiplicity="*" />
@@ -64,5 +71,18 @@
   <Association Name="ProdRelacionadosProd">
     <End Type="grupo11DBModel.PRODUCTO" Role="PRODUCTO" Multiplicity="*" />
     <End Type="grupo11DBModel.PRODRELACIONADOS" Role="PRODRELACIONADOS" Multiplicity="*" />
+  </Association>
+  <EntityType Name="CUENTA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="fechaCreacion" Type="DateTime" Nullable="false" />
+    <Property Name="thumbnail" Type="Binary" MaxLength="65535" FixedLength="false" />
+  </EntityType>
+  <Association Name="PRODUCTO_ATRIBUTO">
+    <End Type="grupo11DBModel.PRODUCTO" Role="PRODUCTO" Multiplicity="*" />
+    <End Type="grupo11DBModel.ATRIBUTO" Role="ATRIBUTO" Multiplicity="*" />
   </Association>
 </Schema>

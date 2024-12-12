@@ -46,7 +46,12 @@ namespace Plytix
 
             var categoriasProducto = seleccionado.CATEGORIA.ToList();
             categoriaListBox.DataSource = bd.CATEGORIA.ToList();
+
+            var atributosProducto = seleccionado.ATRIBUTO.ToList();
+            atributosListBox.DataSource = bd.ATRIBUTO.ToList();
+
             categoriaListBox.ClearSelected();
+
             if (categoriasProducto != null)
             {
                 for (int i = 0; i < categoriaListBox.Items.Count; i++)
@@ -54,6 +59,17 @@ namespace Plytix
                     if (categoriasProducto.Contains(categoriaListBox.Items[i]))
                     {
                         categoriaListBox.SetItemChecked(i, true);
+                    }
+                }
+            }
+
+            if (atributosProducto != null)
+            {
+                for (int i = 0; i < atributosListBox.Items.Count; i++)
+                {
+                    if (atributosProducto.Contains(atributosListBox.Items[i]))
+                    {
+                        atributosListBox.SetItemChecked(i, true);
                     }
                 }
             }
@@ -66,8 +82,7 @@ namespace Plytix
                                 where p.SKU == sku
                                 select p).First();
             productoSeleccionado.NOMBRE = textBoxNombre.Text;
-            productoSeleccionado.SKU = textBoxSKU.Text; // Es unico y no se debe cambiar a no ser que le asignemos al producto un identificador ID
-                                                        // Hay que hacer una función que valide si el SKU es válido
+            productoSeleccionado.SKU = textBoxSKU.Text; 
             productoSeleccionado.GTIN = textBoxGTIN.Text;
             productoSeleccionado.FECHA_EDICION = DateTime.Now;
 

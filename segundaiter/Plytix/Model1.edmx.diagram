@@ -11,6 +11,8 @@
         <EntityTypeShape EntityType="grupo11DBModel.PRODUCTO" Width="1.5" PointX="3" PointY="1" />
         <AssociationConnector Association="grupo11DBModel.PROD_CATE" />
         <AssociationConnector Association="grupo11DBModel.ProdRelacionadosProd" />
+        <EntityTypeShape EntityType="grupo11DBModel.CUENTA" Width="1.5" PointX="5.25" PointY="4.75" />
+        <AssociationConnector Association="grupo11DBModel.PRODUCTO_ATRIBUTO" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

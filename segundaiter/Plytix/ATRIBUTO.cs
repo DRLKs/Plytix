@@ -14,6 +14,11 @@ namespace Plytix
     
     public partial class ATRIBUTO
     {
+        public ATRIBUTO()
+        {
+            this.PRODUCTO = new HashSet<PRODUCTO>();
+        }
+    
         public int ID { get; set; }
         public string TIPO { get; set; }
         public string STRING { get; set; }
@@ -22,5 +27,7 @@ namespace Plytix
         public Nullable<int> INT { get; set; }
         public string NOMBRE { get; set; }
         public string PRODUCTOID { get; set; }
+    
+        public virtual ICollection<PRODUCTO> PRODUCTO { get; set; }
     }
 }
