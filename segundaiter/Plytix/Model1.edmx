@@ -184,7 +184,6 @@
     <edmx:ConceptualModels>
       <Schema Namespace="grupo11DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="grupo11DBEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="ATRIBUTO" EntityType="grupo11DBModel.ATRIBUTO" />
           <EntitySet Name="CATEGORIA" EntityType="grupo11DBModel.CATEGORIA" />
           <EntitySet Name="PRODRELACIONADOS" EntityType="grupo11DBModel.PRODRELACIONADOS" />
           <EntitySet Name="PRODUCTO" EntityType="grupo11DBModel.PRODUCTO" />
@@ -197,25 +196,17 @@
             <End Role="PRODRELACIONADOS" EntitySet="PRODRELACIONADOS" />
           </AssociationSet>
           <EntitySet Name="CUENTA" EntityType="grupo11DBModel.CUENTA" />
-          <AssociationSet Name="PRODUCTO_ATRIBUTO" Association="grupo11DBModel.PRODUCTO_ATRIBUTO">
-            <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+          <EntitySet Name="ATRIBUTO" EntityType="grupo11DBModel.ATRIBUTO" />
+          <EntitySet Name="PRODUCTO_ATRIBUTO" EntityType="grupo11DBModel.PRODUCTO_ATRIBUTO" />
+          <AssociationSet Name="PRODUCTO_ATRIBUTO_ibfk_2" Association="grupo11DBModel.PRODUCTO_ATRIBUTO_ibfk_2">
             <End Role="ATRIBUTO" EntitySet="ATRIBUTO" />
+            <End Role="PRODUCTO_ATRIBUTO" EntitySet="PRODUCTO_ATRIBUTO" />
+          </AssociationSet>
+          <AssociationSet Name="PRODUCTO_ATRIBUTO_ibfk_1" Association="grupo11DBModel.PRODUCTO_ATRIBUTO_ibfk_1">
+            <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+            <End Role="PRODUCTO_ATRIBUTO" EntitySet="PRODUCTO_ATRIBUTO" />
           </AssociationSet>
         </EntityContainer>
-        <EntityType Name="ATRIBUTO">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TIPO" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
-          <Property Name="STRING" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="ARCHIVO" Type="Binary" MaxLength="65535" FixedLength="false" />
-          <Property Name="FLOAT" Type="Single" />
-          <Property Name="INT" Type="Int32" />
-          <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
-          <Property Name="PRODUCTOID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="PRODUCTO" Relationship="grupo11DBModel.PRODUCTO_ATRIBUTO" FromRole="ATRIBUTO" ToRole="PRODUCTO" />
-        </EntityType>
         <EntityType Name="CATEGORIA">
           <Key>
             <PropertyRef Name="ID" />
@@ -245,7 +236,7 @@
           <Property Name="FECHA_EDICION" Type="DateTime" Nullable="false" />
           <NavigationProperty Name="CATEGORIA" Relationship="grupo11DBModel.PROD_CATE" FromRole="PRODUCTO" ToRole="CATEGORIA" />
           <NavigationProperty Name="PRODRELACIONADOS" Relationship="grupo11DBModel.ProdRelacionadosProd" FromRole="PRODUCTO" ToRole="PRODRELACIONADOS" />
-          <NavigationProperty Name="ATRIBUTO" Relationship="grupo11DBModel.PRODUCTO_ATRIBUTO" FromRole="PRODUCTO" ToRole="ATRIBUTO" />
+          <NavigationProperty Name="PRODUCTO_ATRIBUTO" Relationship="grupo11DBModel.PRODUCTO_ATRIBUTO_ibfk_1" FromRole="PRODUCTO" ToRole="PRODUCTO_ATRIBUTO" />
         </EntityType>
         <Association Name="PROD_CATE">
           <End Type="grupo11DBModel.CATEGORIA" Role="CATEGORIA" Multiplicity="*" />
@@ -264,9 +255,49 @@
           <Property Name="fechaCreacion" Type="DateTime" Nullable="false" />
           <Property Name="thumbnail" Type="Binary" MaxLength="65535" FixedLength="false" />
         </EntityType>
-        <Association Name="PRODUCTO_ATRIBUTO">
-          <End Type="grupo11DBModel.PRODUCTO" Role="PRODUCTO" Multiplicity="*" />
-          <End Type="grupo11DBModel.ATRIBUTO" Role="ATRIBUTO" Multiplicity="*" />
+        <EntityType Name="ATRIBUTO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TIPO" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PRODUCTO_ATRIBUTO" Relationship="grupo11DBModel.PRODUCTO_ATRIBUTO_ibfk_2" FromRole="ATRIBUTO" ToRole="PRODUCTO_ATRIBUTO" />
+        </EntityType>
+        <EntityType Name="PRODUCTO_ATRIBUTO">
+          <Key>
+            <PropertyRef Name="id_producto" />
+            <PropertyRef Name="id_atributo" />
+          </Key>
+          <Property Name="id_producto" Type="Int32" Nullable="false" />
+          <Property Name="id_atributo" Type="Int32" Nullable="false" />
+          <Property Name="valor" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ATRIBUTO" Relationship="grupo11DBModel.PRODUCTO_ATRIBUTO_ibfk_2" FromRole="PRODUCTO_ATRIBUTO" ToRole="ATRIBUTO" />
+          <NavigationProperty Name="PRODUCTO" Relationship="grupo11DBModel.PRODUCTO_ATRIBUTO_ibfk_1" FromRole="PRODUCTO_ATRIBUTO" ToRole="PRODUCTO" />
+        </EntityType>
+        <Association Name="PRODUCTO_ATRIBUTO_ibfk_2">
+          <End Type="grupo11DBModel.ATRIBUTO" Role="ATRIBUTO" Multiplicity="1" />
+          <End Type="grupo11DBModel.PRODUCTO_ATRIBUTO" Role="PRODUCTO_ATRIBUTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ATRIBUTO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PRODUCTO_ATRIBUTO">
+              <PropertyRef Name="id_atributo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PRODUCTO_ATRIBUTO_ibfk_1">
+          <End Type="grupo11DBModel.PRODUCTO" Role="PRODUCTO" Multiplicity="1" />
+          <End Type="grupo11DBModel.PRODUCTO_ATRIBUTO" Role="PRODUCTO_ATRIBUTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PRODUCTO_ATRIBUTO">
+              <PropertyRef Name="id_producto" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         </Schema>
     </edmx:ConceptualModels>
@@ -274,15 +305,6 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="grupo11DBModelStoreContainer" CdmEntityContainer="grupo11DBEntities">
-          <EntitySetMapping Name="ATRIBUTO">
-            <EntityTypeMapping TypeName="grupo11DBModel.ATRIBUTO">
-              <MappingFragment StoreEntitySet="ATRIBUTO">
-                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
-                <ScalarProperty Name="TIPO" ColumnName="TIPO" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="CATEGORIA">
             <EntityTypeMapping TypeName="grupo11DBModel.CATEGORIA">
               <MappingFragment StoreEntitySet="CATEGORIA">
@@ -338,14 +360,24 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="PRODUCTO_ATRIBUTO" TypeName="grupo11DBModel.PRODUCTO_ATRIBUTO" StoreEntitySet="PRODUCTO_ATRIBUTO">
-            <EndProperty Name="ATRIBUTO">
-              <ScalarProperty Name="ID" ColumnName="id_atributo" />
-            </EndProperty>
-            <EndProperty Name="PRODUCTO">
-              <ScalarProperty Name="ID" ColumnName="id_producto" />
-            </EndProperty>
-          </AssociationSetMapping>
+          <EntitySetMapping Name="ATRIBUTO">
+            <EntityTypeMapping TypeName="grupo11DBModel.ATRIBUTO">
+              <MappingFragment StoreEntitySet="ATRIBUTO">
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRODUCTO_ATRIBUTO">
+            <EntityTypeMapping TypeName="grupo11DBModel.PRODUCTO_ATRIBUTO">
+              <MappingFragment StoreEntitySet="PRODUCTO_ATRIBUTO">
+                <ScalarProperty Name="valor" ColumnName="valor" />
+                <ScalarProperty Name="id_atributo" ColumnName="id_atributo" />
+                <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -97,7 +97,6 @@ namespace Plytix
 
 /* COSAS QUE FALTAN POR IMPLEMENTAR:
     
-        FALLO al insertar categoria. Mirar si he copiado algo del modificar categoría que aquí no haga falta
         El thumbnail tiene que ser obligatorio (añadir imagen a todos los productos y cambiar la base de datos)
         Añadir descripciones corta y larga para cada producto y apartado para poder visualizar el producto con dichas descripciones
         

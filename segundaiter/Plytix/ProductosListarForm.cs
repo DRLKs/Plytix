@@ -17,22 +17,37 @@ namespace Plytix
             this.FormClosing += MainForm_FormClosing;   // Para cerrar el programa no solo el FORMS
         }
 
+        private String atributosProductos(PRODUCTO prod)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (PRODUCTO_ATRIBUTO atr in prod.PRODUCTO_ATRIBUTO.ToList())
+            {
+                sb.Append(atr.ATRIBUTO.NOMBRE + ": ");
+                sb.Append(atr.valor + "\n");
+            }
+            return sb.ToString();
+        }
+
         public void ProductosListarForm_Load(object sender, EventArgs e)
         {
             // Deja vacío el Grid view 
             ProductosGridView.DataSource = null;
             ProductosGridView.Columns.Clear();
-           
+
             // Tamaño: 45, Precio: 78, Altura: 78
             // Cargo las columnas de los productos con los campos necesarios
             var seleccion = bd.PRODUCTO
-                            .AsEnumerable()
+                            .ToList()
                             .Select(p => new
                             {
                                 THUMBNAIL = p.THUMBNAIL,
                                 NAME = p.NOMBRE,
                                 SKU = p.SKU,
+                                //bd.ATRIBUTO[0].NOMBRE = mostrarValor(bd.ATRIBUTO[0].ID, p.ID)
                                 ATRIBUTOS = atributosProductos(p)
+                                //ATRIBUTOS = string.Join(", ", p.PRODUCTO_ATRIBUTO
+                                //    .Select(a => a.ATRIBUTO.NOMBRE + ": " + a.valor))
+
                             }).ToList();
             ProductosGridView.DataSource = seleccion;
             ProductosGridView.ClearSelection();
@@ -52,24 +67,10 @@ namespace Plytix
                 HeaderText = "DELETE",
                 Text = "🗑️",
                 UseColumnTextForButtonValue = true
-                
+
             });
         }
-
-        private String atributosProductos (PRODUCTO prod)
-        {
-            int cont = 0;
-            StringBuilder sb = new StringBuilder();
-            //for(ATRIBUTO atr in prod.ATRIBUTO)
-            //{
-            //  sb.Append(atr.NOMBRE + ": ");
-            //  sb.Append(atr.valor);
-            //}
-            
-            
-            return sb.ToString();
-            
-        }
+        
 
         // Si se ha pulsado alguna celda (nos interesan las de editar y eliminar)
         private void ProductosGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)

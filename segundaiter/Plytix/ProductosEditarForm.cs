@@ -47,7 +47,12 @@ namespace Plytix
             var categoriasProducto = seleccionado.CATEGORIA.ToList();
             categoriaListBox.DataSource = bd.CATEGORIA.ToList();
 
-            var atributosProducto = seleccionado.ATRIBUTO.ToList();
+            var atributosProducto = new List<ATRIBUTO>();
+            foreach (PRODUCTO_ATRIBUTO atr in seleccionado.PRODUCTO_ATRIBUTO)
+            {
+                atributosProducto.Add(atr.ATRIBUTO);
+            }
+            
             atributosListBox.DataSource = bd.ATRIBUTO.ToList();
 
             categoriaListBox.ClearSelected();

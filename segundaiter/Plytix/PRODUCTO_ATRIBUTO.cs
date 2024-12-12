@@ -12,17 +12,13 @@ namespace Plytix
     using System;
     using System.Collections.Generic;
     
-    public partial class ATRIBUTO
+    public partial class PRODUCTO_ATRIBUTO
     {
-        public ATRIBUTO()
-        {
-            this.PRODUCTO_ATRIBUTO = new HashSet<PRODUCTO_ATRIBUTO>();
-        }
+        public int id_producto { get; set; }
+        public int id_atributo { get; set; }
+        public string valor { get; set; }
     
-        public int ID { get; set; }
-        public string TIPO { get; set; }
-        public string NOMBRE { get; set; }
-    
-        public virtual ICollection<PRODUCTO_ATRIBUTO> PRODUCTO_ATRIBUTO { get; set; }
+        public virtual ATRIBUTO ATRIBUTO { get; set; }
+        public virtual PRODUCTO PRODUCTO { get; set; }
     }
 }

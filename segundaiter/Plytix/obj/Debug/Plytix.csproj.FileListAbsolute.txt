@@ -465,3 +465,7 @@ C:\Users\Alejandro\OneDrive - Universidad de Málaga\Escritorio\UNIVERSIDAD\Plyt
 C:\Users\Alejandro\OneDrive - Universidad de Málaga\Escritorio\UNIVERSIDAD\Plytix\Plytix\segundaiter\Plytix\obj\Debug\Plytix.csproj.Up2Date
 C:\Users\Alejandro\OneDrive - Universidad de Málaga\Escritorio\UNIVERSIDAD\Plytix\Plytix\segundaiter\Plytix\obj\Debug\Plytix.exe
 C:\Users\Alejandro\OneDrive - Universidad de Málaga\Escritorio\UNIVERSIDAD\Plytix\Plytix\segundaiter\Plytix\obj\Debug\Plytix.pdb
+C:\Users\franc\Documents\GitHub\Plytix\segundaiter\Plytix\obj\Debug\Plytix.AtributosAñadirForm.resources
+C:\Users\franc\Documents\GitHub\Plytix\segundaiter\Plytix\obj\Debug\Plytix.AtributosListarForm.resources
+C:\Users\franc\Documents\GitHub\Plytix\segundaiter\Plytix\obj\Debug\Plytix.CuentaForm.resources
+C:\Users\franc\Documents\GitHub\Plytix\segundaiter\Plytix\obj\Debug\Plytix.ProductosRelacionadosAñadirForm.resources

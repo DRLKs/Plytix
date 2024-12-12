@@ -45,7 +45,7 @@ namespace Plytix
             {
                 saveFileDialog.Title = "Guardar archivo JSON";
                 saveFileDialog.Filter = "Archivos JSON (*.json)|*.json";
-                saveFileDialog.FileName = "productos.json"; // Nombre predeterminado del archivo
+                saveFileDialog.FileName = "accountInfo.json"; // Nombre predeterminado del archivo
 
                 // Mostrar el diálogo al usuario
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)

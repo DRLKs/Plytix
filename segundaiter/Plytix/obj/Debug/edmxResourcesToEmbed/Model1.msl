@@ -1,15 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="grupo11DBModelStoreContainer" CdmEntityContainer="grupo11DBEntities">
-    <EntitySetMapping Name="ATRIBUTO">
-      <EntityTypeMapping TypeName="grupo11DBModel.ATRIBUTO">
-        <MappingFragment StoreEntitySet="ATRIBUTO">
-          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
-          <ScalarProperty Name="TIPO" ColumnName="TIPO" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="CATEGORIA">
       <EntityTypeMapping TypeName="grupo11DBModel.CATEGORIA">
         <MappingFragment StoreEntitySet="CATEGORIA">
@@ -65,13 +56,23 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="PRODUCTO_ATRIBUTO" TypeName="grupo11DBModel.PRODUCTO_ATRIBUTO" StoreEntitySet="PRODUCTO_ATRIBUTO">
-      <EndProperty Name="ATRIBUTO">
-        <ScalarProperty Name="ID" ColumnName="id_atributo" />
-      </EndProperty>
-      <EndProperty Name="PRODUCTO">
-        <ScalarProperty Name="ID" ColumnName="id_producto" />
-      </EndProperty>
-    </AssociationSetMapping>
+    <EntitySetMapping Name="ATRIBUTO">
+      <EntityTypeMapping TypeName="grupo11DBModel.ATRIBUTO">
+        <MappingFragment StoreEntitySet="ATRIBUTO">
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCTO_ATRIBUTO">
+      <EntityTypeMapping TypeName="grupo11DBModel.PRODUCTO_ATRIBUTO">
+        <MappingFragment StoreEntitySet="PRODUCTO_ATRIBUTO">
+          <ScalarProperty Name="valor" ColumnName="valor" />
+          <ScalarProperty Name="id_atributo" ColumnName="id_atributo" />
+          <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

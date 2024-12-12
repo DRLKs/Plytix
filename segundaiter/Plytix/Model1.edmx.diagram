@@ -5,14 +5,16 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="328a5f5f862f44518ccde914929391bc" Name="Diagram1">
-        <EntityTypeShape EntityType="grupo11DBModel.ATRIBUTO" Width="1.5" PointX="0.75" PointY="4.75" />
         <EntityTypeShape EntityType="grupo11DBModel.CATEGORIA" Width="1.5" PointX="0.75" PointY="1.5" />
         <EntityTypeShape EntityType="grupo11DBModel.PRODRELACIONADOS" Width="1.5" PointX="5.25" PointY="1.5" />
         <EntityTypeShape EntityType="grupo11DBModel.PRODUCTO" Width="1.5" PointX="3" PointY="1" />
         <AssociationConnector Association="grupo11DBModel.PROD_CATE" />
         <AssociationConnector Association="grupo11DBModel.ProdRelacionadosProd" />
         <EntityTypeShape EntityType="grupo11DBModel.CUENTA" Width="1.5" PointX="5.25" PointY="4.75" />
-        <AssociationConnector Association="grupo11DBModel.PRODUCTO_ATRIBUTO" />
+        <EntityTypeShape EntityType="grupo11DBModel.ATRIBUTO" Width="1.5" PointX="2.75" PointY="7.375" />
+        <EntityTypeShape EntityType="grupo11DBModel.PRODUCTO_ATRIBUTO" Width="1.5" PointX="2.75" PointY="4.625" />
+        <AssociationConnector Association="grupo11DBModel.PRODUCTO_ATRIBUTO_ibfk_2" />
+        <AssociationConnector Association="grupo11DBModel.PRODUCTO_ATRIBUTO_ibfk_1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
