@@ -54,6 +54,8 @@
     <NavigationProperty Name="CATEGORIA" Relationship="grupo11DBModel.PROD_CATE" FromRole="PRODUCTO" ToRole="CATEGORIA" />
     <NavigationProperty Name="PRODRELACIONADOS" Relationship="grupo11DBModel.ProdRelacionadosProd" FromRole="PRODUCTO" ToRole="PRODRELACIONADOS" />
     <NavigationProperty Name="PRODUCTO_ATRIBUTO" Relationship="grupo11DBModel.PRODUCTO_ATRIBUTO_ibfk_1" FromRole="PRODUCTO" ToRole="PRODUCTO_ATRIBUTO" />
+    <Property Name="DESCRIPCION_CORTA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DESCRIPCION_LARGA" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
   </EntityType>
   <Association Name="PROD_CATE">
     <End Type="grupo11DBModel.CATEGORIA" Role="CATEGORIA" Multiplicity="*" />

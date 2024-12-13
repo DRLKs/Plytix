@@ -58,6 +58,8 @@
     <Property Name="GTIN" Type="varchar" MaxLength="45" />
     <Property Name="FECHA_CREACION" Type="date" Nullable="false" />
     <Property Name="FECHA_EDICION" Type="date" Nullable="false" />
+    <Property Name="DESCRIPCION_CORTA" Type="varchar" MaxLength="50" />
+    <Property Name="DESCRIPCION_LARGA" Type="varchar" MaxLength="250" />
   </EntityType>
   <EntityType Name="PRODUCTO_ATRIBUTO">
     <Key>

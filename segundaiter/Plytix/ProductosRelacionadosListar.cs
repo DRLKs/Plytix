@@ -141,7 +141,7 @@ namespace Plytix
                 for( int idx = 0; idx < 3 && idx < numProductos; ++idx )
                 {
                     sb.Append(productos[idx].NOMBRE);
-                    if( idx < 2 && idx < numProductos - 1) sb.Append(',');
+                    if( idx < 2 && idx < numProductos - 1) sb.Append(", ");
                 }
 
                 return sb.ToString();

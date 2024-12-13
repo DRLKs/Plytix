@@ -28,14 +28,11 @@ namespace Plytix
         public string GTIN { get; set; }
         public System.DateTime FECHA_CREACION { get; set; }
         public System.DateTime FECHA_EDICION { get; set; }
+        public string DESCRIPCION_CORTA { get; set; }
+        public string DESCRIPCION_LARGA { get; set; }
     
         public virtual ICollection<CATEGORIA> CATEGORIA { get; set; }
         public virtual ICollection<PRODRELACIONADOS> PRODRELACIONADOS { get; set; }
         public virtual ICollection<PRODUCTO_ATRIBUTO> PRODUCTO_ATRIBUTO { get; set; }
-
-        public override string ToString()
-        {
-            return NOMBRE;
-        }
     }
 }

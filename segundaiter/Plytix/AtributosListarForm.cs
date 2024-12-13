@@ -94,7 +94,7 @@ namespace Plytix
               */
                 if (columnName == "Delete") // Columna Eliminar
                 {
-                    DialogResult result = MessageBox.Show("Are you sure you want to delete this product?",
+                    DialogResult result = MessageBox.Show("Are you sure you want to delete this attribute?",
                                                           "Confirmation", MessageBoxButtons.YesNo);
 
                     if (result == DialogResult.Yes)

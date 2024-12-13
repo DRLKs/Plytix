@@ -20,6 +20,8 @@
     <EntitySetMapping Name="PRODUCTO">
       <EntityTypeMapping TypeName="grupo11DBModel.PRODUCTO">
         <MappingFragment StoreEntitySet="PRODUCTO">
+          <ScalarProperty Name="DESCRIPCION_LARGA" ColumnName="DESCRIPCION_LARGA" />
+          <ScalarProperty Name="DESCRIPCION_CORTA" ColumnName="DESCRIPCION_CORTA" />
           <ScalarProperty Name="FECHA_EDICION" ColumnName="FECHA_EDICION" />
           <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
           <ScalarProperty Name="GTIN" ColumnName="GTIN" />

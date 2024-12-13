@@ -52,7 +52,15 @@ namespace Plytix
             ProductosGridView.DataSource = seleccion;
             ProductosGridView.ClearSelection();
 
-            // Añado las columnas con los botones de editar y eliminar
+            // Añado las columnas con los botones de ver, editar y eliminar
+            ProductosGridView.Columns.Add(new DataGridViewButtonColumn
+            {
+                Name = "Details",
+                HeaderText = "DETAILS",
+                Text = "👁️",
+                UseColumnTextForButtonValue = true
+            });
+
             ProductosGridView.Columns.Add(new DataGridViewButtonColumn
             {
                 Name = "Edit",
@@ -72,18 +80,22 @@ namespace Plytix
         }
         
 
-        // Si se ha pulsado alguna celda (nos interesan las de editar y eliminar)
+        // Si se ha pulsado alguna celda (nos interesan las de editar, eliminar y ver detalles)
         private void ProductosGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
                 string columnName = ProductosGridView.Columns[e.ColumnIndex].Name; // Columna desde la que ocurrió el click
                 String sku = ProductosGridView.Rows[e.RowIndex].Cells["SKU"].Value.ToString();
-                PRODUCTO producto = (from p in bd.PRODUCTO
-                                     where p.SKU == sku
-                                     select p).FirstOrDefault();
+                PRODUCTO producto = bd.PRODUCTO.First(x => x.SKU.Equals(sku));
 
-                if (columnName == "Edit") // Columna Editar
+                if (columnName == "Details") // Columna Eliminar
+                {
+                    ProductosVerDetallesForm productosVerDetallesForm = new ProductosVerDetallesForm(sku);
+                    productosVerDetallesForm.Owner = this;
+                    productosVerDetallesForm.ShowDialog();
+                }
+                else if (columnName == "Edit") // Columna Editar
                 {
                     ProductosEditarForm productosEditarForm = new ProductosEditarForm(sku);
                     productosEditarForm.Owner = this;

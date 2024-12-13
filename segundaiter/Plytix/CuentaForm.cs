@@ -50,7 +50,7 @@ namespace Plytix
         {
             using (SaveFileDialog saveFileDialog = new SaveFileDialog())
             {
-                saveFileDialog.Title = "Guardar archivo JSON";
+                saveFileDialog.Title = "Save JSON file";
                 saveFileDialog.Filter = "Archivos JSON (*.json)|*.json";
                 saveFileDialog.FileName = "accountInfo.json"; // Nombre predeterminado del archivo
 
@@ -77,9 +77,28 @@ namespace Plytix
         {
             var jsonBuilder = new StringBuilder();
 
-            /*     PRODUCTOS     */
+            
             jsonBuilder.Append("[\n");
             List<PRODUCTO> productos = bd.PRODUCTO.ToList();
+            List<CATEGORIA> categorias = bd.CATEGORIA.ToList();
+            List<ATRIBUTO> atributos = bd.ATRIBUTO.ToList();
+            CUENTA cuenta = bd.CUENTA.First(p => p.ID == 0);
+            jsonBuilder.Append("\t{\n");
+            jsonBuilder.Append("\t\t\"ACCOUNT ID\" : \"" + cuenta.ID + "\",\n");
+            jsonBuilder.Append("\t\t\"ACCOUNT NAME\" : \"" + cuenta.nombre + "\",\n");
+            jsonBuilder.Append("\t\t\"CREATION DATE\" : \"" + cuenta.fechaCreacion + "\",\n");
+            jsonBuilder.Append("\t\t\"NUMBER OF PRODUCTS\" : " + productos.Count + ",\n");
+            jsonBuilder.Append("\t\t\"NUMBER OF CATEGORIES\" : " + categorias.Count + ",\n");
+            jsonBuilder.Append("\t\t\"NUMBER OF ATTRIBUTES\" : " + atributos.Count + "\n");
+            jsonBuilder.Append("\t}\n");
+            jsonBuilder.Append("]\n");
+            return jsonBuilder.ToString();
+
+            /*     
+            
+            ----------------------- HOMENAJE AL CÓDIGO ERRÓNEO DE DAVID EN HONOR A SU ESFUERZO -----------------------
+            
+            PRODUCTOS     
             for (int idx = 0; idx < productos.Count; ++idx)
             {
                 jsonBuilder.Append("\t{\n");
@@ -97,11 +116,12 @@ namespace Plytix
                 }
                 jsonBuilder.Append("\n");
             }
-            jsonBuilder.Append("]\n");
+            
 
-            /*     CATEGORIAS     */
-            jsonBuilder.Append("[\n");
-            List<CATEGORIA> categorias = bd.CATEGORIA.ToList();
+
+            CATEGORIAS     
+            
+            jsonBuilder.Append("[\n");            
             for (int idx = 0; idx < categorias.Count; ++idx)
             {
                 jsonBuilder.Append("\t{\n");
@@ -116,10 +136,11 @@ namespace Plytix
                 jsonBuilder.Append("\n");
             }
             jsonBuilder.Append("]\n");
+            
 
-            /*     ATRIBUTOS     */
+            ATRIBUTOS     
+            
             jsonBuilder.Append("[\n");
-            List<ATRIBUTO> atributos = bd.ATRIBUTO.ToList();
             for (int idx = 0; idx < atributos.Count; ++idx)
             {
                 jsonBuilder.Append("\t{\n");
@@ -134,8 +155,8 @@ namespace Plytix
                 jsonBuilder.Append("\n");
             }
             jsonBuilder.Append("]\n");
+            */
 
-            return jsonBuilder.ToString();
         }
         }
     }

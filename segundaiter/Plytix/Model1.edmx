@@ -63,6 +63,8 @@
           <Property Name="GTIN" Type="varchar" MaxLength="45" />
           <Property Name="FECHA_CREACION" Type="date" Nullable="false" />
           <Property Name="FECHA_EDICION" Type="date" Nullable="false" />
+          <Property Name="DESCRIPCION_CORTA" Type="varchar" MaxLength="50" />
+          <Property Name="DESCRIPCION_LARGA" Type="varchar" MaxLength="250" />
         </EntityType>
         <EntityType Name="PRODUCTO_ATRIBUTO">
           <Key>
@@ -237,6 +239,8 @@
           <NavigationProperty Name="CATEGORIA" Relationship="grupo11DBModel.PROD_CATE" FromRole="PRODUCTO" ToRole="CATEGORIA" />
           <NavigationProperty Name="PRODRELACIONADOS" Relationship="grupo11DBModel.ProdRelacionadosProd" FromRole="PRODUCTO" ToRole="PRODRELACIONADOS" />
           <NavigationProperty Name="PRODUCTO_ATRIBUTO" Relationship="grupo11DBModel.PRODUCTO_ATRIBUTO_ibfk_1" FromRole="PRODUCTO" ToRole="PRODUCTO_ATRIBUTO" />
+          <Property Name="DESCRIPCION_CORTA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPCION_LARGA" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="PROD_CATE">
           <End Type="grupo11DBModel.CATEGORIA" Role="CATEGORIA" Multiplicity="*" />
@@ -324,6 +328,8 @@
           <EntitySetMapping Name="PRODUCTO">
             <EntityTypeMapping TypeName="grupo11DBModel.PRODUCTO">
               <MappingFragment StoreEntitySet="PRODUCTO">
+                <ScalarProperty Name="DESCRIPCION_LARGA" ColumnName="DESCRIPCION_LARGA" />
+                <ScalarProperty Name="DESCRIPCION_CORTA" ColumnName="DESCRIPCION_CORTA" />
                 <ScalarProperty Name="FECHA_EDICION" ColumnName="FECHA_EDICION" />
                 <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
                 <ScalarProperty Name="GTIN" ColumnName="GTIN" />

@@ -45,7 +45,7 @@
             this.productosButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.productosButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.productosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productosButton.Location = new System.Drawing.Point(121, 60);
+            this.productosButton.Location = new System.Drawing.Point(346, 60);
             this.productosButton.Name = "productosButton";
             this.productosButton.Size = new System.Drawing.Size(211, 45);
             this.productosButton.TabIndex = 0;
@@ -60,7 +60,7 @@
             this.categoriasButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.categoriasButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.categoriasButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.categoriasButton.Location = new System.Drawing.Point(330, 60);
+            this.categoriasButton.Location = new System.Drawing.Point(555, 60);
             this.categoriasButton.Name = "categoriasButton";
             this.categoriasButton.Size = new System.Drawing.Size(219, 45);
             this.categoriasButton.TabIndex = 1;
@@ -75,7 +75,7 @@
             this.atributosButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.atributosButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.atributosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.atributosButton.Location = new System.Drawing.Point(547, 60);
+            this.atributosButton.Location = new System.Drawing.Point(772, 60);
             this.atributosButton.Name = "atributosButton";
             this.atributosButton.Size = new System.Drawing.Size(219, 45);
             this.atributosButton.TabIndex = 2;
@@ -108,7 +108,7 @@
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(765, 60);
+            this.button3.Location = new System.Drawing.Point(990, 60);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(218, 45);
             this.button3.TabIndex = 7;
@@ -123,7 +123,7 @@
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(980, 60);
+            this.button1.Location = new System.Drawing.Point(1205, 60);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(218, 45);
             this.button1.TabIndex = 8;

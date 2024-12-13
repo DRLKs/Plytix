@@ -470,3 +470,5 @@ C:\Users\franc\Documents\GitHub\Plytix\segundaiter\Plytix\obj\Debug\Plytix.Atrib
 C:\Users\franc\Documents\GitHub\Plytix\segundaiter\Plytix\obj\Debug\Plytix.CuentaForm.resources
 C:\Users\franc\Documents\GitHub\Plytix\segundaiter\Plytix\obj\Debug\Plytix.ProductosRelacionadosAñadirForm.resources
 C:\Users\David\Documents\GIT\Plytix\segundaiter\Plytix\obj\Debug\Plytix.ProductosRelacionadosEditarForm.resources
+C:\Users\franc\Documents\GitHub\Plytix\segundaiter\Plytix\obj\Debug\Plytix.ProductosRelacionadosEditarForm.resources
+C:\Users\franc\Documents\GitHub\Plytix\segundaiter\Plytix\obj\Debug\Plytix.ProductosVerDetallesForm.resources

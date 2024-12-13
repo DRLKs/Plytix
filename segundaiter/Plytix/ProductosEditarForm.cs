@@ -116,7 +116,7 @@ namespace Plytix
             {
                     MessageBox.Show("You haven't made any changes");
             }
-            if (this.Owner is ProductosListarForm parentForm) parentForm.ProductosListarForm_Load(null, null); // Para recargar los datos del grid en la ventana abierta         
+            if (this.Owner is ProductosListarForm parentForm) parentForm.ProductosListarForm_Load(null, null); // NO FUNCIONA - Para recargar los datos del grid en la ventana abierta         
             Close();
         }
     }

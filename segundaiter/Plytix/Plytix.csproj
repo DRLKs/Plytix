@@ -221,6 +221,12 @@
     <Compile Include="ProductosListarForm.Designer.cs">
       <DependentUpon>ProductosListarForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductosVerDetallesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductosVerDetallesForm.Designer.cs">
+      <DependentUpon>ProductosVerDetallesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PRODUCTO_ATRIBUTO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -284,6 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProductosListarForm.resx">
       <DependentUpon>ProductosListarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductosVerDetallesForm.resx">
+      <DependentUpon>ProductosVerDetallesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resource1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
