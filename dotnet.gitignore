@@ -1,0 +1,96 @@
+# Visual Studio
+.vs/
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]*/
+build/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Auto-generated files
+GeneratedFiles/
+
+# Mac files
+.DS_Store
+
+# Windows image file caches
+Thumbs.db
+
+# Files built by Visual Studio
+*.appx
+*.appxupload
+*.build-signing.bin
+*.cer
+*.pfx
+*.snk
+*.swp
+
+# Logs
+*.log
+
+# Azure Web Apps
+app.publish/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Entity Framework Core migrations
+migrations/
+
+# Rider project files
+.idea/
+*.sln.iml
+
+# NuGet packages
+*.nupkg
+*.snupkg
+
+# Node.js dependencies
+node_modules/
+
+# Files built by dotnet build
+bin/
+obj/
+
+# Coverage files
+*.coverage
+*.coveragexml
+.coverage*
+
+# StyleCop
+StyleCopReport.xml
+
+# Local history for Visual Studio
+.localhistory
+
+# SQL Server files
+*.mdf
+*.ldf
+
+# Visual Studio Code files
+.vscode/
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# JetBrains Rider
+.idea/
+.idea_modules
+.idea*/workspace.xml
+.idea*/tasks.xml
+.idea*/runConfigurations
+.idea*/workspace.*
+.idea*/assetWizard
+.idea*/modules.xml
+.idea*/
+*.sln.iml
