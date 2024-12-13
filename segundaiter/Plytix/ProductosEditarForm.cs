@@ -107,7 +107,7 @@ namespace Plytix
                 categoria.PRODUCTO.Add(productoSeleccionado);
             }
 
-            bd.PRODUCTO.AddOrUpdate();
+            bd.PRODUCTO.AddOrUpdate(productoSeleccionado);
             try
             {
                 bd.SaveChanges();

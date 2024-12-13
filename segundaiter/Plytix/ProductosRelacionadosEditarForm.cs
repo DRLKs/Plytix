@@ -43,15 +43,14 @@ namespace Plytix
             try
             {
                 ComprobarDatos();
-                PRODRELACIONADOS productoRelacionado = new PRODRELACIONADOS();
-                productoRelacionado.NAME = textBoxName.Text;
-                productoRelacionado.PRODUCTO.Clear();
+                seleccionado.NAME = textBoxName.Text;
+                seleccionado.PRODUCTO.Clear();
                 foreach (PRODUCTO producto in listBoxProductos.SelectedItems)
                 {
-                    productoRelacionado.PRODUCTO.Add(producto);
+                    seleccionado.PRODUCTO.Add(producto);
                 }
 
-                db.PRODRELACIONADOS.AddOrUpdate(productoRelacionado);
+                db.PRODRELACIONADOS.AddOrUpdate(seleccionado);
                 db.SaveChanges();
                 if (this.Owner is ProductosRelacionadosListar parentForm) parentForm.CargarProductosRelacionados(); // Para recargar los datos del grid en la ventana abierta         
                 Close();

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,7 @@ namespace Plytix
             InitializeComponent();
             bd = new grupo11DBEntities();
             CargarLabels();
+            CargarProfilePic();
         }
 
         public void CargarLabels()
@@ -32,6 +34,11 @@ namespace Plytix
             int numAtributes = bd.ATRIBUTO.Count();
             numeroAtributos.Text = "Number of Atributtes = " + numAtributes;
 
+        }
+
+        private void CargarProfilePic()
+        {
+            pictureBox1.Image = Image.FromFile(@"..\..\Resources\ProfilePIC.png");
         }
 
         private void CrearCSVClick(object sender, EventArgs e)
