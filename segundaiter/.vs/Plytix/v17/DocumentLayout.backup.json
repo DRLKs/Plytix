@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Alejandro\\OneDrive - Universidad de M\u00E1laga\\Escritorio\\UNIVERSIDAD\\Plytix\\Plytix\\segundaiter\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|c:\\users\\alejandro\\onedrive - universidad de m\u00E1laga\\escritorio\\universidad\\plytix\\plytix\\segundaiter\\plytix\\productosrelacionadoslistar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\productosrelacionadoslistar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|c:\\users\\alejandro\\onedrive - universidad de m\u00E1laga\\escritorio\\universidad\\plytix\\plytix\\segundaiter\\plytix\\productoslistarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\productoslistarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|c:\\users\\alejandro\\onedrive - universidad de m\u00E1laga\\escritorio\\universidad\\plytix\\plytix\\segundaiter\\plytix\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|c:\\users\\alejandro\\onedrive - universidad de m\u00E1laga\\escritorio\\universidad\\plytix\\plytix\\segundaiter\\plytix\\productosrelacionadoslistar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\productosrelacionadoslistar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|C:\\Users\\Alejandro\\OneDrive - Universidad de M\u00E1laga\\Escritorio\\UNIVERSIDAD\\Plytix\\Plytix\\segundaiter\\plytix\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|C:\\Users\\Alejandro\\OneDrive - Universidad de M\u00E1laga\\Escritorio\\UNIVERSIDAD\\Plytix\\Plytix\\segundaiter\\plytix\\productoseditarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\productoseditarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,38 +42,51 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Model1.edmx [Diagram1]",
+              "DocumentMoniker": "C:\\Users\\Alejandro\\OneDrive - Universidad de M\u00E1laga\\Escritorio\\UNIVERSIDAD\\Plytix\\Plytix\\segundaiter\\Plytix\\Model1.edmx",
+              "RelativeDocumentMoniker": "Plytix\\Model1.edmx",
+              "ToolTip": "C:\\Users\\Alejandro\\OneDrive - Universidad de M\u00E1laga\\Escritorio\\UNIVERSIDAD\\Plytix\\Plytix\\segundaiter\\Plytix\\Model1.edmx [Diagram1]",
+              "RelativeToolTip": "Plytix\\Model1.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2024-12-13T11:13:06.654Z",
+              "EditorCaption": " [Diagram1]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductosListarForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Alejandro\\OneDrive - Universidad de M\u00E1laga\\Escritorio\\UNIVERSIDAD\\Plytix\\Plytix\\segundaiter\\Plytix\\ProductosListarForm.cs",
+              "RelativeDocumentMoniker": "Plytix\\ProductosListarForm.cs",
+              "ToolTip": "C:\\Users\\Alejandro\\OneDrive - Universidad de M\u00E1laga\\Escritorio\\UNIVERSIDAD\\Plytix\\Plytix\\segundaiter\\Plytix\\ProductosListarForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Plytix\\ProductosListarForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T11:07:48.807Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ProductosRelacionadosListar.cs",
+              "DocumentMoniker": "C:\\Users\\Alejandro\\OneDrive - Universidad de M\u00E1laga\\Escritorio\\UNIVERSIDAD\\Plytix\\Plytix\\segundaiter\\Plytix\\ProductosRelacionadosListar.cs",
+              "RelativeDocumentMoniker": "Plytix\\ProductosRelacionadosListar.cs",
+              "ToolTip": "C:\\Users\\Alejandro\\OneDrive - Universidad de M\u00E1laga\\Escritorio\\UNIVERSIDAD\\Plytix\\Plytix\\segundaiter\\Plytix\\ProductosRelacionadosListar.cs",
+              "RelativeToolTip": "Plytix\\ProductosRelacionadosListar.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAwwF4AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T11:04:56.84Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "ProductosRelacionadosListar.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\Alejandro\\OneDrive - Universidad de M\u00E1laga\\Escritorio\\UNIVERSIDAD\\Plytix\\Plytix\\segundaiter\\Plytix\\ProductosRelacionadosListar.cs",
               "RelativeDocumentMoniker": "Plytix\\ProductosRelacionadosListar.cs",
               "ToolTip": "C:\\Users\\Alejandro\\OneDrive - Universidad de M\u00E1laga\\Escritorio\\UNIVERSIDAD\\Plytix\\Plytix\\segundaiter\\Plytix\\ProductosRelacionadosListar.cs [Dise\u00F1o]",
               "RelativeToolTip": "Plytix\\ProductosRelacionadosListar.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T09:30:55.267Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainForm.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Alejandro\\OneDrive - Universidad de M\u00E1laga\\Escritorio\\UNIVERSIDAD\\Plytix\\Plytix\\segundaiter\\Plytix\\MainForm.cs",
-              "RelativeDocumentMoniker": "Plytix\\MainForm.cs",
-              "ToolTip": "C:\\Users\\Alejandro\\OneDrive - Universidad de M\u00E1laga\\Escritorio\\UNIVERSIDAD\\Plytix\\Plytix\\segundaiter\\Plytix\\MainForm.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Plytix\\MainForm.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T18:13:41.973Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProductosEditarForm.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Alejandro\\OneDrive - Universidad de M\u00E1laga\\Escritorio\\UNIVERSIDAD\\Plytix\\Plytix\\segundaiter\\Plytix\\ProductosEditarForm.cs",
-              "RelativeDocumentMoniker": "Plytix\\ProductosEditarForm.cs",
-              "ToolTip": "C:\\Users\\Alejandro\\OneDrive - Universidad de M\u00E1laga\\Escritorio\\UNIVERSIDAD\\Plytix\\Plytix\\segundaiter\\Plytix\\ProductosEditarForm.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Plytix\\ProductosEditarForm.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T17:47:15.19Z",
+              "WhenOpened": "2024-12-13T11:04:55.421Z",
               "EditorCaption": " [Dise\u00F1o]"
             }
           ]

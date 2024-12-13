@@ -44,6 +44,7 @@
             this.ProductosRelaciondosdataGridView.RowTemplate.Height = 24;
             this.ProductosRelaciondosdataGridView.Size = new System.Drawing.Size(1115, 404);
             this.ProductosRelaciondosdataGridView.TabIndex = 0;
+            this.ProductosRelaciondosdataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductosRelaciondosdataGridView_CellContentClick);
             // 
             // buttonAddLabel
             // 

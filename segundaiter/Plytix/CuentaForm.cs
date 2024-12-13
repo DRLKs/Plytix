@@ -66,7 +66,6 @@ namespace Plytix
                 }
             }
         }
-
         private string EscribirJSON()
         {
             var jsonBuilder = new StringBuilder();
@@ -74,16 +73,15 @@ namespace Plytix
             /*     PRODUCTOS     */
             jsonBuilder.Append("[\n");
             List<PRODUCTO> productos = bd.PRODUCTO.ToList();
-            for ( int idx = 0; idx < productos.Count; ++idx)
+            for (int idx = 0; idx < productos.Count; ++idx)
             {
                 jsonBuilder.Append("\t{\n");
-                jsonBuilder.Append("\t\t\"ID\" : "+ productos[idx].ID + ",\n");
-                jsonBuilder.Append("\t\t\"NAME\" : \"" + productos[idx].NOMBRE + "\",\n" );
-                jsonBuilder.Append("\t\t\"CREATION_DATE\" : \"" + productos[idx].FECHA_CREACION + "\",\n");
-                jsonBuilder.Append("\t\t\"EDITION_DATE\" : \"" + productos[idx].FECHA_EDICION + "\"\n");
-                
-                //jsonBuilder.Append("\t\t\"CATEGORIES\" : \"" + productos[idx].CATEGORIA.ToString() + "\"\n");
+                jsonBuilder.Append("\t\t\"ID\" : " + productos[idx].ID + ",\n");
+                jsonBuilder.Append("\t\t\"NAME\" : \"" + productos[idx].NOMBRE + "\",\n");
 
+                // Formatear las fechas a un formato legible (solo fecha)
+                jsonBuilder.Append("\t\t\"CREATION_DATE\" : \"" + productos[idx].FECHA_CREACION.ToString("yyyy-MM-dd") + "\",\n");
+                jsonBuilder.Append("\t\t\"EDITION_DATE\" : \"" + productos[idx].FECHA_EDICION.ToString("yyyy-MM-dd") + "\"\n");
 
                 jsonBuilder.Append("\t}");
                 if (idx < productos.Count - 1)
@@ -97,14 +95,11 @@ namespace Plytix
             /*     CATEGORIAS     */
             jsonBuilder.Append("[\n");
             List<CATEGORIA> categorias = bd.CATEGORIA.ToList();
-            for ( int idx = 0; idx < categorias.Count; ++idx)
+            for (int idx = 0; idx < categorias.Count; ++idx)
             {
                 jsonBuilder.Append("\t{\n");
                 jsonBuilder.Append("\t\t\"ID\" : " + categorias[idx].ID + ",\n");
-                jsonBuilder.Append("\t\t\"NAME\" : \"" + categorias[idx].NOMBRE + "\",\n");
-
-                //jsonBuilder.Append("\t\t\"CATEGORIES\" : \"" + productos[idx].CATEGORIA.ToString() + "\"\n");
-
+                jsonBuilder.Append("\t\t\"NAME\" : \"" + categorias[idx].NOMBRE + "\"\n");
 
                 jsonBuilder.Append("\t}");
                 if (idx < categorias.Count - 1)
@@ -112,7 +107,6 @@ namespace Plytix
                     jsonBuilder.Append(",");
                 }
                 jsonBuilder.Append("\n");
-
             }
             jsonBuilder.Append("]\n");
 
@@ -123,17 +117,18 @@ namespace Plytix
             {
                 jsonBuilder.Append("\t{\n");
                 jsonBuilder.Append("\t\t\"ID\" : " + atributos[idx].ID + ",\n");
-                jsonBuilder.Append("\t\t\"NAME\" : \"" + atributos[idx].NOMBRE + "\",\n");
+                jsonBuilder.Append("\t\t\"NAME\" : \"" + atributos[idx].NOMBRE + "\"\n");
 
                 jsonBuilder.Append("\t}");
                 if (idx < atributos.Count - 1)
                 {
                     jsonBuilder.Append(",");
                 }
+                jsonBuilder.Append("\n");
             }
             jsonBuilder.Append("]\n");
 
             return jsonBuilder.ToString();
         }
+        }
     }
-}
