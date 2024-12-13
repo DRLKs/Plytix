@@ -71,8 +71,6 @@ namespace Plytix
             AtributosAñadirForm productosAddForm = new AtributosAñadirForm();
             productosAddForm.Owner = this;
             productosAddForm.ShowDialog();
-            AtributosListarForm_Load();
-
         }
 
        private void AtributosGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -85,13 +83,13 @@ namespace Plytix
                                      where a.NOMBRE == nombre
                                      select a).FirstOrDefault();
 
-              /*  if (columnName == "Edit") // Columna Editar
+                if (columnName == "Edit") // Columna Editar
                 {
-                    ProductosEditarForm productosEditarForm = new ProductosEditarForm(sku);
-                    productosEditarForm.Owner = this;
-                    productosEditarForm.ShowDialog();
+                    AtributosEditarForm form = new AtributosEditarForm(atributo.ID);
+                    form.Owner = this;
+                    form.ShowDialog();
                 }
-              */
+                
                 if (columnName == "Delete") // Columna Eliminar
                 {
                     DialogResult result = MessageBox.Show("Are you sure you want to delete this attribute?",

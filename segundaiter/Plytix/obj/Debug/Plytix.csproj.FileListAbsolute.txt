@@ -472,3 +472,6 @@ C:\Users\franc\Documents\GitHub\Plytix\segundaiter\Plytix\obj\Debug\Plytix.Produ
 C:\Users\David\Documents\GIT\Plytix\segundaiter\Plytix\obj\Debug\Plytix.ProductosRelacionadosEditarForm.resources
 C:\Users\franc\Documents\GitHub\Plytix\segundaiter\Plytix\obj\Debug\Plytix.ProductosRelacionadosEditarForm.resources
 C:\Users\franc\Documents\GitHub\Plytix\segundaiter\Plytix\obj\Debug\Plytix.ProductosVerDetallesForm.resources
+C:\Users\David\Documents\GIT\Plytix\segundaiter\Plytix\obj\Debug\Plytix.ProductosVerDetallesForm.resources
+C:\Users\David\Documents\GIT\Plytix\segundaiter\Plytix\obj\Debug\Plytix.CuentaConfigurarCSVForm.resources
+C:\Users\David\Documents\GIT\Plytix\segundaiter\Plytix\obj\Debug\Plytix.AtributosEditarForm.resources

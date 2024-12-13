@@ -27,6 +27,7 @@ namespace Plytix
                 // Deja vacío el Grid view 
                 ProductosRelaciondosdataGridView.DataSource = null;
                 ProductosRelaciondosdataGridView.Columns.Clear();
+                ProductosRelaciondosdataGridView.AllowUserToAddRows = false;
                 ProductosRelaciondosdataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
                 ProductosRelaciondosdataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 

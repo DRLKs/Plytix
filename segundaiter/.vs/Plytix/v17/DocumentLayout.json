@@ -3,84 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\plytix\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
-      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|c:\\users\\david\\documents\\git\\plytix\\segundaiter\\plytix\\atributoseditarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\atributoseditarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\plytix\\productosverdetallesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\productosverdetallesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|c:\\users\\david\\documents\\git\\plytix\\segundaiter\\plytix\\atributoseditarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\atributoseditarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\plytix\\productoslistarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\productoslistarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\plytix\\productoseditarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\productoseditarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\plytix\\productoseditarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\productoseditarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\plytix\\productoslistarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|c:\\users\\david\\documents\\git\\plytix\\segundaiter\\plytix\\productoslistarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\productoslistarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\plytix\\atributoslistarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\atributoslistarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\plytix\\atributoslistarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\atributoslistarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\plytix\\cuentaform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\cuentaform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\plytix\\cuentaform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\cuentaform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\plytix\\productoslistarform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\productoslistarform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\plytix\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\plytix\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\plytix\\productosa\u00F1adirform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\productosa\u00F1adirform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\plytix\\productosa\u00F1adirform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\productosa\u00F1adirform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\plytix\\atributosa\u00F1adirform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\atributosa\u00F1adirform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\plytix\\atributosa\u00F1adirform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\atributosa\u00F1adirform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\plytix\\atributosa\u00F1adirform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|c:\\users\\david\\documents\\git\\plytix\\segundaiter\\plytix\\atributosa\u00F1adirform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\atributosa\u00F1adirform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\plytix\\productosrelacionadoslistar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\productosrelacionadoslistar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|c:\\users\\david\\documents\\git\\plytix\\segundaiter\\plytix\\atributoslistarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\atributoslistarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\plytix\\productosrelacionadoslistar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\productosrelacionadoslistar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|c:\\users\\david\\documents\\git\\plytix\\segundaiter\\plytix\\atributoslistarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\atributoslistarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|c:\\users\\david\\documents\\git\\plytix\\segundaiter\\plytix\\productoslistarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\productoslistarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|c:\\users\\david\\documents\\git\\plytix\\segundaiter\\plytix\\cuentaconfigurarcsvform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\cuentaconfigurarcsvform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -90,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -106,236 +58,104 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Model1.edmx [Diagram1]",
-              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\Model1.edmx",
-              "RelativeDocumentMoniker": "Plytix\\Model1.edmx",
-              "ToolTip": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\Model1.edmx [Diagram1]",
-              "RelativeToolTip": "Plytix\\Model1.edmx [Diagram1]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
-              "WhenOpened": "2024-12-13T19:42:44.636Z",
-              "EditorCaption": " [Diagram1]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ProductosVerDetallesForm.cs",
-              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\ProductosVerDetallesForm.cs",
-              "RelativeDocumentMoniker": "Plytix\\ProductosVerDetallesForm.cs",
-              "ToolTip": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\ProductosVerDetallesForm.cs",
-              "RelativeToolTip": "Plytix\\ProductosVerDetallesForm.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAgwCsAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T18:39:24.015Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ProductosEditarForm.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\ProductosEditarForm.cs",
-              "RelativeDocumentMoniker": "Plytix\\ProductosEditarForm.cs",
-              "ToolTip": "C:\\Users\\franc\\Documents\\GitHub\\Plytix\\segundaiter\\Plytix\\ProductosEditarForm.cs [Dise\u00F1o]",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\franc\\Documents\\GitHub\\Plytix\\segundaiter\\Plytix\\ProductosEditarForm.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T18:22:22.904Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProductosListarForm.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\ProductosListarForm.cs",
-              "RelativeDocumentMoniker": "Plytix\\ProductosListarForm.cs",
-              "ToolTip": "C:\\Users\\franc\\Documents\\GitHub\\Plytix\\segundaiter\\Plytix\\ProductosListarForm.cs [Dise\u00F1o]",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\franc\\Documents\\GitHub\\Plytix\\segundaiter\\Plytix\\ProductosListarForm.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T18:24:27.319Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ProductosEditarForm.cs",
-              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\ProductosEditarForm.cs",
-              "RelativeDocumentMoniker": "Plytix\\ProductosEditarForm.cs",
-              "ToolTip": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\ProductosEditarForm.cs",
-              "RelativeToolTip": "Plytix\\ProductosEditarForm.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAhwCMAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T13:27:55.618Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ProductosListarForm.cs",
-              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\ProductosListarForm.cs",
-              "RelativeDocumentMoniker": "Plytix\\ProductosListarForm.cs",
-              "ToolTip": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\ProductosListarForm.cs",
-              "RelativeToolTip": "Plytix\\ProductosListarForm.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAgwBoAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T18:24:28.767Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AtributosListarForm.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\AtributosListarForm.cs",
-              "RelativeDocumentMoniker": "Plytix\\AtributosListarForm.cs",
-              "ToolTip": "C:\\Users\\franc\\Documents\\GitHub\\Plytix\\segundaiter\\Plytix\\AtributosListarForm.cs [Dise\u00F1o]",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\franc\\Documents\\GitHub\\Plytix\\segundaiter\\Plytix\\AtributosListarForm.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T17:47:00.482Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AtributosListarForm.cs",
-              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\AtributosListarForm.cs",
-              "RelativeDocumentMoniker": "Plytix\\AtributosListarForm.cs",
-              "ToolTip": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\AtributosListarForm.cs",
-              "RelativeToolTip": "Plytix\\AtributosListarForm.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAApwB4AAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T17:47:02.928Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "CuentaForm.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\CuentaForm.cs",
-              "RelativeDocumentMoniker": "Plytix\\CuentaForm.cs",
-              "ToolTip": "C:\\Users\\franc\\Documents\\GitHub\\Plytix\\segundaiter\\Plytix\\CuentaForm.cs [Dise\u00F1o]",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\franc\\Documents\\GitHub\\Plytix\\segundaiter\\Plytix\\CuentaForm.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T13:30:12.187Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "CuentaForm.cs",
-              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\CuentaForm.cs",
-              "RelativeDocumentMoniker": "Plytix\\CuentaForm.cs",
-              "ToolTip": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\CuentaForm.cs",
-              "RelativeToolTip": "Plytix\\CuentaForm.cs",
-              "ViewState": "AgIAAE8AAAAAAAAAAAAswIwAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T13:34:46.995Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "MainForm.cs",
-              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\MainForm.cs",
-              "RelativeDocumentMoniker": "Plytix\\MainForm.cs",
-              "ToolTip": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\MainForm.cs",
-              "RelativeToolTip": "Plytix\\MainForm.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T18:46:23.007Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "MainForm.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\MainForm.cs",
-              "RelativeDocumentMoniker": "Plytix\\MainForm.cs",
-              "ToolTip": "C:\\Users\\franc\\Documents\\GitHub\\Plytix\\segundaiter\\Plytix\\MainForm.cs [Dise\u00F1o]",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\franc\\Documents\\GitHub\\Plytix\\segundaiter\\Plytix\\MainForm.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T18:44:41.623Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ProductosListarForm.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\ProductosListarForm.Designer.cs",
-              "RelativeDocumentMoniker": "Plytix\\ProductosListarForm.Designer.cs",
-              "ToolTip": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\ProductosListarForm.Designer.cs",
-              "RelativeToolTip": "Plytix\\ProductosListarForm.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T18:27:18.133Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "ProductosA\u00F1adirForm.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\ProductosA\u00F1adirForm.cs",
-              "RelativeDocumentMoniker": "Plytix\\ProductosA\u00F1adirForm.cs",
-              "ToolTip": "C:\\Users\\franc\\Documents\\GitHub\\Plytix\\segundaiter\\Plytix\\ProductosA\u00F1adirForm.cs [Dise\u00F1o]",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\franc\\Documents\\GitHub\\Plytix\\segundaiter\\Plytix\\ProductosA\u00F1adirForm.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T18:26:54.895Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ProductosA\u00F1adirForm.cs",
-              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\ProductosA\u00F1adirForm.cs",
-              "RelativeDocumentMoniker": "Plytix\\ProductosA\u00F1adirForm.cs",
-              "ToolTip": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\ProductosA\u00F1adirForm.cs",
-              "RelativeToolTip": "Plytix\\ProductosA\u00F1adirForm.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAvwDIAAABwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T18:26:56.637Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "AtributosA\u00F1adirForm.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\AtributosA\u00F1adirForm.Designer.cs",
-              "RelativeDocumentMoniker": "Plytix\\AtributosA\u00F1adirForm.Designer.cs",
-              "ToolTip": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\AtributosA\u00F1adirForm.Designer.cs",
-              "RelativeToolTip": "Plytix\\AtributosA\u00F1adirForm.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T18:27:39.597Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "AtributosA\u00F1adirForm.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\AtributosA\u00F1adirForm.cs",
-              "RelativeDocumentMoniker": "Plytix\\AtributosA\u00F1adirForm.cs",
-              "ToolTip": "C:\\Users\\franc\\Documents\\GitHub\\Plytix\\segundaiter\\Plytix\\AtributosA\u00F1adirForm.cs [Dise\u00F1o]",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\franc\\Documents\\GitHub\\Plytix\\segundaiter\\Plytix\\AtributosA\u00F1adirForm.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T18:23:43.395Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
               "Title": "AtributosA\u00F1adirForm.cs",
               "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\AtributosA\u00F1adirForm.cs",
               "RelativeDocumentMoniker": "Plytix\\AtributosA\u00F1adirForm.cs",
               "ToolTip": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\AtributosA\u00F1adirForm.cs",
               "RelativeToolTip": "Plytix\\AtributosA\u00F1adirForm.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAAAqwB0AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T18:23:45.989Z"
+              "WhenOpened": "2024-12-13T23:27:59.234Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "ProductosRelacionadosListar.cs",
-              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\ProductosRelacionadosListar.cs",
-              "RelativeDocumentMoniker": "Plytix\\ProductosRelacionadosListar.cs",
-              "ToolTip": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\ProductosRelacionadosListar.cs",
-              "RelativeToolTip": "Plytix\\ProductosRelacionadosListar.cs",
-              "ViewState": "AgIAAIcAAAAAAAAAAAAowI8AAABIAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "AtributosEditarForm.cs",
+              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\AtributosEditarForm.cs",
+              "RelativeDocumentMoniker": "Plytix\\AtributosEditarForm.cs",
+              "ToolTip": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\AtributosEditarForm.cs",
+              "RelativeToolTip": "Plytix\\AtributosEditarForm.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAYwDkAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T18:18:21.154Z"
+              "WhenOpened": "2024-12-13T23:26:05.944Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "ProductosRelacionadosListar.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\ProductosRelacionadosListar.cs",
-              "RelativeDocumentMoniker": "Plytix\\ProductosRelacionadosListar.cs",
-              "ToolTip": "C:\\Users\\franc\\Documents\\GitHub\\Plytix\\segundaiter\\Plytix\\ProductosRelacionadosListar.cs [Dise\u00F1o]",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\franc\\Documents\\GitHub\\Plytix\\segundaiter\\Plytix\\ProductosRelacionadosListar.cs [Dise\u00F1o]",
+              "DocumentIndex": 1,
+              "Title": "AtributosEditarForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\AtributosEditarForm.cs",
+              "RelativeDocumentMoniker": "Plytix\\AtributosEditarForm.cs",
+              "ToolTip": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\AtributosEditarForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Plytix\\AtributosEditarForm.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T11:04:55.421Z"
+              "WhenOpened": "2024-12-13T23:25:27.584Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductosListarForm.cs",
+              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\ProductosListarForm.cs",
+              "RelativeDocumentMoniker": "Plytix\\ProductosListarForm.cs",
+              "ToolTip": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\ProductosListarForm.cs",
+              "RelativeToolTip": "Plytix\\ProductosListarForm.cs",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T23:23:34.81Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ProductosListarForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\ProductosListarForm.cs",
+              "RelativeDocumentMoniker": "Plytix\\ProductosListarForm.cs",
+              "ToolTip": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\ProductosListarForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Plytix\\ProductosListarForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T23:19:56.251Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AtributosListarForm.cs",
+              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\AtributosListarForm.cs",
+              "RelativeDocumentMoniker": "Plytix\\AtributosListarForm.cs",
+              "ToolTip": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\AtributosListarForm.cs",
+              "RelativeToolTip": "Plytix\\AtributosListarForm.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAYwFUAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T23:14:44.512Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AtributosListarForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\AtributosListarForm.cs",
+              "RelativeDocumentMoniker": "Plytix\\AtributosListarForm.cs",
+              "ToolTip": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\AtributosListarForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Plytix\\AtributosListarForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T23:14:43.037Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CuentaConfigurarCSVForm.cs",
+              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\CuentaConfigurarCSVForm.cs",
+              "RelativeDocumentMoniker": "Plytix\\CuentaConfigurarCSVForm.cs",
+              "ToolTip": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\CuentaConfigurarCSVForm.cs",
+              "RelativeToolTip": "Plytix\\CuentaConfigurarCSVForm.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAACoAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T23:12:09.927Z",
+              "EditorCaption": ""
             }
           ]
         }

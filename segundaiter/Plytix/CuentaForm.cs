@@ -43,6 +43,102 @@ namespace Plytix
 
         private void CrearCSVClick(object sender, EventArgs e)
         {
+            CuentaConfigurarCSVForm form = new CuentaConfigurarCSVForm();
+            form.Owner = this;
+            form.ShowDialog();
+        }
+
+        public void ElegirDirectorioCSV(CATEGORIA categoria, List<ATRIBUTO> atributos)
+        {
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Title = "Save CSV file";
+                saveFileDialog.Filter = "Archivos CSV (*.csv)|*.csv";
+                saveFileDialog.FileName = "accountProducts.csv"; // Nombre predeterminado del archivo
+
+                // Mostrar el diálogo al usuario
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Obtener la ruta completa seleccionada por el usuario
+                    string rutaCompleta = saveFileDialog.FileName;
+
+                    // Mostrar la ruta seleccionada
+                    Console.WriteLine($"Ruta completa seleccionada: {rutaCompleta}");
+                    try
+                    {
+                        string contenidoCSV = EscribirCSV(categoria,atributos );
+                        File.WriteAllText(rutaCompleta, contenidoCSV);
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                    Console.WriteLine("Archivo CSV guardado correctamente.");
+                }
+                else
+                {
+                    Console.WriteLine("No se seleccionó un archivo.");
+                }
+            }
+        }
+
+        private string EscribirCSV(CATEGORIA cateegoria, List<ATRIBUTO> atributos)
+        {   
+            /* PRIMERA FILA DONDE MOSTRAMOS LOS DATOS DEL CSV */
+            var csvBuilder = new StringBuilder();
+            bool hayAlgunNumero = false;
+            ATRIBUTO atributoPrecio = null;
+            foreach( ATRIBUTO atributo in bd.ATRIBUTO.ToList())
+            {
+                csvBuilder.Append( atributo.NOMBRE + "," );
+                if( !hayAlgunNumero && (atributo.TIPO == "Integer" || atributo.TIPO == "Decimal") )
+                {
+                    atributoPrecio = atributo;
+                    hayAlgunNumero = true;
+                }
+            }
+            if(!hayAlgunNumero)
+            {
+                throw new Exception("Any Atributte Price");
+            }
+
+            csvBuilder.AppendLine("SKU,Title,Fulfilled By,Amazon_SKU,Price,Offer Primer");
+
+            /* MOSTRAMOS TODOS LOS DATOS DEL CSV*/
+            foreach( PRODUCTO producto in cateegoria.PRODUCTO )
+            {
+                string valorAtributo;
+                foreach( ATRIBUTO atributo in atributos)
+                {
+                    valorAtributo = bd.PRODUCTO_ATRIBUTO.Where(p => p.id_producto == producto.ID && p.id_atributo == atributoPrecio.ID).Select(p => p.valor).FirstOrDefault();
+                    if (valorAtributo != null)
+                    {
+                        csvBuilder.Append(valorAtributo + ",");
+                    }
+                    else
+                    {
+                        csvBuilder.Append(',');
+                    }
+                }
+                csvBuilder.Append(producto.SKU + ",");
+                csvBuilder.Append(producto.NOMBRE + "," );
+                valorAtributo = bd.PRODUCTO_ATRIBUTO.Where( p => p.id_producto == producto.ID && p.id_atributo == atributoPrecio.ID).Select(p=> p.valor).FirstOrDefault();
+                if(valorAtributo != null)
+                {
+                    csvBuilder.Append(valorAtributo + ",");
+                }
+                else
+                {
+                    throw new Exception("The product: " + producto.NOMBRE + "don't have price");
+                }
+                csvBuilder.Append(producto.CATEGORIA + ",");
+                csvBuilder.Append(producto.GTIN + ",");
+                csvBuilder.Append("false\n");
+            }
+
+            return csvBuilder.ToString();
 
         }
 
@@ -73,6 +169,7 @@ namespace Plytix
                 }
             }
         }
+
         private string EscribirJSON()
         {
             var jsonBuilder = new StringBuilder();

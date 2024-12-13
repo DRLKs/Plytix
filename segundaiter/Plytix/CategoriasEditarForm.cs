@@ -19,7 +19,7 @@ namespace Plytix
             InitializeComponent();
             categoria = (from c in bd.CATEGORIA
                         where c.ID == id
-                        select c).First();
+                        select c).FirstOrDefault();
 
             textBoxNombre.Focus();
         }

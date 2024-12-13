@@ -23,5 +23,10 @@ namespace Plytix
         public string NOMBRE { get; set; }
     
         public virtual ICollection<PRODUCTO> PRODUCTO { get; set; }
+
+        public override string ToString()
+        {
+            return NOMBRE;
+        }
     }
 }

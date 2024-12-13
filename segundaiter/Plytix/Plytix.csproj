@@ -152,6 +152,18 @@
     <Compile Include="AtributosAñadirForm.Designer.cs">
       <DependentUpon>AtributosAñadirForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CuentaConfigurarCSVForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CuentaConfigurarCSVForm.Designer.cs">
+      <DependentUpon>CuentaConfigurarCSVForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AtributosEditarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AtributosEditarForm.Designer.cs">
+      <DependentUpon>AtributosEditarForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductosRelacionadosEditarForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,6 +270,9 @@
     <EmbeddedResource Include="AtributosListarForm.resx">
       <DependentUpon>AtributosListarForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CuentaConfigurarCSVForm.resx">
+      <DependentUpon>CuentaConfigurarCSVForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CategoriasAñadirForm.resx">
       <DependentUpon>CategoriasAñadirForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -269,6 +284,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CuentaForm.resx">
       <DependentUpon>CuentaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AtributosEditarForm.resx">
+      <DependentUpon>AtributosEditarForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductosRelacionadosAñadirForm.resx">
       <DependentUpon>ProductosRelacionadosAñadirForm.cs</DependentUpon>
