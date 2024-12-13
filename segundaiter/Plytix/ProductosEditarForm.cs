@@ -85,7 +85,8 @@ namespace Plytix
         {   
             var productoSeleccionado = (from p in bd.PRODUCTO
                                 where p.SKU == sku
-                                select p).First();
+                                select p).FirstOrDefault();
+             
             productoSeleccionado.NOMBRE = textBoxNombre.Text;
             productoSeleccionado.SKU = textBoxSKU.Text; 
             productoSeleccionado.GTIN = textBoxGTIN.Text;

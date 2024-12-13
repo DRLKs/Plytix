@@ -32,5 +32,10 @@ namespace Plytix
         public virtual ICollection<CATEGORIA> CATEGORIA { get; set; }
         public virtual ICollection<PRODRELACIONADOS> PRODRELACIONADOS { get; set; }
         public virtual ICollection<PRODUCTO_ATRIBUTO> PRODUCTO_ATRIBUTO { get; set; }
+
+        public override string ToString()
+        {
+            return NOMBRE;
+        }
     }
 }

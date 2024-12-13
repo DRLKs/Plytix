@@ -38,11 +38,11 @@
             // ProductosRelaciondosdataGridView
             // 
             this.ProductosRelaciondosdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ProductosRelaciondosdataGridView.Location = new System.Drawing.Point(215, 221);
+            this.ProductosRelaciondosdataGridView.Location = new System.Drawing.Point(174, 138);
             this.ProductosRelaciondosdataGridView.Name = "ProductosRelaciondosdataGridView";
             this.ProductosRelaciondosdataGridView.RowHeadersWidth = 51;
             this.ProductosRelaciondosdataGridView.RowTemplate.Height = 24;
-            this.ProductosRelaciondosdataGridView.Size = new System.Drawing.Size(792, 187);
+            this.ProductosRelaciondosdataGridView.Size = new System.Drawing.Size(1115, 404);
             this.ProductosRelaciondosdataGridView.TabIndex = 0;
             // 
             // buttonAddLabel
@@ -50,7 +50,7 @@
             this.buttonAddLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonAddLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAddLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.buttonAddLabel.Location = new System.Drawing.Point(953, 138);
+            this.buttonAddLabel.Location = new System.Drawing.Point(1235, 83);
             this.buttonAddLabel.Name = "buttonAddLabel";
             this.buttonAddLabel.Size = new System.Drawing.Size(54, 49);
             this.buttonAddLabel.TabIndex = 22;
@@ -63,7 +63,7 @@
             this.addLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.addLabel.AutoSize = true;
             this.addLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.addLabel.Location = new System.Drawing.Point(814, 150);
+            this.addLabel.Location = new System.Drawing.Point(1094, 95);
             this.addLabel.Name = "addLabel";
             this.addLabel.Size = new System.Drawing.Size(123, 25);
             this.addLabel.TabIndex = 23;
@@ -74,7 +74,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1286, 565);
+            this.ClientSize = new System.Drawing.Size(1377, 657);
             this.Controls.Add(this.addLabel);
             this.Controls.Add(this.buttonAddLabel);
             this.Controls.Add(this.ProductosRelaciondosdataGridView);
