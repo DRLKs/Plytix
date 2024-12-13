@@ -30,26 +30,8 @@ namespace Plytix
                 ProductosRelaciondosdataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
                 ProductosRelaciondosdataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-                // Cargo las columnas de las categorías con los campos necesarios
-                var seleccion = from PR in bd.PRODRELACIONADOS
-                                select new
-                                {
-                                    NAME = PR
-                                };
-                ProductosRelaciondosdataGridView.DataSource = seleccion.ToList();
-                ProductosRelaciondosdataGridView.ClearSelection();
-
-                // Oculto el botón de añadir categoría si ya hay 3 creadas
-                if (seleccion.Count() >= 5)
-                {
-                    addLabel.Hide();
-                    buttonAddLabel.Hide();
-                }
-                else
-                {
-                    addLabel.Show();
-                    buttonAddLabel.Show();
-                }
+                ProductosRelaciondosdataGridView.Columns.Add("NAME","NAME");
+                ProductosRelaciondosdataGridView.Columns.Add("PRODUCTS", "PRODUCTS");
 
                 // Añado las columnas con los botones de editar y eliminar
                 ProductosRelaciondosdataGridView.Columns.Add(new DataGridViewButtonColumn
@@ -68,6 +50,29 @@ namespace Plytix
                     UseColumnTextForButtonValue = true
 
                 });
+
+                // Cargo las columnas de las categorías con los campos necesarios
+                
+                List<PRODRELACIONADOS> productosRelacionados = bd.PRODRELACIONADOS.ToList();
+                foreach( PRODRELACIONADOS pRelacionados in productosRelacionados)
+                {
+                    List<PRODUCTO> productos = pRelacionados.PRODUCTO.ToList();
+                    ProductosRelaciondosdataGridView.Rows.Add(pRelacionados.NAME, MostrarPrimerosProductos(productos));
+                }
+                ProductosRelaciondosdataGridView.ClearSelection();
+
+                // Oculto el botón de añadir categoría si ya hay 3 creadas
+                if (productosRelacionados.Count() >= 5)
+                {
+                    addLabel.Hide();
+                    buttonAddLabel.Hide();
+                }
+                else
+                {
+                    addLabel.Show();
+                    buttonAddLabel.Show();
+                }
+
             }
             catch (Exception ex)
             {
@@ -99,7 +104,7 @@ namespace Plytix
 
                 if (columnName == "Edit") // Columna Editar
                 {
-                    ProductosEditarForm productosEditarForm = new ProductosEditarForm(name);
+                    ProductosRelacionadosEditarForm productosEditarForm = new ProductosRelacionadosEditarForm(pr);
                     productosEditarForm.Owner = this;
                     productosEditarForm.ShowDialog();
                 }
@@ -124,6 +129,27 @@ namespace Plytix
             }
 
         
+        }
+
+        private string MostrarPrimerosProductos(List<PRODUCTO> productos)
+        {
+            int numProductos = productos.Count;
+            if(numProductos > 0)
+            {
+                StringBuilder sb = new StringBuilder();
+
+                for( int idx = 0; idx < 3 && idx < numProductos; ++idx )
+                {
+                    sb.Append(productos[idx].NOMBRE);
+                    if( idx < 2 && idx < numProductos - 1) sb.Append(',');
+                }
+
+                return sb.ToString();
+            }
+            else
+            {
+                return "No Products";
+            }
         }
         
     }

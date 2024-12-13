@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,22 +11,31 @@ using System.Windows.Forms;
 
 namespace Plytix
 {
-    public partial class ProductosRelacionadosAñadirForm : Form
+    public partial class ProductosRelacionadosEditarForm : Form
     {
         grupo11DBEntities db;
+        PRODRELACIONADOS seleccionado;
 
-        public ProductosRelacionadosAñadirForm()
+        public ProductosRelacionadosEditarForm( PRODRELACIONADOS seleccionado)
         {
             InitializeComponent();
             db = new grupo11DBEntities();
+            this.seleccionado = seleccionado;
             CargarProductos();
         }
 
         private void CargarProductos()
         {
-            listBoxProductos.DataSource = db.PRODUCTO.ToList();
+            textBoxName.Text = seleccionado.NAME;
 
+            listBoxProductos.DataSource = db.PRODUCTO.ToList();
             listBoxProductos.SelectedItem = null;
+
+            /* DEJAMOS SELECCIONADOS LOS PRODUCTOS */
+            foreach( PRODUCTO producto in seleccionado.PRODUCTO)
+            {
+                listBoxProductos.SelectedItem = producto;
+            }
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
@@ -33,14 +43,15 @@ namespace Plytix
             try
             {
                 ComprobarDatos();
-                PRODRELACIONADOS nuevoProductoRelacionado = new PRODRELACIONADOS();
-                nuevoProductoRelacionado.NAME = textBoxName.Text;
-                foreach( PRODUCTO producto in listBoxProductos.SelectedItems)
+                PRODRELACIONADOS productoRelacionado = new PRODRELACIONADOS();
+                productoRelacionado.NAME = textBoxName.Text;
+                productoRelacionado.PRODUCTO.Clear();
+                foreach (PRODUCTO producto in listBoxProductos.SelectedItems)
                 {
-                    nuevoProductoRelacionado.PRODUCTO.Add(producto);
+                    productoRelacionado.PRODUCTO.Add(producto);
                 }
 
-                db.PRODRELACIONADOS.Add(nuevoProductoRelacionado);
+                db.PRODRELACIONADOS.AddOrUpdate(productoRelacionado);
                 db.SaveChanges();
                 if (this.Owner is ProductosRelacionadosListar parentForm) parentForm.CargarProductosRelacionados(); // Para recargar los datos del grid en la ventana abierta         
                 Close();
@@ -51,18 +62,17 @@ namespace Plytix
             }
         }
 
-        private void ComprobarDatos()
-        {
-            if( textBoxName.Text == "" || textBoxName.Text == null)
-            {
-                throw new Exception("You must fill out the name section");
-            }
-        }
-
         private void CancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        private void ComprobarDatos()
+        {
+            if (textBoxName.Text == "" || textBoxName.Text == null)
+            {
+                throw new Exception("You must fill out the name section");
+            }
+        }
     }
 }
