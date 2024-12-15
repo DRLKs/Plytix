@@ -9,14 +9,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="PRODRELACIONADOS">
-      <EntityTypeMapping TypeName="grupo11DBModel.PRODRELACIONADOS">
-        <MappingFragment StoreEntitySet="PRODRELACIONADOS">
-          <ScalarProperty Name="NAME" ColumnName="NAME" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="PRODUCTO">
       <EntityTypeMapping TypeName="grupo11DBModel.PRODUCTO">
         <MappingFragment StoreEntitySet="PRODUCTO">
@@ -38,14 +30,6 @@
       </EndProperty>
       <EndProperty Name="CATEGORIA">
         <ScalarProperty Name="ID" ColumnName="CATEGORIAID" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="ProdRelacionadosProd" TypeName="grupo11DBModel.ProdRelacionadosProd" StoreEntitySet="ProdRelacionadosProd">
-      <EndProperty Name="PRODRELACIONADOS">
-        <ScalarProperty Name="ID" ColumnName="IDRel" />
-      </EndProperty>
-      <EndProperty Name="PRODUCTO">
-        <ScalarProperty Name="ID" ColumnName="IDProd" />
       </EndProperty>
     </AssociationSetMapping>
     <EntitySetMapping Name="CUENTA">
@@ -73,6 +57,16 @@
           <ScalarProperty Name="valor" ColumnName="valor" />
           <ScalarProperty Name="id_atributo" ColumnName="id_atributo" />
           <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RELACION">
+      <EntityTypeMapping TypeName="grupo11DBModel.RELACION">
+        <MappingFragment StoreEntitySet="RELACION">
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="ProductoDer" ColumnName="ProductoDer" />
+          <ScalarProperty Name="ProductoIzq" ColumnName="ProductoIzq" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

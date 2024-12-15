@@ -12,16 +12,14 @@ namespace Plytix
     using System;
     using System.Collections.Generic;
     
-    public partial class PRODRELACIONADOS
+    public partial class RELACION
     {
-        public PRODRELACIONADOS()
-        {
-            this.PRODUCTO = new HashSet<PRODUCTO>();
-        }
-    
         public int ID { get; set; }
-        public string NAME { get; set; }
+        public Nullable<int> ProductoIzq { get; set; }
+        public Nullable<int> ProductoDer { get; set; }
+        public string Nombre { get; set; }
     
-        public virtual ICollection<PRODUCTO> PRODUCTO { get; set; }
+        public virtual PRODUCTO PRODUCTO { get; set; }
+        public virtual PRODUCTO PRODUCTO1 { get; set; }
     }
 }

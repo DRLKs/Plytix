@@ -32,21 +32,6 @@
     <Property Name="PRODUCTOID" Type="int" Nullable="false" />
     <Property Name="CATEGORIAID" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="PRODRELACIONADOS">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="NAME" Type="varchar" MaxLength="50" Nullable="false" />
-  </EntityType>
-  <EntityType Name="ProdRelacionadosProd">
-    <Key>
-      <PropertyRef Name="IDRel" />
-      <PropertyRef Name="IDProd" />
-    </Key>
-    <Property Name="IDRel" Type="int" Nullable="false" />
-    <Property Name="IDProd" Type="int" Nullable="false" />
-  </EntityType>
   <EntityType Name="PRODUCTO">
     <Key>
       <PropertyRef Name="ID" />
@@ -70,6 +55,15 @@
     <Property Name="id_atributo" Type="int" Nullable="false" />
     <Property Name="valor" Type="varchar" MaxLength="255" />
   </EntityType>
+  <EntityType Name="RELACION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ProductoIzq" Type="int" />
+    <Property Name="ProductoDer" Type="int" />
+    <Property Name="Nombre" Type="varchar" MaxLength="45" />
+  </EntityType>
   <Association Name="CATEGORIAREL">
     <End Role="CATEGORIA" Type="Self.CATEGORIA" Multiplicity="1" />
     <End Role="PROD_CATE" Type="Self.PROD_CATE" Multiplicity="*" />
@@ -79,6 +73,30 @@
       </Principal>
       <Dependent Role="PROD_CATE">
         <PropertyRef Name="CATEGORIAID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProdDer">
+    <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="0..1" />
+    <End Role="RELACION" Type="Self.RELACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RELACION">
+        <PropertyRef Name="ProductoDer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProdIzq">
+    <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="0..1" />
+    <End Role="RELACION" Type="Self.RELACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RELACION">
+        <PropertyRef Name="ProductoIzq" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -118,42 +136,25 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="Rel_Prod">
-    <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="1" />
-    <End Role="ProdRelacionadosProd" Type="Self.ProdRelacionadosProd" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="PRODUCTO">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="ProdRelacionadosProd">
-        <PropertyRef Name="IDProd" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="Rel_Rel">
-    <End Role="PRODRELACIONADOS" Type="Self.PRODRELACIONADOS" Multiplicity="1" />
-    <End Role="ProdRelacionadosProd" Type="Self.ProdRelacionadosProd" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="PRODRELACIONADOS">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="ProdRelacionadosProd">
-        <PropertyRef Name="IDRel" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="grupo11DBModelStoreContainer">
     <EntitySet Name="ATRIBUTO" EntityType="Self.ATRIBUTO" Schema="grupo11DB" store:Type="Tables" />
     <EntitySet Name="CATEGORIA" EntityType="Self.CATEGORIA" Schema="grupo11DB" store:Type="Tables" />
     <EntitySet Name="CUENTA" EntityType="Self.CUENTA" Schema="grupo11DB" store:Type="Tables" />
     <EntitySet Name="PROD_CATE" EntityType="Self.PROD_CATE" Schema="grupo11DB" store:Type="Tables" />
-    <EntitySet Name="PRODRELACIONADOS" EntityType="Self.PRODRELACIONADOS" Schema="grupo11DB" store:Type="Tables" />
-    <EntitySet Name="ProdRelacionadosProd" EntityType="Self.ProdRelacionadosProd" Schema="grupo11DB" store:Type="Tables" />
     <EntitySet Name="PRODUCTO" EntityType="Self.PRODUCTO" Schema="grupo11DB" store:Type="Tables" />
     <EntitySet Name="PRODUCTO_ATRIBUTO" EntityType="Self.PRODUCTO_ATRIBUTO" Schema="grupo11DB" store:Type="Tables" />
+    <EntitySet Name="RELACION" EntityType="Self.RELACION" Schema="grupo11DB" store:Type="Tables" />
     <AssociationSet Name="CATEGORIAREL" Association="Self.CATEGORIAREL">
       <End Role="CATEGORIA" EntitySet="CATEGORIA" />
       <End Role="PROD_CATE" EntitySet="PROD_CATE" />
+    </AssociationSet>
+    <AssociationSet Name="ProdDer" Association="Self.ProdDer">
+      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+      <End Role="RELACION" EntitySet="RELACION" />
+    </AssociationSet>
+    <AssociationSet Name="ProdIzq" Association="Self.ProdIzq">
+      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+      <End Role="RELACION" EntitySet="RELACION" />
     </AssociationSet>
     <AssociationSet Name="PRODUCTO_ATRIBUTO_ibfk_1" Association="Self.PRODUCTO_ATRIBUTO_ibfk_1">
       <End Role="PRODUCTO" EntitySet="PRODUCTO" />
@@ -166,14 +167,6 @@
     <AssociationSet Name="PRODUCTOREL" Association="Self.PRODUCTOREL">
       <End Role="PRODUCTO" EntitySet="PRODUCTO" />
       <End Role="PROD_CATE" EntitySet="PROD_CATE" />
-    </AssociationSet>
-    <AssociationSet Name="Rel_Prod" Association="Self.Rel_Prod">
-      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
-      <End Role="ProdRelacionadosProd" EntitySet="ProdRelacionadosProd" />
-    </AssociationSet>
-    <AssociationSet Name="Rel_Rel" Association="Self.Rel_Rel">
-      <End Role="PRODRELACIONADOS" EntitySet="PRODRELACIONADOS" />
-      <End Role="ProdRelacionadosProd" EntitySet="ProdRelacionadosProd" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

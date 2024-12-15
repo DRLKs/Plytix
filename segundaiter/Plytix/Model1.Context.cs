@@ -26,10 +26,10 @@ namespace Plytix
         }
     
         public DbSet<CATEGORIA> CATEGORIA { get; set; }
-        public DbSet<PRODRELACIONADOS> PRODRELACIONADOS { get; set; }
         public DbSet<PRODUCTO> PRODUCTO { get; set; }
         public DbSet<CUENTA> CUENTA { get; set; }
         public DbSet<ATRIBUTO> ATRIBUTO { get; set; }
         public DbSet<PRODUCTO_ATRIBUTO> PRODUCTO_ATRIBUTO { get; set; }
+        public DbSet<RELACION> RELACION { get; set; }
     }
 }

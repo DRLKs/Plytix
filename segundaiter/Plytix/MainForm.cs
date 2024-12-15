@@ -49,16 +49,6 @@ namespace Plytix
             Application.Exit();
         }
 
-        private void ProductosRelacionados_Click(object sender, EventArgs e)
-        {
-            panelMain.Controls.Clear();
-            ProductosRelacionadosListar form = new ProductosRelacionadosListar();
-            form.TopLevel = false;
-            form.FormBorderStyle = FormBorderStyle.None;
-            form.Dock = DockStyle.Fill;
-            panelMain.Controls.Add(form);
-            form.Show();
-        }
 
         private void Atributos_Click(object sender, EventArgs e)
         {
@@ -85,7 +75,7 @@ namespace Plytix
         private void RelatedProducts_Click(object sender, EventArgs e)
         {
             panelMain.Controls.Clear();
-            ProductosRelacionadosListar form = new ProductosRelacionadosListar();
+            RelacionListarForm form = new RelacionListarForm();
             form.TopLevel = false;
             form.FormBorderStyle = FormBorderStyle.None;
             form.Dock = DockStyle.Fill;

@@ -17,8 +17,9 @@ namespace Plytix
         public PRODUCTO()
         {
             this.CATEGORIA = new HashSet<CATEGORIA>();
-            this.PRODRELACIONADOS = new HashSet<PRODRELACIONADOS>();
             this.PRODUCTO_ATRIBUTO = new HashSet<PRODUCTO_ATRIBUTO>();
+            this.RELACION = new HashSet<RELACION>();
+            this.RELACION1 = new HashSet<RELACION>();
         }
     
         public int ID { get; set; }
@@ -32,8 +33,9 @@ namespace Plytix
         public string DESCRIPCION_LARGA { get; set; }
     
         public virtual ICollection<CATEGORIA> CATEGORIA { get; set; }
-        public virtual ICollection<PRODRELACIONADOS> PRODRELACIONADOS { get; set; }
         public virtual ICollection<PRODUCTO_ATRIBUTO> PRODUCTO_ATRIBUTO { get; set; }
+        public virtual ICollection<RELACION> RELACION { get; set; }
+        public virtual ICollection<RELACION> RELACION1 { get; set; }
 
         public override string ToString()
         {

@@ -2,15 +2,10 @@
 <Schema Namespace="grupo11DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="grupo11DBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="CATEGORIA" EntityType="grupo11DBModel.CATEGORIA" />
-    <EntitySet Name="PRODRELACIONADOS" EntityType="grupo11DBModel.PRODRELACIONADOS" />
     <EntitySet Name="PRODUCTO" EntityType="grupo11DBModel.PRODUCTO" />
     <AssociationSet Name="PROD_CATE" Association="grupo11DBModel.PROD_CATE">
       <End Role="CATEGORIA" EntitySet="CATEGORIA" />
       <End Role="PRODUCTO" EntitySet="PRODUCTO" />
-    </AssociationSet>
-    <AssociationSet Name="ProdRelacionadosProd" Association="grupo11DBModel.ProdRelacionadosProd">
-      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
-      <End Role="PRODRELACIONADOS" EntitySet="PRODRELACIONADOS" />
     </AssociationSet>
     <EntitySet Name="CUENTA" EntityType="grupo11DBModel.CUENTA" />
     <EntitySet Name="ATRIBUTO" EntityType="grupo11DBModel.ATRIBUTO" />
@@ -23,6 +18,15 @@
       <End Role="PRODUCTO" EntitySet="PRODUCTO" />
       <End Role="PRODUCTO_ATRIBUTO" EntitySet="PRODUCTO_ATRIBUTO" />
     </AssociationSet>
+    <EntitySet Name="RELACION" EntityType="grupo11DBModel.RELACION" />
+    <AssociationSet Name="ProdDer" Association="grupo11DBModel.ProdDer">
+      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+      <End Role="RELACION" EntitySet="RELACION" />
+    </AssociationSet>
+    <AssociationSet Name="ProdIzq" Association="grupo11DBModel.ProdIzq">
+      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+      <End Role="RELACION" EntitySet="RELACION" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="CATEGORIA">
     <Key>
@@ -31,14 +35,6 @@
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="PRODUCTO" Relationship="grupo11DBModel.PROD_CATE" FromRole="CATEGORIA" ToRole="PRODUCTO" />
-  </EntityType>
-  <EntityType Name="PRODRELACIONADOS">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="PRODUCTO" Relationship="grupo11DBModel.ProdRelacionadosProd" FromRole="PRODRELACIONADOS" ToRole="PRODUCTO" />
   </EntityType>
   <EntityType Name="PRODUCTO">
     <Key>
@@ -52,18 +48,15 @@
     <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" />
     <Property Name="FECHA_EDICION" Type="DateTime" Nullable="false" />
     <NavigationProperty Name="CATEGORIA" Relationship="grupo11DBModel.PROD_CATE" FromRole="PRODUCTO" ToRole="CATEGORIA" />
-    <NavigationProperty Name="PRODRELACIONADOS" Relationship="grupo11DBModel.ProdRelacionadosProd" FromRole="PRODUCTO" ToRole="PRODRELACIONADOS" />
     <NavigationProperty Name="PRODUCTO_ATRIBUTO" Relationship="grupo11DBModel.PRODUCTO_ATRIBUTO_ibfk_1" FromRole="PRODUCTO" ToRole="PRODUCTO_ATRIBUTO" />
     <Property Name="DESCRIPCION_CORTA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="DESCRIPCION_LARGA" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="RELACION" Relationship="grupo11DBModel.ProdDer" FromRole="PRODUCTO" ToRole="RELACION" />
+    <NavigationProperty Name="RELACION1" Relationship="grupo11DBModel.ProdIzq" FromRole="PRODUCTO" ToRole="RELACION" />
   </EntityType>
   <Association Name="PROD_CATE">
     <End Type="grupo11DBModel.CATEGORIA" Role="CATEGORIA" Multiplicity="*" />
     <End Type="grupo11DBModel.PRODUCTO" Role="PRODUCTO" Multiplicity="*" />
-  </Association>
-  <Association Name="ProdRelacionadosProd">
-    <End Type="grupo11DBModel.PRODUCTO" Role="PRODUCTO" Multiplicity="*" />
-    <End Type="grupo11DBModel.PRODRELACIONADOS" Role="PRODRELACIONADOS" Multiplicity="*" />
   </Association>
   <EntityType Name="CUENTA">
     <Key>
@@ -115,6 +108,41 @@
       </Principal>
       <Dependent Role="PRODUCTO_ATRIBUTO">
         <PropertyRef Name="id_producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="RELACION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="ProductoIzq" Type="Int32" />
+    <Property Name="ProductoDer" Type="Int32" />
+    <Property Name="Nombre" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PRODUCTO" Relationship="grupo11DBModel.ProdDer" FromRole="RELACION" ToRole="PRODUCTO" />
+    <NavigationProperty Name="PRODUCTO1" Relationship="grupo11DBModel.ProdIzq" FromRole="RELACION" ToRole="PRODUCTO" />
+  </EntityType>
+  <Association Name="ProdDer">
+    <End Type="grupo11DBModel.PRODUCTO" Role="PRODUCTO" Multiplicity="0..1" />
+    <End Type="grupo11DBModel.RELACION" Role="RELACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RELACION">
+        <PropertyRef Name="ProductoDer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProdIzq">
+    <End Type="grupo11DBModel.PRODUCTO" Role="PRODUCTO" Multiplicity="0..1" />
+    <End Type="grupo11DBModel.RELACION" Role="RELACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RELACION">
+        <PropertyRef Name="ProductoIzq" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

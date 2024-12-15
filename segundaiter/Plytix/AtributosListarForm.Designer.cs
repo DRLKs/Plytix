@@ -33,6 +33,7 @@
             this.AtributosGridView = new System.Windows.Forms.DataGridView();
             this.buttonAddLabel = new System.Windows.Forms.Button();
             this.addLabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.AtributosGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,7 +61,7 @@
             this.AtributosGridView.RowHeadersVisible = false;
             this.AtributosGridView.RowHeadersWidth = 51;
             this.AtributosGridView.RowTemplate.Height = 24;
-            this.AtributosGridView.Size = new System.Drawing.Size(1301, 199);
+            this.AtributosGridView.Size = new System.Drawing.Size(1301, 387);
             this.AtributosGridView.TabIndex = 17;
             this.AtributosGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AtributosGridView_CellContentClick);
             // 
@@ -89,11 +90,24 @@
             this.addLabel.Text = "Add Atributte";
             this.addLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(12, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(245, 29);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "USER ATTRIBUTES";
+            // 
             // AtributosListarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1315, 724);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.addLabel);
             this.Controls.Add(this.buttonAddLabel);
             this.Controls.Add(this.AtributosGridView);
@@ -111,5 +125,6 @@
         private System.Windows.Forms.DataGridView AtributosGridView;
         private System.Windows.Forms.Button buttonAddLabel;
         private System.Windows.Forms.Label addLabel;
+        private System.Windows.Forms.Label label2;
     }
 }

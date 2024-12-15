@@ -42,7 +42,7 @@ namespace Plytix
                 };
                 bd.ATRIBUTO.Add(nuevoAtributo);
                 bd.SaveChanges();
-                if (this.Owner is ProductosRelacionadosListar parentForm) parentForm.CargarProductosRelacionados(); // Para recargar los datos del grid en la ventana abierta         
+                if (this.Owner is AtributosListarForm parentForm) parentForm.AtributosListarForm_Load(); // Para recargar los datos del grid en la ventana abierta         
                 Close();
             }
             else

@@ -164,24 +164,6 @@
     <Compile Include="AtributosEditarForm.Designer.cs">
       <DependentUpon>AtributosEditarForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductosRelacionadosEditarForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ProductosRelacionadosEditarForm.Designer.cs">
-      <DependentUpon>ProductosRelacionadosEditarForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ProductosRelacionadosAñadirForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ProductosRelacionadosAñadirForm.Designer.cs">
-      <DependentUpon>ProductosRelacionadosAñadirForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ProductosRelacionadosListar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ProductosRelacionadosListar.Designer.cs">
-      <DependentUpon>ProductosRelacionadosListar.cs</DependentUpon>
-    </Compile>
     <Compile Include="ProductosAñadirForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,9 +181,6 @@
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PRODRELACIONADOS.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="PRODUCTO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -254,6 +233,27 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="RELACION.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RelacionAñadirForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RelacionAñadirForm.Designer.cs">
+      <DependentUpon>RelacionAñadirForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RelacionEditarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RelacionEditarForm.Designer.cs">
+      <DependentUpon>RelacionEditarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RelacionListarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RelacionListarForm.Designer.cs">
+      <DependentUpon>RelacionListarForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Resource1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -288,15 +288,6 @@
     <EmbeddedResource Include="AtributosEditarForm.resx">
       <DependentUpon>AtributosEditarForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductosRelacionadosAñadirForm.resx">
-      <DependentUpon>ProductosRelacionadosAñadirForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ProductosRelacionadosEditarForm.resx">
-      <DependentUpon>ProductosRelacionadosEditarForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ProductosRelacionadosListar.resx">
-      <DependentUpon>ProductosRelacionadosListar.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ProductosAñadirForm.resx">
       <DependentUpon>ProductosAñadirForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -320,6 +311,15 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RelacionAñadirForm.resx">
+      <DependentUpon>RelacionAñadirForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RelacionEditarForm.resx">
+      <DependentUpon>RelacionEditarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RelacionListarForm.resx">
+      <DependentUpon>RelacionListarForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resource1.resx">
       <Generator>ResXFileCodeGenerator</Generator>

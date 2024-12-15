@@ -24,9 +24,6 @@ namespace Plytix
         private void CargarListBox()
         {
             listBoxCategorias.DataSource = bd.CATEGORIA.ToList();
-            listBoxCategorias.DataSource = bd.CATEGORIA.ToList();
-
-            listBoxAtributtes.SelectedItem = null;
             listBoxCategorias.SelectedItem = null;
         }
 

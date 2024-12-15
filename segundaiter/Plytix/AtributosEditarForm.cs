@@ -38,7 +38,7 @@ namespace Plytix
                 
                 bd.ATRIBUTO.AddOrUpdate(atributoSeleccionado);
                 bd.SaveChanges();
-                if (this.Owner is ProductosRelacionadosListar parentForm) parentForm.CargarProductosRelacionados(); // Para recargar los datos del grid en la ventana abierta         
+                if (this.Owner is AtributosListarForm parentForm) parentForm.AtributosListarForm_Load(); // Para recargar los datos del grid en la ventana abierta         
                 Close();
             }
             else
@@ -57,7 +57,7 @@ namespace Plytix
             var tipos = new[] { "Text", "Integer", "Decimal", "Image" };
             textBoxName.Text = atributoSeleccionado.NOMBRE;
             comboBoxTipos.DataSource = tipos;
-            comboBoxTipos.SelectedItem = atributoSeleccionado.TIPO;
+            comboBoxTipos.SelectedItem = atributoSeleccionado.TIPO.ToString();
         }
     }
 }
