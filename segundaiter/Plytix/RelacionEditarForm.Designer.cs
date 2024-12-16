@@ -72,10 +72,12 @@
             // 
             this.SaveButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SaveButton.AutoSize = true;
+            this.SaveButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveButton.Location = new System.Drawing.Point(159, 377);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(75, 35);
+            this.SaveButton.Size = new System.Drawing.Size(75, 37);
             this.SaveButton.TabIndex = 12;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
@@ -85,10 +87,12 @@
             // 
             this.CancelButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CancelButton.AutoSize = true;
+            this.CancelButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CancelButton.Location = new System.Drawing.Point(304, 377);
             this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(84, 35);
+            this.CancelButton.Size = new System.Drawing.Size(86, 37);
             this.CancelButton.TabIndex = 11;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;

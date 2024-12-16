@@ -40,6 +40,7 @@
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.button1.Location = new System.Drawing.Point(1264, 36);
             this.button1.Name = "button1";
@@ -67,7 +68,7 @@
             this.CategoriasGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.CategoriasGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.CategoriasGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.CategoriasGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.CategoriasGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
             this.CategoriasGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -85,7 +86,7 @@
             this.CategoriasGridView.RowHeadersVisible = false;
             this.CategoriasGridView.RowHeadersWidth = 51;
             this.CategoriasGridView.RowTemplate.Height = 24;
-            this.CategoriasGridView.Size = new System.Drawing.Size(1301, 641);
+            this.CategoriasGridView.Size = new System.Drawing.Size(1301, 340);
             this.CategoriasGridView.TabIndex = 16;
             this.CategoriasGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CategoriasGridView_CellContentClick);
             // 

@@ -79,6 +79,7 @@
             // 
             this.CrearCSVButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CrearCSVButton.AutoSize = true;
+            this.CrearCSVButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CrearCSVButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CrearCSVButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CrearCSVButton.Location = new System.Drawing.Point(700, 527);

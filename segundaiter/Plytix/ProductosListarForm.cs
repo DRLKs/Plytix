@@ -23,7 +23,7 @@ namespace Plytix
             foreach (PRODUCTO_ATRIBUTO atr in prod.PRODUCTO_ATRIBUTO.ToList())
             {
                 sb.Append(atr.ATRIBUTO.NOMBRE + ": ");
-                sb.Append(atr.valor + "\n");
+                sb.Append(atr.valor + " ");
             }
             return sb.ToString();
         }
@@ -44,10 +44,7 @@ namespace Plytix
                                 NAME = p.NOMBRE,
                                 SKU = p.SKU,
                                 //bd.ATRIBUTO[0].NOMBRE = mostrarValor(bd.ATRIBUTO[0].ID, p.ID)
-                                ATRIBUTOS = atributosProductos(p)
-                                //ATRIBUTOS = string.Join(", ", p.PRODUCTO_ATRIBUTO
-                                //    .Select(a => a.ATRIBUTO.NOMBRE + ": " + a.valor))
-
+                                ATTRIBUTES = atributosProductos(p)
                             }).ToList();
             ProductosGridView.DataSource = seleccion;
             ProductosGridView.ClearSelection();

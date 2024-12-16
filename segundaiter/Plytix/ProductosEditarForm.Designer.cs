@@ -212,6 +212,7 @@
             // 
             // TextBoxAtributtesRellenar
             // 
+            this.TextBoxAtributtesRellenar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBoxAtributtesRellenar.Location = new System.Drawing.Point(555, 321);
             this.TextBoxAtributtesRellenar.Name = "TextBoxAtributtesRellenar";
             this.TextBoxAtributtesRellenar.Size = new System.Drawing.Size(133, 22);

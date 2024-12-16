@@ -43,7 +43,7 @@
             this.AtributosGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.AtributosGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.AtributosGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.AtributosGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.AtributosGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
             this.AtributosGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -69,6 +69,7 @@
             // 
             this.buttonAddLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonAddLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAddLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.buttonAddLabel.Location = new System.Drawing.Point(1249, 16);
             this.buttonAddLabel.Name = "buttonAddLabel";

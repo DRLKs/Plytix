@@ -66,7 +66,7 @@
             this.atributosListBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.atributosListBox.CheckOnClick = true;
             this.atributosListBox.FormattingEnabled = true;
-            this.atributosListBox.Location = new System.Drawing.Point(474, 229);
+            this.atributosListBox.Location = new System.Drawing.Point(476, 236);
             this.atributosListBox.Name = "atributosListBox";
             this.atributosListBox.Size = new System.Drawing.Size(253, 72);
             this.atributosListBox.TabIndex = 59;
@@ -194,9 +194,13 @@
             // 
             // button2
             // 
+            this.button2.AutoSize = true;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(367, 506);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(77, 35);
             this.button2.TabIndex = 64;
             this.button2.Text = "SAVE";
             this.button2.UseVisualStyleBackColor = true;
@@ -217,7 +221,7 @@
             this.categoriaListBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.categoriaListBox.CheckOnClick = true;
             this.categoriaListBox.FormattingEnabled = true;
-            this.categoriaListBox.Location = new System.Drawing.Point(474, 84);
+            this.categoriaListBox.Location = new System.Drawing.Point(476, 91);
             this.categoriaListBox.Name = "categoriaListBox";
             this.categoriaListBox.Size = new System.Drawing.Size(253, 72);
             this.categoriaListBox.TabIndex = 58;
@@ -225,6 +229,7 @@
             // 
             // TextBoxAtributtesRellenar
             // 
+            this.TextBoxAtributtesRellenar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBoxAtributtesRellenar.Location = new System.Drawing.Point(594, 317);
             this.TextBoxAtributtesRellenar.Name = "TextBoxAtributtesRellenar";
             this.TextBoxAtributtesRellenar.Size = new System.Drawing.Size(133, 22);
@@ -244,7 +249,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 535);
+            this.ClientSize = new System.Drawing.Size(805, 549);
             this.Controls.Add(this.LabelNombreAtributo);
             this.Controls.Add(this.TextBoxAtributtesRellenar);
             this.Controls.Add(this.button3);
@@ -266,6 +271,7 @@
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ProductosAñadirForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Product";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);

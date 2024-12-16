@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.addLabel = new System.Windows.Forms.Label();
             this.buttonAddLabel = new System.Windows.Forms.Button();
@@ -63,6 +64,7 @@
             // 
             this.buttonAddLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonAddLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAddLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.buttonAddLabel.Location = new System.Drawing.Point(1161, 41);
             this.buttonAddLabel.Name = "buttonAddLabel";
@@ -76,10 +78,23 @@
             // 
             this.relacionesDataGridView.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.relacionesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.relacionesDataGridView.ColumnHeadersHeight = 29;
+            this.relacionesDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.relacionesDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
+            this.relacionesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.relacionesDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
+            this.relacionesDataGridView.GridColor = System.Drawing.SystemColors.Control;
             this.relacionesDataGridView.Location = new System.Drawing.Point(100, 96);
+            this.relacionesDataGridView.MultiSelect = false;
             this.relacionesDataGridView.Name = "relacionesDataGridView";
             this.relacionesDataGridView.ReadOnly = true;
+            this.relacionesDataGridView.RowHeadersVisible = false;
             this.relacionesDataGridView.RowHeadersWidth = 51;
             this.relacionesDataGridView.RowTemplate.Height = 24;
             this.relacionesDataGridView.Size = new System.Drawing.Size(1115, 404);

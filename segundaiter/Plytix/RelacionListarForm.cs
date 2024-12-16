@@ -97,7 +97,7 @@ namespace Plytix
                     }
                     else
                     {
-                        DialogResult result = MessageBox.Show("Are you sure you want to delete this category?",
+                        DialogResult result = MessageBox.Show("Are you sure you want to delete this relation?",
                                                               "Confirmation", MessageBoxButtons.YesNo);
 
                         if (result == DialogResult.Yes)
