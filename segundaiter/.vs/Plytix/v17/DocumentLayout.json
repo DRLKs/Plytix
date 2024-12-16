@@ -11,16 +11,20 @@
       "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\productoseditarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|c:\\users\\david\\documents\\git\\plytix\\segundaiter\\plytix\\productosa\u00F1adirform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\productosa\u00F1adirform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|c:\\users\\david\\documents\\git\\plytix\\segundaiter\\plytix\\cuentaform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\cuentaform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|c:\\users\\david\\documents\\git\\plytix\\segundaiter\\plytix\\productosa\u00F1adirform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\productosa\u00F1adirform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|c:\\users\\david\\documents\\git\\plytix\\segundaiter\\plytix\\cuentaconfigurarcsvform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\cuentaconfigurarcsvform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|c:\\users\\david\\documents\\git\\plytix\\segundaiter\\plytix\\productoslistarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\productoslistarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|c:\\users\\david\\documents\\git\\plytix\\segundaiter\\plytix\\cuentaconfigurarcsvform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\cuentaconfigurarcsvform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|c:\\users\\david\\documents\\git\\plytix\\segundaiter\\plytix\\cuentaform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FF493FB6-F8D4-4A0B-9728-FDD1D774246D}|Plytix\\Plytix.csproj|solutionrelative:plytix\\cuentaform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -52,9 +56,9 @@
               "RelativeDocumentMoniker": "Plytix\\ProductosEditarForm.cs",
               "ToolTip": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\ProductosEditarForm.cs",
               "RelativeToolTip": "Plytix\\ProductosEditarForm.cs",
-              "ViewState": "AgIAAFsAAAAAAAAAAAAUwGAAAABBAAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAwB8AAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T16:00:41.172Z",
+              "WhenOpened": "2024-12-16T17:13:58.76Z",
               "EditorCaption": ""
             },
             {
@@ -66,44 +70,57 @@
               "ToolTip": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\ProductosEditarForm.cs [Dise\u00F1o]",
               "RelativeToolTip": "Plytix\\ProductosEditarForm.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T15:59:48.687Z",
+              "WhenOpened": "2024-12-16T17:13:56.992Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CuentaConfigurarCSVForm.cs",
+              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\CuentaConfigurarCSVForm.cs",
+              "RelativeDocumentMoniker": "Plytix\\CuentaConfigurarCSVForm.cs",
+              "ToolTip": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\CuentaConfigurarCSVForm.cs",
+              "RelativeToolTip": "Plytix\\CuentaConfigurarCSVForm.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACEAAACBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T16:54:02.668Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CuentaConfigurarCSVForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\CuentaConfigurarCSVForm.cs",
+              "RelativeDocumentMoniker": "Plytix\\CuentaConfigurarCSVForm.cs",
+              "ToolTip": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\CuentaConfigurarCSVForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Plytix\\CuentaConfigurarCSVForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T16:53:49.936Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ProductosA\u00F1adirForm.cs",
-              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\ProductosA\u00F1adirForm.cs",
-              "RelativeDocumentMoniker": "Plytix\\ProductosA\u00F1adirForm.cs",
-              "ToolTip": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\ProductosA\u00F1adirForm.cs",
-              "RelativeToolTip": "Plytix\\ProductosA\u00F1adirForm.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAQwNwAAAAQAAAAAAAAAA==",
+              "Title": "CuentaForm.cs",
+              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\CuentaForm.cs",
+              "RelativeDocumentMoniker": "Plytix\\CuentaForm.cs",
+              "ToolTip": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\CuentaForm.cs",
+              "RelativeToolTip": "Plytix\\CuentaForm.cs",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAAAEkAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T15:19:50.316Z",
+              "WhenOpened": "2024-12-16T16:53:39.472Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ProductosA\u00F1adirForm.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\ProductosA\u00F1adirForm.cs",
-              "RelativeDocumentMoniker": "Plytix\\ProductosA\u00F1adirForm.cs",
-              "ToolTip": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\ProductosA\u00F1adirForm.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Plytix\\ProductosA\u00F1adirForm.cs [Dise\u00F1o]",
+              "DocumentIndex": 5,
+              "Title": "CuentaForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\CuentaForm.cs",
+              "RelativeDocumentMoniker": "Plytix\\CuentaForm.cs",
+              "ToolTip": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\CuentaForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Plytix\\CuentaForm.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T15:19:47.309Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ProductosListarForm.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\ProductosListarForm.cs",
-              "RelativeDocumentMoniker": "Plytix\\ProductosListarForm.cs",
-              "ToolTip": "C:\\Users\\David\\Documents\\GIT\\Plytix\\segundaiter\\Plytix\\ProductosListarForm.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Plytix\\ProductosListarForm.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T15:19:37.52Z",
+              "WhenOpened": "2024-12-16T16:53:36.746Z",
               "EditorCaption": " [Dise\u00F1o]"
             }
           ]

@@ -48,7 +48,7 @@ namespace Plytix
             form.ShowDialog();
         }
 
-        public void ElegirDirectorioCSV(CATEGORIA categoria, List<ATRIBUTO> atributos)
+        public void ElegirDirectorioCSV(CATEGORIA categoria)
         {
             using (SaveFileDialog saveFileDialog = new SaveFileDialog())
             {
@@ -66,14 +66,14 @@ namespace Plytix
                     Console.WriteLine($"Ruta completa seleccionada: {rutaCompleta}");
                     try
                     {
-                        string contenidoCSV = EscribirCSV(categoria,atributos );
+                        string contenidoCSV = EscribirCSV(categoria);
                         File.WriteAllText(rutaCompleta, contenidoCSV);
-
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message);
                     }
+                    
 
                     Console.WriteLine("Archivo CSV guardado correctamente.");
                 }
@@ -84,15 +84,16 @@ namespace Plytix
             }
         }
 
-        private string EscribirCSV(CATEGORIA cateegoria, List<ATRIBUTO> atributos)
+        private string EscribirCSV(CATEGORIA cateegoria)
         {   
             /* PRIMERA FILA DONDE MOSTRAMOS LOS DATOS DEL CSV */
             var csvBuilder = new StringBuilder();
+
+            /* COMPROBAMOS QUE HAYA ATRIBUTOS PARA EL PRECIO EN EL SISTEMA */
             bool hayAlgunNumero = false;
             ATRIBUTO atributoPrecio = null;
             foreach( ATRIBUTO atributo in bd.ATRIBUTO.ToList())
             {
-                csvBuilder.Append( atributo.NOMBRE + "," );
                 if( !hayAlgunNumero && (atributo.TIPO == "Integer" || atributo.TIPO == "Decimal") )
                 {
                     atributoPrecio = atributo;
@@ -104,38 +105,30 @@ namespace Plytix
                 throw new Exception("Any Atributte Price");
             }
 
+            /* CREAMOS EL CSV */
             csvBuilder.AppendLine("SKU,Title,Fulfilled By,Amazon_SKU,Price,Offer Primer");
 
+            var lineBuilder = new StringBuilder();
+            string precio;
             /* MOSTRAMOS TODOS LOS DATOS DEL CSV*/
-            foreach( PRODUCTO producto in cateegoria.PRODUCTO )
-            {
-                string valorAtributo;
-                foreach( ATRIBUTO atributo in atributos)
+            foreach ( PRODUCTO producto in cateegoria.PRODUCTO )
+            {            
+                lineBuilder.Clear();
+
+                lineBuilder.Append(producto.SKU + ",");         /* SKU */
+                lineBuilder.Append(producto.NOMBRE + "," );     /* NOMBRE */
+                lineBuilder.Append("MONSTERS INCS,");           /* NOMBRE TIENDA */
+                lineBuilder.Append(producto.GTIN + ",");        /* GTIN */
+
+                precio = (from atribProd in bd.PRODUCTO_ATRIBUTO where atribProd.id_producto == producto.ID && atribProd.id_atributo == atributoPrecio.ID select atribProd.valor).FirstOrDefault();
+                
+                if(precio != null)
                 {
-                    valorAtributo = bd.PRODUCTO_ATRIBUTO.Where(p => p.id_producto == producto.ID && p.id_atributo == atributoPrecio.ID).Select(p => p.valor).FirstOrDefault();
-                    if (valorAtributo != null)
-                    {
-                        csvBuilder.Append(valorAtributo + ",");
-                    }
-                    else
-                    {
-                        csvBuilder.Append(',');
-                    }
+                    lineBuilder.Append(precio + ",");
+                    lineBuilder.Append("false");
+                    csvBuilder.AppendLine(lineBuilder.ToString());
                 }
-                csvBuilder.Append(producto.SKU + ",");
-                csvBuilder.Append(producto.NOMBRE + "," );
-                valorAtributo = bd.PRODUCTO_ATRIBUTO.Where( p => p.id_producto == producto.ID && p.id_atributo == atributoPrecio.ID).Select(p=> p.valor).FirstOrDefault();
-                if(valorAtributo != null)
-                {
-                    csvBuilder.Append(valorAtributo + ",");
-                }
-                else
-                {
-                    throw new Exception("The product: " + producto.NOMBRE + "don't have price");
-                }
-                csvBuilder.Append(producto.CATEGORIA + ",");
-                csvBuilder.Append(producto.GTIN + ",");
-                csvBuilder.Append("false\n");
+                
             }
 
             return csvBuilder.ToString();

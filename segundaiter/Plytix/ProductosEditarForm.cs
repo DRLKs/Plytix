@@ -59,7 +59,7 @@ namespace Plytix
 
             /* CATEGORIAS */
             List<CATEGORIA> categoriasProducto = seleccionado.CATEGORIA.ToList();
-            if( categoriasProducto.Count > 0 ) categoriaListBox.DataSource = bd.CATEGORIA.ToList();
+            categoriaListBox.DataSource = bd.CATEGORIA.ToList();
 
             categoriaListBox.ClearSelected();
 
@@ -154,9 +154,9 @@ namespace Plytix
             if (!atributosListBox.GetItemChecked(indiceMap))  /* No está con el tick*/
             {
                 LabelNombreAtributo.Text = atributoSeleccionado.NOMBRE;
+                TextBoxAtributtesRellenar.Text = "";
                 LabelNombreAtributo.Show();
                 TextBoxAtributtesRellenar.Show();
-                TextBoxAtributtesRellenar.Text = "";
             }
             else
             {

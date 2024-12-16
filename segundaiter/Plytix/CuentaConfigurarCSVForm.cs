@@ -31,19 +31,12 @@ namespace Plytix
         {
             if (listBoxCategorias.SelectedItems.Count > 0)
             {
-                List<ATRIBUTO> atributos = new List<ATRIBUTO>();
-                /*
-                foreach( ATRIBUTO atributo in listBoxCategorias.SelectedItems)
-                {
-                    atributos.Add(atributo);
-                }
-                */
-                if (this.Owner is CuentaForm parentForm) parentForm.ElegirDirectorioCSV((CATEGORIA)listBoxCategorias.SelectedItem, atributos); // Para recargar los datos del grid en la ventana abierta         
+                if (this.Owner is CuentaForm parentForm) parentForm.ElegirDirectorioCSV((CATEGORIA)listBoxCategorias.SelectedItem); // Para recargar los datos del grid en la ventana abierta         
                 Close();
             }
             else
             {
-                MessageBox.Show("Select at least one Category");
+                MessageBox.Show("Select one Category");
             }
         }
     }
