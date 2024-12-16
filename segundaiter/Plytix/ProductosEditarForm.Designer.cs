@@ -44,6 +44,8 @@
             this.categoriaListBox = new System.Windows.Forms.CheckedListBox();
             this.atributosListBox = new System.Windows.Forms.CheckedListBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.LabelNombreAtributo = new System.Windows.Forms.Label();
+            this.TextBoxAtributtesRellenar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -188,6 +190,7 @@
             this.atributosListBox.Size = new System.Drawing.Size(253, 72);
             this.atributosListBox.TabIndex = 43;
             this.atributosListBox.TabStop = false;
+            this.atributosListBox.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.AtributoSeleccionado);
             // 
             // label7
             // 
@@ -199,11 +202,30 @@
             this.label7.TabIndex = 44;
             this.label7.Text = "Attributes";
             // 
+            // LabelNombreAtributo
+            // 
+            this.LabelNombreAtributo.AutoSize = true;
+            this.LabelNombreAtributo.Location = new System.Drawing.Point(462, 326);
+            this.LabelNombreAtributo.Name = "LabelNombreAtributo";
+            this.LabelNombreAtributo.Size = new System.Drawing.Size(0, 16);
+            this.LabelNombreAtributo.TabIndex = 69;
+            // 
+            // TextBoxAtributtesRellenar
+            // 
+            this.TextBoxAtributtesRellenar.Location = new System.Drawing.Point(555, 321);
+            this.TextBoxAtributtesRellenar.Name = "TextBoxAtributtesRellenar";
+            this.TextBoxAtributtesRellenar.Size = new System.Drawing.Size(133, 22);
+            this.TextBoxAtributtesRellenar.TabIndex = 68;
+            this.TextBoxAtributtesRellenar.Visible = false;
+            this.TextBoxAtributtesRellenar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PresionaTecla);
+            // 
             // ProductosEditarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(751, 647);
+            this.Controls.Add(this.LabelNombreAtributo);
+            this.Controls.Add(this.TextBoxAtributtesRellenar);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.atributosListBox);
             this.Controls.Add(this.categoriaListBox);
@@ -246,5 +268,7 @@
         private System.Windows.Forms.CheckedListBox categoriaListBox;
         private System.Windows.Forms.CheckedListBox atributosListBox;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label LabelNombreAtributo;
+        private System.Windows.Forms.TextBox TextBoxAtributtesRellenar;
     }
 }

@@ -338,7 +338,6 @@ C:\Users\David\Documents\GIT\Plytix\segundaiter\Plytix\obj\Debug\Plytix.csproj.U
 C:\Users\David\Documents\GIT\Plytix\segundaiter\Plytix\obj\Debug\Plytix.exe
 C:\Users\David\Documents\GIT\Plytix\segundaiter\Plytix\obj\Debug\Plytix.pdb
 C:\Users\David\Documents\GIT\Plytix\segundaiter\Plytix\obj\Debug\Plytix.ProductosAñadirForm.resources
-C:\Users\David\Documents\GIT\Plytix\segundaiter\Plytix\obj\Debug\Plytix.ProductosRelacionadosListar.resources
 C:\Users\franc\Documents\GitHub\Plytix\segundaiter\Plytix\bin\Debug\Plytix.exe.config
 C:\Users\franc\Documents\GitHub\Plytix\segundaiter\Plytix\bin\Debug\Plytix.exe
 C:\Users\franc\Documents\GitHub\Plytix\segundaiter\Plytix\bin\Debug\Plytix.pdb
@@ -400,7 +399,6 @@ C:\Users\franc\Documents\GitHub\Plytix\segundaiter\Plytix\obj\Debug\Plytix.pdb
 C:\Users\David\Documents\GIT\Plytix\segundaiter\Plytix\obj\Debug\Plytix.AtributosListarForm.resources
 C:\Users\David\Documents\GIT\Plytix\segundaiter\Plytix\obj\Debug\Plytix.CuentaForm.resources
 C:\Users\David\Documents\GIT\Plytix\segundaiter\Plytix\obj\Debug\Plytix.AtributosAñadirForm.resources
-C:\Users\David\Documents\GIT\Plytix\segundaiter\Plytix\obj\Debug\Plytix.ProductosRelacionadosAñadirForm.resources
 C:\Users\Alejandro\OneDrive - Universidad de Málaga\Escritorio\UNIVERSIDAD\Plytix\Plytix\segundaiter\Plytix\bin\Debug\Plytix.exe.config
 C:\Users\Alejandro\OneDrive - Universidad de Málaga\Escritorio\UNIVERSIDAD\Plytix\Plytix\segundaiter\Plytix\bin\Debug\Plytix.exe
 C:\Users\Alejandro\OneDrive - Universidad de Málaga\Escritorio\UNIVERSIDAD\Plytix\Plytix\segundaiter\Plytix\bin\Debug\Plytix.pdb
@@ -467,7 +465,6 @@ C:\Users\Alejandro\OneDrive - Universidad de Málaga\Escritorio\UNIVERSIDAD\Plyt
 C:\Users\franc\Documents\GitHub\Plytix\segundaiter\Plytix\obj\Debug\Plytix.AtributosAñadirForm.resources
 C:\Users\franc\Documents\GitHub\Plytix\segundaiter\Plytix\obj\Debug\Plytix.AtributosListarForm.resources
 C:\Users\franc\Documents\GitHub\Plytix\segundaiter\Plytix\obj\Debug\Plytix.CuentaForm.resources
-C:\Users\David\Documents\GIT\Plytix\segundaiter\Plytix\obj\Debug\Plytix.ProductosRelacionadosEditarForm.resources
 C:\Users\franc\Documents\GitHub\Plytix\segundaiter\Plytix\obj\Debug\Plytix.ProductosVerDetallesForm.resources
 C:\Users\David\Documents\GIT\Plytix\segundaiter\Plytix\obj\Debug\Plytix.ProductosVerDetallesForm.resources
 C:\Users\David\Documents\GIT\Plytix\segundaiter\Plytix\obj\Debug\Plytix.CuentaConfigurarCSVForm.resources
@@ -477,3 +474,6 @@ C:\Users\franc\Documents\GitHub\Plytix\segundaiter\Plytix\obj\Debug\Plytix.Atrib
 C:\Users\franc\Documents\GitHub\Plytix\segundaiter\Plytix\obj\Debug\Plytix.RelacionAñadirForm.resources
 C:\Users\franc\Documents\GitHub\Plytix\segundaiter\Plytix\obj\Debug\Plytix.RelacionEditarForm.resources
 C:\Users\franc\Documents\GitHub\Plytix\segundaiter\Plytix\obj\Debug\Plytix.RelacionListarForm.resources
+C:\Users\David\Documents\GIT\Plytix\segundaiter\Plytix\obj\Debug\Plytix.RelacionAñadirForm.resources
+C:\Users\David\Documents\GIT\Plytix\segundaiter\Plytix\obj\Debug\Plytix.RelacionEditarForm.resources
+C:\Users\David\Documents\GIT\Plytix\segundaiter\Plytix\obj\Debug\Plytix.RelacionListarForm.resources

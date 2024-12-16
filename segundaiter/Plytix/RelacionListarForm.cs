@@ -13,6 +13,7 @@ namespace Plytix
     public partial class RelacionListarForm : Form
     {
         grupo11DBEntities bd = new grupo11DBEntities();
+        private readonly int MAX_RELACIONES = 3;
         public RelacionListarForm()
         {
             InitializeComponent();
@@ -30,6 +31,17 @@ namespace Plytix
                                  };
             relacionesDataGridView.DataSource = infoRelaciones.ToList();
 
+            /* PERMITIMOS O NO PERMITIMOS LA CREACIÓN DE MÁS RELACIONES */
+            if( infoRelaciones.Count() >= MAX_RELACIONES)
+            {
+                addLabel.Hide();
+                buttonAddLabel.Hide();
+            }
+            else
+            {
+                addLabel.Show();
+                buttonAddLabel.Show();
+            }
             relacionesDataGridView.Columns.Add(new DataGridViewButtonColumn
             {
                 Name = "Edit",
