@@ -110,14 +110,16 @@ namespace Plytix
             foreach( CATEGORIA categoria in categoriaListBox.Items)
             {
                 categoria.PRODUCTO.Remove(productoSeleccionado);
+                bd.CATEGORIA.AddOrUpdate(categoria);
             }
 
             /* Añadimos las relaciones entre categorías y productos seleccionados */
-            foreach( CATEGORIA categoria in categoriaListBox.SelectedItems) /* FUNCIONA MAL */
+            foreach ( CATEGORIA categoria in categoriaListBox.SelectedItems) /* FUNCIONA MAL */
             {
                 Console.WriteLine(categoria.NOMBRE);    /* DEPURACIÓN */
                 productoSeleccionado.CATEGORIA.Add(categoria);
                 categoria.PRODUCTO.Add(productoSeleccionado);
+                bd.CATEGORIA.AddOrUpdate(categoria);
             }
 
             productoSeleccionado.PRODUCTO_ATRIBUTO.Clear();
@@ -130,8 +132,8 @@ namespace Plytix
                 nuevaRelacionP_A.valor = map.Value;
                 nuevaRelacionP_A.ATRIBUTO = map.Key;
                 productoSeleccionado.PRODUCTO_ATRIBUTO.Add(nuevaRelacionP_A);
+                bd.PRODUCTO_ATRIBUTO.Add(nuevaRelacionP_A);
             }
-
             bd.PRODUCTO.AddOrUpdate(productoSeleccionado);
             try
             {

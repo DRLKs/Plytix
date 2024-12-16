@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -57,6 +58,7 @@ namespace Plytix
                 {
                     productoNuevo.CATEGORIA.Add(categoria);
                     categoria.PRODUCTO.Add(productoNuevo);
+                    bd.CATEGORIA.AddOrUpdate(categoria);
                 }
 
                 /* Añadimos los atributos */
@@ -68,6 +70,7 @@ namespace Plytix
                     nuevaRelacionP_A.valor = map.Value;
                     nuevaRelacionP_A.ATRIBUTO = map.Key;
                     productoNuevo.PRODUCTO_ATRIBUTO.Add(nuevaRelacionP_A);
+                    bd.PRODUCTO_ATRIBUTO.AddOrUpdate(nuevaRelacionP_A);
                 }
 
                 bd.PRODUCTO.Add( productoNuevo );

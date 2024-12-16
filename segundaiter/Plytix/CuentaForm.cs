@@ -54,7 +54,7 @@ namespace Plytix
             {
                 saveFileDialog.Title = "Save CSV file";
                 saveFileDialog.Filter = "Archivos CSV (*.csv)|*.csv";
-                saveFileDialog.FileName = "accountProducts.csv"; // Nombre predeterminado del archivo
+                saveFileDialog.FileName =  categoria.NOMBRE + "AccountProducts.csv"; /* Nombre del archivo */
 
                 // Mostrar el diálogo al usuario
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
