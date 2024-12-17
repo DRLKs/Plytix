@@ -2,7 +2,7 @@
 
 Es el proyecto del caso práctico para asignatura de Ingeniería de Requisitos, Universidad de Málaga.
 Consiste en una aplicación de escritorio programada en C#, mediante entity framework.
-Esta aplicación simula una aplicación que gestionaría el inventario de un hospital. 
+Esta aplicación simula una aplicación que gestionaría el inventario de una empresa, siendo la la versión mínima de la empresa [Plytix](https://www.plytix.com/). 
 
 ## Tabla de Contenidos
 
@@ -28,10 +28,9 @@ Esta aplicación simula una aplicación que gestionaría el inventario de un hos
 
 Antes de comenzar, asegúrate de tener instalados los siguientes programas o herramientas:  
 
-- [Git](https://git-scm.com/downloads)  
-- [Node.js](https://nodejs.org/) (o cualquier otra dependencia necesaria).  
+- [VisualStudio2022](https://visualstudio.microsoft.com/es/vs/)  
 - Otros requisitos (frameworks, herramientas, etc.).
-
+- [Entity Framework]
 ---
 
 ## Instalación
