@@ -54,7 +54,15 @@ namespace Plytix
             {
                 saveFileDialog.Title = "Save CSV file";
                 saveFileDialog.Filter = "Archivos CSV (*.csv)|*.csv";
-                saveFileDialog.FileName =  categoria.NOMBRE + "AccountProducts.csv"; /* Nombre del archivo */
+                if( categoria != null)
+                {
+                    saveFileDialog.FileName = categoria.NOMBRE + "AccountProducts.csv"; /* Nombre del archivo */
+
+                }
+                else
+                {
+                    saveFileDialog.FileName = "AccountProducts.csv";
+                }
 
                 // Mostrar el diálogo al usuario
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
@@ -111,7 +119,16 @@ namespace Plytix
             var lineBuilder = new StringBuilder();
             string precio;
             /* MOSTRAMOS TODOS LOS DATOS DEL CSV*/
-            foreach ( PRODUCTO producto in cateegoria.PRODUCTO )
+            List<PRODUCTO> productos;
+            if( cateegoria != null)
+            {
+                productos = cateegoria.PRODUCTO.ToList();
+            }
+            else
+            {
+                productos = bd.PRODUCTO.ToList();
+            }
+            foreach ( PRODUCTO producto in productos)
             {            
                 lineBuilder.Clear();
 

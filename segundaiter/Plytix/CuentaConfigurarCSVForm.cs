@@ -29,7 +29,7 @@ namespace Plytix
 
         private void CategoriaElegida_Click(object sender, EventArgs e)
         {
-            if (listBoxCategorias.SelectedItems.Count > 0)
+            if (listBoxCategorias.SelectedItems.Count < 2)
             {
                 if (this.Owner is CuentaForm parentForm) parentForm.ElegirDirectorioCSV((CATEGORIA)listBoxCategorias.SelectedItem); // Para recargar los datos del grid en la ventana abierta         
                 Close();
